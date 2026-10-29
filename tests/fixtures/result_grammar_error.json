@@ -1,0 +1,24 @@
+{
+ "schema_version": "1.3",
+ "id": "an_9b21",
+ "lang": "vi",
+ "text": "映画は面白いでした。",
+ "tokens": [],
+ "input_check": {
+  "status": "error",
+  "at": [
+   2,
+   4
+  ],
+  "explain": "Tính từ い chia quá khứ ở chính tính từ: 面白い → 面白かった",
+  "correction": "映画は面白かったです。",
+  "correction_at": [
+   5,
+   10
+  ]
+ },
+ "auto_fix": null,
+ "error": {
+  "code": "grammar_error"
+ }
+}

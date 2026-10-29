@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bunpo-analyzer"
+version = "0.1.0"
+description = "Phan tich ngu phap cau tieng Nhat cho Migii AI Sensei"
+readme = "README.md"
+# Chatbot chay Python 3.14 (Dockerfile); giu >=3.10 de chay duoc tren may dev.
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    # Tach tu (buoc 1.1). Tu dien ~77 MB (giai nen ~190 MB), cai bang pip.
+    # Ghim phien ban tu dien: doi tu dien la doi ket qua tach tu (nam trong khoa cache).
+    "sudachipy>=0.6.10",
+    "sudachidict-core==20261015",
+]
+
+[project.optional-dependencies]
+# Them dan theo tung buoc: google-genai (2.1)...
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+bunpo_analyzer = ["rules/*.json", "tables/*.json", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+markers = ["kho: chay tren toan bo cau vi du trong kho (cham, can BUNPO_DATA_DIR); bo qua bang -m \"not kho\""]

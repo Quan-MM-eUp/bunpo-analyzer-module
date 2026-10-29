@@ -1,0 +1,2236 @@
+{
+ "version": "0.1",
+ "updated": "2026-10-29",
+ "note": "Bộ câu kiểm thử (bước 0.2). status: draft → approved sau khi duyệt.",
+ "items": [
+  {
+   "id": "G01",
+   "text": "今夜たくさんの宿題がある。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "full",
+    "artifact"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Tối nay có nhiều bài tập về nhà.",
+    "grammar_must": [
+     1566,
+     245
+    ],
+    "grammar_ok": [
+     17
+    ],
+    "structure": [
+     {
+      "role": "adv_time",
+      "text": "今夜",
+      "gloss": "tối nay"
+     },
+     {
+      "role": "subject",
+      "text": "たくさんの宿題が",
+      "gloss": "nhiều bài tập",
+      "grammar": [
+       1566
+      ]
+     },
+     {
+      "role": "predicate",
+      "text": "ある",
+      "gloss": "có",
+      "main": true,
+      "grammar": [
+       245
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G02",
+   "text": "昨日友達と見た映画はとても面白かったです。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "full",
+    "artifact"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Bộ phim hôm qua tôi xem cùng bạn rất hay.",
+    "grammar_must": [
+     196,
+     19,
+     43,
+     26
+    ],
+    "grammar_ok": [
+     22
+    ],
+    "structure": [
+     {
+      "group": "rel",
+      "text": "昨日友達と見た",
+      "head": "映画",
+      "grammar": [
+       196
+      ],
+      "children": [
+       {
+        "role": "subject",
+        "hidden": true,
+        "jp": "（私が）",
+        "gloss": "tôi"
+       },
+       {
+        "role": "adv_time",
+        "text": "昨日",
+        "gloss": "hôm qua"
+       },
+       {
+        "role": "complement",
+        "text": "友達と",
+        "gloss": "cùng bạn",
+        "grammar": [
+         19
+        ]
+       },
+       {
+        "role": "predicate",
+        "text": "見た",
+        "gloss": "đã xem"
+       }
+      ]
+     },
+     {
+      "role": "topic",
+      "text": "映画は",
+      "gloss": "bộ phim"
+     },
+     {
+      "role": "predicate",
+      "text": "とても面白かったです",
+      "gloss": "(đã) rất hay",
+      "main": true,
+      "grammar": [
+       43,
+       26
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G03",
+   "text": "先生に言われたとおりに練習したら、上手に話せるようになった。",
+   "level": "N3",
+   "case": "#7",
+   "tags": [
+    "full",
+    "artifact"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Luyện tập đúng như thầy dặn, tôi đã nói giỏi lên.",
+    "grammar_must": [
+     169,
+     [
+      229,
+      284
+     ],
+     570,
+     301,
+     223,
+     613
+    ],
+    "grammar_ok": [
+     20
+    ],
+    "structure": [
+     {
+      "group": "sub",
+      "text": "先生に言われたとおりに練習したら",
+      "grammar": [
+       169
+      ],
+      "children": [
+       {
+        "group": "rel",
+        "text": "先生に言われた",
+        "head": "とおり",
+        "children": [
+         {
+          "role": "complement",
+          "text": "先生に",
+          "gloss": "bởi thầy"
+         },
+         {
+          "role": "predicate",
+          "text": "言われた",
+          "gloss": "được bảo",
+          "grammar": [
+           [
+            229,
+            284
+           ]
+          ]
+         }
+        ]
+       },
+       {
+        "role": "adv_manner",
+        "text": "とおりに",
+        "gloss": "theo đúng như",
+        "grammar": [
+         570
+        ]
+       },
+       {
+        "role": "predicate",
+        "text": "練習したら",
+        "gloss": "khi đã luyện tập"
+       }
+      ]
+     },
+     {
+      "role": "subject",
+      "hidden": true,
+      "jp": "（私は）",
+      "gloss": "tôi"
+     },
+     {
+      "role": "adv_manner",
+      "text": "上手に",
+      "gloss": "giỏi",
+      "grammar": [
+       301
+      ]
+     },
+     {
+      "role": "predicate",
+      "text": "話せるようになった",
+      "gloss": "đã nói được",
+      "main": true,
+      "grammar": [
+       223,
+       613
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G04",
+   "text": "私は毎朝コーヒーを飲みます。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Mỗi sáng tôi uống cà phê.",
+    "grammar_must": [
+     22,
+     25
+    ],
+    "grammar_ok": [
+     34
+    ],
+    "structure": [
+     {
+      "role": "topic",
+      "text": "私は",
+      "gloss": "tôi"
+     },
+     {
+      "role": "adv_time",
+      "text": "毎朝",
+      "gloss": "mỗi sáng"
+     },
+     {
+      "role": "object",
+      "text": "コーヒーを",
+      "gloss": "cà phê",
+      "grammar": [
+       25
+      ]
+     },
+     {
+      "role": "predicate",
+      "text": "飲みます",
+      "gloss": "uống",
+      "main": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "G05",
+   "text": "図書館で日本語を勉強しています。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Tôi đang học tiếng Nhật ở thư viện.",
+    "grammar_must": [
+     18,
+     [
+      136,
+      234
+     ]
+    ],
+    "grammar_ok": [
+     25
+    ],
+    "structure": [
+     {
+      "role": "subject",
+      "hidden": true,
+      "jp": "（私は）",
+      "gloss": "tôi"
+     },
+     {
+      "role": "adv_place",
+      "text": "図書館で",
+      "gloss": "ở thư viện",
+      "grammar": [
+       18
+      ]
+     },
+     {
+      "role": "object",
+      "text": "日本語を",
+      "gloss": "tiếng Nhật"
+     },
+     {
+      "role": "predicate",
+      "text": "勉強しています",
+      "gloss": "đang học",
+      "main": true,
+      "grammar": [
+       [
+        136,
+        234
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G06",
+   "text": "雨が降っているので、今日は出かけません。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Vì trời đang mưa nên hôm nay tôi không ra ngoài.",
+    "grammar_must": [
+     372,
+     [
+      234,
+      136
+     ]
+    ],
+    "grammar_ok": [
+     17,
+     34
+    ],
+    "structure": [
+     {
+      "group": "sub",
+      "text": "雨が降っているので",
+      "grammar": [
+       372
+      ],
+      "children": [
+       {
+        "role": "subject",
+        "text": "雨が",
+        "gloss": "mưa"
+       },
+       {
+        "role": "predicate",
+        "text": "降っているので",
+        "gloss": "đang rơi nên",
+        "grammar": [
+         [
+          234,
+          136
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "role": "subject",
+      "hidden": true,
+      "jp": "（私は）",
+      "gloss": "tôi"
+     },
+     {
+      "role": "adv_time",
+      "text": "今日は",
+      "gloss": "hôm nay"
+     },
+     {
+      "role": "predicate",
+      "text": "出かけません",
+      "gloss": "không ra ngoài",
+      "main": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "G07",
+   "text": "田中さんは明日来ると言っていました。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Anh Tanaka đã nói là ngày mai sẽ đến.",
+    "grammar_must": [
+     271
+    ],
+    "grammar_ok": [
+     19,
+     414,
+     176,
+     22
+    ],
+    "structure": [
+     {
+      "role": "topic",
+      "text": "田中さんは",
+      "gloss": "anh Tanaka"
+     },
+     {
+      "group": "quote",
+      "text": "明日来ると",
+      "children": [
+       {
+        "role": "adv_time",
+        "text": "明日",
+        "gloss": "ngày mai"
+       },
+       {
+        "role": "predicate",
+        "text": "来ると",
+        "gloss": "(là) sẽ đến"
+       }
+      ]
+     },
+     {
+      "role": "predicate",
+      "text": "言っていました",
+      "gloss": "đã nói",
+      "main": true,
+      "grammar": [
+       271
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G08",
+   "text": "日本語を話すことは難しくないです。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Nói tiếng Nhật thì không khó.",
+    "grammar_must": [
+     344
+    ],
+    "grammar_ok": [
+     26,
+     22
+    ],
+    "structure": [
+     {
+      "group": "nominal",
+      "text": "日本語を話す",
+      "grammar": [
+       344
+      ],
+      "children": [
+       {
+        "role": "object",
+        "text": "日本語を",
+        "gloss": "tiếng Nhật"
+       },
+       {
+        "role": "predicate",
+        "text": "話す",
+        "gloss": "nói"
+       }
+      ]
+     },
+     {
+      "role": "topic",
+      "text": "ことは",
+      "gloss": "việc (nói tiếng Nhật)"
+     },
+     {
+      "role": "predicate",
+      "text": "難しくないです",
+      "gloss": "không khó",
+      "main": true
+     }
+    ]
+   },
+   "note": "Cách chia: nhóm danh từ hoá chỉ gồm 日本語を話す, こと đứng ở dòng chủ đề (giống 映画 ở câu 2). Cần duyệt."
+  },
+  {
+   "id": "G09",
+   "text": "母が作ったケーキを妹が食べてしまった。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Em gái tôi đã lỡ ăn mất cái bánh mẹ làm.",
+    "grammar_must": [
+     196,
+     [
+      235,
+      470
+     ]
+    ],
+    "grammar_ok": [
+     17,
+     25
+    ],
+    "structure": [
+     {
+      "group": "rel",
+      "text": "母が作った",
+      "head": "ケーキ",
+      "grammar": [
+       196
+      ],
+      "children": [
+       {
+        "role": "subject",
+        "text": "母が",
+        "gloss": "mẹ"
+       },
+       {
+        "role": "predicate",
+        "text": "作った",
+        "gloss": "đã làm"
+       }
+      ]
+     },
+     {
+      "role": "object",
+      "text": "ケーキを",
+      "gloss": "cái bánh"
+     },
+     {
+      "role": "subject",
+      "text": "妹が",
+      "gloss": "em gái"
+     },
+     {
+      "role": "predicate",
+      "text": "食べてしまった",
+      "gloss": "đã lỡ ăn mất",
+      "main": true,
+      "grammar": [
+       [
+        235,
+        470
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G10",
+   "text": "駅に着いたら、電話してください。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Khi đến ga thì hãy gọi điện nhé.",
+    "grammar_must": [
+     169,
+     138
+    ],
+    "grammar_ok": [
+     20
+    ],
+    "structure": [
+     {
+      "group": "sub",
+      "text": "駅に着いたら",
+      "grammar": [
+       169
+      ],
+      "children": [
+       {
+        "role": "complement",
+        "text": "駅に",
+        "gloss": "đến ga"
+       },
+       {
+        "role": "predicate",
+        "text": "着いたら",
+        "gloss": "khi đã tới"
+       }
+      ]
+     },
+     {
+      "role": "predicate",
+      "text": "電話してください",
+      "gloss": "hãy gọi điện",
+      "main": true,
+      "grammar": [
+       138
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G11",
+   "text": "弟は兄に宿題を手伝ってもらいました。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Em trai tôi được anh trai giúp làm bài tập.",
+    "grammar_must": [
+     211
+    ],
+    "grammar_ok": [
+     20,
+     22,
+     25
+    ],
+    "structure": [
+     {
+      "role": "topic",
+      "text": "弟は",
+      "gloss": "em trai"
+     },
+     {
+      "role": "complement",
+      "text": "兄に",
+      "gloss": "(nhờ) anh trai"
+     },
+     {
+      "role": "object",
+      "text": "宿題を",
+      "gloss": "bài tập"
+     },
+     {
+      "role": "predicate",
+      "text": "手伝ってもらいました",
+      "gloss": "được giúp",
+      "main": true,
+      "grammar": [
+       211
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G12",
+   "text": "子供のとき、よく公園で遊びました。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Hồi nhỏ tôi hay chơi ở công viên.",
+    "grammar_must": [
+     174
+    ],
+    "grammar_ok": [
+     21,
+     18,
+     34
+    ],
+    "structure": [
+     {
+      "role": "adv_time",
+      "text": "子供のとき",
+      "gloss": "hồi nhỏ",
+      "grammar": [
+       174
+      ]
+     },
+     {
+      "role": "subject",
+      "hidden": true,
+      "jp": "（私は）",
+      "gloss": "tôi"
+     },
+     {
+      "role": "adv_manner",
+      "text": "よく",
+      "gloss": "hay, thường"
+     },
+     {
+      "role": "adv_place",
+      "text": "公園で",
+      "gloss": "ở công viên"
+     },
+     {
+      "role": "predicate",
+      "text": "遊びました",
+      "gloss": "đã chơi",
+      "main": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "G13",
+   "text": "日本へ行くために、お金を貯めています。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Tôi đang để dành tiền để đi Nhật.",
+    "grammar_must": [
+     353,
+     [
+      136,
+      234
+     ]
+    ],
+    "grammar_ok": [
+     23,
+     25
+    ],
+    "structure": [
+     {
+      "group": "sub",
+      "text": "日本へ行くために",
+      "grammar": [
+       353
+      ],
+      "children": [
+       {
+        "role": "complement",
+        "text": "日本へ",
+        "gloss": "đến Nhật"
+       },
+       {
+        "role": "predicate",
+        "text": "行くために",
+        "gloss": "để đi"
+       }
+      ]
+     },
+     {
+      "role": "subject",
+      "hidden": true,
+      "jp": "（私は）",
+      "gloss": "tôi"
+     },
+     {
+      "role": "object",
+      "text": "お金を",
+      "gloss": "tiền"
+     },
+     {
+      "role": "predicate",
+      "text": "貯めています",
+      "gloss": "đang để dành",
+      "main": true,
+      "grammar": [
+       [
+        136,
+        234
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G14",
+   "text": "音楽を聞きながら、料理を作ります。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Tôi vừa nghe nhạc vừa nấu ăn.",
+    "grammar_must": [
+     [
+      224,
+      959
+     ]
+    ],
+    "grammar_ok": [
+     25
+    ],
+    "structure": [
+     {
+      "group": "sub",
+      "text": "音楽を聞きながら",
+      "grammar": [
+       [
+        224,
+        959
+       ]
+      ],
+      "children": [
+       {
+        "role": "object",
+        "text": "音楽を",
+        "gloss": "nhạc"
+       },
+       {
+        "role": "predicate",
+        "text": "聞きながら",
+        "gloss": "vừa nghe"
+       }
+      ]
+     },
+     {
+      "role": "subject",
+      "hidden": true,
+      "jp": "（私は）",
+      "gloss": "tôi"
+     },
+     {
+      "role": "object",
+      "text": "料理を",
+      "gloss": "món ăn"
+     },
+     {
+      "role": "predicate",
+      "text": "作ります",
+      "gloss": "nấu",
+      "main": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "G15",
+   "text": "この本は読みやすいです。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Quyển sách này dễ đọc.",
+    "grammar_must": [
+     [
+      283,
+      398
+     ]
+    ],
+    "grammar_ok": [
+     22
+    ],
+    "structure": [
+     {
+      "role": "topic",
+      "text": "この本は",
+      "gloss": "quyển sách này"
+     },
+     {
+      "role": "predicate",
+      "text": "読みやすいです",
+      "gloss": "dễ đọc",
+      "main": true,
+      "grammar": [
+       [
+        283,
+        398
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G16",
+   "text": "部長に会議の資料を準備させられた。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Tôi bị trưởng phòng bắt chuẩn bị tài liệu cho cuộc họp.",
+    "grammar_must": [
+     [
+      249,
+      809
+     ]
+    ],
+    "grammar_ok": [
+     20,
+     21,
+     25
+    ],
+    "structure": [
+     {
+      "role": "subject",
+      "hidden": true,
+      "jp": "（私は）",
+      "gloss": "tôi"
+     },
+     {
+      "role": "complement",
+      "text": "部長に",
+      "gloss": "bởi trưởng phòng"
+     },
+     {
+      "role": "object",
+      "text": "会議の資料を",
+      "gloss": "tài liệu cuộc họp"
+     },
+     {
+      "role": "predicate",
+      "text": "準備させられた",
+      "gloss": "bị bắt chuẩn bị",
+      "main": true,
+      "grammar": [
+       [
+        249,
+        809
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G17",
+   "text": "彼が来るかどうか分かりません。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Tôi không biết anh ấy có đến hay không.",
+    "grammar_must": [
+     340
+    ],
+    "grammar_ok": [
+     17,
+     134
+    ],
+    "structure": [
+     {
+      "group": "nominal",
+      "text": "彼が来るかどうか",
+      "grammar": [
+       340
+      ],
+      "children": [
+       {
+        "role": "subject",
+        "text": "彼が",
+        "gloss": "anh ấy"
+       },
+       {
+        "role": "predicate",
+        "text": "来るかどうか",
+        "gloss": "có đến hay không"
+       }
+      ]
+     },
+     {
+      "role": "subject",
+      "hidden": true,
+      "jp": "（私は）",
+      "gloss": "tôi"
+     },
+     {
+      "role": "predicate",
+      "text": "分かりません",
+      "gloss": "không biết",
+      "main": true
+     }
+    ]
+   },
+   "note": "Nhóm かどうか đóng vai đối tượng của 分かる; tạm xếp loại nominal. Cần duyệt."
+  },
+  {
+   "id": "G18",
+   "text": "明日は雨が降るかもしれない。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Ngày mai có thể trời sẽ mưa.",
+    "grammar_must": [
+     242
+    ],
+    "grammar_ok": [
+     17
+    ],
+    "structure": [
+     {
+      "role": "adv_time",
+      "text": "明日は",
+      "gloss": "ngày mai"
+     },
+     {
+      "role": "subject",
+      "text": "雨が",
+      "gloss": "mưa"
+     },
+     {
+      "role": "predicate",
+      "text": "降るかもしれない",
+      "gloss": "có thể sẽ rơi",
+      "main": true,
+      "grammar": [
+       242
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G19",
+   "text": "窓が開いている。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Cửa sổ đang mở.",
+    "grammar_must": [
+     222
+    ],
+    "grammar_ok": [
+     234,
+     136,
+     17
+    ],
+    "structure": [
+     {
+      "role": "subject",
+      "text": "窓が",
+      "gloss": "cửa sổ"
+     },
+     {
+      "role": "predicate",
+      "text": "開いている",
+      "gloss": "đang mở (trạng thái)",
+      "main": true,
+      "grammar": [
+       222
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G20",
+   "text": "彼女は歌が上手です。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "full"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "translation": "Cô ấy hát giỏi.",
+    "grammar_must": [
+     17
+    ],
+    "grammar_ok": [
+     22,
+     205
+    ],
+    "structure": [
+     {
+      "role": "topic",
+      "text": "彼女は",
+      "gloss": "cô ấy"
+     },
+     {
+      "role": "object",
+      "text": "歌が",
+      "gloss": "hát (bài hát)",
+      "grammar": [
+       17
+      ]
+     },
+     {
+      "role": "predicate",
+      "text": "上手です",
+      "gloss": "giỏi",
+      "main": true
+     }
+    ]
+   },
+   "note": "歌が là đối tượng của 上手 (xếp vai object). Kho không có mẫu riêng 'Nが上手'; tạm dùng #17 (が chỉ đối tượng). Cần duyệt."
+  },
+  {
+   "id": "G21",
+   "text": "見みた映画はおもしろかった。",
+   "level": "N5",
+   "case": "#8",
+   "tags": [
+    "auto_fix"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": "見た映画はおもしろかった。",
+    "error": null
+   }
+  },
+  {
+   "id": "G22",
+   "text": "映画えいがを見みました。",
+   "level": "N5",
+   "case": "#8",
+   "tags": [
+    "auto_fix"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": "映画を見ました。",
+    "error": null
+   }
+  },
+  {
+   "id": "G23",
+   "text": "今日きょうは暑あついです。",
+   "level": "N5",
+   "case": "#8",
+   "tags": [
+    "auto_fix"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": "今日は暑いです。",
+    "error": null
+   }
+  },
+  {
+   "id": "G24",
+   "text": "私わたしは学生がくせいです。",
+   "level": "N5",
+   "case": "#8",
+   "tags": [
+    "auto_fix"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": "私は学生です。",
+    "error": null
+   }
+  },
+  {
+   "id": "G25",
+   "text": "人々が駅に集まった。",
+   "level": "N5",
+   "case": "#8",
+   "tags": [
+    "auto_fix_negative"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null
+   },
+   "note": "Từ lặp thật / chữ trùng tự nhiên: không được tự sửa."
+  },
+  {
+   "id": "G26",
+   "text": "ここで少し待ってください。",
+   "level": "N5",
+   "case": "#8",
+   "tags": [
+    "auto_fix_negative"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null
+   },
+   "note": "Từ lặp thật / chữ trùng tự nhiên: không được tự sửa."
+  },
+  {
+   "id": "G27",
+   "text": "そろそろ帰りましょう。",
+   "level": "N5",
+   "case": "#8",
+   "tags": [
+    "auto_fix_negative"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null
+   },
+   "note": "Từ lặp thật / chữ trùng tự nhiên: không được tự sửa."
+  },
+  {
+   "id": "G28",
+   "text": "時々雨が降ります。",
+   "level": "N5",
+   "case": "#8",
+   "tags": [
+    "auto_fix_negative"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null
+   },
+   "note": "Từ lặp thật / chữ trùng tự nhiên: không được tự sửa."
+  },
+  {
+   "id": "G29",
+   "text": "いろいろな国の料理を食べました。",
+   "level": "N5",
+   "case": "#8",
+   "tags": [
+    "auto_fix_negative"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null
+   },
+   "note": "Từ lặp thật / chữ trùng tự nhiên: không được tự sửa."
+  },
+  {
+   "id": "G30",
+   "text": "母は元気です。",
+   "level": "N5",
+   "case": "#8",
+   "tags": [
+    "auto_fix_negative"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null
+   },
+   "note": "Từ lặp thật / chữ trùng tự nhiên: không được tự sửa."
+  },
+  {
+   "id": "G31",
+   "text": "映画は面白いでした。",
+   "level": "N5",
+   "case": "#9",
+   "tags": [
+    "grammar_error"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "error",
+    "auto_fix": null,
+    "error": {
+     "code": "grammar_error"
+    },
+    "correction": "映画は面白かったです。"
+   }
+  },
+  {
+   "id": "G32",
+   "text": "本を読みるました。",
+   "level": "N5",
+   "case": "#9",
+   "tags": [
+    "grammar_error"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "error",
+    "auto_fix": null,
+    "error": {
+     "code": "grammar_error"
+    },
+    "correction": "本を読みました。"
+   }
+  },
+  {
+   "id": "G33",
+   "text": "静かいな部屋です。",
+   "level": "N5",
+   "case": "#9",
+   "tags": [
+    "grammar_error"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "error",
+    "auto_fix": null,
+    "error": {
+     "code": "grammar_error"
+    },
+    "correction": "静かな部屋です。"
+   }
+  },
+  {
+   "id": "G34",
+   "text": "昨日、映画を見たいでした。",
+   "level": "N5",
+   "case": "#9",
+   "tags": [
+    "grammar_error"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "error",
+    "auto_fix": null,
+    "error": {
+     "code": "grammar_error"
+    },
+    "correction": "昨日、映画を見たかったです。"
+   }
+  },
+  {
+   "id": "G35",
+   "text": "私は学生だです。",
+   "level": "N5",
+   "case": "#9",
+   "tags": [
+    "grammar_error"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "error",
+    "auto_fix": null,
+    "error": {
+     "code": "grammar_error"
+    },
+    "correction": "私は学生です。"
+   }
+  },
+  {
+   "id": "G36",
+   "text": "先生に会いたいます。",
+   "level": "N5",
+   "case": "#9",
+   "tags": [
+    "grammar_error"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "error",
+    "auto_fix": null,
+    "error": {
+     "code": "grammar_error"
+    },
+    "correction": "先生に会いたいです。"
+   }
+  },
+  {
+   "id": "G37",
+   "text": "この魚、食べれる？",
+   "level": "N4",
+   "case": "#10",
+   "tags": [
+    "suspect"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "suspect",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      223,
+      284
+     ]
+    ],
+    "grammar_ok": []
+   },
+   "note": "ら抜き言葉 (食べれる thay cho 食べられる)."
+  },
+  {
+   "id": "G38",
+   "text": "明日は見れないかもしれない。",
+   "level": "N4",
+   "case": "#10",
+   "tags": [
+    "suspect"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "suspect",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     242
+    ],
+    "grammar_ok": []
+   },
+   "note": "ら抜き言葉 (見れない)."
+  },
+  {
+   "id": "G39",
+   "text": "朝ごはん、もう食べた？",
+   "level": "N5",
+   "case": "#10",
+   "tags": [
+    "casual_ok"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null
+   },
+   "note": "Văn nói lược trợ từ, câu hỏi dùng ？: tự nhiên, không được báo sai."
+  },
+  {
+   "id": "G40",
+   "text": "全然大丈夫です。",
+   "level": "N4",
+   "case": "#10",
+   "tags": [
+    "casual_ok"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": [
+     "ok",
+     "suspect"
+    ],
+    "auto_fix": null,
+    "error": null
+   },
+   "note": "全然 + khẳng định: văn nói phổ biến; chấp nhận ok hoặc suspect, không được error."
+  },
+  {
+   "id": "G41",
+   "text": "鈴木さんはトヨタで働いています。",
+   "level": "N5",
+   "case": "#13",
+   "tags": [
+    "unknown_word"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null
+   },
+   "note": "Có tên riêng/từ mới: vẫn phân tích; từ không có trong kho có meaning_source = llm."
+  },
+  {
+   "id": "G42",
+   "text": "週末に東京スカイツリーに登りました。",
+   "level": "N5",
+   "case": "#13",
+   "tags": [
+    "unknown_word"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null
+   },
+   "note": "Có tên riêng/từ mới: vẫn phân tích; từ không có trong kho có meaning_source = llm."
+  },
+  {
+   "id": "G43",
+   "text": "昨日ネトフリでアニメを見た。",
+   "level": "N5",
+   "case": "#13",
+   "tags": [
+    "unknown_word"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null
+   },
+   "note": "Có tên riêng/từ mới: vẫn phân tích; từ không có trong kho có meaning_source = llm."
+  },
+  {
+   "id": "G44",
+   "text": "今日は雨です。傘を持って行きます。",
+   "level": null,
+   "case": "#14",
+   "tags": [
+    "invalid_input"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": null,
+    "auto_fix": null,
+    "error": {
+     "code": "invalid_input",
+     "reason": "multiple_sentences"
+    }
+   }
+  },
+  {
+   "id": "G45",
+   "text": "本当？本当に行くの？",
+   "level": null,
+   "case": "#14",
+   "tags": [
+    "invalid_input"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": null,
+    "auto_fix": null,
+    "error": {
+     "code": "invalid_input",
+     "reason": "multiple_sentences"
+    }
+   }
+  },
+  {
+   "id": "G46",
+   "text": "Hôm nay trời đẹp quá.",
+   "level": null,
+   "case": "#14",
+   "tags": [
+    "invalid_input"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": null,
+    "auto_fix": null,
+    "error": {
+     "code": "invalid_input",
+     "reason": "not_japanese"
+    }
+   }
+  },
+  {
+   "id": "G47",
+   "text": "Hello! How are you?",
+   "level": null,
+   "case": "#14",
+   "tags": [
+    "invalid_input"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": null,
+    "auto_fix": null,
+    "error": {
+     "code": "invalid_input",
+     "reason": "not_japanese"
+    }
+   }
+  },
+  {
+   "id": "G48",
+   "text": "私は毎朝六時に起きて、顔を洗って、朝ご飯を食べて、新聞を読んで、犬と一緒に近くの公園を散歩して、それから駅まで歩いて電車に乗って、会社に着いたらすぐにメールを確認して、午前中の会議の資料を準備して、同僚と一緒に昼ご飯を食べに行きます。",
+   "level": null,
+   "case": "#14",
+   "tags": [
+    "invalid_input"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": null,
+    "auto_fix": null,
+    "error": {
+     "code": "invalid_input",
+     "reason": "too_long"
+    }
+   }
+  },
+  {
+   "id": "G49",
+   "text": "彼は「明日行く。」と言った。",
+   "level": "N4",
+   "case": "#14",
+   "tags": [
+    "valid_edge"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      414,
+      19
+     ]
+    ],
+    "grammar_ok": []
+   },
+   "note": "。 nằm trong 「」 nên vẫn là 1 câu."
+  },
+  {
+   "id": "G50",
+   "text": "今夜たくさんの宿題がある",
+   "level": "N5",
+   "case": "#14",
+   "tags": [
+    "valid_edge"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     1566,
+     245
+    ],
+    "grammar_ok": []
+   },
+   "note": "Thiếu 。 cuối câu vẫn hợp lệ."
+  },
+  {
+   "id": "G51",
+   "text": "今夜　たくさんの　宿題が　ある。",
+   "level": "N5",
+   "case": "#14",
+   "tags": [
+    "valid_edge"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     1566,
+     245
+    ],
+    "grammar_ok": []
+   },
+   "note": "Có khoảng trắng (kiểu sách giáo khoa): chuẩn hoá rồi phân tích như câu không có khoảng trắng."
+  },
+  {
+   "id": "G52",
+   "text": "これは私の本です。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     21
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G53",
+   "text": "机の上に猫がいます。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      152,
+      78
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G54",
+   "text": "ご飯を食べてから、歯を磨きます。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     137
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G55",
+   "text": "時間がないから、タクシーで行きましょう。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     49
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G56",
+   "text": "友達が駅まで送ってくれました。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     209
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G57",
+   "text": "明日は晴れると思います。",
+   "level": "N5",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      175,
+      270
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G58",
+   "text": "富士山に登ったことがあります。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      252,
+      160
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G59",
+   "text": "春になれば、桜が咲きます。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      377,
+      427,
+      598
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G60",
+   "text": "財布を盗まれました。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      229,
+      284
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G61",
+   "text": "雨なのに、彼は傘を持たずに出かけた。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      373,
+      723
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G62",
+   "text": "明日雨が降るそうです。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      402,
+      540
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G63",
+   "text": "この料理は辛すぎます。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      348,
+      672
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G64",
+   "text": "新しい靴を履いてみました。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     262
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G65",
+   "text": "パーティーの前に飲み物を買っておきます。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     263
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G66",
+   "text": "日本へ行くなら、春がいいですよ。",
+   "level": "N4",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     369
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G67",
+   "text": "毎日野菜を食べるようにしています。",
+   "level": "N3",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      758,
+      384
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G68",
+   "text": "練習すればするほど上手になる。",
+   "level": "N3",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     601
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G69",
+   "text": "来月大阪に転勤することになりました。",
+   "level": "N3",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     493
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G70",
+   "text": "日本語が分かるわけではない。",
+   "level": "N3",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      616,
+      666
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G71",
+   "text": "この仕事は私にとって大切です。",
+   "level": "N3",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      591,
+      663
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G72",
+   "text": "約束したから、行かないわけにはいかない。",
+   "level": "N3",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     [
+      581,
+      625
+     ]
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G73",
+   "text": "あの人は先生に違いない。",
+   "level": "N3",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     596
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G74",
+   "text": "雨が降りそうです。",
+   "level": "N3",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     674
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G75",
+   "text": "頑張ったものの、試験に落ちてしまった。",
+   "level": "N2",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     1007
+    ],
+    "grammar_ok": []
+   }
+  },
+  {
+   "id": "G76",
+   "text": "その話を聞いて、泣かずにはいられなかった。",
+   "level": "N2",
+   "case": "#7",
+   "tags": [
+    "pattern"
+   ],
+   "status": "draft",
+   "expect": {
+    "input_check": "ok",
+    "auto_fix": null,
+    "error": null,
+    "grammar_must": [
+     925
+    ],
+    "grammar_ok": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,1274 @@
+{
+ "version": "0.1",
+ "status": "draft - can duyet noi dung",
+ "note": "Nghia tro tu / tro dong tu / hau to (meaning_source = particle_table). Dieu kien so khop theo thu tu, muc dau tien khop duoc dung. Ban dich: particle_table.<lang>.json dang {key: text}. Muc co \"core\": true la tu co ban kho chua co (なる, いる, よく), chi dung khi kho khong tra duoc; nen bo sung vao word_lib.",
+ "entries": [
+  {
+   "key": "te_shireru",
+   "base": "しれる",
+   "pos": "verb",
+   "prev": [
+    "も"
+   ],
+   "vi": "(～かもしれない: có lẽ, có thể)"
+  },
+  {
+   "key": "te_いる",
+   "base": "いる",
+   "after_te": true,
+   "vi": "(đang / trạng thái: ～ている)"
+  },
+  {
+   "key": "te_おる",
+   "base": "おる",
+   "after_te": true,
+   "vi": "(đang, khiêm nhường: ～ております)"
+  },
+  {
+   "key": "te_ある",
+   "base": "ある",
+   "after_te": true,
+   "vi": "(trạng thái do ai đó làm sẵn: ～てある)"
+  },
+  {
+   "key": "te_しまう",
+   "base": "しまう",
+   "after_te": true,
+   "vi": "(lỡ, xong hẳn: ～てしまう)"
+  },
+  {
+   "key": "te_みる",
+   "base": "みる",
+   "after_te": true,
+   "vi": "(thử: ～てみる)"
+  },
+  {
+   "key": "te_おく",
+   "base": "おく",
+   "after_te": true,
+   "vi": "(làm sẵn: ～ておく)"
+  },
+  {
+   "key": "te_くる",
+   "base": "くる",
+   "after_te": true,
+   "vi": "(dần dần / đi rồi quay lại: ～てくる)"
+  },
+  {
+   "key": "te_いく",
+   "base": "いく",
+   "after_te": true,
+   "vi": "(dần dần / tiếp diễn: ～ていく)"
+  },
+  {
+   "key": "te_くれる",
+   "base": "くれる",
+   "after_te": true,
+   "vi": "(ai đó làm cho mình: ～てくれる)"
+  },
+  {
+   "key": "te_くださる",
+   "base": "くださる",
+   "after_te": true,
+   "vi": "(làm cho mình, kính ngữ: ～てください)"
+  },
+  {
+   "key": "te_もらう",
+   "base": "もらう",
+   "after_te": true,
+   "vi": "(được ai làm cho: ～てもらう)"
+  },
+  {
+   "key": "te_いただく",
+   "base": "いただく",
+   "after_te": true,
+   "vi": "(được làm cho, khiêm nhường: ～ていただく)"
+  },
+  {
+   "key": "te_あげる",
+   "base": "あげる",
+   "after_te": true,
+   "vi": "(làm cho người khác: ～てあげる)"
+  },
+  {
+   "key": "te_やる",
+   "base": "やる",
+   "after_te": true,
+   "vi": "(làm cho người dưới: ～てやる)"
+  },
+  {
+   "key": "te_hoshii",
+   "base": "ほしい",
+   "after_te": true,
+   "vi": "(muốn ai làm: ～てほしい)"
+  },
+  {
+   "key": "adj_nai",
+   "base": "ない",
+   "pos": "adj",
+   "pos2": "非自立可能",
+   "vi": "không (phủ định)"
+  },
+  {
+   "key": "aux_tara",
+   "base": "た",
+   "pos": "aux",
+   "cform": "仮定形",
+   "vi": "nếu, khi (điều kiện: ～たら)"
+  },
+  {
+   "key": "aux_ta",
+   "base": "た",
+   "pos": "aux",
+   "vi": "quá khứ, đã (hoàn thành)"
+  },
+  {
+   "key": "aux_da_node",
+   "base": "だ",
+   "pos": "aux",
+   "cform": "連用形",
+   "prev": [
+    "の",
+    "ん"
+   ],
+   "vi": "vì (～ので)"
+  },
+  {
+   "key": "aux_dara",
+   "base": "だら",
+   "pos": "aux",
+   "vi": "nếu, khi (điều kiện: ～たら)"
+  },
+  {
+   "key": "aux_da_naraba",
+   "base": "だ",
+   "pos": "aux",
+   "cform": "仮定形",
+   "vi": "nếu (là) (～なら)"
+  },
+  {
+   "key": "aux_da_daro",
+   "base": "だ",
+   "pos": "aux",
+   "cform": "意志推量形",
+   "vi": "chắc là (phỏng đoán: だろう)"
+  },
+  {
+   "key": "aux_da_de",
+   "base": "だ",
+   "pos": "aux",
+   "cform": "連用形",
+   "vi": "là (dạng nối: で)"
+  },
+  {
+   "key": "aux_da",
+   "base": "だ",
+   "pos": "aux",
+   "vi": "là (thể thường của です)"
+  },
+  {
+   "key": "prt_da_ni",
+   "base": "だ",
+   "pos": "prt",
+   "cform": "連用形-ニ",
+   "vi": "(biến tính từ な thành trạng từ: Naに / ～ように)"
+  },
+  {
+   "key": "prt_da_na",
+   "base": "だ",
+   "pos": "prt",
+   "cform": "連体形",
+   "vi": "(nối tính từ な / のな với danh từ)"
+  },
+  {
+   "key": "aux_desu",
+   "base": "です",
+   "pos": "aux",
+   "vi": "là (lịch sự)"
+  },
+  {
+   "key": "aux_masu",
+   "base": "ます",
+   "pos": "aux",
+   "vi": "(đuôi lịch sự)"
+  },
+  {
+   "key": "aux_nai",
+   "base": "ない",
+   "pos": "aux",
+   "vi": "không (phủ định)"
+  },
+  {
+   "key": "aux_nu",
+   "base": "ぬ",
+   "pos": "aux",
+   "vi": "không (phủ định: ～ん / ～ず)"
+  },
+  {
+   "key": "aux_zu",
+   "base": "ず",
+   "pos": "aux",
+   "vi": "không (phủ định, văn viết: ～ず)"
+  },
+  {
+   "key": "aux_reru",
+   "base": "れる",
+   "pos": "aux",
+   "vi": "bị, được (bị động); có thể; (tôn kính)"
+  },
+  {
+   "key": "aux_rareru",
+   "base": "られる",
+   "pos": "aux",
+   "vi": "bị, được (bị động); có thể; (tôn kính)"
+  },
+  {
+   "key": "aux_seru",
+   "base": "せる",
+   "pos": "aux",
+   "vi": "bắt, cho (sai khiến)"
+  },
+  {
+   "key": "aux_saseru",
+   "base": "させる",
+   "pos": "aux",
+   "vi": "bắt, cho (sai khiến)"
+  },
+  {
+   "key": "aux_tai",
+   "base": "たい",
+   "pos": "aux",
+   "vi": "muốn"
+  },
+  {
+   "key": "aux_tagaru",
+   "base": "たがる",
+   "pos": "aux",
+   "vi": "(người khác) muốn"
+  },
+  {
+   "key": "aux_u",
+   "base": "う",
+   "pos": "aux",
+   "vi": "hãy cùng…; định… (ý chí, rủ rê)"
+  },
+  {
+   "key": "aux_you_vol",
+   "base": "よう",
+   "pos": "aux",
+   "pos1": "助動詞",
+   "vi": "hãy cùng…; định… (ý chí, rủ rê)"
+  },
+  {
+   "key": "aux_you",
+   "base": "よう",
+   "pos": "aux",
+   "vi": "giống như; để, sao cho (～ようだ / ～ように)"
+  },
+  {
+   "key": "aux_sou",
+   "base": "そう",
+   "pos": "aux",
+   "vi": "trông có vẻ; nghe nói (～そうだ)"
+  },
+  {
+   "key": "aux_rashii",
+   "base": "らしい",
+   "pos": "aux",
+   "vi": "có vẻ, nghe nói; đúng chất"
+  },
+  {
+   "key": "aux_mitai",
+   "base": "みたい",
+   "pos": "aux",
+   "vi": "giống như, có vẻ (văn nói)"
+  },
+  {
+   "key": "aux_beshi",
+   "base": "べし",
+   "pos": "aux",
+   "vi": "nên, phải (～べき)"
+  },
+  {
+   "key": "aux_mai",
+   "base": "まい",
+   "pos": "aux",
+   "vi": "chắc không; quyết không (～まい)"
+  },
+  {
+   "key": "aux_teru",
+   "base": "てる",
+   "pos": "aux",
+   "vi": "(văn nói của ～ている)"
+  },
+  {
+   "key": "aux_deru",
+   "base": "でる",
+   "pos": "aux",
+   "vi": "(văn nói của ～でいる)"
+  },
+  {
+   "key": "aux_chau",
+   "base": "ちゃう",
+   "pos": "aux",
+   "vi": "(văn nói của ～てしまう)"
+  },
+  {
+   "key": "aux_toku",
+   "base": "とく",
+   "pos": "aux",
+   "vi": "(văn nói của ～ておく)"
+  },
+  {
+   "key": "prt_は_係助詞",
+   "base": "は",
+   "pos": "prt",
+   "pos2": "係助詞",
+   "vi": "đánh dấu chủ đề"
+  },
+  {
+   "key": "prt_も_係助詞",
+   "base": "も",
+   "pos": "prt",
+   "pos2": "係助詞",
+   "vi": "cũng, đến cả"
+  },
+  {
+   "key": "prt_こそ_係助詞",
+   "base": "こそ",
+   "pos": "prt",
+   "pos2": "係助詞",
+   "vi": "chính là"
+  },
+  {
+   "key": "prt_が_格助詞",
+   "base": "が",
+   "pos": "prt",
+   "pos2": "格助詞",
+   "vi": "đánh dấu chủ ngữ / đối tượng (thích, giỏi, có…)"
+  },
+  {
+   "key": "prt_が_接続助詞",
+   "base": "が",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "nhưng"
+  },
+  {
+   "key": "prt_を_格助詞",
+   "base": "を",
+   "pos": "prt",
+   "pos2": "格助詞",
+   "vi": "đánh dấu tân ngữ (đối tượng của hành động)"
+  },
+  {
+   "key": "prt_に_格助詞",
+   "base": "に",
+   "pos": "prt",
+   "pos2": "格助詞",
+   "vi": "ở, vào lúc, đến, cho, bởi (nơi chốn, thời điểm, đích, đối tượng)"
+  },
+  {
+   "key": "prt_へ_格助詞",
+   "base": "へ",
+   "pos": "prt",
+   "pos2": "格助詞",
+   "vi": "đến, về phía"
+  },
+  {
+   "key": "prt_で_格助詞",
+   "base": "で",
+   "pos": "prt",
+   "pos2": "格助詞",
+   "vi": "ở, tại, bằng, vì (nơi diễn ra hành động, phương tiện, nguyên nhân)"
+  },
+  {
+   "key": "prt_で_接続助詞",
+   "base": "で",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "(dạng て: nối câu)"
+  },
+  {
+   "key": "prt_と_格助詞",
+   "base": "と",
+   "pos": "prt",
+   "pos2": "格助詞",
+   "vi": "và, cùng với; rằng (trích dẫn)"
+  },
+  {
+   "key": "prt_と_接続助詞",
+   "base": "と",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "hễ… thì, khi…"
+  },
+  {
+   "key": "prt_no_noni",
+   "base": "の",
+   "pos": "prt",
+   "next": [
+    "に"
+   ],
+   "next_pos": "prt",
+   "vi": "(～のに: mặc dù, vậy mà)"
+  },
+  {
+   "key": "prt_no_node",
+   "base": "の",
+   "pos": "prt",
+   "pos2": "準体助詞",
+   "next": [
+    "で"
+   ],
+   "vi": "(～ので: vì)"
+  },
+  {
+   "key": "prt_の_格助詞",
+   "base": "の",
+   "pos": "prt",
+   "pos2": "格助詞",
+   "vi": "của (sở hữu, bổ nghĩa danh từ)"
+  },
+  {
+   "key": "prt_の_準体助詞",
+   "base": "の",
+   "pos": "prt",
+   "pos2": "準体助詞",
+   "vi": "việc, cái (danh từ hoá); (trong ので, のに)"
+  },
+  {
+   "key": "prt_の_終助詞",
+   "base": "の",
+   "pos": "prt",
+   "pos2": "終助詞",
+   "vi": "(cuối câu: hỏi / giải thích nhẹ)"
+  },
+  {
+   "key": "prt_から_格助詞",
+   "base": "から",
+   "pos": "prt",
+   "pos2": "格助詞",
+   "vi": "từ (điểm xuất phát)"
+  },
+  {
+   "key": "prt_から_接続助詞",
+   "base": "から",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "vì, bởi vì"
+  },
+  {
+   "key": "prt_まで_副助詞",
+   "base": "まで",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "đến, cho đến"
+  },
+  {
+   "key": "prt_より_格助詞",
+   "base": "より",
+   "pos": "prt",
+   "pos2": "格助詞",
+   "vi": "hơn; từ"
+  },
+  {
+   "key": "prt_や_副助詞",
+   "base": "や",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "và (liệt kê không đầy đủ)"
+  },
+  {
+   "key": "prt_か_副助詞",
+   "base": "か",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "hay, hoặc; (nghi vấn trong câu)"
+  },
+  {
+   "key": "prt_か_終助詞",
+   "base": "か",
+   "pos": "prt",
+   "pos2": "終助詞",
+   "vi": "(cuối câu: câu hỏi)"
+  },
+  {
+   "key": "prt_て_接続助詞",
+   "base": "て",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "(dạng て: nối hành động, nguyên nhân)"
+  },
+  {
+   "key": "prt_ば_接続助詞",
+   "base": "ば",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "nếu"
+  },
+  {
+   "key": "prt_ながら_接続助詞",
+   "base": "ながら",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "vừa… vừa…; mặc dù"
+  },
+  {
+   "key": "prt_だけ_副助詞",
+   "base": "だけ",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "chỉ"
+  },
+  {
+   "key": "prt_しか_副助詞",
+   "base": "しか",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "chỉ (đi với phủ định)"
+  },
+  {
+   "key": "prt_ばかり_副助詞",
+   "base": "ばかり",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "chỉ toàn; vừa mới"
+  },
+  {
+   "key": "prt_ほど_副助詞",
+   "base": "ほど",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "khoảng; đến mức"
+  },
+  {
+   "key": "prt_くらい_副助詞",
+   "base": "くらい",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "khoảng, cỡ"
+  },
+  {
+   "key": "prt_ぐらい_副助詞",
+   "base": "ぐらい",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "khoảng, cỡ"
+  },
+  {
+   "key": "prt_など_副助詞",
+   "base": "など",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "v.v., chẳng hạn"
+  },
+  {
+   "key": "prt_なんて_副助詞",
+   "base": "なんて",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "như là…, cái việc… (coi nhẹ, ngạc nhiên)"
+  },
+  {
+   "key": "prt_たり_副助詞",
+   "base": "たり",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "lúc thì…, nào là… (liệt kê hành động)"
+  },
+  {
+   "key": "prt_って_副助詞",
+   "base": "って",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "(văn nói) rằng; nghe nói; nói về"
+  },
+  {
+   "key": "prt_さえ_副助詞",
+   "base": "さえ",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "ngay cả"
+  },
+  {
+   "key": "prt_すら_副助詞",
+   "base": "すら",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "ngay cả"
+  },
+  {
+   "key": "prt_ずつ_副助詞",
+   "base": "ずつ",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "mỗi, từng"
+  },
+  {
+   "key": "prt_きり_副助詞",
+   "base": "きり",
+   "pos": "prt",
+   "pos2": "副助詞",
+   "vi": "chỉ; kể từ khi"
+  },
+  {
+   "key": "prt_し_接続助詞",
+   "base": "し",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "vừa… lại… (liệt kê lý do)"
+  },
+  {
+   "key": "prt_けど_接続助詞",
+   "base": "けど",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "nhưng"
+  },
+  {
+   "key": "prt_けれど_接続助詞",
+   "base": "けれど",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "nhưng"
+  },
+  {
+   "key": "prt_けれども_接続助詞",
+   "base": "けれども",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "nhưng"
+  },
+  {
+   "key": "prt_のに_接続助詞",
+   "base": "のに",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "mặc dù, vậy mà"
+  },
+  {
+   "key": "prt_ので_接続助詞",
+   "base": "ので",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "vì"
+  },
+  {
+   "key": "prt_ても_接続助詞",
+   "base": "ても",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "dù… cũng"
+  },
+  {
+   "key": "prt_でも_接続助詞",
+   "base": "でも",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "dù… cũng"
+  },
+  {
+   "key": "prt_ては_接続助詞",
+   "base": "ては",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "nếu… thì (hay đi với cấm đoán)"
+  },
+  {
+   "key": "prt_つつ_接続助詞",
+   "base": "つつ",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "vừa… vừa…; mặc dù"
+  },
+  {
+   "key": "prt_とも_接続助詞",
+   "base": "とも",
+   "pos": "prt",
+   "pos2": "接続助詞",
+   "vi": "dù… đi nữa"
+  },
+  {
+   "key": "prt_ね_終助詞",
+   "base": "ね",
+   "pos": "prt",
+   "pos2": "終助詞",
+   "vi": "nhỉ, nhé"
+  },
+  {
+   "key": "prt_よ_終助詞",
+   "base": "よ",
+   "pos": "prt",
+   "pos2": "終助詞",
+   "vi": "đấy, đó (nhấn mạnh)"
+  },
+  {
+   "key": "prt_な_終助詞",
+   "base": "な",
+   "pos": "prt",
+   "pos2": "終助詞",
+   "vi": "đừng… (cấm); …nhỉ (cảm thán)"
+  },
+  {
+   "key": "prt_わ_終助詞",
+   "base": "わ",
+   "pos": "prt",
+   "pos2": "終助詞",
+   "vi": "(cuối câu, nhấn mạnh nhẹ)"
+  },
+  {
+   "key": "prt_ぞ_終助詞",
+   "base": "ぞ",
+   "pos": "prt",
+   "pos2": "終助詞",
+   "vi": "(cuối câu, nhấn mạnh mạnh)"
+  },
+  {
+   "key": "prt_さ_終助詞",
+   "base": "さ",
+   "pos": "prt",
+   "pos2": "終助詞",
+   "vi": "(cuối câu, văn nói)"
+  },
+  {
+   "key": "prt_もん_終助詞",
+   "base": "もん",
+   "pos": "prt",
+   "pos2": "終助詞",
+   "vi": "vì… mà (văn nói)"
+  },
+  {
+   "key": "prt_かな_終助詞",
+   "base": "かな",
+   "pos": "prt",
+   "pos2": "終助詞",
+   "vi": "không biết… nhỉ"
+  },
+  {
+   "key": "prt_か",
+   "base": "か",
+   "pos": "prt",
+   "vi": "hay, hoặc; (nghi vấn trong câu)"
+  },
+  {
+   "key": "prt_かな",
+   "base": "かな",
+   "pos": "prt",
+   "vi": "không biết… nhỉ"
+  },
+  {
+   "key": "prt_から",
+   "base": "から",
+   "pos": "prt",
+   "vi": "từ (điểm xuất phát)"
+  },
+  {
+   "key": "prt_が",
+   "base": "が",
+   "pos": "prt",
+   "vi": "đánh dấu chủ ngữ / đối tượng (thích, giỏi, có…)"
+  },
+  {
+   "key": "prt_きり",
+   "base": "きり",
+   "pos": "prt",
+   "vi": "chỉ; kể từ khi"
+  },
+  {
+   "key": "prt_くらい",
+   "base": "くらい",
+   "pos": "prt",
+   "vi": "khoảng, cỡ"
+  },
+  {
+   "key": "prt_ぐらい",
+   "base": "ぐらい",
+   "pos": "prt",
+   "vi": "khoảng, cỡ"
+  },
+  {
+   "key": "prt_けど",
+   "base": "けど",
+   "pos": "prt",
+   "vi": "nhưng"
+  },
+  {
+   "key": "prt_けれど",
+   "base": "けれど",
+   "pos": "prt",
+   "vi": "nhưng"
+  },
+  {
+   "key": "prt_けれども",
+   "base": "けれども",
+   "pos": "prt",
+   "vi": "nhưng"
+  },
+  {
+   "key": "prt_こそ",
+   "base": "こそ",
+   "pos": "prt",
+   "vi": "chính là"
+  },
+  {
+   "key": "prt_さ",
+   "base": "さ",
+   "pos": "prt",
+   "vi": "(cuối câu, văn nói)"
+  },
+  {
+   "key": "prt_さえ",
+   "base": "さえ",
+   "pos": "prt",
+   "vi": "ngay cả"
+  },
+  {
+   "key": "prt_し",
+   "base": "し",
+   "pos": "prt",
+   "vi": "vừa… lại… (liệt kê lý do)"
+  },
+  {
+   "key": "prt_しか",
+   "base": "しか",
+   "pos": "prt",
+   "vi": "chỉ (đi với phủ định)"
+  },
+  {
+   "key": "prt_すら",
+   "base": "すら",
+   "pos": "prt",
+   "vi": "ngay cả"
+  },
+  {
+   "key": "prt_ずつ",
+   "base": "ずつ",
+   "pos": "prt",
+   "vi": "mỗi, từng"
+  },
+  {
+   "key": "prt_ぞ",
+   "base": "ぞ",
+   "pos": "prt",
+   "vi": "(cuối câu, nhấn mạnh mạnh)"
+  },
+  {
+   "key": "prt_たり",
+   "base": "たり",
+   "pos": "prt",
+   "vi": "lúc thì…, nào là… (liệt kê hành động)"
+  },
+  {
+   "key": "prt_だけ",
+   "base": "だけ",
+   "pos": "prt",
+   "vi": "chỉ"
+  },
+  {
+   "key": "prt_って",
+   "base": "って",
+   "pos": "prt",
+   "vi": "(văn nói) rằng; nghe nói; nói về"
+  },
+  {
+   "key": "prt_つつ",
+   "base": "つつ",
+   "pos": "prt",
+   "vi": "vừa… vừa…; mặc dù"
+  },
+  {
+   "key": "prt_て",
+   "base": "て",
+   "pos": "prt",
+   "vi": "(dạng て: nối hành động, nguyên nhân)"
+  },
+  {
+   "key": "prt_ては",
+   "base": "ては",
+   "pos": "prt",
+   "vi": "nếu… thì (hay đi với cấm đoán)"
+  },
+  {
+   "key": "prt_ても",
+   "base": "ても",
+   "pos": "prt",
+   "vi": "dù… cũng"
+  },
+  {
+   "key": "prt_で",
+   "base": "で",
+   "pos": "prt",
+   "vi": "ở, tại, bằng, vì (nơi diễn ra hành động, phương tiện, nguyên nhân)"
+  },
+  {
+   "key": "prt_でも",
+   "base": "でも",
+   "pos": "prt",
+   "vi": "dù… cũng"
+  },
+  {
+   "key": "prt_と",
+   "base": "と",
+   "pos": "prt",
+   "vi": "và, cùng với; rằng (trích dẫn)"
+  },
+  {
+   "key": "prt_とも",
+   "base": "とも",
+   "pos": "prt",
+   "vi": "dù… đi nữa"
+  },
+  {
+   "key": "prt_な",
+   "base": "な",
+   "pos": "prt",
+   "vi": "đừng… (cấm); …nhỉ (cảm thán)"
+  },
+  {
+   "key": "prt_ながら",
+   "base": "ながら",
+   "pos": "prt",
+   "vi": "vừa… vừa…; mặc dù"
+  },
+  {
+   "key": "prt_など",
+   "base": "など",
+   "pos": "prt",
+   "vi": "v.v., chẳng hạn"
+  },
+  {
+   "key": "prt_なんて",
+   "base": "なんて",
+   "pos": "prt",
+   "vi": "như là…, cái việc… (coi nhẹ, ngạc nhiên)"
+  },
+  {
+   "key": "prt_に",
+   "base": "に",
+   "pos": "prt",
+   "vi": "ở, vào lúc, đến, cho, bởi (nơi chốn, thời điểm, đích, đối tượng)"
+  },
+  {
+   "key": "prt_ね",
+   "base": "ね",
+   "pos": "prt",
+   "vi": "nhỉ, nhé"
+  },
+  {
+   "key": "prt_の",
+   "base": "の",
+   "pos": "prt",
+   "vi": "của (sở hữu, bổ nghĩa danh từ)"
+  },
+  {
+   "key": "prt_ので",
+   "base": "ので",
+   "pos": "prt",
+   "vi": "vì"
+  },
+  {
+   "key": "prt_のに",
+   "base": "のに",
+   "pos": "prt",
+   "vi": "mặc dù, vậy mà"
+  },
+  {
+   "key": "prt_は",
+   "base": "は",
+   "pos": "prt",
+   "vi": "đánh dấu chủ đề"
+  },
+  {
+   "key": "prt_ば",
+   "base": "ば",
+   "pos": "prt",
+   "vi": "nếu"
+  },
+  {
+   "key": "prt_ばかり",
+   "base": "ばかり",
+   "pos": "prt",
+   "vi": "chỉ toàn; vừa mới"
+  },
+  {
+   "key": "prt_へ",
+   "base": "へ",
+   "pos": "prt",
+   "vi": "đến, về phía"
+  },
+  {
+   "key": "prt_ほど",
+   "base": "ほど",
+   "pos": "prt",
+   "vi": "khoảng; đến mức"
+  },
+  {
+   "key": "prt_まで",
+   "base": "まで",
+   "pos": "prt",
+   "vi": "đến, cho đến"
+  },
+  {
+   "key": "prt_も",
+   "base": "も",
+   "pos": "prt",
+   "vi": "cũng, đến cả"
+  },
+  {
+   "key": "prt_もん",
+   "base": "もん",
+   "pos": "prt",
+   "vi": "vì… mà (văn nói)"
+  },
+  {
+   "key": "prt_や",
+   "base": "や",
+   "pos": "prt",
+   "vi": "và (liệt kê không đầy đủ)"
+  },
+  {
+   "key": "prt_よ",
+   "base": "よ",
+   "pos": "prt",
+   "vi": "đấy, đó (nhấn mạnh)"
+  },
+  {
+   "key": "prt_より",
+   "base": "より",
+   "pos": "prt",
+   "vi": "hơn; từ"
+  },
+  {
+   "key": "prt_わ",
+   "base": "わ",
+   "pos": "prt",
+   "vi": "(cuối câu, nhấn mạnh nhẹ)"
+  },
+  {
+   "key": "prt_を",
+   "base": "を",
+   "pos": "prt",
+   "vi": "đánh dấu tân ngữ (đối tượng của hành động)"
+  },
+  {
+   "key": "sfx_さん",
+   "base": "さん",
+   "pos1": "接尾辞",
+   "vi": "anh, chị, ông, bà (gọi lịch sự)"
+  },
+  {
+   "key": "sfx_様",
+   "base": "様",
+   "pos1": "接尾辞",
+   "vi": "ngài, quý (rất lịch sự)"
+  },
+  {
+   "key": "sfx_さま",
+   "base": "さま",
+   "pos1": "接尾辞",
+   "vi": "ngài, quý (rất lịch sự)"
+  },
+  {
+   "key": "sfx_君",
+   "base": "君",
+   "pos1": "接尾辞",
+   "vi": "(gọi bạn nam / người dưới)"
+  },
+  {
+   "key": "sfx_くん",
+   "base": "くん",
+   "pos1": "接尾辞",
+   "vi": "(gọi bạn nam / người dưới)"
+  },
+  {
+   "key": "sfx_ちゃん",
+   "base": "ちゃん",
+   "pos1": "接尾辞",
+   "vi": "(gọi thân mật)"
+  },
+  {
+   "key": "sfx_たち",
+   "base": "たち",
+   "pos1": "接尾辞",
+   "vi": "(số nhiều: các, những)"
+  },
+  {
+   "key": "sfx_達",
+   "base": "達",
+   "pos1": "接尾辞",
+   "vi": "(số nhiều: các, những)"
+  },
+  {
+   "key": "sfx_氏",
+   "base": "氏",
+   "pos1": "接尾辞",
+   "vi": "ông, bà (văn viết)"
+  },
+  {
+   "key": "sfx_さ",
+   "base": "さ",
+   "pos1": "接尾辞",
+   "vi": "độ, sự (danh từ hoá tính từ)"
+  },
+  {
+   "key": "sfx_的",
+   "base": "的",
+   "pos1": "接尾辞",
+   "vi": "mang tính"
+  },
+  {
+   "key": "sfx_がる",
+   "base": "がる",
+   "pos1": "接尾辞",
+   "vi": "(tỏ ra, có vẻ)"
+  },
+  {
+   "key": "sfx_がち",
+   "base": "がち",
+   "pos1": "接尾辞",
+   "vi": "hay, thường hay"
+  },
+  {
+   "key": "sfx_っぽい",
+   "base": "っぽい",
+   "pos1": "接尾辞",
+   "vi": "có vẻ, hay"
+  },
+  {
+   "key": "sfx_ら",
+   "base": "ら",
+   "pos1": "接尾辞",
+   "vi": "(số nhiều, thân mật)"
+  },
+  {
+   "key": "sfx_化",
+   "base": "化",
+   "pos1": "接尾辞",
+   "vi": "hoá"
+  },
+  {
+   "key": "sfx_中",
+   "base": "中",
+   "pos1": "接尾辞",
+   "vi": "đang, suốt, trong"
+  },
+  {
+   "key": "core_naru",
+   "base": "なる",
+   "pos": "verb",
+   "vi": "trở nên, trở thành",
+   "core": true
+  },
+  {
+   "key": "core_iru",
+   "base": "いる",
+   "pos": "verb",
+   "vi": "có, ở (người, động vật)",
+   "core": true
+  },
+  {
+   "key": "core_yoku",
+   "base": "よく",
+   "pos": "adv",
+   "vi": "thường, hay; giỏi, kỹ",
+   "core": true
+  },
+  {
+   "key": "pfx_o",
+   "base": "お",
+   "pos1": "接頭辞",
+   "vi": "(tiền tố lịch sự / kính ngữ)"
+  },
+  {
+   "key": "pfx_go",
+   "base": "ご",
+   "pos1": "接頭辞",
+   "vi": "(tiền tố lịch sự / kính ngữ)"
+  },
+  {
+   "key": "pfx_go2",
+   "base": "御",
+   "pos1": "接頭辞",
+   "vi": "(tiền tố lịch sự / kính ngữ)"
+  },
+  {
+   "key": "sfx_nikui",
+   "base": "にくい",
+   "pos1": "接尾辞",
+   "vi": "khó (～にくい)"
+  },
+  {
+   "key": "sfx_yasui",
+   "base": "やすい",
+   "pos1": "接尾辞",
+   "vi": "dễ (～やすい)"
+  },
+  {
+   "key": "sfx_kai",
+   "base": "回",
+   "pos1": "接尾辞",
+   "vi": "lần"
+  },
+  {
+   "key": "sfx_sai",
+   "base": "歳",
+   "pos1": "接尾辞",
+   "vi": "tuổi"
+  },
+  {
+   "key": "sfx_jin",
+   "base": "人",
+   "pos1": "接尾辞",
+   "vi": "người"
+  },
+  {
+   "key": "core_大きな",
+   "base": "大きな",
+   "pos": "adj",
+   "vi": "to, lớn",
+   "core": true
+  },
+  {
+   "key": "core_小さな",
+   "base": "小さな",
+   "pos": "adj",
+   "vi": "nhỏ, bé",
+   "core": true
+  },
+  {
+   "key": "core_そんな",
+   "base": "そんな",
+   "pos": "adj",
+   "vi": "như thế, như vậy",
+   "core": true
+  },
+  {
+   "key": "core_こんな",
+   "base": "こんな",
+   "pos": "adj",
+   "vi": "như thế này",
+   "core": true
+  },
+  {
+   "key": "core_あんな",
+   "base": "あんな",
+   "pos": "adj",
+   "vi": "như thế kia",
+   "core": true
+  },
+  {
+   "key": "core_どんな",
+   "base": "どんな",
+   "pos": "adj",
+   "vi": "như thế nào, loại gì",
+   "core": true
+  },
+  {
+   "key": "sfx_kata",
+   "base": "方",
+   "pos1": "接尾辞",
+   "vi": "cách (～方); vị (người)"
+  }
+ ]
+}

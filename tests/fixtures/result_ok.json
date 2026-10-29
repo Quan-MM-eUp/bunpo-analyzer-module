@@ -1,0 +1,309 @@
+{
+ "schema_version": "1.3",
+ "id": "an_7f3c",
+ "lang": "vi",
+ "text": "昨日友達と見た映画はとても面白かったです。",
+ "translation": "Bộ phim hôm qua tôi xem cùng bạn rất hay.",
+ "tokens": [
+  {
+   "i": 0,
+   "surface": "昨日",
+   "base": "昨日",
+   "reading": "きのう",
+   "pos": "noun",
+   "furigana": [
+    [
+     "昨日",
+     "きのう"
+    ]
+   ],
+   "meaning": "hôm qua",
+   "meaning_source": "word_lib"
+  },
+  {
+   "i": 1,
+   "surface": "友達",
+   "base": "友達",
+   "reading": "ともだち",
+   "pos": "noun",
+   "furigana": [
+    [
+     "友達",
+     "ともだち"
+    ]
+   ],
+   "meaning": "bạn, bạn bè",
+   "meaning_source": "word_lib"
+  },
+  {
+   "i": 2,
+   "surface": "と",
+   "base": "と",
+   "reading": "と",
+   "pos": "prt",
+   "furigana": [
+    [
+     "と",
+     null
+    ]
+   ],
+   "meaning": "cùng với",
+   "meaning_source": "particle_table"
+  },
+  {
+   "i": 3,
+   "surface": "見",
+   "base": "見る",
+   "reading": "み",
+   "pos": "verb",
+   "pos_sub": "v2",
+   "furigana": [
+    [
+     "見",
+     "み"
+    ]
+   ],
+   "meaning": "xem, khám bệnh",
+   "meaning_source": "word_lib"
+  },
+  {
+   "i": 4,
+   "surface": "た",
+   "base": "た",
+   "reading": "た",
+   "pos": "aux",
+   "furigana": [
+    [
+     "た",
+     null
+    ]
+   ],
+   "meaning": "quá khứ",
+   "meaning_source": "particle_table"
+  },
+  {
+   "i": 5,
+   "surface": "映画",
+   "base": "映画",
+   "reading": "えいが",
+   "pos": "noun",
+   "furigana": [
+    [
+     "映画",
+     "えいが"
+    ]
+   ],
+   "meaning": "phim, điện ảnh",
+   "meaning_source": "word_lib"
+  },
+  {
+   "i": 6,
+   "surface": "は",
+   "base": "は",
+   "reading": "は",
+   "pos": "prt",
+   "furigana": [
+    [
+     "は",
+     null
+    ]
+   ],
+   "meaning": "đánh dấu chủ đề",
+   "meaning_source": "particle_table"
+  },
+  {
+   "i": 7,
+   "surface": "とても",
+   "base": "とても",
+   "reading": "とても",
+   "pos": "adv",
+   "furigana": [
+    [
+     "とても",
+     null
+    ]
+   ],
+   "meaning": "rất, rất lắm; thật sự",
+   "meaning_source": "word_lib"
+  },
+  {
+   "i": 8,
+   "surface": "面白かっ",
+   "base": "面白い",
+   "reading": "おもしろかっ",
+   "pos": "adj",
+   "pos_sub": "adj_i",
+   "furigana": [
+    [
+     "面白",
+     "おもしろ"
+    ],
+    [
+     "かっ",
+     null
+    ]
+   ],
+   "meaning": "buồn cười, hài hước, vui",
+   "meaning_source": "word_lib"
+  },
+  {
+   "i": 9,
+   "surface": "た",
+   "base": "た",
+   "reading": "た",
+   "pos": "aux",
+   "furigana": [
+    [
+     "た",
+     null
+    ]
+   ],
+   "meaning": "quá khứ",
+   "meaning_source": "particle_table"
+  },
+  {
+   "i": 10,
+   "surface": "です",
+   "base": "です",
+   "reading": "です",
+   "pos": "aux",
+   "furigana": [
+    [
+     "です",
+     null
+    ]
+   ],
+   "meaning": "lịch sự",
+   "meaning_source": "particle_table"
+  },
+  {
+   "i": 11,
+   "surface": "。",
+   "pos": "punct"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "g1",
+   "type": "group",
+   "parent": null,
+   "kind": "rel",
+   "span": [
+    0,
+    5
+   ],
+   "head": 5,
+   "head_text": "映画",
+   "grammar": [
+    196
+   ]
+  },
+  {
+   "id": "r1",
+   "type": "row",
+   "parent": "g1",
+   "role": "subject",
+   "hidden": true,
+   "jp": "（私が）",
+   "gloss": "tôi"
+  },
+  {
+   "id": "r2",
+   "type": "row",
+   "parent": "g1",
+   "role": "adv_time",
+   "span": [
+    0,
+    1
+   ],
+   "gloss": "hôm qua"
+  },
+  {
+   "id": "r3",
+   "type": "row",
+   "parent": "g1",
+   "role": "complement",
+   "span": [
+    1,
+    3
+   ],
+   "gloss": "cùng bạn",
+   "grammar": [
+    19
+   ]
+  },
+  {
+   "id": "r4",
+   "type": "row",
+   "parent": "g1",
+   "role": "predicate",
+   "span": [
+    3,
+    5
+   ],
+   "gloss": "đã xem"
+  },
+  {
+   "id": "r5",
+   "type": "row",
+   "parent": null,
+   "role": "topic",
+   "span": [
+    5,
+    7
+   ],
+   "gloss": "bộ phim"
+  },
+  {
+   "id": "r6",
+   "type": "row",
+   "parent": null,
+   "role": "predicate",
+   "span": [
+    7,
+    11
+   ],
+   "gloss": "(đã) rất hay",
+   "main": true,
+   "grammar": [
+    43,
+    26
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "id": 196,
+   "short_label": "V thể thường + N",
+   "level": "N5",
+   "meaning": "Cách bổ nghĩa cho danh từ bằng mệnh đề quan hệ.",
+   "note": "昨日友達と見た đứng trước 映画 để mô tả nó; dịch thành \"bộ phim mà…\"."
+  },
+  {
+   "id": 19,
+   "short_label": "N と",
+   "level": "N5",
+   "meaning": "Cùng với.",
+   "note": "友達と: xem cùng với bạn."
+  },
+  {
+   "id": 43,
+   "short_label": "とても",
+   "level": "N5",
+   "meaning": "rất ~",
+   "note": "とても bổ nghĩa cho 面白かった."
+  },
+  {
+   "id": 26,
+   "short_label": "Aかったです",
+   "level": "N5",
+   "meaning": "Quá khứ của tính từ い: Aい → Aかった.",
+   "note": "面白い → 面白かったです: bộ phim đã hay."
+  }
+ ],
+ "input_check": {
+  "status": "ok"
+ },
+ "auto_fix": null,
+ "error": null
+}
