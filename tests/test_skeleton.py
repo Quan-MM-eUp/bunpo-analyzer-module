@@ -23,10 +23,10 @@ def test_version():
 
 
 def test_settings_defaults(monkeypatch):
-    for k in ("BUNPO_LLM_PROVIDER", "BUNPO_MAX_CHARS", "BUNPO_DEFAULT_LANG"):
+    for k in ("BUNPO_LLM_PROVIDER", "BUNPO_MAX_CHARS", "BUNPO_DEFAULT_LANG", "BUNPO_LLM_MODEL"):
         monkeypatch.delenv(k, raising=False)
     s = Settings(_env_file=None)
-    assert s.llm_provider == "gemini"
+    assert s.llm_provider == "openai"
     assert s.max_chars == 100
     assert s.default_lang == "vi"
 
@@ -43,9 +43,14 @@ def test_supported_langs():
     assert len(SUPPORTED_LANGS) == 16 and len(set(SUPPORTED_LANGS)) == 16
 
 
-async def test_analyze_not_implemented():
-    with pytest.raises(NotImplementedError):
-        await analyze("今夜たくさんの宿題がある。")
+async def test_analyze_invalid_input_no_llm():
+    r = await analyze("hello world")
+    assert r.error is not None and r.error.code == "invalid_input" and not r.tokens
+
+
+async def test_analyze_unsupported_lang():
+    with pytest.raises(ValueError):
+        await analyze("今夜たくさんの宿題がある。", lang="xx")
 
 
 def test_schema_example_ok():

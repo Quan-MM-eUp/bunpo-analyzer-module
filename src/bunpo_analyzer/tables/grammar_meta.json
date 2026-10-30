@@ -1,0 +1,10201 @@
+{
+ "version": 1,
+ "kho_version": "43c2ef812859",
+ "note": "Sinh tu dong boi scripts/build_grammar_meta.py (buoc 4.1). Sua tay short_label duoc.",
+ "grammar": {
+  "1": {
+   "short_label": "Aい/AなN",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "2": {
+   "short_label": "これ・それ・あれ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "3": {
+   "short_label": "このN・そのN・あのN",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "4": {
+   "short_label": "Câu hỏi với nghi vấn từ",
+   "label_lang": "vi",
+   "confusable_ids": [
+    5
+   ]
+  },
+  "5": {
+   "short_label": "～はNですか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    4
+   ]
+  },
+  "6": {
+   "short_label": "なんじ・なんぷん",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "7": {
+   "short_label": "～はいくらですか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "8": {
+   "short_label": "～はなんばんですか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "9": {
+   "short_label": "～はおいくつですか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "10": {
+   "short_label": "～はなんがいですか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "11": {
+   "short_label": "ここは～です・～はここです",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "12": {
+   "short_label": "NをV(ngoại động từ)",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "13": {
+   "short_label": "Nをします",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "14": {
+   "short_label": "N1とN2",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "15": {
+   "short_label": "N2のN1",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "16": {
+   "short_label": "いつ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "17": {
+   "short_label": "が",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "18": {
+   "short_label": "で",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    165
+   ]
+  },
+  "19": {
+   "short_label": "と",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "20": {
+   "short_label": "に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "21": {
+   "short_label": "の",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1615,
+    1616
+   ]
+  },
+  "22": {
+   "short_label": "は",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    119
+   ]
+  },
+  "23": {
+   "short_label": "へ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "24": {
+   "short_label": "も",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    90
+   ]
+  },
+  "25": {
+   "short_label": "を",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "26": {
+   "short_label": "Aい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "27": {
+   "short_label": "Tính từ な (Aナ)",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "28": {
+   "short_label": "Vること～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "29": {
+   "short_label": "Vるの～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    122,
+    1615,
+    1616
+   ]
+  },
+  "30": {
+   "short_label": "～から（điểm xuất phát）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "31": {
+   "short_label": "～がすき・きらい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    185
+   ]
+  },
+  "32": {
+   "short_label": "～です",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "33": {
+   "short_label": "なんがつ・なんにち",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "34": {
+   "short_label": "Vます・Vません・Vました・Vませんでした",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "35": {
+   "short_label": "Nは～語で何ですか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "36": {
+   "short_label": "あげます",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    38,
+    45
+   ]
+  },
+  "37": {
+   "short_label": "から…まで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    99,
+    154
+   ]
+  },
+  "38": {
+   "short_label": "くれます",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    36,
+    45
+   ]
+  },
+  "39": {
+   "short_label": "ここ、そこ、あそこ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "40": {
+   "short_label": "そうですか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    41,
+    178,
+    62
+   ]
+  },
+  "41": {
+   "short_label": "そうですね",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    40
+   ]
+  },
+  "42": {
+   "short_label": "そして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    96
+   ]
+  },
+  "43": {
+   "short_label": "とても",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "44": {
+   "short_label": "なん・なに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "45": {
+   "short_label": "もらいます",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    36,
+    38
+   ]
+  },
+  "46": {
+   "short_label": "～Vましょう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    47,
+    132,
+    138
+   ]
+  },
+  "47": {
+   "short_label": "～Vませんか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    178,
+    201
+   ]
+  },
+  "48": {
+   "short_label": "～か（liệt kê: A hay B）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "49": {
+   "short_label": "～から（lý do）",
+   "label_lang": "vi",
+   "confusable_ids": [
+    99,
+    105,
+    132
+   ]
+  },
+  "50": {
+   "short_label": "～が、～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    143
+   ]
+  },
+  "51": {
+   "short_label": "～がいちばん",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    130
+   ]
+  },
+  "52": {
+   "short_label": "～がほしい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    132
+   ]
+  },
+  "53": {
+   "short_label": "～ごろ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    525,
+    154
+   ]
+  },
+  "54": {
+   "short_label": "～さん、～ちゃん",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "55": {
+   "short_label": "～てはいけない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    58,
+    59,
+    132,
+    198,
+    60
+   ]
+  },
+  "56": {
+   "short_label": "～と～とどちら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    113
+   ]
+  },
+  "57": {
+   "short_label": "～どんな",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "58": {
+   "short_label": "～ないで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    132
+   ]
+  },
+  "59": {
+   "short_label": "～ないといけない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    55,
+    60,
+    198
+   ]
+  },
+  "60": {
+   "short_label": "～なくてはいけない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    55,
+    198,
+    59
+   ]
+  },
+  "61": {
+   "short_label": "～ね",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "62": {
+   "short_label": "～はどうですか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    40,
+    178
+   ]
+  },
+  "63": {
+   "short_label": "～は～より",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "64": {
+   "short_label": "～よ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "65": {
+   "short_label": "Aの",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "66": {
+   "short_label": "Cách dùng số lượng, lượng từ",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "67": {
+   "short_label": "～かい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "68": {
+   "short_label": "Dùng trợ từ đối với phương tiện giao thông",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "69": {
+   "short_label": "NがA",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "70": {
+   "short_label": "N1(người/vật/địa điểm) の N2vị trí",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "71": {
+   "short_label": "N1にN2をV",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "72": {
+   "short_label": "N1はN2が～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "73": {
+   "short_label": "N1やN2…（など）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "74": {
+   "short_label": "Nối câu đơn thành câu ghép",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "75": {
+   "short_label": "Nối nhiều loại có số lượng khác nhau",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "76": {
+   "short_label": "NがV",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "77": {
+   "short_label": "NにV",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "78": {
+   "short_label": "Nは～にいます・あります",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    160,
+    171,
+    184
+   ]
+  },
+  "79": {
+   "short_label": "N1はN2とおなじぐらい～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "80": {
+   "short_label": "N1はN2ほどAない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "81": {
+   "short_label": "NをV→NはV",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "82": {
+   "short_label": "Vたい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    52
+   ]
+  },
+  "83": {
+   "short_label": "Vなくてもいいです",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    140
+   ]
+  },
+  "84": {
+   "short_label": "Vなければなりません",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    86
+   ]
+  },
+  "85": {
+   "short_label": "～ぐらい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "86": {
+   "short_label": "あまり～ありません",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    94,
+    124,
+    84
+   ]
+  },
+  "87": {
+   "short_label": "いくつ～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    7,
+    132
+   ]
+  },
+  "88": {
+   "short_label": "いつか～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    89,
+    90,
+    132
+   ]
+  },
+  "89": {
+   "short_label": "いつでも～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    88,
+    90,
+    108,
+    132
+   ]
+  },
+  "90": {
+   "short_label": "いつも～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    89,
+    97
+   ]
+  },
+  "91": {
+   "short_label": "こちら～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    62,
+    95,
+    113,
+    178
+   ]
+  },
+  "92": {
+   "short_label": "さっき～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    128
+   ]
+  },
+  "93": {
+   "short_label": "すぐに～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    128
+   ]
+  },
+  "94": {
+   "short_label": "ぜんぜん～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    58,
+    132
+   ]
+  },
+  "95": {
+   "short_label": "そちら～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    91,
+    199
+   ]
+  },
+  "96": {
+   "short_label": "それから、～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    42
+   ]
+  },
+  "97": {
+   "short_label": "たいてい～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    38,
+    90,
+    98
+   ]
+  },
+  "98": {
+   "short_label": "だいたい～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    97,
+    124
+   ]
+  },
+  "99": {
+   "short_label": "だから、～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1615,
+    1616
+   ]
+  },
+  "100": {
+   "short_label": "だれか～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    88,
+    101,
+    107,
+    114,
+    119
+   ]
+  },
+  "101": {
+   "short_label": "だれでも～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    100,
+    114
+   ]
+  },
+  "102": {
+   "short_label": "だれも～ません",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    100,
+    101,
+    114,
+    109,
+    110,
+    111
+   ]
+  },
+  "103": {
+   "short_label": "だれ～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    100,
+    114,
+    1615,
+    1616
+   ]
+  },
+  "104": {
+   "short_label": "ときどき～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    90
+   ]
+  },
+  "105": {
+   "short_label": "どうして～か",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "106": {
+   "short_label": "どうやって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    122
+   ]
+  },
+  "107": {
+   "short_label": "どこか～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    108
+   ]
+  },
+  "108": {
+   "short_label": "どこでも～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    107
+   ]
+  },
+  "109": {
+   "short_label": "どこにも～ません",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    108,
+    102,
+    110,
+    111,
+    120
+   ]
+  },
+  "110": {
+   "short_label": "どこへも～ません",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    102,
+    109,
+    111,
+    120
+   ]
+  },
+  "111": {
+   "short_label": "どこも～ません",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    108,
+    102,
+    109,
+    110,
+    120
+   ]
+  },
+  "112": {
+   "short_label": "どこ～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    107,
+    113
+   ]
+  },
+  "113": {
+   "short_label": "どちら～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1615,
+    1616
+   ]
+  },
+  "114": {
+   "short_label": "どなた～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    57,
+    212
+   ]
+  },
+  "115": {
+   "short_label": "どのくらい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    525
+   ]
+  },
+  "116": {
+   "short_label": "どの～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    525,
+    113,
+    115,
+    1615,
+    1616
+   ]
+  },
+  "117": {
+   "short_label": "どれ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "118": {
+   "short_label": "どれでも～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    89,
+    108,
+    121,
+    122
+   ]
+  },
+  "119": {
+   "short_label": "なにか～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    100,
+    132,
+    178
+   ]
+  },
+  "120": {
+   "short_label": "なにも～ません",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    94,
+    119,
+    102,
+    109,
+    110,
+    111
+   ]
+  },
+  "121": {
+   "short_label": "なんでも～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    89,
+    101,
+    108,
+    118,
+    122
+   ]
+  },
+  "122": {
+   "short_label": "なんで～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    106
+   ]
+  },
+  "123": {
+   "short_label": "～に行く／来る（mục đích di chuyển）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "124": {
+   "short_label": "ほとんど～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    58,
+    94,
+    97,
+    98
+   ]
+  },
+  "125": {
+   "short_label": "まあまあ～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    58,
+    1563
+   ]
+  },
+  "126": {
+   "short_label": "まだ～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    199
+   ]
+  },
+  "127": {
+   "short_label": "まだ～ません",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    199
+   ]
+  },
+  "128": {
+   "short_label": "もうすぐ～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    93
+   ]
+  },
+  "129": {
+   "short_label": "もう～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    128,
+    1566
+   ]
+  },
+  "130": {
+   "short_label": "もっと～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "131": {
+   "short_label": "よく～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    43,
+    1566
+   ]
+  },
+  "132": {
+   "short_label": "（～に～を）ください",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    138,
+    141
+   ]
+  },
+  "133": {
+   "short_label": "～NVTか～",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "134": {
+   "short_label": "～Nが分かります",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "135": {
+   "short_label": "～N１とN2のあいだ～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "136": {
+   "short_label": "～Vています",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "137": {
+   "short_label": "～Vてから",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    93
+   ]
+  },
+  "138": {
+   "short_label": "～Vてください",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    38,
+    58,
+    132,
+    141,
+    209
+   ]
+  },
+  "139": {
+   "short_label": "～Vてはいけません",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "140": {
+   "short_label": "～Vてもいいです",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    237
+   ]
+  },
+  "141": {
+   "short_label": "～Vないでください",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    58,
+    132,
+    138
+   ]
+  },
+  "142": {
+   "short_label": "～Vましょうか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    91,
+    132
+   ]
+  },
+  "143": {
+   "short_label": "～。しかし、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "144": {
+   "short_label": "～。じゃ、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "145": {
+   "short_label": "～。それじゃ、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "146": {
+   "short_label": "～。それでは、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "147": {
+   "short_label": "～。では、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "148": {
+   "short_label": "～。でも、～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    87,
+    143
+   ]
+  },
+  "149": {
+   "short_label": "～あとで・～あとに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "150": {
+   "short_label": "～いかがですか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    62,
+    91,
+    178,
+    212
+   ]
+  },
+  "151": {
+   "short_label": "～だけ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    525
+   ]
+  },
+  "152": {
+   "short_label": "～にNがいます/あります",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    78,
+    1611,
+    1614,
+    160,
+    171
+   ]
+  },
+  "153": {
+   "short_label": "～はNをVたいです",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "154": {
+   "short_label": "～までに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "155": {
+   "short_label": "V1たり、V2たり、～する",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "156": {
+   "short_label": "～しゅみ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "157": {
+   "short_label": "～はN1をN2にかえます",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "158": {
+   "short_label": "Vる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "159": {
+   "short_label": "なる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    58,
+    132,
+    1565
+   ]
+  },
+  "160": {
+   "short_label": "～ことがあります",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    78,
+    171,
+    184
+   ]
+  },
+  "161": {
+   "short_label": "～か～か～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "162": {
+   "short_label": "～が見える・聞こえる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "163": {
+   "short_label": "～が＋tự động từ＊",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "164": {
+   "short_label": "～くする・にする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "165": {
+   "short_label": "～くて・で",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "166": {
+   "short_label": "～けど、～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    58
+   ]
+  },
+  "167": {
+   "short_label": "～こ・そ・あ・ど",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "168": {
+   "short_label": "～たち",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "169": {
+   "short_label": "～たら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "170": {
+   "short_label": "～ても",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    57
+   ]
+  },
+  "171": {
+   "short_label": "～でNがあります",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    78,
+    160,
+    184
+   ]
+  },
+  "172": {
+   "short_label": "～でも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "173": {
+   "short_label": "～と",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "174": {
+   "short_label": "～とき",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    132
+   ]
+  },
+  "175": {
+   "short_label": "～と思います",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "176": {
+   "short_label": "～と言います",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    179
+   ]
+  },
+  "177": {
+   "short_label": "～どうしますか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    178
+   ]
+  },
+  "178": {
+   "short_label": "～どうですか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    150,
+    177,
+    212,
+    40,
+    62
+   ]
+  },
+  "179": {
+   "short_label": "～は［ngôn ngữ］で何と／どう言いますか",
+   "label_lang": "vi",
+   "confusable_ids": [
+    176
+   ]
+  },
+  "180": {
+   "short_label": "～なかなか～ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "181": {
+   "short_label": "～にある・いる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "182": {
+   "short_label": "～に帰ります",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "183": {
+   "short_label": "～に戻ります",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "184": {
+   "short_label": "～に～があります",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    87,
+    190,
+    78,
+    160,
+    171
+   ]
+  },
+  "185": {
+   "short_label": "～のがすき・きらい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    31
+   ]
+  },
+  "186": {
+   "short_label": "～の・～が",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "187": {
+   "short_label": "～の前に",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    137,
+    154,
+    190
+   ]
+  },
+  "188": {
+   "short_label": "～はたいへんです",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "189": {
+   "short_label": "～へ・～に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "190": {
+   "short_label": "～まえに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "191": {
+   "short_label": "～より～のほうが～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    113
+   ]
+  },
+  "192": {
+   "short_label": "～よ・～ね",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "193": {
+   "short_label": "～を",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "194": {
+   "short_label": "～を＋tha động từ＊",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "195": {
+   "short_label": "Nghi vấn từ＋も（＋trợ từ）＋～ない",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "196": {
+   "short_label": "Mệnh đề bổ nghĩa danh từ",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "197": {
+   "short_label": "お・ご（tiền tố lịch sự）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "198": {
+   "short_label": "ちゃいけない・じゃいけない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    55,
+    59,
+    60
+   ]
+  },
+  "199": {
+   "short_label": "だです",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "200": {
+   "short_label": "～一番",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "201": {
+   "short_label": "～一緒に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "202": {
+   "short_label": "じゃない・ではない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1564
+   ]
+  },
+  "203": {
+   "short_label": "にへ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "204": {
+   "short_label": "～のが下手",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "205": {
+   "short_label": "～のが上手",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "206": {
+   "short_label": "よりほうが",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "207": {
+   "short_label": "なあ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "208": {
+   "short_label": "～ができます",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    28
+   ]
+  },
+  "209": {
+   "short_label": "～てくれる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    36,
+    38,
+    210,
+    211
+   ]
+  },
+  "210": {
+   "short_label": "～てあげる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    36,
+    209,
+    211
+   ]
+  },
+  "211": {
+   "short_label": "～てもらう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    45,
+    209
+   ]
+  },
+  "212": {
+   "short_label": "～でしょう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "213": {
+   "short_label": "～くなる・～になる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "214": {
+   "short_label": "～方",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "215": {
+   "short_label": "Aがる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "216": {
+   "short_label": "で",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "217": {
+   "short_label": "Vたがる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "218": {
+   "short_label": "Vます→N",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "219": {
+   "short_label": "V他てある",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    263
+   ]
+  },
+  "220": {
+   "short_label": "V thể ý chí",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "221": {
+   "short_label": "V thể ý chí と思っています",
+   "label_lang": "vi",
+   "confusable_ids": [
+    302,
+    306,
+    215,
+    271
+   ]
+  },
+  "222": {
+   "short_label": "V自ている",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "223": {
+   "short_label": "～ V thể khả năng",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "224": {
+   "short_label": "～Vながら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "225": {
+   "short_label": "それで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "226": {
+   "short_label": "それに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "227": {
+   "short_label": "ほう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "228": {
+   "short_label": "まだ～Vている",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "229": {
+   "short_label": "受け身",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "230": {
+   "short_label": "Thể mệnh lệnh",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "231": {
+   "short_label": "Nghi vấn từ＋でも",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "232": {
+   "short_label": "Nghi vấn từ＋～ても",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "233": {
+   "short_label": "（さ）せる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    249,
+    284
+   ]
+  },
+  "234": {
+   "short_label": "～Vている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    263,
+    277,
+    407,
+    413
+   ]
+  },
+  "235": {
+   "short_label": "～Vてしまう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    405,
+    409
+   ]
+  },
+  "236": {
+   "short_label": "～Vなさい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "237": {
+   "short_label": "～なくてもいい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    278,
+    368,
+    416,
+    481,
+    419
+   ]
+  },
+  "238": {
+   "short_label": "～より～（の）ほう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "239": {
+   "short_label": "～あとで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    334
+   ]
+  },
+  "240": {
+   "short_label": "～かしら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    256
+   ]
+  },
+  "241": {
+   "short_label": "～かな（あ）",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    240,
+    256
+   ]
+  },
+  "242": {
+   "short_label": "～かもしれない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    256
+   ]
+  },
+  "243": {
+   "short_label": "～か（＋V、＋A/NA）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "244": {
+   "short_label": "～がみえます・きこえます",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    318
+   ]
+  },
+  "245": {
+   "short_label": "～がある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "246": {
+   "short_label": "～ことがある",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    252
+   ]
+  },
+  "247": {
+   "short_label": "～ことにする",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    415
+   ]
+  },
+  "248": {
+   "short_label": "～させてください",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    469,
+    391,
+    383
+   ]
+  },
+  "249": {
+   "short_label": "～させられる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    274,
+    284,
+    469
+   ]
+  },
+  "250": {
+   "short_label": "～しか～ない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    359
+   ]
+  },
+  "251": {
+   "short_label": "～し（～し）",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    283
+   ]
+  },
+  "252": {
+   "short_label": "～たことがある",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    245,
+    435,
+    350
+   ]
+  },
+  "253": {
+   "short_label": "～たほうがいい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    278,
+    416,
+    483
+   ]
+  },
+  "254": {
+   "short_label": "～ため（に）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "255": {
+   "short_label": "～たらいいです",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    253,
+    278,
+    355,
+    483,
+    326,
+    410
+   ]
+  },
+  "256": {
+   "short_label": "～だろう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    242
+   ]
+  },
+  "257": {
+   "short_label": "～って",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "258": {
+   "short_label": "～つもり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "259": {
+   "short_label": "～づらい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "260": {
+   "short_label": "～ていく",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    263,
+    264
+   ]
+  },
+  "261": {
+   "short_label": "～てほしい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    245,
+    435,
+    285,
+    469,
+    1562
+   ]
+  },
+  "262": {
+   "short_label": "～てみる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    281,
+    292,
+    340
+   ]
+  },
+  "263": {
+   "short_label": "～ておく",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "264": {
+   "short_label": "～てくる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    260,
+    262
+   ]
+  },
+  "265": {
+   "short_label": "～ても/でも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "266": {
+   "short_label": "～ではないか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    256,
+    434
+   ]
+  },
+  "267": {
+   "short_label": "～という",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    313,
+    402,
+    406
+   ]
+  },
+  "268": {
+   "short_label": "～という意味です",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "269": {
+   "short_label": "～とも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "270": {
+   "short_label": "～と思う",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    285,
+    385,
+    433,
+    441,
+    293
+   ]
+  },
+  "271": {
+   "short_label": "～と言っていました",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    302,
+    221,
+    306,
+    215,
+    473
+   ]
+  },
+  "272": {
+   "short_label": "～と言われている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1555,
+    1307,
+    432
+   ]
+  },
+  "273": {
+   "short_label": "～と読みます",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "274": {
+   "short_label": "～なければならない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    481,
+    419
+   ]
+  },
+  "275": {
+   "short_label": "～など",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    267
+   ]
+  },
+  "276": {
+   "short_label": "～にくい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    259,
+    283
+   ]
+  },
+  "277": {
+   "short_label": "～ばかり",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    250,
+    403
+   ]
+  },
+  "278": {
+   "short_label": "～ほうがいい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    253,
+    416
+   ]
+  },
+  "279": {
+   "short_label": "～ますように",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    385,
+    400,
+    433
+   ]
+  },
+  "280": {
+   "short_label": "～まま",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    263
+   ]
+  },
+  "281": {
+   "short_label": "～みたい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    402,
+    434
+   ]
+  },
+  "282": {
+   "short_label": "～も～し、～も～し～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "283": {
+   "short_label": "～やすい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    276
+   ]
+  },
+  "284": {
+   "short_label": "～られる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    249,
+    385,
+    433,
+    233,
+    1549
+   ]
+  },
+  "285": {
+   "short_label": "～んです",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "286": {
+   "short_label": "～予定",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "287": {
+   "short_label": "～出す",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    264
+   ]
+  },
+  "288": {
+   "short_label": "～始める",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "289": {
+   "short_label": "～終わる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    277,
+    403,
+    413
+   ]
+  },
+  "290": {
+   "short_label": "～続ける",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    234
+   ]
+  },
+  "291": {
+   "short_label": "～間",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "292": {
+   "short_label": "～（よ）うとする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "293": {
+   "short_label": "～（よ）うと思う",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    436,
+    258,
+    270,
+    292,
+    441
+   ]
+  },
+  "294": {
+   "short_label": "Aい→Aいさ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "295": {
+   "short_label": "Cho tôi",
+   "label_lang": "vi",
+   "confusable_ids": [
+    469
+   ]
+  },
+  "296": {
+   "short_label": "N は/が Động từ bị động",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "297": {
+   "short_label": "N1người は N2người に N3を Động từ bị động",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "298": {
+   "short_label": "N1người は N2người に Động từ bị động",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "299": {
+   "short_label": "N1のN2",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "300": {
+   "short_label": "Thể điều kiện",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "301": {
+   "short_label": "Aい→Aく/Na→Naに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "302": {
+   "short_label": "V thông thường のを 知っていますか",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "303": {
+   "short_label": "VるのがAです",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "304": {
+   "short_label": "VるのはAです",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    375
+   ]
+  },
+  "305": {
+   "short_label": "Vるのを忘れました",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "306": {
+   "short_label": "[知っています/知りません」",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    302,
+    221,
+    215,
+    271,
+    419,
+    426
+   ]
+  },
+  "307": {
+   "short_label": "かならずきっとぜひ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "308": {
+   "short_label": "けれど（も）",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    413,
+    469
+   ]
+  },
+  "309": {
+   "short_label": "こう・そう・ああ＋V",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "310": {
+   "short_label": "そのほかのていねいな言い方",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "311": {
+   "short_label": "そんなに～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "312": {
+   "short_label": "ですから・だから",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "313": {
+   "short_label": "どういう～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    267
+   ]
+  },
+  "314": {
+   "short_label": "なかなかやっととうとう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1554
+   ]
+  },
+  "315": {
+   "short_label": "に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "316": {
+   "short_label": "は・も",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "317": {
+   "short_label": "まだもう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "318": {
+   "short_label": "みえます・聞こえます",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    244
+   ]
+  },
+  "319": {
+   "short_label": "Thể sai khiến bị động",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "320": {
+   "short_label": "Phó từ⇔Tính từ",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "321": {
+   "short_label": "Danh từ⇔Động từ",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "322": {
+   "short_label": "Tính từ⇔Danh từ（～さ）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "323": {
+   "short_label": "Danh từ⇔Câu",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "324": {
+   "short_label": "Cách nói mệnh lệnh",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "325": {
+   "short_label": "So sánh",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "326": {
+   "short_label": "Nghi vấn từ＋たら/ば＋いいですか v.v.",
+   "label_lang": "vi",
+   "confusable_ids": [
+    255,
+    410,
+    412,
+    419
+   ]
+  },
+  "327": {
+   "short_label": "Cách nói khiêm nhường",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "328": {
+   "short_label": "（それ）では・じゃ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "329": {
+   "short_label": "（もし）～たら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "330": {
+   "short_label": "（～は）thể bị động",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "331": {
+   "short_label": "（～は）～ほど～ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "332": {
+   "short_label": "（～も）～し",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "333": {
+   "short_label": "～V1ないで、V2",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "334": {
+   "short_label": "～Vたあとで、",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "335": {
+   "short_label": "～Vてみます",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "336": {
+   "short_label": "～V thể khả năng なくなりました",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "337": {
+   "short_label": "～あいだ（は）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "338": {
+   "short_label": "～う／よう（thể ý chí）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "339": {
+   "short_label": "～か（câu hỏi gián tiếp）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "340": {
+   "short_label": "～かどうか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "341": {
+   "short_label": "～から・で",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "342": {
+   "short_label": "～がっています・～がります",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    302,
+    221,
+    306,
+    271
+   ]
+  },
+  "343": {
+   "short_label": "～がほしいです・～たいです",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "344": {
+   "short_label": "～こと/ということ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "345": {
+   "short_label": "～ことか（も）ある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "346": {
+   "short_label": "～こんな・そんな・あんな＋N",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "347": {
+   "short_label": "～さ（せら）れます",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "348": {
+   "short_label": "～すぎ.～すぎる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "349": {
+   "short_label": "～そう［có vẻ］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "350": {
+   "short_label": "～たことがない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    252
+   ]
+  },
+  "351": {
+   "short_label": "～たとき",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "352": {
+   "short_label": "～たときに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    239,
+    351,
+    413,
+    437,
+    469
+   ]
+  },
+  "353": {
+   "short_label": "～ために［mục đích］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "354": {
+   "short_label": "～たらいかがですか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    253,
+    278,
+    355,
+    483
+   ]
+  },
+  "355": {
+   "short_label": "～たらどうですか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    253,
+    278,
+    354,
+    483
+   ]
+  },
+  "356": {
+   "short_label": "～たら［điều kiện xác định・điều kiện giả định］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "357": {
+   "short_label": "～たら～た",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "358": {
+   "short_label": "～たり～たり",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    283
+   ]
+  },
+  "359": {
+   "short_label": "～だけしか～ない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    250,
+    277
+   ]
+  },
+  "360": {
+   "short_label": "～だす/はじめる/おわる/つづける",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "361": {
+   "short_label": "～ちゃう［dạng rút gọn］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "362": {
+   "short_label": "～て",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    234
+   ]
+  },
+  "363": {
+   "short_label": "～てくる［thay đổi trạng thái］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "364": {
+   "short_label": "～でもかまわない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    368
+   ]
+  },
+  "365": {
+   "short_label": "～とか（～とか）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "366": {
+   "short_label": "～と［điều kiện］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "367": {
+   "short_label": "～なくてはいけない／～ないといけない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    274,
+    417,
+    418
+   ]
+  },
+  "368": {
+   "short_label": "～なくてもかまわない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    237,
+    364,
+    419
+   ]
+  },
+  "369": {
+   "short_label": "～なら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "370": {
+   "short_label": "～によって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "371": {
+   "short_label": "～のだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    267,
+    285,
+    313
+   ]
+  },
+  "372": {
+   "short_label": "～ので",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    353
+   ]
+  },
+  "373": {
+   "short_label": "～のに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    166
+   ]
+  },
+  "374": {
+   "short_label": "～のに［thời gian・chi phí］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "375": {
+   "short_label": "～のはNです",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    304
+   ]
+  },
+  "376": {
+   "short_label": "～の［trợ từ cuối câu］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "377": {
+   "short_label": "～ば［điều kiện giả định］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "378": {
+   "short_label": "～ほど（～ない）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "379": {
+   "short_label": "～め（目）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "380": {
+   "short_label": "～も［mức độ］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "381": {
+   "short_label": "～ようになる⇔～なくなる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    613
+   ]
+  },
+  "382": {
+   "short_label": "～ように言い",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    432
+   ]
+  },
+  "383": {
+   "short_label": "～ようにしてください",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    391,
+    248
+   ]
+  },
+  "384": {
+   "short_label": "～ようにする",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    436,
+    262,
+    263,
+    292,
+    383,
+    385
+   ]
+  },
+  "385": {
+   "short_label": "～ように（mục đích）",
+   "label_lang": "vi",
+   "confusable_ids": [
+    279,
+    281,
+    353,
+    383
+   ]
+  },
+  "386": {
+   "short_label": "～よう［比ゆ］",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "387": {
+   "short_label": "～よう［mục đích・kết quả］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "388": {
+   "short_label": "～らしい［suy đoán］",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "389": {
+   "short_label": "～中（に）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "390": {
+   "short_label": "～途中で",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "391": {
+   "short_label": "おVください",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "392": {
+   "short_label": "V thể sai khiến",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "393": {
+   "short_label": "～Nがする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "394": {
+   "short_label": "～Nにします",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    267,
+    385,
+    400,
+    433
+   ]
+  },
+  "395": {
+   "short_label": "～Vたところ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    277,
+    403,
+    407,
+    413
+   ]
+  },
+  "396": {
+   "short_label": "～Vてくれませんか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    469
+   ]
+  },
+  "397": {
+   "short_label": "～Vて来ます",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "398": {
+   "short_label": "～Vやすいです・～Vにくいです",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "399": {
+   "short_label": "～Vるところ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    292,
+    407,
+    413,
+    437
+   ]
+  },
+  "400": {
+   "short_label": "～します",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "401": {
+   "short_label": "～すぎ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "402": {
+   "short_label": "～そうだ（nghe nói）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "403": {
+   "short_label": "～たばかり",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    277,
+    395,
+    413
+   ]
+  },
+  "404": {
+   "short_label": "～ちゃ/ちゃう（dạng rút gọn）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "405": {
+   "short_label": "～ちゃった",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "406": {
+   "short_label": "～っていう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    267
+   ]
+  },
+  "407": {
+   "short_label": "～ているところ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    234,
+    395,
+    399,
+    413
+   ]
+  },
+  "408": {
+   "short_label": "～ている間に",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    234,
+    421
+   ]
+  },
+  "409": {
+   "short_label": "～てしまいます",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "410": {
+   "short_label": "～てもいいです／～てはいけません",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    326,
+    255,
+    419
+   ]
+  },
+  "411": {
+   "short_label": "～て･･･ ～くて･･･ ～で･･･",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "412": {
+   "short_label": "～と/たら/ば＋いい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    326
+   ]
+  },
+  "413": {
+   "short_label": "～ところ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    277,
+    403,
+    407
+   ]
+  },
+  "414": {
+   "short_label": "～と言う/聞く/書くなど",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "415": {
+   "short_label": "～ないことにする",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    436
+   ]
+  },
+  "416": {
+   "short_label": "～ないほうがいい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    253,
+    278,
+    483
+   ]
+  },
+  "417": {
+   "short_label": "～なきゃいけない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    274,
+    418,
+    367
+   ]
+  },
+  "418": {
+   "short_label": "～なくちゃいけない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    237,
+    274,
+    481,
+    417,
+    367
+   ]
+  },
+  "419": {
+   "short_label": "～なくてもいいです／～なければなりません",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    326,
+    306,
+    237,
+    255,
+    410,
+    368
+   ]
+  },
+  "420": {
+   "short_label": "～の/こと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "421": {
+   "short_label": "～の間に",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    408,
+    437,
+    438,
+    469
+   ]
+  },
+  "422": {
+   "short_label": "～は…が＋tính từ／động từ chỉ trạng thái",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "423": {
+   "short_label": "～はず",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    256
+   ]
+  },
+  "424": {
+   "short_label": "～は～に（thể sai khiến bị động）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "425": {
+   "short_label": "～は～に・を（thể sai khiến）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "426": {
+   "short_label": "～は～ほど～ありません",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    306,
+    419
+   ]
+  },
+  "427": {
+   "short_label": "～ば（thể giả định）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "428": {
+   "short_label": "～まして/～ますので/～ますのに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "429": {
+   "short_label": "～まで･･･ ～までに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "430": {
+   "short_label": "～よう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    281,
+    385,
+    402,
+    433,
+    434,
+    464
+   ]
+  },
+  "431": {
+   "short_label": "～ようになる・なくなる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    613
+   ]
+  },
+  "432": {
+   "short_label": "～ように言われる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    272,
+    736
+   ]
+  },
+  "433": {
+   "short_label": "～ように（mong ước）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "434": {
+   "short_label": "～らしい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    281,
+    402
+   ]
+  },
+  "435": {
+   "short_label": "～ることがある",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    245,
+    252,
+    370
+   ]
+  },
+  "436": {
+   "short_label": "～ることにする",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    267,
+    384,
+    385,
+    415,
+    433
+   ]
+  },
+  "437": {
+   "short_label": "～るとき",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "438": {
+   "short_label": "～るときに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    291,
+    351,
+    352,
+    413,
+    437
+   ]
+  },
+  "439": {
+   "short_label": "～中",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "440": {
+   "short_label": "～場合",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "441": {
+   "short_label": "～thể ý chí＋と思う",
+   "label_lang": "vi",
+   "confusable_ids": [
+    270,
+    293
+   ]
+  },
+  "442": {
+   "short_label": "～（さ）せます",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "443": {
+   "short_label": "～（よ）うと思います",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    293
+   ]
+  },
+  "444": {
+   "short_label": "～（よ）うに（と）言う/伝える/注意するなど",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    432
+   ]
+  },
+  "445": {
+   "short_label": "～（ら）れます（khả năng）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "446": {
+   "short_label": "～（ら）れます（bị động）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "447": {
+   "short_label": "～？それとも～？",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "448": {
+   "short_label": "でございます",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "449": {
+   "short_label": "ございます",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "450": {
+   "short_label": "いらっしゃる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "451": {
+   "short_label": "いたします",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "452": {
+   "short_label": "～頃（ころ・ごろ）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "453": {
+   "short_label": "なさる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "454": {
+   "short_label": "お～になる（tôn kính）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "455": {
+   "short_label": "～間に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "456": {
+   "short_label": "だけで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "457": {
+   "short_label": "～が必要",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "458": {
+   "short_label": "がるがっている",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "459": {
+   "short_label": "～必要がある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "460": {
+   "short_label": "～から作る",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "461": {
+   "short_label": "～急に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "462": {
+   "short_label": "または",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "463": {
+   "short_label": "～に気がつく",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "464": {
+   "short_label": "～に見える",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "465": {
+   "short_label": "～の中で",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "466": {
+   "short_label": "おきに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "467": {
+   "short_label": "Tha động từ・Tự động từ（cặp đối ứng）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "468": {
+   "short_label": "てで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "469": {
+   "short_label": "ていた",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "470": {
+   "short_label": "てしまうちゃう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "471": {
+   "short_label": "てすみません",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "472": {
+   "short_label": "てよかった",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "473": {
+   "short_label": "～と言ってもいい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    271
+   ]
+  },
+  "474": {
+   "short_label": "～と聞いた",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "475": {
+   "short_label": "は～がは",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "476": {
+   "short_label": "さすが",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "477": {
+   "short_label": "お～する（khiêm nhường）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "478": {
+   "short_label": "ずっと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "479": {
+   "short_label": "てくれてありがとう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "480": {
+   "short_label": "どんどん",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "481": {
+   "short_label": "なくて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "482": {
+   "short_label": "んだけど-んですが",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "483": {
+   "short_label": "～たらどう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    355
+   ]
+  },
+  "484": {
+   "short_label": "もし～ても",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "485": {
+   "short_label": "代（độ tuổi・thập niên）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "486": {
+   "short_label": "真(っ)",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "487": {
+   "short_label": "がみられる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "488": {
+   "short_label": "すくなくない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "489": {
+   "short_label": "とされている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1555,
+    272
+   ]
+  },
+  "490": {
+   "short_label": "化する",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "491": {
+   "short_label": "各",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "492": {
+   "short_label": "風",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "493": {
+   "short_label": "～ことになる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    530,
+    532,
+    630
+   ]
+  },
+  "494": {
+   "short_label": "～について",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1033
+   ]
+  },
+  "495": {
+   "short_label": "～てばかり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "496": {
+   "short_label": "～V thể sai khiến ていただけませんか",
+   "label_lang": "vi",
+   "confusable_ids": [
+    497,
+    808
+   ]
+  },
+  "497": {
+   "short_label": "～ていただきたい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    660,
+    496
+   ]
+  },
+  "498": {
+   "short_label": "～ずっと(so sánh)",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "499": {
+   "short_label": "ちゃんと-きちんと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "500": {
+   "short_label": "ではなくて-じゃなくて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "501": {
+   "short_label": "と同じで-と違って",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "502": {
+   "short_label": "AはBほど～ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "503": {
+   "short_label": "（nghi vấn từ）～のか",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "504": {
+   "short_label": "いくら～ても",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "505": {
+   "short_label": "だけど",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "506": {
+   "short_label": "ところで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    545,
+    571
+   ]
+  },
+  "507": {
+   "short_label": "より～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "508": {
+   "short_label": "～てしかたがない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "509": {
+   "short_label": "～あいだに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "510": {
+   "short_label": "～あまり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "511": {
+   "short_label": "～あまりにも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "512": {
+   "short_label": "～うちに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    525
+   ]
+  },
+  "513": {
+   "short_label": "～うとする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "514": {
+   "short_label": "～おかげで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    539
+   ]
+  },
+  "515": {
+   "short_label": "～かける",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "516": {
+   "short_label": "～かな",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "517": {
+   "short_label": "～から～にかけて",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    530,
+    592
+   ]
+  },
+  "518": {
+   "short_label": "～かわりに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    769
+   ]
+  },
+  "519": {
+   "short_label": "～がち",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    526,
+    551
+   ]
+  },
+  "520": {
+   "short_label": "～きがする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "521": {
+   "short_label": "～きり",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    551
+   ]
+  },
+  "522": {
+   "short_label": "～きる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "523": {
+   "short_label": "～ぎみ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "524": {
+   "short_label": "～くせに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "525": {
+   "short_label": "～くらい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "526": {
+   "short_label": "～けいこうがある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "527": {
+   "short_label": "～こそ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    650,
+    669
+   ]
+  },
+  "528": {
+   "short_label": "～ことから",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    655,
+    764,
+    267,
+    1543
+   ]
+  },
+  "529": {
+   "short_label": "～ことがある（～こともある）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "530": {
+   "short_label": "～ことに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    580
+   ]
+  },
+  "531": {
+   "short_label": "～ことにしている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    530,
+    532,
+    755,
+    761,
+    779,
+    267
+   ]
+  },
+  "532": {
+   "short_label": "～ことになっている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    493,
+    530,
+    531,
+    573,
+    875,
+    612
+   ]
+  },
+  "533": {
+   "short_label": "～ことはない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    578,
+    580,
+    604,
+    664,
+    561,
+    633
+   ]
+  },
+  "534": {
+   "short_label": "～さ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "535": {
+   "short_label": "～さえ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "536": {
+   "short_label": "～しかない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    581,
+    617
+   ]
+  },
+  "537": {
+   "short_label": "～ずつ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    811,
+    859
+   ]
+  },
+  "538": {
+   "short_label": "～ずに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "539": {
+   "short_label": "～せいで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    514,
+    370,
+    869
+   ]
+  },
+  "540": {
+   "short_label": "～そうだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    388,
+    781
+   ]
+  },
+  "541": {
+   "short_label": "～そのために",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    573,
+    677,
+    783
+   ]
+  },
+  "542": {
+   "short_label": "～たて",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    813
+   ]
+  },
+  "543": {
+   "short_label": "～たとえば",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "544": {
+   "short_label": "～たとえ～ても",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    573
+   ]
+  },
+  "545": {
+   "short_label": "～たところで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    506,
+    791
+   ]
+  },
+  "546": {
+   "short_label": "～たとたん",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    631
+   ]
+  },
+  "547": {
+   "short_label": "～たびに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    811
+   ]
+  },
+  "548": {
+   "short_label": "～だけの",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "549": {
+   "short_label": "～だらけ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    931
+   ]
+  },
+  "550": {
+   "short_label": "～っけ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "551": {
+   "short_label": "～っぱなし",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "552": {
+   "short_label": "～ついでに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    506
+   ]
+  },
+  "553": {
+   "short_label": "～つつ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "554": {
+   "short_label": "～つまり",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    562,
+    615,
+    770,
+    267
+   ]
+  },
+  "555": {
+   "short_label": "～つもりで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    755,
+    761,
+    779,
+    689
+   ]
+  },
+  "556": {
+   "short_label": "～てからでないと",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    580,
+    671
+   ]
+  },
+  "557": {
+   "short_label": "～てごらん",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "558": {
+   "short_label": "～てしょうがない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    695,
+    610
+   ]
+  },
+  "559": {
+   "short_label": "～てはじめて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "560": {
+   "short_label": "～てもしかたがない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    508
+   ]
+  },
+  "561": {
+   "short_label": "～ということ/はなしだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    664,
+    533,
+    562,
+    578,
+    799,
+    633
+   ]
+  },
+  "562": {
+   "short_label": "～ということだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    493,
+    530,
+    540,
+    615,
+    349,
+    931
+   ]
+  },
+  "563": {
+   "short_label": "～というと",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    554,
+    568,
+    267,
+    870,
+    698
+   ]
+  },
+  "564": {
+   "short_label": "～というのは",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    565,
+    718,
+    770,
+    267,
+    661,
+    662
+   ]
+  },
+  "565": {
+   "short_label": "～というの～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    540,
+    562,
+    349,
+    770,
+    267
+   ]
+  },
+  "566": {
+   "short_label": "～というものではない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    616,
+    720,
+    604
+   ]
+  },
+  "567": {
+   "short_label": "～というより",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    568,
+    267,
+    853
+   ]
+  },
+  "568": {
+   "short_label": "～といえば",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "569": {
+   "short_label": "～といっても",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "570": {
+   "short_label": "～とおり（に）",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    589,
+    755,
+    761,
+    779
+   ]
+  },
+  "571": {
+   "short_label": "～ところが",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    506,
+    655,
+    657
+   ]
+  },
+  "572": {
+   "short_label": "～としたら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    573,
+    574,
+    575,
+    580,
+    655,
+    1597
+   ]
+  },
+  "573": {
+   "short_label": "～として",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    591,
+    755,
+    761,
+    779
+   ]
+  },
+  "574": {
+   "short_label": "～とする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "575": {
+   "short_label": "～とすると",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    540,
+    572,
+    574,
+    655,
+    349,
+    1597
+   ]
+  },
+  "576": {
+   "short_label": "～とともに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    590,
+    1543
+   ]
+  },
+  "577": {
+   "short_label": "～どんなに～ことか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    585,
+    702,
+    703,
+    1543,
+    636
+   ]
+  },
+  "578": {
+   "short_label": "～ないことはない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    533,
+    579,
+    616,
+    664,
+    561,
+    633
+   ]
+  },
+  "579": {
+   "short_label": "～ないこともない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    533,
+    578,
+    616,
+    774,
+    972
+   ]
+  },
+  "580": {
+   "short_label": "～ないと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "581": {
+   "short_label": "～ないわけにはいかない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    617
+   ]
+  },
+  "582": {
+   "short_label": "～ながらも",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    524
+   ]
+  },
+  "583": {
+   "short_label": "～なぜなら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    563,
+    564,
+    565,
+    650,
+    660,
+    661
+   ]
+  },
+  "584": {
+   "short_label": "～なんか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    585,
+    702,
+    703
+   ]
+  },
+  "585": {
+   "short_label": "～なんて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "586": {
+   "short_label": "～において",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "587": {
+   "short_label": "～にかわって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    518,
+    573,
+    1598
+   ]
+  },
+  "588": {
+   "short_label": "～にかんして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    494,
+    1033
+   ]
+  },
+  "589": {
+   "short_label": "～にしたがって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    590
+   ]
+  },
+  "590": {
+   "short_label": "～につれて",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    576,
+    589
+   ]
+  },
+  "591": {
+   "short_label": "～にとって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    494,
+    655
+   ]
+  },
+  "592": {
+   "short_label": "～にわたって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "593": {
+   "short_label": "～に反して",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1543
+   ]
+  },
+  "594": {
+   "short_label": "～に対して",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    494,
+    717,
+    721
+   ]
+  },
+  "595": {
+   "short_label": "～に比べて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "596": {
+   "short_label": "～に違いない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "597": {
+   "short_label": "～に限り",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "598": {
+   "short_label": "～ば",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "599": {
+   "short_label": "～ばかりでなく",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    813
+   ]
+  },
+  "600": {
+   "short_label": "～ばよかった",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    660
+   ]
+  },
+  "601": {
+   "short_label": "～ば～ほど",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    589,
+    590,
+    1595
+   ]
+  },
+  "602": {
+   "short_label": "～ふりをする",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    650,
+    755,
+    761,
+    779,
+    1543
+   ]
+  },
+  "603": {
+   "short_label": "～べき",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    604,
+    730
+   ]
+  },
+  "604": {
+   "short_label": "～べきではない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    533,
+    616,
+    1100,
+    720
+   ]
+  },
+  "605": {
+   "short_label": "～ほど",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    525,
+    569
+   ]
+  },
+  "606": {
+   "short_label": "～ままにする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "607": {
+   "short_label": "～めったにない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    585,
+    702,
+    703,
+    267
+   ]
+  },
+  "608": {
+   "short_label": "～ものか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    614,
+    729
+   ]
+  },
+  "609": {
+   "short_label": "～ものだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    770,
+    267,
+    831
+   ]
+  },
+  "610": {
+   "short_label": "～ようがない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    617,
+    558,
+    695
+   ]
+  },
+  "611": {
+   "short_label": "～ようとしない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    292,
+    572,
+    574,
+    753
+   ]
+  },
+  "612": {
+   "short_label": "～ようになっている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    532,
+    875,
+    759,
+    613,
+    602,
+    630
+   ]
+  },
+  "613": {
+   "short_label": "～ようになる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    493,
+    530,
+    612,
+    755,
+    761,
+    779
+   ]
+  },
+  "614": {
+   "short_label": "～わけがない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    435,
+    616,
+    617,
+    671,
+    729
+   ]
+  },
+  "615": {
+   "short_label": "～わけだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    554,
+    562,
+    616,
+    730,
+    770
+   ]
+  },
+  "616": {
+   "short_label": "～わけではない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1100,
+    614,
+    615,
+    655,
+    267
+   ]
+  },
+  "617": {
+   "short_label": "～わけにはいかない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    581
+   ]
+  },
+  "618": {
+   "short_label": "～をこめて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "619": {
+   "short_label": "～を中心に",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    573,
+    1033,
+    783
+   ]
+  },
+  "620": {
+   "short_label": "～んだって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    540,
+    562,
+    660,
+    349,
+    770,
+    267
+   ]
+  },
+  "621": {
+   "short_label": "～一方",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1543,
+    1595
+   ]
+  },
+  "622": {
+   "short_label": "～上げる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1595,
+    784
+   ]
+  },
+  "623": {
+   "short_label": "～上に",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    676,
+    1543
+   ]
+  },
+  "624": {
+   "short_label": "～以来",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    498
+   ]
+  },
+  "625": {
+   "short_label": "～休むわけにはいかない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "626": {
+   "short_label": "～向き（tính phù hợp）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "627": {
+   "short_label": "～向け",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "628": {
+   "short_label": "～最中に",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    515
+   ]
+  },
+  "629": {
+   "short_label": "～気味",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    520,
+    783
+   ]
+  },
+  "630": {
+   "short_label": "～行われることになっている",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "631": {
+   "short_label": "～開けたとたん",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "632": {
+   "short_label": "～際に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "633": {
+   "short_label": "～食べないことはない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "634": {
+   "short_label": "すこしも～ない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    877
+   ]
+  },
+  "635": {
+   "short_label": "ですから～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    749
+   ]
+  },
+  "636": {
+   "short_label": "どんなに～ても",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    931,
+    577
+   ]
+  },
+  "637": {
+   "short_label": "なきゃ／なく（っ）ちゃ／～ないと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "638": {
+   "short_label": "まったく～ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "639": {
+   "short_label": "まるで～よう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    755,
+    761,
+    779
+   ]
+  },
+  "640": {
+   "short_label": "もしかすると～かもしれない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    655,
+    730,
+    783,
+    820,
+    746
+   ]
+  },
+  "641": {
+   "short_label": "もしも～なら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "642": {
+   "short_label": "もし～たなら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    600
+   ]
+  },
+  "643": {
+   "short_label": "Cách nói dùng thể sai khiến",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "644": {
+   "short_label": "Mệnh lệnh（しろ）／Cấm chỉ（～な）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "645": {
+   "short_label": "必ずしも～とは限らない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    580,
+    616,
+    877
+   ]
+  },
+  "646": {
+   "short_label": "決して～ない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    533,
+    755,
+    761,
+    779,
+    267
+   ]
+  },
+  "647": {
+   "short_label": "Nghi vấn từ～（の）か／～かどうか",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "648": {
+   "short_label": "Dạng rút gọn（～ている／～でいる）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "649": {
+   "short_label": "Cách nói dùng tự động từ",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "650": {
+   "short_label": "（…のは）～からだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "651": {
+   "short_label": "（thể mệnh lệnh）と頼まれる",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "652": {
+   "short_label": "（thể mệnh lệnh）と言われる",
+   "label_lang": "vi",
+   "confusable_ids": [
+    806
+   ]
+  },
+  "653": {
+   "short_label": "～100円にしても",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "654": {
+   "short_label": "～。さて～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "655": {
+   "short_label": "～。すると、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "656": {
+   "short_label": "～。そういえば、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "657": {
+   "short_label": "～。それが、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "658": {
+   "short_label": "～。それでも～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "659": {
+   "short_label": "～。それなら～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "660": {
+   "short_label": "～。だって～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "661": {
+   "short_label": "～。というのは～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "662": {
+   "short_label": "～「デジカメ」というのは…",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "663": {
+   "short_label": "～あなたにとって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "664": {
+   "short_label": "～あやまりことはない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "665": {
+   "short_label": "～から言って",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "666": {
+   "short_label": "～きらいなわけではない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "667": {
+   "short_label": "～くらい…はない・～ぐらい…はない・～ほど…はない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    525,
+    668
+   ]
+  },
+  "668": {
+   "short_label": "～くらいは～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    525,
+    667
+   ]
+  },
+  "669": {
+   "short_label": "～からこそ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "670": {
+   "short_label": "～ことは…が",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    533,
+    578
+   ]
+  },
+  "671": {
+   "short_label": "～じゃない（か）",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1547,
+    835
+   ]
+  },
+  "672": {
+   "short_label": "～すぎる・～すぎだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "673": {
+   "short_label": "～ずにすんだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "674": {
+   "short_label": "～そうだ（様子）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "675": {
+   "short_label": "～そうにない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    540,
+    610,
+    349
+   ]
+  },
+  "676": {
+   "short_label": "～その上～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    826
+   ]
+  },
+  "677": {
+   "short_label": "～その結果",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    573
+   ]
+  },
+  "678": {
+   "short_label": "～それと～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "679": {
+   "short_label": "～ためだ・～ため（に）…",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "680": {
+   "short_label": "～たら、かえって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "681": {
+   "short_label": "～たらだめ／～てはだめ／～ちゃだめ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "682": {
+   "short_label": "～たらどうか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    693
+   ]
+  },
+  "683": {
+   "short_label": "～だけでいい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "684": {
+   "short_label": "～って（nghe nói）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "685": {
+   "short_label": "～って（引用）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "686": {
+   "short_label": "～って／～たって／～だって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "687": {
+   "short_label": "～っぱい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    388,
+    781
+   ]
+  },
+  "688": {
+   "short_label": "～つもりだった（のに）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "689": {
+   "short_label": "～つもりでした",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    555,
+    730
+   ]
+  },
+  "690": {
+   "short_label": "～てからでないと．．．ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "691": {
+   "short_label": "～てくれと",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    660,
+    755,
+    761,
+    779
+   ]
+  },
+  "692": {
+   "short_label": "～ては…・～（の）では…",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "693": {
+   "short_label": "～てみたらどうですか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    682
+   ]
+  },
+  "694": {
+   "short_label": "～てる（Vている rút gọn）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "695": {
+   "short_label": "～でしょうがない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    558,
+    610
+   ]
+  },
+  "696": {
+   "short_label": "～と…た・～たら…た",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "697": {
+   "short_label": "～といいなあ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    505,
+    655
+   ]
+  },
+  "698": {
+   "short_label": "～というとのに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    870,
+    563
+   ]
+  },
+  "699": {
+   "short_label": "～ところ + に／を／で",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "700": {
+   "short_label": "～ところだ・～ところ（＋trợ từ）…",
+   "label_lang": "vi",
+   "confusable_ids": [
+    949
+   ]
+  },
+  "701": {
+   "short_label": "～などと（なんて）言う／思う",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "702": {
+   "short_label": "～なんて（意外）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "703": {
+   "short_label": "～なんて（軽視）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "704": {
+   "short_label": "～にしては／～わりに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    965
+   ]
+  },
+  "705": {
+   "short_label": "～にたいする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "706": {
+   "short_label": "～にともなう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    972
+   ]
+  },
+  "707": {
+   "short_label": "～にともなって／ともない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    774,
+    579,
+    706
+   ]
+  },
+  "708": {
+   "short_label": "～には（mục đích）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "709": {
+   "short_label": "～にもとづいて／もとづき",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    710
+   ]
+  },
+  "710": {
+   "short_label": "～にもとづく",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    709
+   ]
+  },
+  "711": {
+   "short_label": "～によっては",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    858,
+    712,
+    713,
+    714,
+    370
+   ]
+  },
+  "712": {
+   "short_label": "～によって…・～による",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    370,
+    858,
+    711,
+    713,
+    714
+   ]
+  },
+  "713": {
+   "short_label": "～によっては～（こと）もある",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    858,
+    712,
+    711,
+    714,
+    370
+   ]
+  },
+  "714": {
+   "short_label": "～によって違う",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    858,
+    712,
+    711,
+    713,
+    370
+   ]
+  },
+  "715": {
+   "short_label": "～によって（nguyên nhân・phương tiện）",
+   "label_lang": "vi",
+   "confusable_ids": [
+    858,
+    712,
+    711,
+    713,
+    714
+   ]
+  },
+  "716": {
+   "short_label": "～によると",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "717": {
+   "short_label": "～に対して（đối tượng）",
+   "label_lang": "vi",
+   "confusable_ids": [
+    594,
+    721
+   ]
+  },
+  "718": {
+   "short_label": "～のこと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "719": {
+   "short_label": "～のだから",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    748
+   ]
+  },
+  "720": {
+   "short_label": "～のではないだろうか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    616,
+    1100,
+    604
+   ]
+  },
+  "721": {
+   "short_label": "～のに対して（対比）",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    594,
+    717
+   ]
+  },
+  "722": {
+   "short_label": "～のに（mục đích）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "723": {
+   "short_label": "～のに（tương phản）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "724": {
+   "short_label": "～のは…（こと）だ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "725": {
+   "short_label": "～のはなしでは",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "726": {
+   "short_label": "～のも当然だ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "727": {
+   "short_label": "～のようだ・～みたいだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    755,
+    761,
+    779,
+    741,
+    752
+   ]
+  },
+  "728": {
+   "short_label": "～の（主格）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "729": {
+   "short_label": "～はずがない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "730": {
+   "short_label": "～はずだ（đương nhiên）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "731": {
+   "short_label": "～はもちろん～も",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "732": {
+   "short_label": "～ば…・～たら…・～なら…",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "733": {
+   "short_label": "～ば（いい）と思う",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "734": {
+   "short_label": "～ば～のに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    600,
+    1602
+   ]
+  },
+  "735": {
+   "short_label": "～ほど（ば）～ほど",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "736": {
+   "short_label": "～ようにいう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    660,
+    755,
+    761,
+    779
+   ]
+  },
+  "737": {
+   "short_label": "～ようにかんじる／おもう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "738": {
+   "short_label": "～をとおして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    370
+   ]
+  },
+  "739": {
+   "short_label": "～（よ）うとおもっている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    532,
+    875,
+    612,
+    602,
+    630
+   ]
+  },
+  "740": {
+   "short_label": "～ままになる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "741": {
+   "short_label": "まるで～のようだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "742": {
+   "short_label": "～み",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "743": {
+   "short_label": "～めぐって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "744": {
+   "short_label": "～も…ば～も…・～も…なら～も",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "745": {
+   "short_label": "～もう少しで遅刻するところだった",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "746": {
+   "short_label": "～もしかするとうそかもしれない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "747": {
+   "short_label": "～もし休みがたとしても",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "748": {
+   "short_label": "～ものだから／もので",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    719
+   ]
+  },
+  "749": {
+   "short_label": "～ものですから",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    635
+   ]
+  },
+  "750": {
+   "short_label": "～もの（もん）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "751": {
+   "short_label": "～やるしかない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "752": {
+   "short_label": "～ようだ／～みたいだ（suy đoán）",
+   "label_lang": "vi",
+   "confusable_ids": [
+    727
+   ]
+  },
+  "753": {
+   "short_label": "～ようとした",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    506,
+    292,
+    572,
+    573,
+    574,
+    611
+   ]
+  },
+  "754": {
+   "short_label": "～ような／ように",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "755": {
+   "short_label": "～ように（mào đầu・như đã biết）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "756": {
+   "short_label": "～ように…・～ようにと…・～よう…",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "757": {
+   "short_label": "～ようにしましょう",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    530,
+    755,
+    761,
+    779
+   ]
+  },
+  "758": {
+   "short_label": "～ようにする・～ようにしている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    793
+   ]
+  },
+  "759": {
+   "short_label": "～ようになった",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    530,
+    612,
+    755,
+    761,
+    779,
+    613
+   ]
+  },
+  "760": {
+   "short_label": "～ように感じる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "761": {
+   "short_label": "～ように（giống như／theo như）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "762": {
+   "short_label": "～よう（に）（忠告）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "763": {
+   "short_label": "～らしい（推測）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "764": {
+   "short_label": "～られた",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    370
+   ]
+  },
+  "765": {
+   "short_label": "～れる／られる（tự phát）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "766": {
+   "short_label": "～わりには",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    524
+   ]
+  },
+  "767": {
+   "short_label": "～んだもん",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    615,
+    660
+   ]
+  },
+  "768": {
+   "short_label": "～たまま・のまま",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "769": {
+   "short_label": "～そのかわり(に)",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "770": {
+   "short_label": "～ことだ（khuyên）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "771": {
+   "short_label": "～勝てるわけがない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "772": {
+   "short_label": "～ますように（cầu mong）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "773": {
+   "short_label": "～外国人にしては",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "774": {
+   "short_label": "少しも・ちっとも～ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "775": {
+   "short_label": "～弾けることはが…",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "776": {
+   "short_label": "～散歩のついでに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "777": {
+   "short_label": "～旅行といっても",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "778": {
+   "short_label": "～日本文化について",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "779": {
+   "short_label": "～ように（mong muốn kết quả）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "780": {
+   "short_label": "～まで（đến khi）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "781": {
+   "short_label": "～らしい（đặc trưng）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "782": {
+   "short_label": "～とく・どく（Vておく rút gọn）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "783": {
+   "short_label": "～(ら)れている（bị động）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "784": {
+   "short_label": "～上げる・～上がる（hoàn tất）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "785": {
+   "short_label": "～最中",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "786": {
+   "short_label": "～という（N・もの・こと）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "787": {
+   "short_label": "～ように言う・頼む",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "788": {
+   "short_label": "～注意されてはじめて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "789": {
+   "short_label": "～知っているふりをする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "790": {
+   "short_label": "～結婚結婚してるんだって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "791": {
+   "short_label": "～たところ（kết quả・phát hiện）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "792": {
+   "short_label": "～聞いてごらん",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "793": {
+   "short_label": "～聞こえるようにする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "794": {
+   "short_label": "～つもりだった",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "795": {
+   "short_label": "～見せてほしい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "796": {
+   "short_label": "～に～(ら)れる（bị động gián tiếp）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "797": {
+   "short_label": "～走るというより",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "798": {
+   "short_label": "～通す",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "799": {
+   "short_label": "～遅れるということだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "800": {
+   "short_label": "～開けっぱなし",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "801": {
+   "short_label": "～間…・～間に…",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "802": {
+   "short_label": "～の（danh từ hóa）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "803": {
+   "short_label": "～ちゃう・じゃう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "804": {
+   "short_label": "～切る・～切れる・～切れない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "805": {
+   "short_label": "～食べようとしない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "806": {
+   "short_label": "～(し)ろ・～なと言われる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "807": {
+   "short_label": "～まで（đến cả）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "808": {
+   "short_label": "～（さ）せてほしい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    795
+   ]
+  },
+  "809": {
+   "short_label": "～（さ）せられる／～される",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "810": {
+   "short_label": "～（の）なら…",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "811": {
+   "short_label": "ごとに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "812": {
+   "short_label": "～合う",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "813": {
+   "short_label": "ばかりで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    599
+   ]
+  },
+  "814": {
+   "short_label": "～別にない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "815": {
+   "short_label": "ぶりに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "816": {
+   "short_label": "～中（ちゅう・じゅう）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "817": {
+   "short_label": "～か何か",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "818": {
+   "short_label": "～結局",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "819": {
+   "short_label": "～込む",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "820": {
+   "short_label": "もしかしたら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "821": {
+   "short_label": "もしも～たら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "822": {
+   "short_label": "～直す",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "823": {
+   "short_label": "なるべく",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "824": {
+   "short_label": "～に慣れる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "825": {
+   "short_label": "のでしょうか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "826": {
+   "short_label": "さらに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "827": {
+   "short_label": "せいぜい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "828": {
+   "short_label": "しばらく",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "829": {
+   "short_label": "すでに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "830": {
+   "short_label": "Số lượng＋は",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "831": {
+   "short_label": "～たものだ（hồi tưởng）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "832": {
+   "short_label": "～確かに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "833": {
+   "short_label": "～て済む",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "834": {
+   "short_label": "てはいけないから",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "835": {
+   "short_label": "～ている場合じゃない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1547,
+    671
+   ]
+  },
+  "836": {
+   "short_label": "～的",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "837": {
+   "short_label": "～ても始まらない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "838": {
+   "short_label": "～ても構わない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "839": {
+   "short_label": "とみえるとみえて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "840": {
+   "short_label": "～途中で途中に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "841": {
+   "short_label": "通すとおす",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "842": {
+   "short_label": "とてもない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "843": {
+   "short_label": "～は別として",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "844": {
+   "short_label": "～はで有名",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "845": {
+   "short_label": "わざと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "846": {
+   "short_label": "よりも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "847": {
+   "short_label": "～ように見える",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "848": {
+   "short_label": "どうしても",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "849": {
+   "short_label": "ふと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "850": {
+   "short_label": "～一度に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "851": {
+   "short_label": "～一体",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "852": {
+   "short_label": "まさか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "853": {
+   "short_label": "むしろ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "854": {
+   "short_label": "つい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "855": {
+   "short_label": "ついに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "856": {
+   "short_label": "わざわざ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "857": {
+   "short_label": "かなり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "858": {
+   "short_label": "かは-によって違う",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    712,
+    711,
+    713,
+    714,
+    370
+   ]
+  },
+  "859": {
+   "short_label": "それぞれ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "860": {
+   "short_label": "できれば-できたら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "861": {
+   "short_label": "でよければ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "862": {
+   "short_label": "で言うと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "863": {
+   "short_label": "と言える",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "864": {
+   "short_label": "代（tiền phí・chi phí）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "865": {
+   "short_label": "同士",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "866": {
+   "short_label": "一方で",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "867": {
+   "short_label": "～反面",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    518,
+    783
+   ]
+  },
+  "868": {
+   "short_label": "～さえ～ば",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "869": {
+   "short_label": "せいか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "870": {
+   "short_label": "～かというと",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    563,
+    698
+   ]
+  },
+  "871": {
+   "short_label": "と並んで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "872": {
+   "short_label": "に合わせて-に合った",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "873": {
+   "short_label": "に当たる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "874": {
+   "short_label": "～(は)言うまでもない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "875": {
+   "short_label": "～は～となっている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    532,
+    612,
+    602,
+    630,
+    739
+   ]
+  },
+  "876": {
+   "short_label": "前者は-後者は",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "877": {
+   "short_label": "必ずしも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "878": {
+   "short_label": "点",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "879": {
+   "short_label": "第一",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "880": {
+   "short_label": "noun-型",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "881": {
+   "short_label": "あり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "882": {
+   "short_label": "左右する",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "883": {
+   "short_label": "に気をつける",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "884": {
+   "short_label": "～おそれがある",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    905
+   ]
+  },
+  "885": {
+   "short_label": "～に加え（て）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "886": {
+   "short_label": "～のことだから",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    912,
+    920,
+    926,
+    927,
+    770,
+    1079
+   ]
+  },
+  "887": {
+   "short_label": "～ものがある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "888": {
+   "short_label": "～をきっかけに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "889": {
+   "short_label": "～をもとに（して）",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1093
+   ]
+  },
+  "890": {
+   "short_label": "いつの間にか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "891": {
+   "short_label": "が気になる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "892": {
+   "short_label": "たった-の",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "893": {
+   "short_label": "て頂戴",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "894": {
+   "short_label": "何といっても",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    911
+   ]
+  },
+  "895": {
+   "short_label": "何より",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "896": {
+   "short_label": "～がてら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    959
+   ]
+  },
+  "897": {
+   "short_label": "～ぐるみ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "898": {
+   "short_label": "あまりの～に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "899": {
+   "short_label": "～が出ている",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "900": {
+   "short_label": "ということは",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    953,
+    1136,
+    770
+   ]
+  },
+  "901": {
+   "short_label": "見受けられる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "902": {
+   "short_label": "～あげく",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "903": {
+   "short_label": "～あたり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "904": {
+   "short_label": "～かい（が）ある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "905": {
+   "short_label": "～かねない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    884
+   ]
+  },
+  "906": {
+   "short_label": "～かねる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    905
+   ]
+  },
+  "907": {
+   "short_label": "～かのように",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "908": {
+   "short_label": "～かのよう（だ／な／に）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "909": {
+   "short_label": "～からして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    910
+   ]
+  },
+  "910": {
+   "short_label": "～からすると",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    909
+   ]
+  },
+  "911": {
+   "short_label": "～からといって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    966,
+    1044,
+    894
+   ]
+  },
+  "912": {
+   "short_label": "～からには",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    911,
+    941,
+    1030
+   ]
+  },
+  "913": {
+   "short_label": "～から見ると",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    910
+   ]
+  },
+  "914": {
+   "short_label": "～から言うと",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    910
+   ]
+  },
+  "915": {
+   "short_label": "～か～ないかのうちに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    892
+   ]
+  },
+  "916": {
+   "short_label": "～がたい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "917": {
+   "short_label": "～が～だけに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "918": {
+   "short_label": "～くらいなら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "919": {
+   "short_label": "～げ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "920": {
+   "short_label": "～ことだから",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    886
+   ]
+  },
+  "921": {
+   "short_label": "～ことなく",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1030,
+    1109
+   ]
+  },
+  "922": {
+   "short_label": "～ざるを得ない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    925,
+    989,
+    1018
+   ]
+  },
+  "923": {
+   "short_label": "～ずじまい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "924": {
+   "short_label": "～ずにすむ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "925": {
+   "short_label": "～ずにはいられない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1065,
+    1534,
+    1533,
+    1072
+   ]
+  },
+  "926": {
+   "short_label": "～だけあって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    927,
+    928
+   ]
+  },
+  "927": {
+   "short_label": "～だけに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "928": {
+   "short_label": "～だけのことはある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "929": {
+   "short_label": "～だけまし",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    918,
+    928,
+    1053
+   ]
+  },
+  "930": {
+   "short_label": "～っこない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "931": {
+   "short_label": "～っぽい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "932": {
+   "short_label": "～つつある",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1163
+   ]
+  },
+  "933": {
+   "short_label": "～てこそ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "934": {
+   "short_label": "～てたまらない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "935": {
+   "short_label": "～てでも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "936": {
+   "short_label": "～てならない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    934,
+    1153,
+    937,
+    973,
+    989
+   ]
+  },
+  "937": {
+   "short_label": "～てはならない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    989,
+    1005,
+    1153,
+    936,
+    973
+   ]
+  },
+  "938": {
+   "short_label": "～ては（～ては）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "939": {
+   "short_label": "～てほしいものだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1068
+   ]
+  },
+  "940": {
+   "short_label": "～てまで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    935
+   ]
+  },
+  "941": {
+   "short_label": "～てみせる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1000
+   ]
+  },
+  "942": {
+   "short_label": "～てもさしつかえない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "943": {
+   "short_label": "～て以来",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "944": {
+   "short_label": "～て当然だ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    903,
+    993,
+    1049,
+    770,
+    1154
+   ]
+  },
+  "945": {
+   "short_label": "～というものでもない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1188,
+    946,
+    954,
+    1100,
+    1104,
+    1112
+   ]
+  },
+  "946": {
+   "short_label": "～というものは",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1188,
+    945,
+    954,
+    1100
+   ]
+  },
+  "947": {
+   "short_label": "～といった",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "948": {
+   "short_label": "～とか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1174
+   ]
+  },
+  "949": {
+   "short_label": "～ところだった",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1140
+   ]
+  },
+  "950": {
+   "short_label": "～ところをみると",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "951": {
+   "short_label": "～としても",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    966
+   ]
+  },
+  "952": {
+   "short_label": "～として～ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "953": {
+   "short_label": "～となると",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    922,
+    1018,
+    1078,
+    1062
+   ]
+  },
+  "954": {
+   "short_label": "～とはいうものの",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1188,
+    945,
+    946,
+    1100
+   ]
+  },
+  "955": {
+   "short_label": "～どころか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    956
+   ]
+  },
+  "956": {
+   "short_label": "～どころではない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    955,
+    1038,
+    991,
+    1005
+   ]
+  },
+  "957": {
+   "short_label": "～ないことには",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1153,
+    1081
+   ]
+  },
+  "958": {
+   "short_label": "～ないものか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1035
+   ]
+  },
+  "959": {
+   "short_label": "～ながら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1007
+   ]
+  },
+  "960": {
+   "short_label": "～にあたって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "961": {
+   "short_label": "～における／おいて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "962": {
+   "short_label": "～にかかわらず",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    974,
+    1089
+   ]
+  },
+  "963": {
+   "short_label": "～にかけては",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "964": {
+   "short_label": "～にこしたことはない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "965": {
+   "short_label": "～にしては",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    926,
+    966
+   ]
+  },
+  "966": {
+   "short_label": "～にしても",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    951,
+    965,
+    967,
+    1164,
+    1535
+   ]
+  },
+  "967": {
+   "short_label": "～にせよ（～にしろ）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "968": {
+   "short_label": "～につき",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "969": {
+   "short_label": "～につけ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "970": {
+   "short_label": "～につれ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "971": {
+   "short_label": "～にともない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1178,
+    972
+   ]
+  },
+  "972": {
+   "short_label": "～にともなって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    970,
+    1041,
+    971
+   ]
+  },
+  "973": {
+   "short_label": "～にほかならない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1153,
+    936,
+    937,
+    989
+   ]
+  },
+  "974": {
+   "short_label": "～にもかかわらず",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    962
+   ]
+  },
+  "975": {
+   "short_label": "～に向け（て）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "976": {
+   "short_label": "～に基づいて",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    889,
+    1041
+   ]
+  },
+  "977": {
+   "short_label": "～に応えて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "978": {
+   "short_label": "～に応じて",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    970,
+    1041
+   ]
+  },
+  "979": {
+   "short_label": "～に決まっている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1095
+   ]
+  },
+  "980": {
+   "short_label": "～に沿って",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1041
+   ]
+  },
+  "981": {
+   "short_label": "～に相違ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "982": {
+   "short_label": "～に過ぎない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "983": {
+   "short_label": "～に関わる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1089
+   ]
+  },
+  "984": {
+   "short_label": "～に限って",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "985": {
+   "short_label": "～に限らず",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "986": {
+   "short_label": "～に限る",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "987": {
+   "short_label": "～に際して",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    960
+   ]
+  },
+  "988": {
+   "short_label": "～ぬく",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    941
+   ]
+  },
+  "989": {
+   "short_label": "～ねばならない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    937,
+    1153,
+    936,
+    973
+   ]
+  },
+  "990": {
+   "short_label": "～のだ（～んだ）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "991": {
+   "short_label": "～のではないか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1038,
+    956,
+    1005
+   ]
+  },
+  "992": {
+   "short_label": "～のみならず",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "993": {
+   "short_label": "～のももっともだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    903,
+    1049
+   ]
+  },
+  "994": {
+   "short_label": "～の上では",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1118
+   ]
+  },
+  "995": {
+   "short_label": "～はさておき",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1096
+   ]
+  },
+  "996": {
+   "short_label": "～はというと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "997": {
+   "short_label": "～はともかく",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "998": {
+   "short_label": "～はもとより",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    955
+   ]
+  },
+  "999": {
+   "short_label": "～ばかりか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    955,
+    1091
+   ]
+  },
+  "1000": {
+   "short_label": "～ばかりに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    927
+   ]
+  },
+  "1001": {
+   "short_label": "～まい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1002": {
+   "short_label": "～ままに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1003": {
+   "short_label": "～もかまわず",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    974
+   ]
+  },
+  "1004": {
+   "short_label": "～もしない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1005": {
+   "short_label": "～ものではない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1038,
+    956,
+    991
+   ]
+  },
+  "1006": {
+   "short_label": "～ものなら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1037
+   ]
+  },
+  "1007": {
+   "short_label": "～ものの",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    954,
+    959
+   ]
+  },
+  "1008": {
+   "short_label": "～やら～やら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1009": {
+   "short_label": "～よりほかない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1010": {
+   "short_label": "～をはじめ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1031,
+    1032
+   ]
+  },
+  "1011": {
+   "short_label": "～をめぐって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1012": {
+   "short_label": "～を問わず",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1013": {
+   "short_label": "～を契機に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1014": {
+   "short_label": "～を除いて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1015": {
+   "short_label": "～上で（sau khi）",
+   "label_lang": "vi",
+   "confusable_ids": [
+    960,
+    1118
+   ]
+  },
+  "1016": {
+   "short_label": "～上は",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    912
+   ]
+  },
+  "1017": {
+   "short_label": "～以上（は）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1018": {
+   "short_label": "～得ない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    922
+   ]
+  },
+  "1019": {
+   "short_label": "～得る",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1020": {
+   "short_label": "～抜きで／～を抜きに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1098
+   ]
+  },
+  "1021": {
+   "short_label": "～末（に）",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    902
+   ]
+  },
+  "1022": {
+   "short_label": "～次第",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1023": {
+   "short_label": "～次第で",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1209
+   ]
+  },
+  "1024": {
+   "short_label": "～限り",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1025": {
+   "short_label": "～限りは",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1026": {
+   "short_label": "～（よ）うあ～まいか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1056
+   ]
+  },
+  "1027": {
+   "short_label": "～ずくめ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1028": {
+   "short_label": "～にて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1029": {
+   "short_label": "～のいかんだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    962,
+    1012
+   ]
+  },
+  "1030": {
+   "short_label": "～のない～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1031": {
+   "short_label": "～をはじめとして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1010,
+    1032
+   ]
+  },
+  "1032": {
+   "short_label": "～をはじめとする～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    947,
+    1010,
+    1031
+   ]
+  },
+  "1033": {
+   "short_label": "～をめぐる～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1034": {
+   "short_label": "いつまで～のやら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1035": {
+   "short_label": "どうにか～ないものか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    958,
+    1131
+   ]
+  },
+  "1036": {
+   "short_label": "（ただ）～のみ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1037": {
+   "short_label": "～（よ）うものなら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1006
+   ]
+  },
+  "1038": {
+   "short_label": "～（よ）ではないか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1177,
+    956,
+    991,
+    1005
+   ]
+  },
+  "1039": {
+   "short_label": "～。おまけに～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1040": {
+   "short_label": "～。しかも～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1041": {
+   "short_label": "～。したがって～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1042": {
+   "short_label": "～。そこで、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1043": {
+   "short_label": "～。それなのに～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1044": {
+   "short_label": "～。ただし、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1045": {
+   "short_label": "～。ただ、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1046": {
+   "short_label": "～。だが、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1047": {
+   "short_label": "～。ちなみに～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1048": {
+   "short_label": "～。なお～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1049": {
+   "short_label": "～。もっとも～。",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1050": {
+   "short_label": "～。要するに、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1051": {
+   "short_label": "～あまり（に）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1052": {
+   "short_label": "～あるいは～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1053": {
+   "short_label": "～だけましだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1054": {
+   "short_label": "～かと思うと・かと思ったら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1069
+   ]
+  },
+  "1055": {
+   "short_label": "～から～に至るまで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1056": {
+   "short_label": "～か～まいか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1026
+   ]
+  },
+  "1057": {
+   "short_label": "～がい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1058": {
+   "short_label": "～が～られる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    901
+   ]
+  },
+  "1059": {
+   "short_label": "～きれる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1060": {
+   "short_label": "～ことか／どろう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1061": {
+   "short_label": "～ことだし",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1062": {
+   "short_label": "～こととなると",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    953
+   ]
+  },
+  "1063": {
+   "short_label": "～しだいで／だ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1064": {
+   "short_label": "～、すなわち～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1065": {
+   "short_label": "～ずにはおかない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    925,
+    1066
+   ]
+  },
+  "1066": {
+   "short_label": "～ずにはすまない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    925,
+    1065
+   ]
+  },
+  "1067": {
+   "short_label": "～。それはそうと、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1068": {
+   "short_label": "～たいものだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    939
+   ]
+  },
+  "1069": {
+   "short_label": "～たかと思ったら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1054
+   ]
+  },
+  "1070": {
+   "short_label": "～たきり",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    943
+   ]
+  },
+  "1071": {
+   "short_label": "～つつも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1072": {
+   "short_label": "～ていられない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    934,
+    1533,
+    1534,
+    925
+   ]
+  },
+  "1073": {
+   "short_label": "～てしょうがない（しょうがない）／しかたがない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1193
+   ]
+  },
+  "1074": {
+   "short_label": "～てはかなわない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1075": {
+   "short_label": "～というのか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    991,
+    1076
+   ]
+  },
+  "1076": {
+   "short_label": "～というのに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    974
+   ]
+  },
+  "1077": {
+   "short_label": "～というのも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1078": {
+   "short_label": "～となったら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    953,
+    1136
+   ]
+  },
+  "1079": {
+   "short_label": "～とのことだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    770,
+    886
+   ]
+  },
+  "1080": {
+   "short_label": "～とみられる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1166
+   ]
+  },
+  "1081": {
+   "short_label": "～ないことには～ない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    957,
+    1136,
+    1153
+   ]
+  },
+  "1082": {
+   "short_label": "～ない限り",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1083": {
+   "short_label": "～なくはない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1084
+   ]
+  },
+  "1084": {
+   "short_label": "～なくもない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1083
+   ]
+  },
+  "1085": {
+   "short_label": "～なんて／とは",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1086": {
+   "short_label": "～にしたところで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1087": {
+   "short_label": "～にしたら・にすれば（lập trường）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1088": {
+   "short_label": "～にそって／沿い",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1089": {
+   "short_label": "～に関わって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    983
+   ]
+  },
+  "1090": {
+   "short_label": "～ぬき（で／に等）／（を）ぬきにして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1098
+   ]
+  },
+  "1091": {
+   "short_label": "～のみならず～も",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    999
+   ]
+  },
+  "1092": {
+   "short_label": "～の上で",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    994
+   ]
+  },
+  "1093": {
+   "short_label": "～の下で",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1041
+   ]
+  },
+  "1094": {
+   "short_label": "～の／ものやら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1095": {
+   "short_label": "～は…にかかっている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    979
+   ]
+  },
+  "1096": {
+   "short_label": "～はともかく～は",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    955,
+    995
+   ]
+  },
+  "1097": {
+   "short_label": "～はまだしも",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    955,
+    966,
+    1096
+   ]
+  },
+  "1098": {
+   "short_label": "～は抜きにして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    965,
+    995,
+    1096,
+    1090,
+    1020
+   ]
+  },
+  "1099": {
+   "short_label": "～は／ならともかく（として）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1100": {
+   "short_label": "～ば～というものでもない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    911,
+    945,
+    1005,
+    1131,
+    1188,
+    946
+   ]
+  },
+  "1101": {
+   "short_label": "～ぶり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1102": {
+   "short_label": "～まで～て",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    940,
+    1005,
+    1112
+   ]
+  },
+  "1103": {
+   "short_label": "～も…ば／なら～も",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1104": {
+   "short_label": "～もなんでもない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    945,
+    1100,
+    1112
+   ]
+  },
+  "1105": {
+   "short_label": "～も～ば～も～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1106": {
+   "short_label": "～ようにも",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    951,
+    1107
+   ]
+  },
+  "1107": {
+   "short_label": "～ようにも～れない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    951,
+    1106
+   ]
+  },
+  "1108": {
+   "short_label": "～ようもない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1106
+   ]
+  },
+  "1109": {
+   "short_label": "～ることなしに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    921,
+    1588
+   ]
+  },
+  "1110": {
+   "short_label": "～ることのないように",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1030
+   ]
+  },
+  "1111": {
+   "short_label": "～るときりがない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1112": {
+   "short_label": "～るまでもない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    945,
+    1100,
+    1104
+   ]
+  },
+  "1113": {
+   "short_label": "～を契機に（して）／として",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1114": {
+   "short_label": "～を頼りに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    889
+   ]
+  },
+  "1115": {
+   "short_label": "～を～として",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1116": {
+   "short_label": "～んだった",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1117": {
+   "short_label": "～上",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1118": {
+   "short_label": "～上（で）（về mặt・phạm vi）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1119": {
+   "short_label": "～とか（nghe nói）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1120": {
+   "short_label": "～にかかわって・にかかわる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1121": {
+   "short_label": "～次第だ（giải thích lý do）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1122": {
+   "short_label": "～向け・向き",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1123": {
+   "short_label": "～に伴い・に伴って",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1124": {
+   "short_label": "～差し支えない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1125": {
+   "short_label": "～折には",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1126": {
+   "short_label": "～かぎり(は)・かぎりでは",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1127": {
+   "short_label": "～。それなら(ば)、～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1128": {
+   "short_label": "～矢先に／の",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1129": {
+   "short_label": "～もの(もん)・んだもの",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1130": {
+   "short_label": "～立ちっぱなし",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1131": {
+   "short_label": "～ものだ・～ものではない（bản chất・cảm thán・khuyên răn）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1132": {
+   "short_label": "～にしろ・にせよ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1133": {
+   "short_label": "～見えて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1134": {
+   "short_label": "～一方だ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1135": {
+   "short_label": "～限りでは",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1136": {
+   "short_label": "～ことに（cảm xúc）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1137": {
+   "short_label": "～（に）は…が／けど ～ことは…が／けど",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1138": {
+   "short_label": "～（よ）うにも～ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1139": {
+   "short_label": "～（よ）うとする／している",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1140": {
+   "short_label": "もう少しで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1141": {
+   "short_label": "だけは",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1142": {
+   "short_label": "でしかない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1143": {
+   "short_label": "～再び",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1144": {
+   "short_label": "ふうに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1145": {
+   "short_label": "～逆に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1146": {
+   "short_label": "～果たして",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1147": {
+   "short_label": "～一応",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1148": {
+   "short_label": "～以外",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1149": {
+   "short_label": "いきなり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1150": {
+   "short_label": "～一気に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1151": {
+   "short_label": "いわゆる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1152": {
+   "short_label": "ことだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1153": {
+   "short_label": "ことにはならない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    936,
+    937,
+    957,
+    1081,
+    973,
+    989
+   ]
+  },
+  "1154": {
+   "short_label": "～も当然だ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    944
+   ]
+  },
+  "1155": {
+   "short_label": "ものかもんか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1156": {
+   "short_label": "～中を中では",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1157": {
+   "short_label": "～なくて済む",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1158": {
+   "short_label": "～に向かって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1159": {
+   "short_label": "～お願う",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1160": {
+   "short_label": "～恐らく",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1161": {
+   "short_label": "～及び",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1162": {
+   "short_label": "～幸いなことに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1163": {
+   "short_label": "～次第に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1164": {
+   "short_label": "それにしても",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1535,
+    966
+   ]
+  },
+  "1165": {
+   "short_label": "そうすると",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1166": {
+   "short_label": "～少なくとも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1167": {
+   "short_label": "～直ちに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1168": {
+   "short_label": "たまえ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1169": {
+   "short_label": "ていては",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1170": {
+   "short_label": "てはでは",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1171": {
+   "short_label": "～と同時に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1172": {
+   "short_label": "というふうに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1173": {
+   "short_label": "～と考えられる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1174": {
+   "short_label": "とかで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1175": {
+   "short_label": "わずかに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1176": {
+   "short_label": "やがて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1177": {
+   "short_label": "ようでは",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1178": {
+   "short_label": "ちっとも～ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1179": {
+   "short_label": "どうやら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1180": {
+   "short_label": "どうせ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1181": {
+   "short_label": "いよいよ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1182": {
+   "short_label": "ろくに～ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1183": {
+   "short_label": "せっかく",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1184": {
+   "short_label": "せめて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1185": {
+   "short_label": "とっくに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1186": {
+   "short_label": "よほど・よっぽど",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1187": {
+   "short_label": "ばかりだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1188": {
+   "short_label": "というものだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    945,
+    946,
+    954,
+    1100
+   ]
+  },
+  "1189": {
+   "short_label": "くせして",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1190": {
+   "short_label": "いずれも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1191": {
+   "short_label": "しかしながら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1192": {
+   "short_label": "やや",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1193": {
+   "short_label": "よりしかたがない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    508
+   ]
+  },
+  "1194": {
+   "short_label": "一旦",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1195": {
+   "short_label": "万が一",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1196": {
+   "short_label": "何から何まで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1197": {
+   "short_label": "思うように",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1198": {
+   "short_label": "未だに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1199": {
+   "short_label": "～というか～というか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1200": {
+   "short_label": "がけに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1201": {
+   "short_label": "ざる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1202": {
+   "short_label": "たちまち",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1203": {
+   "short_label": "なにやら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1204": {
+   "short_label": "～のは～ぐらいのものだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1205": {
+   "short_label": "～るともなく",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1580
+   ]
+  },
+  "1206": {
+   "short_label": "どうにか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1207": {
+   "short_label": "を前提に",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1257,
+    1388
+   ]
+  },
+  "1208": {
+   "short_label": "以前",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1209": {
+   "short_label": "次第です",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1210": {
+   "short_label": "～かたがた",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1211": {
+   "short_label": "～かと思いきや",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1212": {
+   "short_label": "～こそあれ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1227
+   ]
+  },
+  "1213": {
+   "short_label": "～こそすれ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1212,
+    1227
+   ]
+  },
+  "1214": {
+   "short_label": "～こととて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1215": {
+   "short_label": "～てからというもの",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1221
+   ]
+  },
+  "1216": {
+   "short_label": "～てやまない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1217": {
+   "short_label": "～でなくてなんだろう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1218": {
+   "short_label": "～ではあるまいし",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1412
+   ]
+  },
+  "1219": {
+   "short_label": "～ではすまない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1292,
+    1319
+   ]
+  },
+  "1220": {
+   "short_label": "～とあれば",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1301
+   ]
+  },
+  "1221": {
+   "short_label": "～というもの",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1215
+   ]
+  },
+  "1222": {
+   "short_label": "～といえども",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1227,
+    1422
+   ]
+  },
+  "1223": {
+   "short_label": "～といったらない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1305,
+    1515,
+    1304,
+    1455,
+    1375
+   ]
+  },
+  "1224": {
+   "short_label": "～ときたら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1515
+   ]
+  },
+  "1225": {
+   "short_label": "～ときている",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1214,
+    1224
+   ]
+  },
+  "1226": {
+   "short_label": "～ところを",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1227": {
+   "short_label": "～とはいえ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234
+   ]
+  },
+  "1228": {
+   "short_label": "～とは比べものにならない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1482
+   ]
+  },
+  "1229": {
+   "short_label": "～とは限らない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1437
+   ]
+  },
+  "1230": {
+   "short_label": "～とみると",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1231": {
+   "short_label": "～ないものでもない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1527,
+    1112,
+    1411,
+    1321,
+    1245
+   ]
+  },
+  "1232": {
+   "short_label": "～ならでは",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1517
+   ]
+  },
+  "1233": {
+   "short_label": "～なりとも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1234": {
+   "short_label": "～にして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1332
+   ]
+  },
+  "1235": {
+   "short_label": "～にしろ～にしろ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234
+   ]
+  },
+  "1236": {
+   "short_label": "～にとどまらず",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1237": {
+   "short_label": "～には及ばない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1238": {
+   "short_label": "～にひきかえ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1239": {
+   "short_label": "～にもまして",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1240": {
+   "short_label": "～によらず",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1348,
+    1421,
+    1511
+   ]
+  },
+  "1241": {
+   "short_label": "～に先立ち",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1242": {
+   "short_label": "～に先駆けて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1243": {
+   "short_label": "～に即して",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1244": {
+   "short_label": "～に言わせれば",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234,
+    1274,
+    1275,
+    1530
+   ]
+  },
+  "1245": {
+   "short_label": "～に限ったことではない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1512,
+    1577,
+    1417,
+    1481,
+    1325
+   ]
+  },
+  "1246": {
+   "short_label": "～の極み",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1247": {
+   "short_label": "～の至り",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1248": {
+   "short_label": "～はどうであれ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1240,
+    1348,
+    1572
+   ]
+  },
+  "1249": {
+   "short_label": "～まみれ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1250": {
+   "short_label": "～もさることながら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1251": {
+   "short_label": "～もしないで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1253
+   ]
+  },
+  "1252": {
+   "short_label": "～ものとして",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1253": {
+   "short_label": "～やしない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1254": {
+   "short_label": "～をものともせずに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1255
+   ]
+  },
+  "1255": {
+   "short_label": "～をよそに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234
+   ]
+  },
+  "1256": {
+   "short_label": "～を余儀なくされる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1520
+   ]
+  },
+  "1257": {
+   "short_label": "～を前提として",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234,
+    1393,
+    1207,
+    1388
+   ]
+  },
+  "1258": {
+   "short_label": "～を禁じ得ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1259": {
+   "short_label": "～を経て",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1260": {
+   "short_label": "～を踏まえて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1261": {
+   "short_label": "～を限りに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1262": {
+   "short_label": "～んがために",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1263": {
+   "short_label": "～んばかりに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1484,
+    1316
+   ]
+  },
+  "1264": {
+   "short_label": "～並み",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1265": {
+   "short_label": "～折に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1266": {
+   "short_label": "～限りだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1267": {
+   "short_label": "どんなに～うが",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1422,
+    1512,
+    1572
+   ]
+  },
+  "1268": {
+   "short_label": "～あっての～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1269": {
+   "short_label": "～うが～うが",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1512,
+    1572
+   ]
+  },
+  "1270": {
+   "short_label": "～うと～うと",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1572
+   ]
+  },
+  "1271": {
+   "short_label": "～かいもなく",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1272": {
+   "short_label": "～かたわら～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1273": {
+   "short_label": "～からある",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1274
+   ]
+  },
+  "1274": {
+   "short_label": "～からする",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1273
+   ]
+  },
+  "1275": {
+   "short_label": "～から言わせれば",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1244,
+    1274
+   ]
+  },
+  "1276": {
+   "short_label": "～かれ～かれ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1233
+   ]
+  },
+  "1277": {
+   "short_label": "～がゆえに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1278": {
+   "short_label": "～がゆえの～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1277
+   ]
+  },
+  "1279": {
+   "short_label": "～が～なら、～も～だ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1454,
+    1367
+   ]
+  },
+  "1280": {
+   "short_label": "～こそ～が",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1227
+   ]
+  },
+  "1281": {
+   "short_label": "～ごとき/～ごとく",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1349
+   ]
+  },
+  "1282": {
+   "short_label": "～じゃあるまいし",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1412
+   ]
+  },
+  "1283": {
+   "short_label": "～ずとも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1284": {
+   "short_label": "～そばから",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1285": {
+   "short_label": "～たが最後",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1288
+   ]
+  },
+  "1286": {
+   "short_label": "～たことにしてください",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234,
+    1474
+   ]
+  },
+  "1287": {
+   "short_label": "～たらきりがない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1357,
+    1427
+   ]
+  },
+  "1288": {
+   "short_label": "～たら最後",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1285
+   ]
+  },
+  "1289": {
+   "short_label": "～たら～たで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234
+   ]
+  },
+  "1290": {
+   "short_label": "～たりとも～ない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1411
+   ]
+  },
+  "1291": {
+   "short_label": "～たる～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1292": {
+   "short_label": "～だけではすまない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1219,
+    1319
+   ]
+  },
+  "1293": {
+   "short_label": "～だの～だの",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234
+   ]
+  },
+  "1294": {
+   "short_label": "～だろうとなかろうと",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1512,
+    1572
+   ]
+  },
+  "1295": {
+   "short_label": "～つ～つ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1296": {
+   "short_label": "～てかなわない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1297": {
+   "short_label": "～ては",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1298": {
+   "short_label": "～てまでも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1299": {
+   "short_label": "～であれ～であれ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1572,
+    1409
+   ]
+  },
+  "1300": {
+   "short_label": "～ですら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1333
+   ]
+  },
+  "1301": {
+   "short_label": "～とあって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1220,
+    1268
+   ]
+  },
+  "1302": {
+   "short_label": "～といい～といい",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234
+   ]
+  },
+  "1303": {
+   "short_label": "～というところだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1304,
+    1478
+   ]
+  },
+  "1304": {
+   "short_label": "～といったところだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1478,
+    1515,
+    1303,
+    1305,
+    1223,
+    1308
+   ]
+  },
+  "1305": {
+   "short_label": "～といったらありはしない・ありゃしない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1223,
+    1456,
+    1515,
+    1304
+   ]
+  },
+  "1306": {
+   "short_label": "～といわず～といわず",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1307": {
+   "short_label": "～とされる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1308": {
+   "short_label": "～としたところで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234,
+    1304
+   ]
+  },
+  "1309": {
+   "short_label": "～となれば",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1402
+   ]
+  },
+  "1310": {
+   "short_label": "～とみえて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1311": {
+   "short_label": "～ともあろう～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1331,
+    1578
+   ]
+  },
+  "1312": {
+   "short_label": "～ともなると",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1313
+   ]
+  },
+  "1313": {
+   "short_label": "～ともなれば",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1312
+   ]
+  },
+  "1314": {
+   "short_label": "～とも～とも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1315": {
+   "short_label": "～と相まって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1573,
+    1366
+   ]
+  },
+  "1316": {
+   "short_label": "～と言わんばかりに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1263,
+    1484
+   ]
+  },
+  "1317": {
+   "short_label": "～と～を兼ねて",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1210,
+    1365,
+    1461
+   ]
+  },
+  "1318": {
+   "short_label": "～ないではおかない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1219,
+    1319
+   ]
+  },
+  "1319": {
+   "short_label": "～ないではすまない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1219,
+    1318,
+    1292
+   ]
+  },
+  "1320": {
+   "short_label": "～ないまでも",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234,
+    1112
+   ]
+  },
+  "1321": {
+   "short_label": "～ないものだろうか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1206,
+    1231
+   ]
+  },
+  "1322": {
+   "short_label": "～ながらに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234,
+    1323
+   ]
+  },
+  "1323": {
+   "short_label": "～ながらの～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1322
+   ]
+  },
+  "1324": {
+   "short_label": "～なくしては～ない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1268
+   ]
+  },
+  "1325": {
+   "short_label": "～なしでは～ない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1417,
+    1481,
+    1245
+   ]
+  },
+  "1326": {
+   "short_label": "～なしには～ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1327": {
+   "short_label": "～ならいざ知らず",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234,
+    1528,
+    1353
+   ]
+  },
+  "1328": {
+   "short_label": "～なら～なりに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1514
+   ]
+  },
+  "1329": {
+   "short_label": "～なり～なり",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1373
+   ]
+  },
+  "1330": {
+   "short_label": "～にあっては",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1529
+   ]
+  },
+  "1331": {
+   "short_label": "～にあるまじき～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1332": {
+   "short_label": "～にして初めて",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234
+   ]
+  },
+  "1333": {
+   "short_label": "～にすら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1300
+   ]
+  },
+  "1334": {
+   "short_label": "～にせよ～にせよ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234
+   ]
+  },
+  "1335": {
+   "short_label": "～につけ～につけ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1336": {
+   "short_label": "～に即した",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1337": {
+   "short_label": "～に堪えない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1338
+   ]
+  },
+  "1338": {
+   "short_label": "～に堪える",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1337
+   ]
+  },
+  "1339": {
+   "short_label": "～も同然だ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1340": {
+   "short_label": "～に耐える",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1341": {
+   "short_label": "～に至った",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1442,
+    1444,
+    1443
+   ]
+  },
+  "1342": {
+   "short_label": "～に限ったことでもない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1577,
+    1527,
+    1112,
+    1411,
+    1231
+   ]
+  },
+  "1343": {
+   "short_label": "～に難くない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1344": {
+   "short_label": "～に～を重ねて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1345": {
+   "short_label": "～のいかんでは",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1346,
+    1347,
+    1420,
+    1348
+   ]
+  },
+  "1346": {
+   "short_label": "～のいかんにかかわらず",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1345,
+    1511,
+    1420,
+    1347,
+    1348
+   ]
+  },
+  "1347": {
+   "short_label": "～のいかんによっては",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1345,
+    1346,
+    1511,
+    1501,
+    1420,
+    1348
+   ]
+  },
+  "1348": {
+   "short_label": "～のいかんによらず",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1240,
+    1346,
+    1511,
+    1420,
+    1345,
+    1347
+   ]
+  },
+  "1349": {
+   "short_label": "～のごとき～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1350": {
+   "short_label": "～のやら～のやら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1351": {
+   "short_label": "～の嫌いがある",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1385
+   ]
+  },
+  "1352": {
+   "short_label": "～の手前",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1353": {
+   "short_label": "～はいざ知らず",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1327
+   ]
+  },
+  "1354": {
+   "short_label": "～はおろか～すら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1355,
+    1356
+   ]
+  },
+  "1355": {
+   "short_label": "～はおろか～まで",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1354,
+    1356
+   ]
+  },
+  "1356": {
+   "short_label": "～はおろか～も",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1300,
+    1354,
+    1355
+   ]
+  },
+  "1357": {
+   "short_label": "～ばきりがない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1287,
+    1427
+   ]
+  },
+  "1358": {
+   "short_label": "～ば～ものを",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1359": {
+   "short_label": "～びた",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1361
+   ]
+  },
+  "1360": {
+   "short_label": "～びる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1361": {
+   "short_label": "～ぶった",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1362": {
+   "short_label": "～ぶって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1363": {
+   "short_label": "～ぶる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1361
+   ]
+  },
+  "1364": {
+   "short_label": "～までだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1365": {
+   "short_label": "～も兼ねて",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1210,
+    1461,
+    1317
+   ]
+  },
+  "1366": {
+   "short_label": "～も相まって",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1315
+   ]
+  },
+  "1367": {
+   "short_label": "～も～なら、～も～だ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1279
+   ]
+  },
+  "1368": {
+   "short_label": "～ようか～るまいか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1412
+   ]
+  },
+  "1369": {
+   "short_label": "～ようが～るまいが",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1512
+   ]
+  },
+  "1370": {
+   "short_label": "～ようと～るまいと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1371": {
+   "short_label": "～るがままに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1372": {
+   "short_label": "～るが早いか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1373
+   ]
+  },
+  "1373": {
+   "short_label": "～るなり",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1372
+   ]
+  },
+  "1374": {
+   "short_label": "～るにとどまらず",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1375": {
+   "short_label": "～るにはあたらない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1417,
+    1223,
+    1455
+   ]
+  },
+  "1376": {
+   "short_label": "～るにも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1377": {
+   "short_label": "～るにも～れない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1376
+   ]
+  },
+  "1378": {
+   "short_label": "～るべからざる～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1403,
+    1379
+   ]
+  },
+  "1379": {
+   "short_label": "～るべからず",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1403,
+    1378
+   ]
+  },
+  "1380": {
+   "short_label": "～るべく",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1404
+   ]
+  },
+  "1381": {
+   "short_label": "～るべくもない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1380,
+    1485
+   ]
+  },
+  "1382": {
+   "short_label": "～るものとする",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1435
+   ]
+  },
+  "1383": {
+   "short_label": "～るや否や",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1373,
+    1497
+   ]
+  },
+  "1384": {
+   "short_label": "～る始末だ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1385": {
+   "short_label": "～る嫌いがある",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1351
+   ]
+  },
+  "1386": {
+   "short_label": "～をおいて他にない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1463
+   ]
+  },
+  "1387": {
+   "short_label": "～をもって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1388": {
+   "short_label": "～を前提にして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1207,
+    1234,
+    1257
+   ]
+  },
+  "1389": {
+   "short_label": "～を境にして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234,
+    1465
+   ]
+  },
+  "1390": {
+   "short_label": "～を機にして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234,
+    1462
+   ]
+  },
+  "1391": {
+   "short_label": "～を皮切りに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234,
+    1392
+   ]
+  },
+  "1392": {
+   "short_label": "～を皮切りにして",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1234,
+    1391
+   ]
+  },
+  "1393": {
+   "short_label": "～前提で",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1207,
+    1257
+   ]
+  },
+  "1394": {
+   "short_label": "～極まりない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1395
+   ]
+  },
+  "1395": {
+   "short_label": "～極まる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1246,
+    1394
+   ]
+  },
+  "1396": {
+   "short_label": "～足りない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1397": {
+   "short_label": "～に足る～",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1451
+   ]
+  },
+  "1398": {
+   "short_label": "ことごとく",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1399": {
+   "short_label": "～敢えて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1400": {
+   "short_label": "～案の定",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1401": {
+   "short_label": "あらかじめ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1402": {
+   "short_label": "ばこそ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1403": {
+   "short_label": "べからずべからざる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1378,
+    1379
+   ]
+  },
+  "1404": {
+   "short_label": "べくして",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1405": {
+   "short_label": "びるびてびた",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1406": {
+   "short_label": "ぶりっぷり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1407": {
+   "short_label": "だにだにしない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1408": {
+   "short_label": "だろうに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1409": {
+   "short_label": "であれであろうと",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1572,
+    1299
+   ]
+  },
+  "1410": {
+   "short_label": "でもありでもある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1411": {
+   "short_label": "～でも何でもない・～くも何ともない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1527,
+    1112,
+    1290,
+    1231,
+    1245
+   ]
+  },
+  "1412": {
+   "short_label": "ではあるまいか",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1218,
+    1368
+   ]
+  },
+  "1413": {
+   "short_label": "どうにもない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1482
+   ]
+  },
+  "1414": {
+   "short_label": "～が早いか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1415": {
+   "short_label": "がましい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1416": {
+   "short_label": "～羽目になる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1417": {
+   "short_label": "ほどのことではない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1481,
+    1325,
+    1245
+   ]
+  },
+  "1418": {
+   "short_label": "ほうがましだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1419": {
+   "short_label": "～放題",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1420": {
+   "short_label": "～いかんだ・いかんでは・いかんによっては",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1511,
+    1501,
+    1345,
+    1346,
+    1347,
+    1348
+   ]
+  },
+  "1421": {
+   "short_label": "いかなる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1422": {
+   "short_label": "いかに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1423": {
+   "short_label": "いずれにしても・いずれにしろ・いずれにせよ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1424": {
+   "short_label": "じみた",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1425": {
+   "short_label": "～か否か",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1426": {
+   "short_label": "～可能性がある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1427": {
+   "short_label": "～切りがない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1287,
+    1357
+   ]
+  },
+  "1428": {
+   "short_label": "きっての",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1429": {
+   "short_label": "～（こと）この上ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1430": {
+   "short_label": "こともあって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1431": {
+   "short_label": "までもないまでもなく",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1527,
+    1411,
+    1320,
+    1231,
+    1245
+   ]
+  },
+  "1432": {
+   "short_label": "まくる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1433": {
+   "short_label": "まるっきり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1434": {
+   "short_label": "めく",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1435": {
+   "short_label": "～ものと思われる・ものと見られる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1382
+   ]
+  },
+  "1436": {
+   "short_label": "もしくは",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1437": {
+   "short_label": "～ないとも限らない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1229
+   ]
+  },
+  "1438": {
+   "short_label": "～何しろ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1439": {
+   "short_label": "なりになりの",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1440": {
+   "short_label": "なしになしで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1441": {
+   "short_label": "～に値する",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1442": {
+   "short_label": "～に至るまで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1443": {
+   "short_label": "～に至っても",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1341,
+    1444
+   ]
+  },
+  "1444": {
+   "short_label": "～に至っては",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1341,
+    1443
+   ]
+  },
+  "1445": {
+   "short_label": "～にかかっては・にかかったら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1446": {
+   "short_label": "にかこつけて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1447": {
+   "short_label": "にかまけて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1448": {
+   "short_label": "にまつわる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1449": {
+   "short_label": "～に則って",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1450": {
+   "short_label": "～に忍びない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1451": {
+   "short_label": "～に足る・に足りる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1397
+   ]
+  },
+  "1452": {
+   "short_label": "～に照らして",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1453": {
+   "short_label": "～には無理がある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1454": {
+   "short_label": "にもほどがある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1455": {
+   "short_label": "～には当たらない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1223,
+    1375
+   ]
+  },
+  "1456": {
+   "short_label": "のなんのって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1457": {
+   "short_label": "のやらものやらことやら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1458": {
+   "short_label": "～を控えて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1459": {
+   "short_label": "をいいことに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1460": {
+   "short_label": "～を（も）顧みず",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1461": {
+   "short_label": "～を兼ねて",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1317,
+    1365
+   ]
+  },
+  "1462": {
+   "short_label": "～を機に",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1390
+   ]
+  },
+  "1463": {
+   "short_label": "をおいてない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1386
+   ]
+  },
+  "1464": {
+   "short_label": "～を押して・を押し切って",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1465": {
+   "short_label": "～を境に",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1389
+   ]
+  },
+  "1466": {
+   "short_label": "～思いをする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1467": {
+   "short_label": "およそ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1468": {
+   "short_label": "さも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1469": {
+   "short_label": "さもないと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1470": {
+   "short_label": "そびれる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1471": {
+   "short_label": "～損なう・損ねる・損じる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1472": {
+   "short_label": "～術がない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1473": {
+   "short_label": "～た弾みに・た拍子に",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1474": {
+   "short_label": "～たことにする・～たことになる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1286
+   ]
+  },
+  "1475": {
+   "short_label": "たつもりはない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1476": {
+   "short_label": "ただのみだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1477": {
+   "short_label": "ためしがない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1478": {
+   "short_label": "たらところだ",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1303,
+    1304
+   ]
+  },
+  "1479": {
+   "short_label": "たるものたる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1480": {
+   "short_label": "てしかるべきだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1481": {
+   "short_label": "～て済むことではない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1417,
+    1325,
+    1245
+   ]
+  },
+  "1482": {
+   "short_label": "てもどうにもならない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1413,
+    1228
+   ]
+  },
+  "1483": {
+   "short_label": "～ても知らない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1484": {
+   "short_label": "とばかりに",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1316,
+    1263
+   ]
+  },
+  "1485": {
+   "short_label": "～と言えなくもない",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1381
+   ]
+  },
+  "1486": {
+   "short_label": "～と見るや",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1487": {
+   "short_label": "ともすれば",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1488": {
+   "short_label": "としたことが",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1489": {
+   "short_label": "とっさに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1490": {
+   "short_label": "とて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1491": {
+   "short_label": "～とは打って変わって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1492": {
+   "short_label": "～尽くす",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1493": {
+   "short_label": "ってばったら",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1494": {
+   "short_label": "～うちに入らない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1495": {
+   "short_label": "～はそっちのけで・をそっちのけで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1496": {
+   "short_label": "わ～わで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1497": {
+   "short_label": "や否ややいなや",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1383
+   ]
+  },
+  "1498": {
+   "short_label": "やれやれ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1499": {
+   "short_label": "ようがようと",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1500
+   ]
+  },
+  "1500": {
+   "short_label": "～ようが～ようが・～ようと～ようと",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1499
+   ]
+  },
+  "1501": {
+   "short_label": "ようによってはようでは",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1420,
+    1347
+   ]
+  },
+  "1502": {
+   "short_label": "～ようが～まいが・～ようと～まいと",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1522
+   ]
+  },
+  "1503": {
+   "short_label": "ぞ・ぜ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1504": {
+   "short_label": "あくまでも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1505": {
+   "short_label": "いかにも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1506": {
+   "short_label": "もはや",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1507": {
+   "short_label": "なんというなんとなんて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1508": {
+   "short_label": "さぞ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1509": {
+   "short_label": "とりわけ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1510": {
+   "short_label": "あわよくば",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1511": {
+   "short_label": "いかん-ず",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1420,
+    1240,
+    1346,
+    1347,
+    1348
+   ]
+  },
+  "1512": {
+   "short_label": "かろう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1513": {
+   "short_label": "がいい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1514": {
+   "short_label": "たなり-なり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1515": {
+   "short_label": "ったら-といったら",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1304,
+    1305,
+    1223
+   ]
+  },
+  "1516": {
+   "short_label": "といおうか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1517": {
+   "short_label": "なら-で",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1518": {
+   "short_label": "に恥じない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1519": {
+   "short_label": "やがる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1520": {
+   "short_label": "を余儀なくさせる",
+   "label_lang": "neutral",
+   "confusable_ids": [
+    1256
+   ]
+  },
+  "1521": {
+   "short_label": "訳あり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1522": {
+   "short_label": "う・よう + が～まいが",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1523": {
+   "short_label": "がん～",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1524": {
+   "short_label": "てやる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1525": {
+   "short_label": "との",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1526": {
+   "short_label": "とは",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1527": {
+   "short_label": "ないでもない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1528": {
+   "short_label": "ならまだしも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1529": {
+   "short_label": "にあっても",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1530": {
+   "short_label": "にしてみれば",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1531": {
+   "short_label": "ものとおもっていた",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1532": {
+   "short_label": "わ～わ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1533": {
+   "short_label": "てはいられない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1534": {
+   "short_label": "ないではいられない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1535": {
+   "short_label": "にしても…にしても",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1536": {
+   "short_label": "にまかせる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1537": {
+   "short_label": "のうちで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1538": {
+   "short_label": "もまた",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1539": {
+   "short_label": "かんがえられない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1540": {
+   "short_label": "かんけいがある",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1541": {
+   "short_label": "ことなの",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1542": {
+   "short_label": "ても～なくても",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1543": {
+   "short_label": "である",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1544": {
+   "short_label": "でもあるまい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1545": {
+   "short_label": "のは～のほうだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1546": {
+   "short_label": "また～も",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1547": {
+   "short_label": "んじゃない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1548": {
+   "short_label": "いか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1549": {
+   "short_label": "ことができる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1550": {
+   "short_label": "そういう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1551": {
+   "short_label": "だけでなく…も",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1552": {
+   "short_label": "だんだん",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1553": {
+   "short_label": "でも～でも",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1554": {
+   "short_label": "とうとうＶ－た",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1555": {
+   "short_label": "とかんがえられている",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1556": {
+   "short_label": "ない～はない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1557": {
+   "short_label": "なければいけない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1558": {
+   "short_label": "にする・くする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1559": {
+   "short_label": "は～のひとつだ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1560": {
+   "short_label": "まず",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1561": {
+   "short_label": "また",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1562": {
+   "short_label": "ように～てほしい",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1563": {
+   "short_label": "けっこう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1564": {
+   "short_label": "じゃないが",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1565": {
+   "short_label": "じゃなかった",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1566": {
+   "short_label": "たくさん",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1567": {
+   "short_label": "だった・でした",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1568": {
+   "short_label": "nghi vấn từ＋にしたって",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1569": {
+   "short_label": "かつて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1570": {
+   "short_label": "しゅんかん",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1571": {
+   "short_label": "それなり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1572": {
+   "short_label": "であろうと（も）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1573": {
+   "short_label": "とあいまって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1574": {
+   "short_label": "にいわせると",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1575": {
+   "short_label": "にかたくない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1576": {
+   "short_label": "のみか",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1577": {
+   "short_label": "ひとつ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1578": {
+   "short_label": "もあろう（lượng từ＋もあろう）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1579": {
+   "short_label": "をかわきりに",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1580": {
+   "short_label": "nghi vấn từ＋（trợ từ）＋ともなく",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1581": {
+   "short_label": "Ｎにしたって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1582": {
+   "short_label": "Ｎ（＋trợ từ）すら",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1583": {
+   "short_label": "Ｖ－るにしたって",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1584": {
+   "short_label": "Ｖ－るやいなや",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1585": {
+   "short_label": "いかす",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1586": {
+   "short_label": "たすえ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1587": {
+   "short_label": "とか（いう）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1588": {
+   "short_label": "とちゅう（は）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1589": {
+   "short_label": "のもとで",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1590": {
+   "short_label": "も…ば",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1591": {
+   "short_label": "るよりほか（に／は）ない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1592": {
+   "short_label": "をつうじて",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1593": {
+   "short_label": "nghi vấn từ…かとおもったら",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1594": {
+   "short_label": "～がた(polite plural suffix for people, as in あなたがた)",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1595": {
+   "short_label": "あがる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1596": {
+   "short_label": "だとすれば",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1597": {
+   "short_label": "とすれば",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1598": {
+   "short_label": "にかわり",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1599": {
+   "short_label": "によれば",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1600": {
+   "short_label": "～向き（phương hướng）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1601": {
+   "short_label": "Ｖ－てもＲ－きれない",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1602": {
+   "short_label": "Ｖ－ばいい（lời khuyên）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1603": {
+   "short_label": "これ／それ／あれいじょう",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1604": {
+   "short_label": "まっ",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1605": {
+   "short_label": "まま（で）",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1606": {
+   "short_label": "やっと",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1607": {
+   "short_label": "る／…ないようにする",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1608": {
+   "short_label": "る／…ないようになる",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1609": {
+   "short_label": "（trợ từ）なら",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1610": {
+   "short_label": "N（時／年齢）＋から（starting point in time/age）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1611": {
+   "short_label": "いいえ、ちがいます(fixed negative reply to deny correctness)",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1612": {
+   "short_label": "から（dùng cuối câu）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1613": {
+   "short_label": "すき",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  },
+  "1614": {
+   "short_label": "ちがいます（trả lời phủ định）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1615": {
+   "short_label": "のです（khẳng định）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1616": {
+   "short_label": "のです（giải thích）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1617": {
+   "short_label": "まだ（tiếp diễn từ quá khứ）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1618": {
+   "short_label": "まだ（tiếp diễn tới khi hoàn tất）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1619": {
+   "short_label": "まだ（so sánh）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1620": {
+   "short_label": "まだ（thời gian trôi qua）",
+   "label_lang": "vi",
+   "confusable_ids": []
+  },
+  "1621": {
+   "short_label": "まで(は)",
+   "label_lang": "neutral",
+   "confusable_ids": []
+  }
+ }
+}

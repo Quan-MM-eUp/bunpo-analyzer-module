@@ -29,6 +29,8 @@ _SPACE_JP = re.compile(f"(?<=[{_JP}])\\s+|\\s+(?=[{_JP}])")
 _SPACES = re.compile(r"\s+")
 _QUOTED = re.compile(r"「[^「」]*」|『[^『』]*』")
 _END = "。！？!?．"
+# Cach doc trong ngoac ngay sau chu Han (chep tu giao trinh): 会議中（ちゅう）です -> 会議中です
+_PAREN_READING = re.compile(f"(?<=[{_KANJI}])[（(][ぁ-ゖァ-ヺー]+[)）]")
 _KANJI_RUN = re.compile(f"[{_KANJI}]+")
 _HIRA_RUN = re.compile(r"[ぁ-ゖー]+")
 
@@ -44,9 +46,14 @@ class InputResult:
     error: Optional[ErrorInfo] = None
 
 
+# So thu tu chep tu giao trinh o dau cau: ①, ➂, ❶, 1., 2), (3), （４）
+_LEAD_MARK = re.compile(r"^\s*(?:[①-⑳➀-➓❶-❿]|[0-9０-９]{1,2}[\.．\)）]|[（(][0-9０-９]{1,2}[)）])\s*")
+
+
 def normalize(raw: str) -> str:
     s = _HALF_KATA.sub(lambda m: unicodedata.normalize("NFKC", m.group()), raw)
     s = s.replace("\r\n", "\n").strip()
+    s = _LEAD_MARK.sub("", s)
     s = _SPACE_JP.sub("", s)  # 今夜　たくさんの　宿題 -> 今夜たくさんの宿題
     return _SPACES.sub(" ", s)
 
@@ -171,7 +178,7 @@ def check_input(raw: str, max_chars: int = 100, tokenizer: Optional[Tokenizer] =
         return InputResult(raw, text, error=ErrorInfo(code="invalid_input", reason="multiple_sentences"))
     if len(text) > max_chars:
         return InputResult(raw, text, error=ErrorInfo(code="invalid_input", reason="too_long"))
-    fixed = fix_furigana(text, tokenizer)
+    fixed = fix_furigana(_PAREN_READING.sub("", text), tokenizer)
     if fixed != text:
         return InputResult(raw, fixed, auto_fix=AutoFix(original=raw.strip(), fixed=fixed))
     return InputResult(raw, text)

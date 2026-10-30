@@ -16,11 +16,15 @@ dependencies = [
     # Ghim phien ban tu dien: doi tu dien la doi ket qua tach tu (nam trong khoa cache).
     "sudachipy>=0.6.10",
     "sudachidict-core==20261015",
+    # Goi LLM theo chuan OpenAI (buoc 2.1); chatbot cung dung thu vien nay.
+    "openai>=2.0",
 ]
 
 [project.optional-dependencies]
-# Them dan theo tung buoc: google-genai (2.1)...
+# Them dan theo tung buoc khi can (vi du google-genai neu chuyen sang Gemini)
 dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+# Cache dung chung nhieu worker (BUNPO_CACHE_BACKEND=redis)
+redis = ["redis>=5.0"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -31,5 +35,7 @@ bunpo_analyzer = ["rules/*.json", "tables/*.json", "py.typed"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
+addopts = "-m 'not live'"
 asyncio_default_fixture_loop_scope = "function"
-markers = ["kho: chay tren toan bo cau vi du trong kho (cham, can BUNPO_DATA_DIR); bo qua bang -m \"not kho\""]
+markers = [
+    "live: goi LLM that (can BUNPO_OPENAI_API_KEY, mang toi gateway); bo qua mac dinh","kho: chay tren toan bo cau vi du trong kho (cham, can BUNPO_DATA_DIR); bo qua bang -m \"not kho\""]

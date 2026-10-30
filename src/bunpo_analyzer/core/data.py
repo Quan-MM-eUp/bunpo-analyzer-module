@@ -154,6 +154,8 @@ class Kho:
         }
 
         files = [wp, gp]
+        # Chi kho goc (khong tinh ban dich): dau ra LLM chi phu thuoc phan nay -> khoa cache.
+        self.core_version = _sha(files)
         self._word_text: dict[str, dict[str, dict[str, Any]]] = {}
         self._gram_text: dict[str, dict[str, dict[str, Any]]] = {}
         for p in sorted((self.data_dir / "word").glob("word_text.*.json")):

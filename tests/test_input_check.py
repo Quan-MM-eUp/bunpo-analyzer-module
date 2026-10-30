@@ -125,3 +125,23 @@ def test_no_false_fix_on_kho_examples():
     fixed = [s for s in sents if fix_furigana(normalize(s)) != normalize(s)]
     # 1 cau trong kho tu no da sai chinh ta (書かければならくて) nen cho phep sai so rat nho.
     assert len(fixed) <= max(2, len(sents) // 2000), fixed[:10]
+
+
+# ---------------- buoc 3.2 ----------------
+@pytest.mark.parametrize("raw,text", [
+    ("➂病気がなおったら、食べられるようになるでしょう。", "病気がなおったら、食べられるようになるでしょう。"),
+    ("①マンガを読みます。", "マンガを読みます。"),
+    ("1. 本を読む。", "本を読む。"),
+    ("（3）本を読む。", "本を読む。"),
+    ("3時に起きる。", "3時に起きる。"),
+    ("1つください。", "1つください。"),
+])
+def test_strip_list_markers(raw, text):
+    assert normalize(raw) == text
+
+
+def test_paren_reading_auto_fix():
+    r = check_input("今、会議中（ちゅう）です。")
+    assert r.text == "今、会議中です。" and r.auto_fix and r.auto_fix.fixed == r.text
+    r = check_input("これ（ペン）です。")
+    assert r.auto_fix is None

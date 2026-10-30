@@ -244,11 +244,10 @@
     "auto_fix": null,
     "error": null,
     "translation": "Mỗi sáng tôi uống cà phê.",
-    "grammar_must": [
-     22,
-     25
-    ],
+    "grammar_must": [],
     "grammar_ok": [
+     22,
+     25,
      34
     ],
     "structure": [
@@ -277,7 +276,8 @@
       "main": true
      }
     ]
-   }
+   },
+   "note": "Câu chỉ có trợ từ cơ bản (は, を): không bắt buộc gắn mẫu (theo quy ước trợ từ cơ bản)."
   },
   {
    "id": "G05",
@@ -294,13 +294,13 @@
     "error": null,
     "translation": "Tôi đang học tiếng Nhật ở thư viện.",
     "grammar_must": [
-     18,
      [
       136,
       234
      ]
     ],
     "grammar_ok": [
+     18,
      25
     ],
     "structure": [
@@ -1144,10 +1144,9 @@
     "auto_fix": null,
     "error": null,
     "translation": "Cô ấy hát giỏi.",
-    "grammar_must": [
-     17
-    ],
+    "grammar_must": [],
     "grammar_ok": [
+     17,
      22,
      205
     ],
@@ -1734,10 +1733,14 @@
     "auto_fix": null,
     "error": null,
     "grammar_must": [
-     21
+     [
+      21,
+      15
+     ]
     ],
     "grammar_ok": []
-   }
+   },
+   "note": "#21 (の) và #15 (N2のN1) cùng chỉ の nối danh từ: chọn id nào cũng đúng."
   },
   {
    "id": "G53",

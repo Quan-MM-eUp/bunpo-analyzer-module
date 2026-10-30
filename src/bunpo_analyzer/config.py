@@ -27,15 +27,42 @@ class Settings(BaseSettings):
     # module kiem tra lai de an toan.
     max_chars: int = Field(default=100, gt=0)
 
-    # LLM chua chot: tam dung Gemini. Ten model kiem tra lai khi lam buoc 2.1.
-    llm_provider: str = "gemini"
-    llm_model: str = "gemini-3.1-flash-lite"
-    llm_fallback_model: str = "gemini-3-flash"
-    llm_timeout_s: float = Field(default=20, gt=0)
+    # LLM chua chot nha cung cap. Tam dung OpenAI qua LLM gateway noi bo (key dev,
+    # khong dung cho production). Doi nha cung cap / model chi can sua bien moi truong.
+    llm_provider: str = "openai"
+    # Chon tam (30/10): gpt-5-mini (suy nghi thap) - cau truc tot, re; ~8 s/cau.
+    # Du phong / goi lai khi sai khuon: gpt-4.1 (nhanh, chinh xac nhat trong lan thu).
+    llm_model: str = "gpt-5-mini"
+    llm_fallback_model: str = "gpt-4.1"
+    llm_timeout_s: float = Field(default=30, gt=0)
+    llm_max_retries: int = Field(default=1, ge=0, le=3)  # goi lai khi loi tam thoi
+    llm_max_tokens: int = Field(default=2000, gt=0)
+    # Chi cho model "suy nghi" (gpt-5*, o-series): minimal | low | medium | high.
+    llm_reasoning_effort: str = "low"
+    openai_api_key: str = ""
+    openai_base_url: str = "https://llm-api.eup.ai/v1"
     gemini_api_key: str = ""
+    # Gia uoc tinh (USD / 1 trieu token: [vao, ra]) de ghi chi phi moi lan goi.
+    # Kiem tra lai bang gia that cua gateway.
+    llm_prices: dict[str, tuple[float, float]] = {
+        "gpt-4.1-mini": (0.40, 1.60),
+        "gpt-4.1": (2.00, 8.00),
+        "gpt-4o-mini": (0.15, 0.60),
+        "gpt-5-mini": (0.25, 2.00),
+        "gpt-5-nano": (0.05, 0.40),
+        "gpt-5": (1.25, 10.00),
+    }
 
-    # Tang khi doi prompt: nam trong khoa cache (muc 3.6).
-    prompt_version: str = "1"
+    # "Dich nhe" (muc 12.5): cau da co trong cache, nguoi dung ngon ngu khac mo ->
+    # chi dich phan chu. Khong can suy nghi nen dung model nhanh, re.
+    llm_light_model: str = "gpt-4.1-mini"
+
+    # Cache (buoc 2.6, muc 3.6): memory (mac dinh, trong tien trinh) | redis | none.
+    # Phien ban prompt, kho, tu dien, model nam trong khoa nen khong can xoa tay khi doi.
+    cache_backend: str = "memory"
+    cache_url: str = ""  # redis://host:6379/0 khi cache_backend=redis
+    cache_ttl_s: int = Field(default=30 * 86400, gt=0)
+    cache_max_items: int = Field(default=5000, gt=0)  # chi cho memory
 
 
 @lru_cache

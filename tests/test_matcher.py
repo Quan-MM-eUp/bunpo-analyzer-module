@@ -127,13 +127,13 @@ def test_cond_alias_not():
 
 @pytest.mark.kho
 def test_levels_fully_covered():
-    """Moi mau cua cap da lam xong (N5) deu co luat hoac nam trong llm_only."""
+    """Moi mau cua cap da lam xong (N5-N1) deu co luat hoac nam trong llm_only."""
     base = _kho_dir()
     if base is None:
         pytest.skip("khong tim thay kho du lieu")
     lib = json.loads((base / "grammar" / "grammar_lib.json").read_text(encoding="utf-8"))
     covered = {r.id for r in MATCHER.rules} | {x.id for x in MATCHER.llm_only}
-    for level in ("N5",):
+    for level in ("N5", "N4", "N3", "N2", "N1"):
         ids = {int(g["id"]) for g in lib if g["level"] == level}
         assert ids <= covered, sorted(ids - covered)[:20]
 
@@ -156,6 +156,6 @@ def test_golden_must_found_for_covered_levels():
         ids = set(MATCHER.candidate_ids(tokenize(check_input(it["text"]).text)))
         for must in e["grammar_must"]:
             alts = must if isinstance(must, list) else [must]
-            if any(level.get(a) == "N5" for a in alts) and not ids & set(alts):
+            if not ids & set(alts):
                 missing.append((it["id"], alts))
     assert not missing
