@@ -1,0 +1,491 @@
+<title>Bunpo Test</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+/* Trang test module phan tich ngu phap: khung chat mot cot kho dien thoai, giao dien sang co dinh nhu app Migii */
+:root{
+  color-scheme:light;
+  --bg:#F5F6F8; --card:#FFFFFF; --row:#F7F9F9; --ink:#3F4448; --muted:#8C9196; --line:#E6EAEC;
+  --teal:#4BBAA6; --teal-deep:#2E9C88; --teal-soft:#E4F5F1;
+  --orange:#FF9F1C; --orange-soft:#FFF2DF; --red:#E0483F; --red-soft:#FDECEA; --yellow-soft:#FFF7DB;
+  --noun:#4A90E2; --verb:#5DB85A; --adj:#FF9F1C; --adv:#9B7BEA; --prt:#F25C5C; --aux:#4BBAA6;
+  --rel:#9B7BEA; --rel-bg:#F2EDFD; --sub:#FF9F1C; --sub-bg:#FFF2DF; --quote:#4A90E2; --quote-bg:#EAF2FC; --nominal:#5DB85A; --nominal-bg:#EAF6E9;
+  --f-body:"Nunito",system-ui,sans-serif; --f-jp:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-weight:600;font-size:15px;line-height:1.55}
+button{font:inherit;color:inherit}
+button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid var(--teal-deep);outline-offset:2px}
+.app{max-width:480px;margin:0 auto;height:100dvh;display:flex;flex-direction:column;background:var(--bg)}
+/* thanh tren */
+.top{display:flex;align-items:center;gap:8px;padding:10px max(16px,env(safe-area-inset-left,0px));padding-top:calc(10px + env(safe-area-inset-top,0px));background:#fff;border-bottom:1px solid var(--line)}
+.top h1{margin:0;font-size:16px;font-weight:800;flex:1;min-width:0}
+.top h1 small{display:block;font-size:11.5px;font-weight:700;color:var(--muted)}
+.badge{font-size:11px;font-weight:800;border-radius:999px;padding:2px 8px;white-space:nowrap}
+.badge.mock{background:var(--orange-soft);color:#B26A00}.badge.live{background:var(--teal-soft);color:var(--teal-deep)}
+.top select{font:inherit;font-size:13px;border:1.5px solid var(--line);border-radius:10px;padding:4px 6px;background:#fff}
+.icon-btn{background:none;border:0;width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--muted);display:flex;align-items:center;justify-content:center}
+.icon-btn svg{width:20px;height:20px}
+.menu{position:absolute;right:12px;top:56px;background:#fff;border-radius:14px;box-shadow:0 6px 24px rgba(30,50,60,.16);padding:8px;z-index:15;min-width:220px}
+.menu label,.menu button{display:flex;align-items:center;gap:8px;width:100%;padding:8px 10px;border:0;background:none;border-radius:10px;cursor:pointer;font-size:14px;text-align:left}
+.menu button:hover,.menu label:hover{background:var(--row)}
+/* khung chat */
+.chat{flex:1;overflow-y:auto;padding:16px max(16px,env(safe-area-inset-left,0px)) 8px;display:flex;flex-direction:column;gap:10px;overscroll-behavior:contain}
+.msg{max-width:88%;padding:9px 13px;border-radius:18px;font-size:14.5px;white-space:pre-line;overflow-wrap:anywhere}
+.msg.me{align-self:flex-end;background:var(--teal);color:#fff;border-bottom-right-radius:6px;font-family:var(--f-jp);font-weight:500}
+.msg.bot{align-self:flex-start;background:#fff;border-bottom-left-radius:6px;box-shadow:0 1px 3px rgba(40,60,70,.06)}
+.msg.warn{background:var(--yellow-soft)}
+.msg.err{background:var(--red-soft);color:#9A2B25}
+.msg .jp{font-family:var(--f-jp);font-weight:500}
+.typing{display:inline-flex;gap:4px;align-items:center}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:bl 1s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bl{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.typing-t{font-size:12.5px;color:var(--muted);margin-left:8px}
+.welcome{align-self:center;text-align:center;color:var(--muted);font-size:13.5px;max-width:320px;padding:16px 0}
+.welcome b{color:var(--ink)}
+/* the ket qua */
+.rcard{align-self:flex-start;width:88%;background:#fff;border-radius:18px;border-bottom-left-radius:6px;padding:12px 14px;box-shadow:0 1px 3px rgba(40,60,70,.06);display:flex;flex-direction:column;gap:6px}
+.rc-t{font-family:var(--f-jp);font-size:17px;font-weight:500;line-height:1.5;overflow-wrap:anywhere}
+.rc-s{font-size:12.5px;color:var(--muted);font-weight:700}
+.rc-tr{font-size:14px;color:var(--teal-deep);font-weight:700}
+.rc-a{display:flex;gap:8px;align-items:center;margin-top:4px}
+.btn{border:0;border-radius:999px;padding:8px 16px;font-weight:800;font-size:14px;cursor:pointer}
+.btn.f{background:var(--teal);color:#fff}.btn.o{background:#fff;color:var(--teal-deep);border:1.5px solid var(--teal)}
+.info-btn{margin-left:auto;background:none;border:1.5px solid var(--line);color:var(--muted);border-radius:999px;font-size:12px;font-weight:800;padding:4px 10px;cursor:pointer}
+.dev{font-size:12.5px;color:var(--ink);background:var(--row);border-radius:12px;padding:8px 10px;font-weight:600;display:flex;flex-direction:column;gap:3px}
+.dev[hidden]{display:none}
+.dev b{color:var(--muted);font-weight:800;margin-right:4px}
+.dev pre{max-height:220px;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;font-size:11px;margin:4px 0 0;white-space:pre-wrap;word-break:break-all}
+.dev .cp{align-self:flex-start;border:1.5px solid var(--teal);background:#fff;color:var(--teal-deep);border-radius:999px;font-size:12px;font-weight:800;padding:3px 10px;cursor:pointer;margin-top:4px}
+/* the loi ngu phap */
+.ecard{align-self:flex-start;width:88%;background:#fff;border-radius:18px;border-bottom-left-radius:6px;padding:12px 14px;box-shadow:0 1px 3px rgba(40,60,70,.06);display:flex;flex-direction:column;gap:8px;border-left:4px solid var(--red)}
+.ecard .h{font-weight:800;color:var(--red);font-size:13.5px}
+.ecard .s{font-family:var(--f-jp);font-size:17px;font-weight:500}
+.ecard mark.bad{background:var(--red-soft);color:var(--red);border-radius:4px;padding:0 2px;text-decoration:underline wavy var(--red);text-underline-offset:4px}
+.ecard mark.good{background:var(--teal-soft);color:var(--teal-deep);border-radius:4px;padding:0 2px}
+.ecard .x{font-size:14px;color:var(--ink);font-weight:600}
+.ecard .lb{font-size:12px;color:var(--muted);font-weight:800}
+/* goi y + o nhap */
+.sugs{display:flex;gap:6px;overflow-x:auto;padding:6px max(16px,env(safe-area-inset-left,0px));scrollbar-width:none}
+.sugs::-webkit-scrollbar{display:none}
+.sug{flex:none;border:1.5px solid var(--teal);background:#fff;color:var(--teal-deep);border-radius:999px;padding:5px 12px;font-family:var(--f-jp);font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap}
+.bar{display:flex;gap:8px;align-items:flex-end;padding:8px max(16px,env(safe-area-inset-left,0px)) calc(10px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid var(--line)}
+.bar textarea{flex:1;resize:none;border:1.5px solid var(--line);border-radius:20px;padding:9px 14px;font-family:var(--f-jp);font-size:16px;line-height:1.4;max-height:110px;min-height:42px}
+.bar .send{width:42px;height:42px;border-radius:50%;border:0;background:var(--teal);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none}
+.bar .send[disabled]{background:#C9D3D6;cursor:default}
+.bar .send svg{width:20px;height:20px}
+.count{font-size:11px;color:var(--muted);text-align:right;padding:0 max(20px,env(safe-area-inset-left,0px)) 0;background:#fff}
+.count.over{color:var(--red)}
+/* man hinh phan tich */
+.screen{position:fixed;inset:0;background:var(--bg);z-index:10;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.screen.open{transform:none}
+.screen .top{flex:none}
+.scr-body{flex:1;overflow-y:auto;padding:16px max(16px,env(safe-area-inset-left,0px)) 40px}
+.scr-in{max-width:440px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.back{background:none;border:0;color:var(--teal-deep);font-weight:800;cursor:pointer;padding:4px 2px;font-size:15px}
+.card{background:var(--card);border-radius:20px;padding:18px 16px;display:flex;flex-direction:column;gap:12px;min-width:0;box-shadow:0 1px 3px rgba(40,60,70,.06)}
+.sec-h{display:flex;align-items:center;gap:8px}
+.sec-h h3{margin:0;font-size:15px;font-weight:800;color:var(--ink)}
+.num{width:24px;height:24px;flex:none;border-radius:50%;background:var(--teal);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.lg-btn{margin-left:auto;background:none;border:0;font-size:12.5px;font-weight:700;color:var(--teal-deep);cursor:pointer;padding:4px 2px}
+.sent{font-family:var(--f-jp);font-size:26px;line-height:2.15;font-weight:500;color:var(--ink)}
+.tk{display:inline-block;padding:0 2px 3px;margin:0 1px;border:0;border-bottom:3px solid transparent;border-radius:6px 6px 0 0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tk.punct{cursor:default;border-bottom-color:transparent;padding:0;margin:0}
+.tk.on{background:var(--teal-soft)!important}
+.tk.in-rel{background:var(--rel-bg)}.tk.in-sub{background:var(--sub-bg)}.tk.in-quote{background:var(--quote-bg)}.tk.in-nominal{background:var(--nominal-bg)}
+.p-noun{border-bottom-color:var(--noun)}.p-verb{border-bottom-color:var(--verb)}.p-adj{border-bottom-color:var(--adj)}.p-adv{border-bottom-color:var(--adv)}.p-prt{border-bottom-color:var(--prt)}.p-aux{border-bottom-color:var(--aux)}
+ruby rt{font-size:10.5px;color:var(--muted);font-weight:400}
+.lg{display:flex;gap:6px 12px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.lg[hidden]{display:none}
+.lg i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:4px}
+.lg b{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:middle;margin-right:4px}
+.detail{font-size:13.5px;color:var(--teal-deep);background:var(--teal-soft);border-radius:12px;padding:8px 12px;min-height:20px}
+.detail .w{font-family:var(--f-jp);font-weight:700;color:var(--ink)}
+.tr{font-size:17px;font-weight:800;color:var(--ink);line-height:1.45}
+.list{display:flex;flex-direction:column;gap:8px}
+.row{display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:9px 11px;background:#fff;border:1.5px solid #D7DEE2;border-radius:12px;min-width:0}
+.row.main{border:2px solid var(--teal);padding:8.5px 10.5px}
+.row.hidden{border-style:dashed}
+.row.hidden .jp,.row.hidden .vi{color:#A3A8AD}
+.role{font-size:12.5px;font-weight:800;color:var(--ink);background:#EEF1F3;border-radius:6px;padding:2px 8px}
+.row.main .role{background:var(--teal);color:#fff}
+.l2{display:flex;align-items:baseline;gap:4px 10px;flex-wrap:wrap;min-width:0}
+.jp{font-family:var(--f-jp);font-size:19px;font-weight:500;color:var(--ink);overflow-wrap:anywhere}
+.vi{font-size:14px;color:var(--teal-deep);font-weight:700}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags:empty{display:none}
+.tag{font-size:12px;padding:2px 10px;border-radius:999px;background:var(--teal-soft);color:var(--teal-deep);font-family:var(--f-jp);font-weight:500;white-space:nowrap;border:0;cursor:pointer}
+.grp{border-radius:14px;padding:9px 8px 8px;display:flex;flex-direction:column;gap:8px}
+.grp.rel{background:var(--rel-bg);--gc:#6B4FC8}.grp.sub{background:var(--sub-bg);--gc:#B26A00}.grp.quote{background:var(--quote-bg);--gc:#2F6FB8}.grp.nominal{background:var(--nominal-bg);--gc:#3C8A3A}
+.gh{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:13px;color:var(--gc);font-weight:800;padding:0 2px}
+.gh .gg{font-weight:700;color:var(--muted);font-size:12.5px;width:100%}
+.gl{display:flex;flex-direction:column;font-size:14px;color:var(--muted)}
+.gl button{display:flex;align-items:flex-start;gap:6px;width:100%;text-align:left;background:none;border:0;padding:7px 0;cursor:pointer;border-radius:8px}
+.gl button+button{border-top:1px solid var(--line);border-radius:0}
+.gl .txt{flex:1;min-width:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gl b{font-weight:700;color:var(--ink);font-family:var(--f-jp)}
+.gl .chev{color:var(--teal);font-weight:800;font-size:18px;line-height:1.2}
+.note{font-size:13.5px;color:#9A6A00;background:var(--yellow-soft);border-radius:12px;padding:8px 12px}
+/* bang ngu phap */
+.scrim{position:fixed;inset:0;background:rgba(25,40,45,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
+.scrim.open{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;margin:0 auto;max-width:480px;max-height:86vh;background:var(--bg);border-radius:22px 22px 0 0;transform:translateY(105%);transition:transform .25s ease;z-index:21;display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom,0px)}
+.sheet.open{transform:none}
+.sh-top{padding:8px 16px 4px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.grab{width:40px;height:4px;border-radius:2px;background:#D5D9DC}
+.sh-nav{width:100%;display:flex;justify-content:space-between;align-items:center;min-height:28px}
+.sh-nav button{background:none;border:0;color:var(--teal-deep);font-weight:700;cursor:pointer;padding:4px 2px}
+.sh-nav .x{color:var(--muted);font-size:20px;line-height:1}
+.sh-body{overflow-y:auto;padding:4px 12px 28px;display:flex;flex-direction:column;gap:12px;overscroll-behavior:contain}
+.sh-card{background:#fff;border-radius:16px;padding:14px;box-shadow:0 1px 3px rgba(40,60,70,.06);min-width:0}
+.sh-h{margin-bottom:10px}
+.sh-name{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sh-name .nm{font-family:var(--f-jp);font-size:22px;font-weight:700;color:var(--ink)}
+.sh-name .rd{font-family:var(--f-jp);font-size:13px;color:var(--muted)}
+.pill{font-size:12px;padding:2px 10px;border-radius:999px;background:var(--teal);color:#fff;font-weight:700}
+.pill.soft{background:var(--teal-soft);color:var(--teal-deep)}
+.senses{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14.5px;color:var(--teal-deep);font-weight:800;white-space:pre-line}
+.conn{font-family:var(--f-jp);background:var(--row);border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:15px;overflow-wrap:anywhere}
+.exi{border-left:3px solid var(--teal);padding:2px 0 2px 10px;margin-bottom:8px}
+.exi .j{font-family:var(--f-jp);font-size:16px;font-weight:500;color:var(--ink);white-space:pre-line}
+.exi .v{font-size:13.5px;color:var(--muted);white-space:pre-line}
+.explain{white-space:pre-line;font-size:14px;color:var(--ink);background:var(--row);border-radius:12px;padding:10px 12px;font-weight:500}
+.explain.notes{background:#EEF4FB}
+.sub-t{font-size:13px;font-weight:800;color:var(--ink);margin:12px 0 6px}
+.mis{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.mis li{font-size:14px;color:var(--ink);font-weight:500;background:var(--orange-soft);border-radius:12px;padding:8px 12px}
+.mis .ng{color:var(--red);font-weight:800}.mis .ok{color:var(--teal-deep);font-weight:800}
+.cmp{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px}
+.cmp table{border-collapse:collapse;min-width:520px;font-size:13px;font-weight:500;color:var(--ink)}
+.cmp th{background:var(--teal-soft);color:var(--teal-deep);font-weight:800;text-align:left;padding:8px 10px;white-space:nowrap}
+.cmp td{padding:8px 10px;border-top:1px solid var(--line);vertical-align:top}
+.cmp rt{font-size:9px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-family:var(--f-jp);font-size:13px;padding:5px 12px;border-radius:999px;border:1.5px solid var(--teal);background:#fff;color:var(--teal-deep);font-weight:500;cursor:pointer}
+.acc{padding:0}
+.acc-h{display:flex;align-items:center;gap:8px;width:100%;background:none;border:0;text-align:left;padding:14px;cursor:pointer;border-radius:16px;-webkit-tap-highlight-color:transparent}
+.acc-h h3{margin:0;font-size:15px;font-weight:800;color:var(--ink);flex:1}
+.acc-chev{width:22px;height:22px;flex:none;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:transform 250ms cubic-bezier(.2,.8,.2,1)}
+.acc-chev svg{width:18px;height:18px}
+.acc.open .acc-chev{transform:rotate(180deg)}
+.acc-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows 200ms cubic-bezier(.4,0,.2,1)}
+.acc.open .acc-b{grid-template-rows:1fr;transition-duration:250ms;transition-timing-function:cubic-bezier(.2,.8,.2,1)}
+.acc-in{overflow:hidden;min-height:0}
+.acc-c{padding:0 14px 14px;opacity:0;transform:translateY(-6px);transition:opacity 150ms ease,transform 200ms ease}
+.acc.open .acc-c{opacity:1;transform:none;transition:opacity 220ms ease 40ms,transform 250ms cubic-bezier(.2,.8,.2,1)}
+.loading{color:var(--muted);text-align:center;padding:24px 0}
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#3F4448;color:#fff;font-size:13px;padding:8px 14px;border-radius:999px;opacity:0;transition:opacity .2s;z-index:30;pointer-events:none;max-width:90%}
+.toast.show{opacity:.95}
+@media (max-width:360px){.sent{font-size:22px}.card{padding:16px 12px}}
+@media (prefers-reduced-motion:reduce){.screen,.sheet,.scrim,.toast,.acc-chev,.acc-b,.acc-c,.typing i{transition:none!important;animation:none!important}}
+</style>
+
+<div class="app" id="app">
+  <header class="top">
+    <h1>Bunpo Test <small>Thử module phân tích ngữ pháp</small></h1>
+    <span class="badge" id="mode"></span>
+    <select id="lang" aria-label="Ngôn ngữ kết quả">
+      <option>vi</option><option>en</option><option>cn</option><option>tw</option><option>ko</option><option>fr</option>
+      <option>de</option><option>es</option><option>pt</option><option>ru</option><option>pl</option><option>id</option>
+      <option>th</option><option>hi</option><option>ne</option><option>my</option>
+    </select>
+    <button class="icon-btn" id="menu-btn" aria-label="Tuỳ chọn" aria-expanded="false"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></button>
+  </header>
+  <div class="menu" id="menu" hidden>
+    <label><input type="checkbox" id="nocache"> Bỏ qua cache (phân tích lại)</label>
+    <label><input type="checkbox" id="devopen"> Luôn mở thông tin kỹ thuật</label>
+    <button type="button" id="clear">Xoá lịch sử chat</button>
+  </div>
+  <main class="chat" id="chat" aria-live="polite"></main>
+  <div class="sugs" id="sugs" aria-label="Câu gợi ý"></div>
+  <div class="count" id="count"></div>
+  <form class="bar" id="form">
+    <textarea id="inp" rows="1" placeholder="Gõ 1 câu tiếng Nhật…" aria-label="Câu tiếng Nhật"></textarea>
+    <button class="send" id="send" type="submit" aria-label="Gửi" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </form>
+</div>
+
+<section class="screen" id="screen" aria-label="Màn hình phân tích" aria-hidden="true">
+  <header class="top"><button class="back" id="scr-back">‹ Quay lại</button><h1 style="text-align:center">Phân tích câu</h1><span style="width:70px"></span></header>
+  <div class="scr-body" id="scr-body"><div class="scr-in" id="scr-in"></div></div>
+</section>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Thông tin ngữ pháp" aria-hidden="true">
+  <div class="sh-top"><div class="grab"></div><div class="sh-nav"><button type="button" id="sh-back" hidden>‹ Quay lại</button><span></span><button type="button" class="x" id="sh-close" aria-label="Đóng">✕</button></div></div>
+  <div class="sh-body" id="sh-body"></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* Du lieu mau (che do khong co server). Server demo thay bang null de goi module that. */
+const MOCK = /*MOCK*/null;
+const MAX_CHARS = 100;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const store = { get(k, d){ try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+                set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+
+/* ---- nhan tieng Viet cho ma trong ket qua (giai doan 5 se lay tu i18n bunpo.*) ---- */
+const POS = {noun:"danh từ",verb:"động từ",adj:"tính từ",adv:"trạng từ",prt:"trợ từ",aux:"trợ động từ"};
+const POS_SUB = {v1:"động từ nhóm 1",v2:"động từ nhóm 2",v3:"động từ nhóm 3",adj_i:"tính từ い",adj_na:"tính từ な"};
+const ROLE = {subject:"Chủ ngữ",topic:"Chủ đề",object:"Tân ngữ",complement:"Bổ ngữ",predicate:"Vị ngữ",
+  adv_time:"Trạng ngữ chỉ thời gian",adv_place:"Trạng ngữ chỉ nơi chốn",adv_manner:"Trạng ngữ chỉ cách thức",adv_reason:"Trạng ngữ chỉ lý do"};
+const KIND = {rel:"Mệnh đề bổ nghĩa",sub:"Vế phụ",quote:"Lời trích dẫn",nominal:"Mệnh đề danh từ hoá"};
+const LEVEL_RANK = {N5:5,N4:4,N3:3,N2:2,N1:1};
+
+/* ---- goi module (that hoac mau) ---- */
+let LIVE = false;
+async function detectMode(){
+  if (!MOCK) { try { const r = await fetch("/api/health"); LIVE = r.ok; } catch { LIVE = false; } }
+  const m = $("mode"); m.className = "badge " + (LIVE ? "live" : "mock"); m.textContent = LIVE ? "Module thật" : "Bản mẫu";
+}
+async function apiAnalyze(text, lang, noCache){
+  if (LIVE) {
+    const r = await fetch("/api/analyze", {method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({text, lang, no_cache: noCache})});
+    if (!r.ok) throw new Error(`Server lỗi ${r.status}: ${await r.text()}`);
+    return r.json();
+  }
+  await new Promise(res => setTimeout(res, 700));
+  const hit = MOCK && MOCK.results[text];
+  if (!hit) return {mockMiss: true};
+  return JSON.parse(JSON.stringify(hit));
+}
+async function apiGrammar(id, lang){
+  if (LIVE) { const r = await fetch(`/api/grammar/${id}?lang=${encodeURIComponent(lang)}`); if (!r.ok) throw new Error(`Không tải được mẫu #${id}`); return r.json(); }
+  const g = MOCK && MOCK.grammar[String(id)]; if (!g) throw new Error(`Bản mẫu chưa có dữ liệu mẫu #${id}`); return g;
+}
+
+/* ---- lich su ---- */
+let history = store.get("bunpo-history", []);
+const saveHistory = () => store.set("bunpo-history", history.slice(-40));
+
+/* ---- khung chat ---- */
+const chat = $("chat");
+function scrollDown(){ requestAnimationFrame(() => chat.scrollTo({top: chat.scrollHeight, behavior: "smooth"})); }
+function addMsg(cls, html){ const d = document.createElement("div"); d.className = "msg " + cls; d.innerHTML = html; chat.appendChild(d); scrollDown(); return d; }
+function welcome(){
+  chat.innerHTML = `<div class="welcome">Gõ <b>1 câu tiếng Nhật</b> vào ô bên dưới, hoặc bấm một câu gợi ý.<br>${LIVE ? "Đang nối với module thật: mỗi câu mới tốn khoảng $0,0025." : "Bản mẫu: chỉ có kết quả cho các câu gợi ý (kết quả thật từ lần chạy đánh giá). Chạy <b>scripts/demo_server.py</b> để phân tích câu bất kỳ."}</div>`;
+}
+
+function maxLevel(gs){ let best = null; for (const g of gs) if (g.level && (!best || LEVEL_RANK[g.level] < LEVEL_RANK[best])) best = g.level; return best; }
+function hlChars(text, a, b, cls){ return esc(text.slice(0, a)) + `<mark class="${cls}">${esc(text.slice(a, b))}</mark>` + esc(text.slice(b)); }
+function tokChars(tokens, span){ if (!span) return null; let pos = 0, a = null, b = null;
+  tokens.forEach(t => { if (t.i === span[0]) a = pos; pos += t.surface.length; if (t.i === span[1] - 1) b = pos; }); return a === null ? null : [a, b]; }
+
+function devPanel(entry){
+  const m = entry.meta || {}; const r = entry.result;
+  const cache = {miss:"phân tích mới", hit:"có sẵn trong cache", light:"dịch nhẹ từ cache", off:"tắt"}[m.cache] || m.cache || "-";
+  const fixes = (m.fixes || []).length ? m.fixes.map(esc).join("<br>") : "-";
+  const errs = (m.attempt_errors || []).map((e, k) => e && e.length ? `lần ${k+1}: ${esc(e.join("; "))}` : "").filter(Boolean).join("<br>") || "-";
+  return `<div class="dev" ${store.get("bunpo-dev", false) ? "" : "hidden"}>
+    <div><b>Cache</b>${esc(cache)}</div><div><b>Model</b>${esc((m.models || []).join(" → ") || "-")}</div>
+    <div><b>Độ trễ</b>${((m.latency_ms || 0) / 1000).toFixed(1)} s <b style="margin-left:8px">Chi phí</b>$${(m.cost_usd || 0).toFixed(4)}</div>
+    <div><b>Lỗi khuôn</b>${errs}</div><div><b>Code tự sửa</b>${fixes}</div>
+    <div><b>Từ chưa có trong kho</b>${esc((m.misses || []).join(", ") || "-")}</div>
+    <pre>${esc(JSON.stringify(r, null, 1))}</pre><button type="button" class="cp">Sao chép JSON</button></div>`;
+}
+function wireDev(el, entry){
+  const btn = el.querySelector(".info-btn"), dev = el.querySelector(".dev");
+  if (btn) btn.addEventListener("click", () => { dev.hidden = !dev.hidden; });
+  const cp = el.querySelector(".cp");
+  if (cp) cp.addEventListener("click", async () => { try { await navigator.clipboard.writeText(JSON.stringify(entry.result, null, 1)); toast("Đã sao chép JSON"); } catch { toast("Không sao chép được"); } });
+}
+
+function renderEntry(entry){
+  addMsg("me", esc(entry.text));
+  if (entry.mockMiss) { addMsg("bot", "Bản mẫu chưa có câu này. Bấm một câu gợi ý, hoặc chạy <b>scripts/demo_server.py</b> để phân tích câu bất kỳ."); return; }
+  if (entry.fail) { addMsg("bot err", esc(entry.fail)); return; }
+  const r = entry.result, err = r.error && r.error.code, ic = r.input_check || {status:"ok"};
+  if (err === "invalid_input") {
+    const t = {not_japanese:"Mình chỉ phân tích câu tiếng Nhật thôi. Bạn gửi 1 câu tiếng Nhật nhé.",
+      multiple_sentences:"Bạn gửi từng câu một nhé, mình phân tích mỗi lần 1 câu.",
+      too_long:`Câu dài quá (tối đa ${MAX_CHARS} ký tự). Bạn tách thành câu ngắn hơn nhé.`}[r.error.reason] || "Câu này mình chưa phân tích được.";
+    addMsg("bot", t); return;
+  }
+  if (r.auto_fix) addMsg("bot", `Mình đã sửa câu của bạn thành: <span class="jp">${esc(r.auto_fix.fixed)}</span>`);
+  if (err === "grammar_error") {
+    const at = tokChars(r.tokens, ic.at);
+    const src = at ? hlChars(r.text, at[0], at[1], "bad") : esc(r.text);
+    const fix = ic.correction ? (ic.correction_at ? hlChars(ic.correction, ic.correction_at[0], ic.correction_at[1], "good") : esc(ic.correction)) : "";
+    const el = document.createElement("div"); el.className = "ecard";
+    el.innerHTML = `<div class="h">Câu này chưa đúng ngữ pháp</div><div class="s">${src}</div>
+      <div class="x">${esc(ic.explain || "")}</div>${fix ? `<div class="lb">Câu đúng</div><div class="s">${fix}</div>` : ""}
+      <div class="rc-a"><button type="button" class="info-btn">ⓘ</button></div>${devPanel(entry)}`;
+    chat.appendChild(el); wireDev(el, entry); scrollDown(); return;
+  }
+  if (ic.status === "suspect") {
+    const at = tokChars(r.tokens, ic.at);
+    addMsg("bot warn", `Câu này có thể chưa chuẩn${at ? ` ở 「<span class="jp">${esc(r.text.slice(at[0], at[1]))}</span>」` : ""}. ${esc(ic.reason || "")}`);
+  }
+  if (err === "structure_failed" || err === "llm_unavailable") {
+    const t = err === "structure_failed" ? "Mình chưa phân tích được cấu trúc câu này, bạn xem tạm cách đọc và nghĩa từ nhé."
+      : (r.error.reason === "quota" ? "LLM gateway đã hết ngân sách (429). Nhờ người quản lý nâng hạn mức rồi thử lại. Tạm thời bạn xem cách đọc và nghĩa từ nhé."
+        : "Không gọi được AI lúc này. Tạm thời bạn xem cách đọc và nghĩa từ nhé.");
+    addMsg("bot warn", t);
+  }
+  const gs = r.grammar || [], lv = maxLevel(gs);
+  const el = document.createElement("div"); el.className = "rcard";
+  el.innerHTML = `<div class="rc-t">${esc(r.text)}</div>
+    <div class="rc-s">${gs.length ? `${lv ? lv + " · " : ""}${gs.length} mẫu ngữ pháp` : (err ? "Chỉ có cách đọc và nghĩa từ" : "Không có mẫu ngữ pháp đáng chú ý")}</div>
+    ${r.translation ? `<div class="rc-tr">${esc(r.translation)}</div>` : ""}
+    <div class="rc-a"><button type="button" class="btn f">Xem phân tích</button><button type="button" class="info-btn" aria-label="Thông tin kỹ thuật">ⓘ</button></div>${devPanel(entry)}`;
+  el.querySelector(".btn").addEventListener("click", () => openScreen(entry));
+  chat.appendChild(el); wireDev(el, entry); scrollDown();
+}
+
+/* ---- gui cau ---- */
+let busy = false;
+async function send(text){
+  text = text.trim(); if (!text || busy) return;
+  busy = true; updateSend();
+  const lang = $("lang").value, noCache = $("nocache").checked;
+  if (chat.querySelector(".welcome")) chat.innerHTML = "";
+  addMsg("me", esc(text));
+  const t0 = performance.now();
+  const typing = addMsg("bot", `<span class="typing"><i></i><i></i><i></i></span><span class="typing-t">đang phân tích…</span>`);
+  const tick = setInterval(() => { typing.querySelector(".typing-t").textContent = `đang phân tích… ${((performance.now() - t0) / 1000).toFixed(0)} s`; }, 1000);
+  let entry;
+  try { const res = await apiAnalyze(text, lang, noCache); entry = {text, lang, ...res}; }
+  catch (e) { entry = {text, lang, fail: e.message || String(e)}; }
+  clearInterval(tick); typing.remove(); chat.lastElementChild.remove();  // bo bong bong cua minh, ve lai trong renderEntry
+  renderEntry(entry);
+  history.push(entry); saveHistory();
+  busy = false; updateSend();
+}
+
+/* ---- man hinh phan tich ---- */
+let current = null;
+function openScreen(entry){
+  current = entry; const r = entry.result, box = $("scr-in");
+  const groups = (r.nodes || []).filter(n => n.type === "group" && n.span);
+  const depth = id => { let d = 0, n = (r.nodes || []).find(x => x.id === id); while (n && n.parent) { d++; n = r.nodes.find(x => x.id === n.parent); } return d; };
+  const parts = r.tokens.map(t => {
+    const inner = (t.furigana && t.furigana.length ? t.furigana : [[t.surface, null]]).map(([s, rd]) => rd ? `<ruby>${esc(s)}<rt>${esc(rd)}</rt></ruby>` : esc(s)).join("");
+    if (t.pos === "punct") return `<span class="tk punct">${inner}</span>`;
+    const inG = groups.filter(g => t.i >= g.span[0] && t.i < g.span[1]).sort((a, b) => depth(b.id) - depth(a.id))[0];
+    return `<button type="button" class="tk p-${t.pos}${inG ? " in-" + inG.kind : ""}" data-i="${t.i}">${inner}</button>`;
+  }).join("");
+  const lg = Object.keys(POS).map(p => `<span><i style="background:var(--${p})"></i>${POS[p]}</span>`).join("") +
+    ["rel","sub","quote","nominal"].map(k => `<span><b style="background:var(--${k}-bg);border-left:3px solid var(--${k})"></b>${KIND[k]}</span>`).join("");
+  let n = 0; const hd = (t, extra = "") => `<div class="sec-h"><span class="num">${++n}</span><h3>${t}</h3>${extra}</div>`;
+  let h = `<div class="card">${hd("Câu gốc", `<button type="button" class="lg-btn" aria-expanded="false">Chú thích màu ▾</button>`)}
+    <div class="sent" id="sent">${parts}</div><div class="lg" id="lgd" hidden>${lg}</div>
+    <div class="detail" id="tdet" aria-live="polite">Bấm vào từ để xem nghĩa</div></div>`;
+  if (r.error && (r.error.code === "structure_failed" || r.error.code === "llm_unavailable")) {
+    h += `<div class="note">Chưa có phần dịch và cấu trúc câu (${esc(r.error.code)}).</div>`;
+  } else {
+    if (r.translation) h += `<div class="card">${hd("Dịch nghĩa")}<div class="tr">${esc(r.translation)}</div></div>`;
+    h += `<div class="card">${hd("Cấu trúc câu")}<div class="list">${tree(r)}</div></div>`;
+    const gl = (r.grammar || []).map(g => `<button type="button" data-g="${g.id}"><span class="txt"><b>${esc(g.short_label)} · ${esc(g.level || "")}</b> — ${esc(g.meaning || "")}</span><span class="chev" aria-hidden="true">›</span></button>`).join("");
+    if (gl) h += `<div class="card">${hd("Ngữ pháp trong câu")}<div class="gl">${gl}</div></div>`;
+  }
+  box.innerHTML = h; $("scr-body").scrollTop = 0;
+  const lb = box.querySelector(".lg-btn"), lgEl = $("lgd");
+  lb.addEventListener("click", () => { lgEl.hidden = !lgEl.hidden; lb.setAttribute("aria-expanded", !lgEl.hidden); lb.textContent = lgEl.hidden ? "Chú thích màu ▾" : "Chú thích màu ▴"; });
+  box.querySelectorAll(".tk[data-i]").forEach(b => b.addEventListener("click", () => {
+    box.querySelectorAll(".tk").forEach(x => x.classList.remove("on")); b.classList.add("on");
+    const t = r.tokens[+b.dataset.i]; const lab = POS_SUB[t.pos_sub] || POS[t.pos] || t.pos;
+    const base = t.base && t.base !== t.surface && (t.pos === "verb" || t.pos === "adj") ? ` · dạng gốc ${esc(t.base)}` : "";
+    const rd = t.reading && t.reading !== t.surface ? ` 【${esc(t.reading)}】` : "";
+    $("tdet").innerHTML = `<span class="w">${esc(t.surface)}</span>${rd} · ${lab}${base}${t.meaning ? " · " + esc(t.meaning) : ""}`;
+  }));
+  $("screen").classList.add("open"); $("screen").setAttribute("aria-hidden", "false");
+}
+function tree(r){
+  const nodes = r.nodes || [], gmap = Object.fromEntries((r.grammar || []).map(g => [g.id, g]));
+  const tags = ids => (ids || []).filter(id => gmap[id]).map(id => `<button type="button" class="tag" data-g="${id}">${esc(gmap[id].short_label)} · ${esc(gmap[id].level || "")}</button>`).join("");
+  const txt = n => n.span ? r.tokens.slice(n.span[0], n.span[1]).map(t => t.surface).join("") : (n.jp || "");
+  const kids = pid => nodes.filter(n => (n.parent ?? null) === pid);
+  const one = n => {
+    if (n.type === "group") {
+      const label = n.kind === "rel" && n.head_text ? `${KIND.rel} cho ${esc(n.head_text)}` : (KIND[n.kind] || n.kind);
+      return `<div class="grp ${n.kind}"><div class="gh"><span>${label}</span>${tags(n.grammar)}${n.gloss ? `<span class="gg">${esc(n.gloss)}</span>` : ""}</div>${kids(n.id).map(one).join("")}</div>`;
+    }
+    const role = n.main ? "Vị ngữ chính" : (ROLE[n.role] || n.role) + (n.hidden ? " (ẩn)" : "");
+    return `<div class="row${n.main ? " main" : ""}${n.hidden ? " hidden" : ""}"><span class="role">${role}</span><div class="l2"><span class="jp">${esc(txt(n))}</span><span class="vi">${esc(n.gloss || "")}</span></div><span class="tags">${tags(n.grammar)}</span></div>`;
+  };
+  return kids(null).map(one).join("");
+}
+
+/* ---- bang ngu phap ---- */
+const sheet = $("sheet"), scrim = $("scrim"), shBody = $("sh-body"), shBack = $("sh-back");
+let stack = [], lastFocus = null;
+const markMis = t => esc(t).replace(/([×✕✗])/g, '<span class="ng">$1</span>').replace(/([○◯〇✓])/g, '<span class="ok">$1</span>');
+const safeCell = s => esc(s).replace(/&lt;(\/?)(ruby|rt)&gt;/g, "<$1$2>");
+async function renderSheet(id){
+  shBack.hidden = stack.length < 2;
+  shBody.innerHTML = `<div class="loading">Đang tải…</div>`;
+  let g; try { g = await apiGrammar(id, current ? current.lang : $("lang").value); }
+  catch (e) { shBody.innerHTML = `<div class="sh-card">${esc(e.message)}</div>`; return; }
+  let n = 0; const H = t => `<div class="sec-h sh-h"><span class="num">${++n}</span><h3>${t}</h3></div>`;
+  const labels = (g.labels || []).filter(l => l.name).map(l => `<span class="pill soft">${esc(l.name)}</span>`).join("");
+  const rd = g.reading && /[一-鿿]/.test(g.short_label || "") ? `<span class="rd">（${esc(g.reading)}）</span>` : "";
+  let h = `<section class="sh-card">${H("Mẫu ngữ pháp")}<div class="sh-name"><span class="nm">${esc(g.short_label || g.name)}</span>${rd}${g.level ? `<span class="pill">${esc(g.level)}</span>` : ""}${labels}</div>${g.meaning ? `<div class="senses">${esc(g.meaning)}</div>` : ""}</section>`;
+  if (g.connection) h += `<section class="sh-card">${H("Công thức")}<div class="conn">${esc(g.connection)}</div></section>`;
+  const ex = (g.examples || []).slice(0, 2).map(e => `<div class="exi"><div class="j">${esc(e.jp)}</div>${e.vi ? `<div class="v">${esc(e.vi)}</div>` : ""}</div>`).join("");
+  if (ex) h += `<section class="sh-card">${H("Ví dụ")}${ex}</section>`;
+  let det = "";
+  if (g.explain) det += `<div class="sub-t" style="margin-top:0">Giải thích</div><div class="explain">${esc(g.explain)}</div>`;
+  if (g.comparison && g.comparison.rows && g.comparison.rows.length) det += `<div class="sub-t">So sánh</div><div class="cmp"><table><thead><tr>${g.comparison.headers.map(x => `<th>${safeCell(x)}</th>`).join("")}</tr></thead><tbody>${g.comparison.rows.map(r => `<tr>${r.map(c => `<td>${safeCell(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  if (g.mistakes && g.mistakes.length) det += `<div class="sub-t">Lỗi hay gặp</div><ul class="mis">${g.mistakes.map(m => `<li>${markMis(m)}</li>`).join("")}</ul>`;
+  if (g.notes) det += `<div class="sub-t">Lưu ý</div><div class="explain notes">${esc(g.notes)}</div>`;
+  if (g.confusable && g.confusable.length) det += `<div class="sub-t">Dễ nhầm với</div><div class="chips">${g.confusable.map(c => `<button type="button" class="chip" data-go="${c.id}">${esc(c.short_label)}${c.level ? " · " + esc(c.level) : ""}</button>`).join("")}</div>`;
+  if (det) h += `<section class="sh-card acc"><button type="button" class="acc-h" aria-expanded="false"><span class="num">${++n}</span><h3>Phân tích chi tiết</h3><span class="acc-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="acc-b"><div class="acc-in" inert><div class="acc-c">${det}</div></div></div></section>`;
+  shBody.innerHTML = h; shBody.scrollTop = 0;
+  const acc = shBody.querySelector(".acc-h");
+  if (acc) acc.addEventListener("click", () => {
+    const card = acc.parentElement, inner = card.querySelector(".acc-in"), b = card.querySelector(".acc-b");
+    const open = !card.classList.contains("open"); card.classList.toggle("open", open); acc.setAttribute("aria-expanded", open); inner.inert = !open;
+    if (!open) return;
+    const fit = () => { const rc = card.getBoundingClientRect(), v = shBody.getBoundingClientRect();
+      if (rc.bottom > v.bottom - 8) shBody.scrollTo({top: shBody.scrollTop + Math.min(rc.bottom - v.bottom + 16, rc.top - v.top - 8), behavior: "smooth"}); };
+    const done = e => { if (e.target !== b) return; b.removeEventListener("transitionend", done); fit(); };
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) fit(); else b.addEventListener("transitionend", done);
+  });
+  shBody.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => { stack.push(+b.dataset.go); renderSheet(+b.dataset.go); }));
+}
+function openSheet(id){ lastFocus = document.activeElement; stack = [id]; renderSheet(id);
+  sheet.classList.add("open"); scrim.classList.add("open"); sheet.setAttribute("aria-hidden", "false"); setTimeout(() => $("sh-close").focus(), 50); }
+function closeSheet(){ sheet.classList.remove("open"); scrim.classList.remove("open"); sheet.setAttribute("aria-hidden", "true"); if (lastFocus) lastFocus.focus(); }
+shBack.addEventListener("click", () => { stack.pop(); renderSheet(stack[stack.length - 1]); });
+$("sh-close").addEventListener("click", closeSheet); scrim.addEventListener("click", closeSheet);
+let y0 = null;
+sheet.querySelector(".sh-top").addEventListener("touchstart", e => { y0 = e.touches[0].clientY; }, {passive: true});
+sheet.querySelector(".sh-top").addEventListener("touchend", e => { if (y0 !== null && e.changedTouches[0].clientY - y0 > 60) closeSheet(); y0 = null; });
+$("scr-in").addEventListener("click", e => { const b = e.target.closest("[data-g]"); if (b) openSheet(+b.dataset.g); });
+$("scr-back").addEventListener("click", () => { $("screen").classList.remove("open"); $("screen").setAttribute("aria-hidden", "true"); });
+document.addEventListener("keydown", e => { if (e.key !== "Escape") return;
+  if (sheet.classList.contains("open")) closeSheet(); else if ($("screen").classList.contains("open")) $("scr-back").click(); });
+
+/* ---- o nhap, goi y, menu ---- */
+const inp = $("inp");
+function updateSend(){ const n = inp.value.trim().length; $("send").disabled = busy || !n;
+  const c = $("count"); c.textContent = n > MAX_CHARS * 0.8 ? `${n}/${MAX_CHARS}` : ""; c.classList.toggle("over", n > MAX_CHARS); }
+inp.addEventListener("input", () => { inp.style.height = "auto"; inp.style.height = Math.min(inp.scrollHeight, 110) + "px"; updateSend(); });
+inp.addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey && !e.isComposing) { e.preventDefault(); $("form").requestSubmit(); } });
+$("form").addEventListener("submit", e => { e.preventDefault(); const t = inp.value; inp.value = ""; inp.style.height = "auto"; updateSend(); send(t); });
+const SUGS_LIVE = ["昨日友達と見た映画はとても面白かったです。","先生に言われたとおりに練習したら、上手に話せるようになった。","映画は面白いでした。","この魚、食べれる？","見みた映画はおもしろかった。","会議中（ちゅう）です。","Hôm nay trời đẹp quá."];
+function renderSugs(){ const list = MOCK ? MOCK.suggestions : SUGS_LIVE;
+  $("sugs").innerHTML = list.map(s => `<button type="button" class="sug">${esc(s)}</button>`).join("");
+  $("sugs").querySelectorAll(".sug").forEach(b => b.addEventListener("click", () => send(b.textContent))); }
+const menu = $("menu"), mb = $("menu-btn");
+mb.addEventListener("click", e => { e.stopPropagation(); menu.hidden = !menu.hidden; mb.setAttribute("aria-expanded", !menu.hidden); });
+document.addEventListener("click", e => { if (!menu.hidden && !menu.contains(e.target) && e.target !== mb) { menu.hidden = true; mb.setAttribute("aria-expanded", "false"); } });
+$("devopen").checked = store.get("bunpo-dev", false);
+$("devopen").addEventListener("change", e => { store.set("bunpo-dev", e.target.checked); document.querySelectorAll(".dev").forEach(d => d.hidden = !e.target.checked); });
+$("clear").addEventListener("click", () => { history = []; saveHistory(); welcome(); menu.hidden = true; });
+$("lang").value = store.get("bunpo-lang", "vi");
+$("lang").addEventListener("change", e => store.set("bunpo-lang", e.target.value));
+function toast(m){ const t = $("toast"); t.textContent = m; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 1800); }
+
+(async () => {
+  await detectMode(); renderSugs();
+  if (history.length) history.forEach(renderEntry); else welcome();
+})();
+</script>

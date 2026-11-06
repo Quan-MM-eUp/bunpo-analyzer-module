@@ -77,3 +77,10 @@ Khi chấm, module chỉ dùng khối đầu làm nghĩa chính. Bộ luật b�
 Một số câu ví dụ ở khối chính không chứa mẫu của mục (thuộc mẫu khác): #761 (câu ために), #265 (câu ～ば), #339 (câu hỏi tu từ). Một số câu gõ sai: #570 「聞いていたとり」, #716 「統計によるば」, #751 「買うしなかった」, #560 「怒るものしかたがない」. LLM cũng báo đúng 2 câu gõ sai: #443 「旅行に行きので」 (đúng: 行くので), #1542 「食ベなくても」 (chữ ベ katakana).
 
 Xem đủ danh sách: `python scripts/eval.py --rules-only --levels N5 N4 N3 N2 N1`, rồi mở `runs/rules_miss_<cấp>.txt` (khối chính) và `runs/rules_miss_<cấp>_gop.txt` (khối gộp).
+
+## 9. Phát hiện khi dịch kho (C1–C3)
+
+- **`meaning_vi` chứa câu ví dụ thay cho nghĩa** (dạng `*① …\n#####\n② …`, bị cắt cụt), 23 mẫu: 1568, 1569, 1570, 1571, 1573, 1575, 1577, 1580, 1581, 1582, 1583, 1588, 1590, 1593, 1598, 1599, 1600, 1601, 1602, 1609, 1612, 1615, 1616. Không đưa vào bản dịch; giao diện tiếng Việt cũng đang hiện nguyên văn. Cần viết lại nghĩa.
+- **Trường viết bằng tiếng Anh** thay vì tiếng Việt, 10 chỗ: #62 notes, #1610 explain, #1611 explain, #1614 meaning, #1614 explain, #1621 explain, #1594 meaning, #1594 explain, #1576 explain, #1578 explain. Vẫn dịch (từ tiếng Anh) nhưng bản tiếng Việt đang hiện tiếng Anh.
+- **#219**: câu ví dụ 2 vỡ (`ドア / を / ドア / が`). **#682, #1059**: phần dịch tiếng Việt của câu ví dụ chép lại cả câu Nhật.
+- **#1087** ví dụ 2: 「会社の経験が苦しい」 có lẽ là 経営. **#900** `notes`: câu 「私はもうお酒を飲めます」 được dịch tiếng Việt là "tôi đã bỏ rượu" (sai nghĩa). **#244** `explain` lặp lại một khối hai lần. **#251, #629** `notes` còn nhãn thừa (`meaning_vi:`, `explain:`, `examples:`).

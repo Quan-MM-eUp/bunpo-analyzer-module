@@ -100,6 +100,8 @@ grammar/grammar_text.en.json  {"245": {"name": "...", "meaning": "...", "explain
 
 Thiếu file, thiếu `id` hoặc thiếu trường thì dùng tiếng Việt. Âm Hán Việt chỉ trả cho tiếng Việt. `Kho.version` là mã băm nội dung các file đã nạp (đổi kho là đổi khóa cache).
 
+Bộ công cụ dịch kho sang 15 ngôn ngữ (`scripts/translation/`, kế hoạch trong `ke-hoach-dich-kho-ngu-phap.md`, cách chạy trong `<kho>/translation/HUONG_DAN.md`): `export_batches.py` đóng gói kho đã làm sạch thành lô, `tm.py` quản lý tiến độ và khoá, `check.py` kiểm tra bản dịch, `merge.py` gộp thành `grammar_text.<lang>.json`. Trừ `export_batches.py`, các script chỉ dùng thư viện chuẩn.
+
 ## Luật dò mẫu ngữ pháp
 
 Mỗi file trong `src/bunpo_analyzer/rules/` chứa danh sách luật; mỗi luật có `id` (khớp `grammar_lib`), `patterns` (chuỗi điều kiện cho từng token), `examples` và `not_examples`. Hai danh sách ví dụ được test tự động, nên viết luật mới chỉ cần thêm ví dụ là có kiểm thử. Mô tả đầy đủ các điều kiện ở đầu `core/matcher.py`. Mẫu không viết được luật thì ghi vào `llm_only` (kèm lý do).
@@ -119,6 +121,18 @@ Chép `.env.example` thành `.env`, điền `BUNPO_OPENAI_API_KEY` (file `.env` 
 - Chấm tự động (bước 3.1): `python scripts/eval.py` (bộ câu kiểm thử + 20 câu ví dụ kho mỗi cấp N5–N3, gọi qua `analyze_full` thật, không cache). So sánh model: `--models gpt-5-mini gpt-4.1`. Báo cáo `runs/eval_<thời gian>.md`, từng câu ở file JSON cùng tên. Chỉ đo bộ luật (không gọi LLM): `--rules-only --levels N5 N4 N3 N2 N1`, câu luật bỏ sót ghi vào `runs/rules_miss_<cấp>.txt`.
 - Gom mẫu trùng: `python scripts/build_canon.py` (sinh lại `tables/grammar_canon.json` và `docs/mau_trung.md` khi kho hoặc luật đổi; bảng sửa tay được).
 - Thử cache + dịch nhẹ: `python scripts/try_cache.py` (mỗi câu chạy lần lượt vi, vi, en, ko, en; in trạng thái cache, độ trễ, chi phí).
+
+## Trang test trên máy
+
+```powershell
+pip install -e ".[demo]"
+python scripts/demo_server.py      # mở http://localhost:8000
+```
+
+Gõ 1 câu tiếng Nhật vào ô chat; kết quả hiện thành thẻ, bấm **Xem phân tích** để mở màn phân tích và bảng ngữ pháp (giao diện giống artifact đã duyệt). Nút ⓘ trên mỗi thẻ: cache, model, độ trễ, chi phí, lỗi khuôn, chỗ code tự sửa, JSON gốc (có nút sao chép để báo lỗi). Menu ⋮: bỏ qua cache, xoá lịch sử. Server chỉ nghe trên 127.0.0.1, key trong `.env` không gửi xuống trình duyệt. Mỗi câu mới tốn khoảng $0,0025; câu lặp lại lấy từ cache.
+
+- Giao diện: `demo/app.html` (sửa xong tải lại trang là thấy, không cần khởi động lại server).
+- Bản mẫu không cần server (dữ liệu thật từ một lần chạy `eval.py`): `python scripts/build_demo_mock.py runs/eval_<...>.json` sinh `demo/mock_data.json`.
 
 ## Cache
 
