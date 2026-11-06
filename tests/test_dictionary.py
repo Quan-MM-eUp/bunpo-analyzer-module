@@ -221,7 +221,7 @@ async def test_lookup_dict_fuji_sentence():
 
 async def test_lookup_dict_multi_parts_and_misses():
     data = {
-        "気をつける": [E("気をつける", ["きをつける"], ("to be careful", "exp, v1", []), id="kiwo")],
+        "気をつける": [E("気をつける", ["きをつける"], ("to be careful", "exp, v1", []), level="N2", id="kiwo")],
         "子供": [E("子供", ["こども"], ("child", "n", []))],
         "猫": M.parse_words(neko()),
     }
@@ -337,3 +337,41 @@ async def test_capture_script(tmp_path, monkeypatch):
     sent.clear()
     st = await cap.capture("en", ["猫", "犬", "bad"], M.derive_key(PEM), "https://x", 3, 2)
     assert sent == ["bad"] and st["new"] == 1  # chay lai: chi thu tu loi
+
+
+# ---------------- D4: chon muc tu / nghia tren du lieu that ----------------
+def test_d4_rules_on_real_samples():
+    from bunpo_analyzer.core.lookup import base_reading, clean_meaning
+
+    d = M.StaticDictionary.from_dir(FIX)
+
+    async def meanings(text, lang):
+        toks = tokenize(text)
+        lk = await lookup_dict(toks, d, lang)
+        return {toks[w.i].surface: w.meaning for w in lk.words}
+
+    en = asyncio.run(meanings("話すことは難しい。", "en"))
+    assert en["こと"].startswith("thing; matter")  # こと tro tu sai tu loai -> 事
+    en = asyncio.run(meanings("子供のときよく公園で遊んだ。", "en"))
+    assert en["とき"].startswith("time")  # khong lay ten tau Shinkansen; Sudachi chuan hoa -> 時
+    en = asyncio.run(meanings("日本へ行くためにお金を貯める。", "en"))
+    assert "purpose" in en["ため"] and "peer" not in en["ため"]  # ため -> 為
+    vi = asyncio.run(meanings("日本へ行くためにお金を貯める。", "vi"))
+    assert "vì" in vi["ため"]
+    en = asyncio.run(meanings("雨が降りそうなので、傘を持っていきます。", "en"))
+    assert en["雨"].startswith("rain") and en["降り"] != en["雨"]  # 雨が降る: khong gop cum co tro tu
+    assert en["持っ"] != en["いき"]
+    en = asyncio.run(meanings("気をつけてください。", "en"))
+    assert en["気"] == en["つけ"] and en["気"].startswith("to be careful")  # thanh ngu co cap JLPT: gop
+    toks = tokenize("富士山に登った。面白かった。来た。")
+    br = {t.surface: base_reading(t) for t in toks}
+    assert br["登っ"] == "のぼる" and br["面白かっ"] == "おもしろい" and br["来"] is None
+    assert clean_meaning("Tokyo Sky Tree<br>tòa tháp; ; mẹ, u, bầm,; x.") == ["Tokyo Sky Tree", "tòa tháp", "mẹ, u, bầm", "x"]
+
+
+def test_multi_requires_kind():
+    data = {"駅に着く": [E("駅に着く", ["えきにつく"], ("đến nhà ga", "", []), level="N5")],
+            "駅": [E("駅", ["えき"], ("ga", "n", []))], "着く": [E("着く", ["つく"], ("đến", "v5k", []))]}
+    toks = tokenize("駅に着いた。")
+    lk = asyncio.run(lookup_dict(toks, FakeDict(data), "vi"))
+    assert [w.meaning for w in lk.words[:3:2]] == ["ga", "đến"]  # cum khong co tu loai (nguoi dung them) -> bo

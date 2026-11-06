@@ -284,6 +284,11 @@ def lookup(toks: list[MorphToken], kho: Kho, lang: str = DEFAULT_LANG) -> Lookup
 # so, dau cau, tu co ban (core). Moi tu can tra duoc gom lai, goi tu dien MOT lan (song song, co cache).
 _ASCII_KIND = re.compile(r"^[a-z][a-z0-9-]*$")
 _MAX_MEAN_CHARS = 120
+# Nhan ten rieng (JMnedict / Mazii): ten tau, dia danh, ho ten... - khong dung cho tu thuong.
+_PROPER = {"n-pr", "serv", "place", "surname", "given", "person", "company", "product", "organization",
+           "station", "unclass", "work", "fict", "ship", "char", "creat", "dei", "doc", "ev", "group",
+           "leg", "myth", "obj", "relig"}
+_TAG = re.compile(r"<[^>]+>")
 
 
 def _kind_ok(pos: str, kinds: tuple[str, ...]) -> Optional[bool]:
@@ -293,8 +298,8 @@ def _kind_ok(pos: str, kinds: tuple[str, ...]) -> Optional[bool]:
         return None
     if pos == "verb":
         return any(k.startswith("v") and k != "vs" for k in ks)
-    if pos == "noun":
-        return any(k.startswith("n") or k in ("pn", "vs", "num", "ctr", "exp") for k in ks)
+    if pos == "noun":  # Sudachi xep nhieu tu dung nhu pho tu la danh tu (時々, 今日)
+        return any(k.startswith(("n", "adv")) or k in ("pn", "vs", "num", "ctr", "exp") for k in ks)
     if pos == "adj":
         return any(k.startswith("adj") for k in ks)
     if pos == "adv":
@@ -309,37 +314,74 @@ def _entry_kind_ok(pos: str, e) -> Optional[bool]:
     return False if any(v is False for v in vals) else None
 
 
+def _is_proper(e) -> bool:
+    return bool(e.senses) and all(any(k in _PROPER for k in s.kinds) for s in e.senses)
+
+
+def _has_kind(e) -> bool:
+    return any(k for s in e.senses for k in s.kinds)
+
+
 def _hira_set(xs) -> set[str]:
     return {kata_to_hira(x) for x in xs if x}
 
 
-def pick_entry(entries: list, forms: tuple[str, ...], pos: str, reading: Optional[str], top: frozenset = frozenset()):
-    """Chon muc tu: chu viet trung dang goc / mat chu / dang chuan hoa; tu viet bang kana thi nhan muc
-    co chu Han neu cung cach doc (つける -> 付ける). Tu kana ngan (こと, もの) chi nhan khi do la ket qua dau tien
-    tu dien tra cho chinh tu do (`top`: id cac muc dung dau), tranh trung am (て -> 手).
-    Uu tien: trung chu viet > dung tu loai > trung cach doc > thu tu cua tu dien."""
+def pick_entry(entries: list, forms: tuple[str, ...], pos: str, reading: Optional[str],
+               top: frozenset = frozenset(), proper: bool = False, norm: Optional[str] = None):
+    """Chon muc tu cho mot token.
+
+    Nhan: muc trung chu viet (dang goc / mat chu / dang chuan hoa); token viet bang kana thi nhan them muc
+    co chu Han cung cach doc (つける -> 付ける). Tu kana ngan (こと, とき) de trung am: muc chu Han chi nhan
+    khi la ket qua dau cua chinh tu do (`top`) hoac khi cac muc trung chu viet deu sai tu loai (こと tro tu -> 事).
+    Uu tien: dung tu loai > khong phai ten rieng (tru khi token la ten rieng) > trung dang chuan hoa co
+    chu Han cua Sudachi (ため -> 為, とき -> 時) > trung cach doc > trung chu viet > thu tu cua tu dien.
+    """
     kana_token = not any(_KANJI.search(f) for f in forms if f)
     min_len = 3 if pos in ("verb", "adj") else 4
-    best = None
-    for idx, e in enumerate(entries):
-        exact = e.word in forms
-        same_reading = bool(reading) and kata_to_hira(reading) in _hira_set(e.readings)
-        if not exact:
-            if not (kana_token and same_reading):
+    r = kata_to_hira(reading) if reading else None
+    norm_kanji = norm if norm and _KANJI.search(norm) else None
+
+    def collect(allow_short: bool):
+        out = []
+        for idx, e in enumerate(entries):
+            exact = e.word in forms
+            same_reading = bool(r) and r in _hira_set(e.readings)
+            if not exact:
+                if not (kana_token and same_reading):
+                    continue
+                if _KANJI.search(e.word) and len(r or "") < min_len and e.id not in top and not allow_short:
+                    continue
+            kok = _entry_kind_ok(pos, e)
+            if kok is False and not exact:
                 continue
-            if _KANJI.search(e.word) and len(reading or "") < min_len and e.id not in top:
-                continue
-        kok = _entry_kind_ok(pos, e)
-        if kok is False and not exact:
-            continue
-        score = (not exact, kok is False, not same_reading, idx)
-        if best is None or score < best[0]:
-            best = (score, e)
-    return best[1] if best else None
+            score = (kok is False, _is_proper(e) and not proper, e.word != norm_kanji if norm_kanji else False,
+                     bool(r) and not same_reading, not exact, idx)
+            out.append((score, e))
+        return out
+
+    cands = collect(False)
+    if cands and all(sc[0] for sc, _ in cands):  # co muc trung chu viet nhung sai tu loai (こと tro tu)
+        cands += collect(True)
+    if not cands:
+        return None
+    return min(cands, key=lambda x: x[0])[1]
+
+
+def clean_meaning(text: Optional[str]) -> list[str]:
+    """Tach nghia thanh tung y: bo the HTML, dau ; , . thua, y rong; giu thu tu."""
+    if not text:
+        return []
+    t = _TAG.sub("; ", text)
+    out = []
+    for piece in t.split(";"):
+        x = piece.strip().strip(",.、。").strip()
+        if x:
+            out.append(x)
+    return out
 
 
 def entry_meaning(e, pos: str, reading: Optional[str]) -> Optional[str]:
-    """1-3 nghia dau khop cach doc + tu loai (toi da ~120 ky tu); khong co thi short_mean."""
+    """Nghia ngan: cac nghia khop cach doc + tu loai, tach y, bo trung, toi da ~120 ky tu; khong co thi short_mean."""
     ss = list(e.senses)
     if reading:
         r = kata_to_hira(reading)
@@ -347,17 +389,31 @@ def entry_meaning(e, pos: str, reading: Optional[str]) -> Optional[str]:
         ss = by_r or ss
     by_k = [s for s in ss if _kind_ok(pos, s.kinds) is not False]
     ss = by_k or ss
+    groups = [g for g in (clean_meaning(s.mean) for s in ss) if g][:3]  # toi da 3 nghia dau
+    if not groups:
+        groups = [clean_meaning(e.short_mean)]
     out: list[str] = []
-    for m in dict.fromkeys(s.mean for s in ss if s.mean):
-        if out and (len(out) >= 3 or len("; ".join([*out, m])) > _MAX_MEAN_CHARS):
+    for x in dict.fromkeys(x for g in groups for x in g):
+        if out and len("; ".join([*out, x])) > _MAX_MEAN_CHARS:
             break
-        out.append(m)
-    if out:
-        return "; ".join(out)
-    sm = (e.short_mean or "").strip()
-    if len(sm) > _MAX_MEAN_CHARS:
-        sm = sm[:_MAX_MEAN_CHARS].rsplit(";", 1)[0].strip() or sm[:_MAX_MEAN_CHARS]
-    return sm or None
+        out.append(x)
+    return "; ".join(out) or None
+
+
+def base_reading(t: MorphToken) -> Optional[str]:
+    """Cach doc dang goc: kana -> chinh no; chia dong / tinh tu (登っ のぼっ -> 登る のぼる) suy tu phan chu Han."""
+    r = _base_reading(t)
+    if r or not t.reading or t.verb_group == 3:
+        return r
+    pre = 0
+    while pre < min(len(t.surface), len(t.base)) and t.surface[pre] == t.base[pre]:
+        pre += 1
+    s_tail, b_tail = t.surface[pre:], t.base[pre:]
+    if not pre or not _KANJI.search(t.surface[:pre]) or _KANJI.search(s_tail + b_tail):
+        return None
+    if s_tail and not t.reading.endswith(kata_to_hira(s_tail)):
+        return None
+    return t.reading[: len(t.reading) - len(s_tail)] + kata_to_hira(b_tail)
 
 
 def _forms(t: MorphToken) -> tuple[str, ...]:
@@ -423,7 +479,11 @@ async def lookup_dict(toks: list[MorphToken], dictionary, lang: str = DEFAULT_LA
             continue
         multi = None
         for j, key in _multi_keys(toks, i):
-            hit = next((x for x in found.get(key, []) if x.word == key), None)
+            # Cum co tro tu ben trong (雨が降る, 持っていく) phai la thanh ngu co cap JLPT (気をつける):
+            # cum ghep thuong thi de nghia tung tu cho bang phan tich.
+            with_prt = any(x.pos == "prt" for x in toks[i:j])
+            hit = next((x for x in found.get(key, [])
+                        if x.word == key and _has_kind(x) and (x.level or not with_prt)), None)
             if hit:
                 multi = (j, hit)
                 break
@@ -442,8 +502,9 @@ async def lookup_dict(toks: list[MorphToken], dictionary, lang: str = DEFAULT_LA
         if t.pos in _CONTENT:
             forms = _forms(t)
             top = frozenset(found[f][0].id for f in forms if found.get(f))
-            hit = pick_entry(entries_for(forms), forms, t.pos, _base_reading(t), top)
-        m = entry_meaning(hit, t.pos, _base_reading(t)) if hit else None
+            hit = pick_entry(entries_for(forms), forms, t.pos, base_reading(t), top,
+                             proper="固有名詞" in t.pos_detail, norm=t.norm)
+        m = entry_meaning(hit, t.pos, base_reading(t)) if hit else None
         if hit and m:
             out[i] = _info_from_entry(i, (i, i + 1), hit, m, "key", lang)
             i += 1
