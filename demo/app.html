@@ -393,7 +393,8 @@ function openScreen(entry){
     const t = r.tokens[+b.dataset.i]; const lab = POS_SUB[t.pos_sub] || POS[t.pos] || t.pos;
     const base = t.base && t.base !== t.surface && (t.pos === "verb" || t.pos === "adj") ? ` · dạng gốc ${esc(t.base)}` : "";
     const rd = t.reading && t.reading !== t.surface ? ` 【${esc(t.reading)}】` : "";
-    $("tdet").innerHTML = `<span class="w">${esc(t.surface)}</span>${rd} · ${lab}${base}${t.meaning ? " · " + esc(t.meaning) : ""}`;
+    const han = t.han ? ` · ${esc(t.han)}` : "", lv = t.level ? ` · ${esc(t.level)}` : "";
+    $("tdet").innerHTML = `<span class="w">${esc(t.surface)}</span>${rd}${han} · ${lab}${base}${t.meaning ? " · " + esc(t.meaning) : ""}${lv}`;
   }));
   $("screen").classList.add("open"); $("screen").setAttribute("aria-hidden", "false");
 }

@@ -17,7 +17,7 @@ from bunpo_analyzer.core.input_check import InputResult, check_input
 from bunpo_analyzer.core.llm import LLMClient, LLMError
 from bunpo_analyzer.core.llm.base import LLMResult, Message
 from bunpo_analyzer.core.llm_output import LLMOutput
-from bunpo_analyzer.core.lookup import LookupResult, lookup
+from bunpo_analyzer.core.lookup import LookupResult, lookup, lookup_dict
 from bunpo_analyzer.core.matcher import GrammarMatcher, Match, get_matcher
 from bunpo_analyzer.core.postprocess import to_token_positions
 from bunpo_analyzer.core.prompt import build_messages
@@ -44,9 +44,31 @@ def prepare(raw: str, lang: str = "vi", kho: Optional[Kho] = None,
     if inp.error:
         return Prepared(inp, lang=lang)
     kho = kho or get_kho()
-    matcher = matcher or get_matcher()
     toks = tokenize(inp.text)
-    lk = lookup(toks, kho, lang)
+    return _finish(inp, toks, lookup(toks, kho, lang), kho, matcher, lang)
+
+
+async def prepare_async(raw: str, lang: str = "vi", kho: Optional[Kho] = None,
+                        matcher: Optional[GrammarMatcher] = None, max_chars: int = 100,
+                        dictionary=None) -> Prepared:
+    """Nhu prepare() nhung tra nghia tu bang tu dien ngoai (Mazii) neu co `dictionary`.
+
+    Tu dien tra truoc khi dung prompt (gioi han thoi gian ~1,5-3 s, tu da tra thi lay tu cache):
+    tu khong tra duoc van nho LLM dien nghia nhu cu.
+    """
+    if dictionary is None:
+        return prepare(raw, lang, kho, matcher, max_chars)
+    inp = check_input(raw, max_chars=max_chars)
+    if inp.error:
+        return Prepared(inp, lang=lang)
+    kho = kho or get_kho()
+    toks = tokenize(inp.text)
+    return _finish(inp, toks, await lookup_dict(toks, dictionary, lang), kho, matcher, lang)
+
+
+def _finish(inp: InputResult, toks: list[MorphToken], lk: LookupResult, kho: Kho,
+            matcher: Optional[GrammarMatcher], lang: str) -> Prepared:
+    matcher = matcher or get_matcher()
     ms = canonicalize(matcher.match(toks))  # mau trung -> mau chuan (docs/mau_trung.md)
     return Prepared(inp, toks, lk, ms, chunk(toks), build_messages(inp.text, toks, ms, kho, lk, lang), lang)
 

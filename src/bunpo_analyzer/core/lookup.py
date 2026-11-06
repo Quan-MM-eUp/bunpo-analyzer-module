@@ -48,12 +48,15 @@ class WordInfo:
     span: tuple[int, int] = (0, 0)  # [token dau, token cuoi + 1) neu khop ca cum
     via: str = ""  # table | key | multi | reading | parts | core | number
     level: Optional[str] = None
+    dict_id: Optional[str] = None  # id muc tu trong tu dien ngoai (Mazii)
+    han: Optional[str] = None  # am Han Viet (chi tieng Viet)
 
 
 @dataclass
 class LookupResult:
     words: list[WordInfo]
     misses: list[str] = field(default_factory=list)  # dang goc chua co trong kho (de ghi log)
+    stats: dict[str, Any] = field(default_factory=dict)  # tu dien ngoai: so tu tra, so tu tim thay...
 
 
 # ---------------- bang tro tu ----------------
@@ -276,12 +279,218 @@ def lookup(toks: list[MorphToken], kho: Kho, lang: str = DEFAULT_LANG) -> Lookup
     return LookupResult([x for x in out if x is not None], misses)
 
 
+# ---------------- tu dien ngoai (Mazii) ----------------
+# Thay buoc tra word_lib (2, 3, 4, 6 o tren) khi Settings.dict_provider = "mazii". Giu nguyen bang tro tu,
+# so, dau cau, tu co ban (core). Moi tu can tra duoc gom lai, goi tu dien MOT lan (song song, co cache).
+_ASCII_KIND = re.compile(r"^[a-z][a-z0-9-]*$")
+_MAX_MEAN_CHARS = 120
+
+
+def _kind_ok(pos: str, kinds: tuple[str, ...]) -> Optional[bool]:
+    """Tu loai cua mot nghia (kieu JMdict) co khop tu loai token khong; None = khong biet (khong loc)."""
+    ks = [k for k in kinds if _ASCII_KIND.match(k)]
+    if not ks:
+        return None
+    if pos == "verb":
+        return any(k.startswith("v") and k != "vs" for k in ks)
+    if pos == "noun":
+        return any(k.startswith("n") or k in ("pn", "vs", "num", "ctr", "exp") for k in ks)
+    if pos == "adj":
+        return any(k.startswith("adj") for k in ks)
+    if pos == "adv":
+        return any(k.startswith("adv") for k in ks)
+    return None
+
+
+def _entry_kind_ok(pos: str, e) -> Optional[bool]:
+    vals = [_kind_ok(pos, s.kinds) for s in e.senses]
+    if any(v is True for v in vals):
+        return True
+    return False if any(v is False for v in vals) else None
+
+
+def _hira_set(xs) -> set[str]:
+    return {kata_to_hira(x) for x in xs if x}
+
+
+def pick_entry(entries: list, forms: tuple[str, ...], pos: str, reading: Optional[str], top: frozenset = frozenset()):
+    """Chon muc tu: chu viet trung dang goc / mat chu / dang chuan hoa; tu viet bang kana thi nhan muc
+    co chu Han neu cung cach doc (つける -> 付ける). Tu kana ngan (こと, もの) chi nhan khi do la ket qua dau tien
+    tu dien tra cho chinh tu do (`top`: id cac muc dung dau), tranh trung am (て -> 手).
+    Uu tien: trung chu viet > dung tu loai > trung cach doc > thu tu cua tu dien."""
+    kana_token = not any(_KANJI.search(f) for f in forms if f)
+    min_len = 3 if pos in ("verb", "adj") else 4
+    best = None
+    for idx, e in enumerate(entries):
+        exact = e.word in forms
+        same_reading = bool(reading) and kata_to_hira(reading) in _hira_set(e.readings)
+        if not exact:
+            if not (kana_token and same_reading):
+                continue
+            if _KANJI.search(e.word) and len(reading or "") < min_len and e.id not in top:
+                continue
+        kok = _entry_kind_ok(pos, e)
+        if kok is False and not exact:
+            continue
+        score = (not exact, kok is False, not same_reading, idx)
+        if best is None or score < best[0]:
+            best = (score, e)
+    return best[1] if best else None
+
+
+def entry_meaning(e, pos: str, reading: Optional[str]) -> Optional[str]:
+    """1-3 nghia dau khop cach doc + tu loai (toi da ~120 ky tu); khong co thi short_mean."""
+    ss = list(e.senses)
+    if reading:
+        r = kata_to_hira(reading)
+        by_r = [s for s in ss if not s.readings or r in _hira_set(s.readings)]
+        ss = by_r or ss
+    by_k = [s for s in ss if _kind_ok(pos, s.kinds) is not False]
+    ss = by_k or ss
+    out: list[str] = []
+    for m in dict.fromkeys(s.mean for s in ss if s.mean):
+        if out and (len(out) >= 3 or len("; ".join([*out, m])) > _MAX_MEAN_CHARS):
+            break
+        out.append(m)
+    if out:
+        return "; ".join(out)
+    sm = (e.short_mean or "").strip()
+    if len(sm) > _MAX_MEAN_CHARS:
+        sm = sm[:_MAX_MEAN_CHARS].rsplit(";", 1)[0].strip() or sm[:_MAX_MEAN_CHARS]
+    return sm or None
+
+
+def _forms(t: MorphToken) -> tuple[str, ...]:
+    return tuple(dict.fromkeys(x for x in (t.base, t.surface, t.norm) if x))
+
+
+def _multi_keys(toks: list[MorphToken], i: int) -> list[tuple[int, str]]:
+    """Cum 2-3 token bat dau bang tu noi dung (気をつける), dai nhat truoc; token cuoi o dang goc."""
+    if toks[i].pos not in _CONTENT:
+        return []
+    out = []
+    for j in range(min(len(toks), i + 3), i + 1, -1):
+        seg = toks[i:j]
+        if any(x.pos == "punct" for x in seg) or seg[-1].pos not in _CONTENT:
+            continue
+        out.append((j, "".join(x.surface for x in seg[:-1]) + seg[-1].base))
+    return out
+
+
+def _info_from_entry(i: int, span: tuple[int, int], e, meaning: str, via: str, lang: str) -> WordInfo:
+    return WordInfo(i, meaning, "dict", (), span, via, e.level, e.id or None,
+                    e.han if lang == DEFAULT_LANG else None)
+
+
+async def lookup_dict(toks: list[MorphToken], dictionary, lang: str = DEFAULT_LANG) -> LookupResult:
+    """Nhu lookup() nhung lay nghia tu tu dien ngoai (Mazii). Tu khong tra duoc / qua gio -> "llm"."""
+    queries: list[str] = []
+    for i, t in enumerate(toks):
+        if t.pos == "punct" or table_entry(toks, i) or _is_number(t) or t.pos not in _CONTENT:
+            continue
+        queries += [k for _, k in _multi_keys(toks, i)]
+        queries += list(_forms(t))
+        for surface, base, norm, _r, pos1 in t.parts:
+            if pos1 != "接尾辞":
+                queries += [x for x in (base, surface, norm) if x]
+    found = await dictionary.search_many(queries, lang) if queries else {}
+
+    def entries_for(keys) -> list:
+        out = []
+        for k in keys:
+            out += found.get(k, [])
+        return out
+
+    out: list[Optional[WordInfo]] = [None] * len(toks)
+    misses: list[str] = []
+    i = 0
+    while i < len(toks):
+        t = toks[i]
+        if t.pos == "punct":
+            out[i] = WordInfo(i, None, "none", span=(i, i + 1))
+            i += 1
+            continue
+        e = table_entry(toks, i)
+        if e:
+            out[i] = WordInfo(i, table_meaning(e, lang), "particle_table", span=(i, i + 1), via="table")
+            i += 1
+            continue
+        multi = None
+        for j, key in _multi_keys(toks, i):
+            hit = next((x for x in found.get(key, []) if x.word == key), None)
+            if hit:
+                multi = (j, hit)
+                break
+        if multi:
+            j, hit = multi
+            m = entry_meaning(hit, toks[j - 1].pos, None)
+            for k in range(i, j):
+                out[k] = _info_from_entry(k, (i, j), hit, m, "multi", lang)
+            i = j
+            continue
+        if _is_number(t):
+            out[i] = WordInfo(i, None, "none", span=(i, i + 1), via="number")
+            i += 1
+            continue
+        hit = None
+        if t.pos in _CONTENT:
+            forms = _forms(t)
+            top = frozenset(found[f][0].id for f in forms if found.get(f))
+            hit = pick_entry(entries_for(forms), forms, t.pos, _base_reading(t), top)
+        m = entry_meaning(hit, t.pos, _base_reading(t)) if hit else None
+        if hit and m:
+            out[i] = _info_from_entry(i, (i, i + 1), hit, m, "key", lang)
+            i += 1
+            continue
+        parts = _dict_parts(t, found, lang) if t.pos in _CONTENT else None
+        core = core_entry(t)
+        if parts:
+            out[i] = WordInfo(i, parts, "dict", span=(i, i + 1), via="parts")
+        elif core:
+            out[i] = WordInfo(i, table_meaning(core, lang), "particle_table", span=(i, i + 1), via="core")
+        else:
+            out[i] = WordInfo(i, None, "llm", span=(i, i + 1))
+            if t.pos in _CONTENT:
+                misses.append(t.base)
+        i += 1
+    stats = {"queries": len(set(queries)), "answered": len(found), "misses": len(misses)}
+    return LookupResult([x for x in out if x is not None], misses, stats)
+
+
+def _dict_parts(t: MorphToken, found: dict, lang: str) -> Optional[str]:
+    """Tu ghep khong co trong tu dien: tach don vi ngan (子供たち -> 子供 + たち), moi phan deu phai tra duoc."""
+    if not t.parts:
+        return None
+    pieces = []
+    for surface, base, norm, reading, pos1 in t.parts:
+        if pos1 == "接尾辞":
+            e = next((x for x in _table() if x.get("pos1") == "接尾辞" and x["base"] in (surface, base)), None)
+            if e:
+                pieces.append(f"{surface} ({table_meaning(e, lang)})")
+                continue
+        forms = tuple(dict.fromkeys(x for x in (base, surface, norm) if x))
+        cands = []
+        for k in forms:
+            cands += found.get(k, [])
+        hit = pick_entry(cands, forms, "noun", reading)
+        m = entry_meaning(hit, "noun", reading) if hit else None
+        if not m:
+            return None
+        pieces.append(f"{surface} ({m})")
+    return " + ".join(pieces)
+
+
 def apply_to_tokens(toks: list[MorphToken], result: LookupResult) -> list:
     """Ghep vao Token cua khuon AnalysisResult (meaning, meaning_source)."""
     out = []
     for t, w in zip(toks, result.words):
         s = t.to_schema()
         if t.pos != "punct":
-            s = s.model_copy(update={"meaning": w.meaning, "meaning_source": w.meaning_source if w.meaning_source != "none" else None})
+            upd: dict[str, Any] = {"meaning": w.meaning,
+                                   "meaning_source": w.meaning_source if w.meaning_source != "none" else None}
+            for k in ("level", "han", "dict_id"):
+                if getattr(w, k) and w.meaning_source == "dict":
+                    upd[k] = getattr(w, k)
+            s = s.model_copy(update=upd)
         out.append(s)
     return out

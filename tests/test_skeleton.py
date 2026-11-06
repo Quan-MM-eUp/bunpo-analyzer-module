@@ -19,7 +19,7 @@ def load(name: str) -> dict:
 
 def test_version():
     assert bunpo_analyzer.__version__ == "0.1.0"
-    assert SCHEMA_VERSION == "1.3"
+    assert SCHEMA_VERSION == "1.4"
 
 
 def test_settings_defaults(monkeypatch):

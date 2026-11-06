@@ -27,7 +27,7 @@ result = await analyze("今夜たくさんの宿題がある。", lang="vi")   #
 src/bunpo_analyzer/
 ├── __init__.py        analyze, grammar_detail, AnalysisResult
 ├── config.py          Settings (BUNPO_*), 16 ngôn ngữ
-├── schema.py          khuôn AnalysisResult 1.3 (hợp đồng với app)
+├── schema.py          khuôn AnalysisResult 1.4 (hợp đồng với app)
 ├── core/
 │   ├── analyzer.py    analyze(), analyze_full() (kèm log) bước 2.5
 │   ├── assemble.py    ghép AnalysisResult đầy đủ      bước 2.5
@@ -101,6 +101,19 @@ grammar/grammar_text.en.json  {"245": {"name": "...", "meaning": "...", "explain
 Thiếu file, thiếu `id` hoặc thiếu trường thì dùng tiếng Việt. Âm Hán Việt chỉ trả cho tiếng Việt. `Kho.version` là mã băm nội dung các file đã nạp (đổi kho là đổi khóa cache).
 
 Bộ công cụ dịch kho sang 15 ngôn ngữ (`scripts/translation/`, kế hoạch trong `ke-hoach-dich-kho-ngu-phap.md`, cách chạy trong `<kho>/translation/HUONG_DAN.md`): `export_batches.py` đóng gói kho đã làm sạch thành lô, `tm.py` quản lý tiến độ và khoá, `check.py` kiểm tra bản dịch, `merge.py` gộp thành `grammar_text.<lang>.json`. Trừ `export_batches.py`, các script chỉ dùng thư viện chuẩn.
+
+## Tra nghĩa từ bằng Mazii (nhánh `feature/mazii-dict`)
+
+`BUNPO_DICT_PROVIDER=mazii` thì nghĩa từ lấy từ API Mazii (`/api/search/word/v3`) theo ngôn ngữ người dùng thay cho `word_lib` (mặc định `kho` để test không cần mạng).
+
+- Trợ từ, trợ động từ, hậu tố vẫn lấy từ bảng trợ từ; số và dấu câu không tra.
+- Mỗi câu gom mọi từ cần tra (kể cả cụm 2–3 từ như 気をつける và phần của từ ghép), gọi song song (`BUNPO_DICT_MAX_CONCURRENCY`), mỗi lần tối đa `BUNPO_DICT_TIMEOUT_S` (1,5 s), cả câu tối đa gấp đôi. Mỗi từ cache riêng 30 ngày (kết quả rỗng 1 ngày), dùng chung kho cache của module.
+- Chọn mục từ: trùng chữ viết (dạng gốc / mặt chữ / dạng chuẩn hoá) > đúng từ loại > trùng cách đọc. Nghĩa: 1–3 nghĩa đầu khớp cách đọc và từ loại (tối đa ~120 ký tự).
+- Từ không tra được hoặc quá giờ: LLM điền nghĩa như cũ. Mazii lỗi 5 lần liên tiếp thì ngừng gọi 60 giây.
+- Kết quả: `Token.meaning_source = "dict"`, thêm `level` (JLPT), `han` (âm Hán Việt, chỉ tiếng Việt), `dict_id` (khuôn 1.4).
+- Ngôn ngữ chưa có từ điển Mazii (pl) dùng bản tiếng Anh.
+- Cần `public.pem` của app Mazii để giải mã (`BUNPO_MAZII_PEM_PATH` hoặc `BUNPO_MAZII_PEM`); không commit file này.
+- Thử nhanh: `python scripts/try_dict.py "富士山に登ったことがありますか。" --lang en`.
 
 ## Luật dò mẫu ngữ pháp
 

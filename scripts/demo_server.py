@@ -69,7 +69,7 @@ def create_app(settings: Optional[Settings] = None, kho: Optional[Kho] = None, c
     def health() -> dict:
         return {"ok": True, "model": settings.llm_model, "fallback": settings.llm_fallback_model,
                 "light_model": settings.llm_light_model, "has_key": bool(settings.openai_api_key),
-                "kho_version": kho.core_version, "grammar": len(kho.grammars)}
+                "kho_version": kho.core_version, "grammar": len(kho.grammars), "dict": settings.dict_provider}
 
     @app.post("/api/analyze")
     async def analyze(body: AnalyzeIn) -> dict:
