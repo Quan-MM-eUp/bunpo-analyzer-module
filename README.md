@@ -45,6 +45,7 @@ src/bunpo_analyzer/
 │   └── cache.py       cache (memory / redis)           bước 2.6
 ├── rules/             luật ngữ pháp *.json (định dạng: đầu `core/matcher.py`)  bước 1.5
 ├── tables/            particle_table.json: nghĩa trợ từ, trợ động từ, hậu tố (bước 1.4)
+│                      particle_table.<lang>.json: bản dịch en/id/tw/cn/ko (scripts/translation/export_particles.py)
 └── adapters/chatbot.py                                 giai đoạn 5
 tests/
 ├── fixtures/          2 ví dụ ở mục 11.5

@@ -125,7 +125,10 @@ def get_cache(settings: Settings) -> Cache:
 @lru_cache(maxsize=1)
 def rules_version() -> str:
     h = hashlib.sha256()
-    for p in sorted(_RULES.glob("*.json")) + [_RULES.parent / "tables" / "grammar_canon.json"]:
+    tables = _RULES.parent / "tables"
+    # bang tro tu (+ ban dich) nam trong ket qua theo tung ngon ngu -> doi bang thi doi khoa cache
+    files = [*sorted(_RULES.glob("*.json")), tables / "grammar_canon.json", *sorted(tables.glob("particle_table*.json"))]
+    for p in files:
         if not p.exists():
             continue
         h.update(p.name.encode())
