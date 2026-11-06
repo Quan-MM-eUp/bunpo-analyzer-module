@@ -192,3 +192,43 @@ class MaziiDictionary:
     async def aclose(self) -> None:
         if self._http is not None:
             await self._http.aclose()
+
+
+# ---------------- du lieu mau (D0) ----------------
+_KEEP = ("_id", "mobileId", "word", "phonetic", "level", "short_mean", "han")
+
+
+def trim_payload(payload: Any) -> dict[str, Any]:
+    """Chi giu cac truong module dung (bo anh, trong am, vi du...) de luu du lieu mau gon."""
+    words = []
+    for w in ((payload or {}).get("data") or {}).get("words") or []:
+        if not isinstance(w, dict):
+            continue
+        x = {k: w[k] for k in _KEEP if k in w}
+        x["means"] = [{"mean": m.get("mean"), "kind": m.get("kind"), "stagr": m.get("stagr")}
+                      for m in w.get("means") or [] if isinstance(m, dict)]
+        words.append(x)
+    return {"data": {"words": words}}
+
+
+class StaticDictionary:
+    """Tu dien doc tu du lieu mau da ghi (tests/fixtures/mazii/<dict>.json), khong goi mang.
+
+    data: {ma tu dien (jaen...): {tu: payload da giai ma}}. Tu khong co trong du lieu -> coi nhu khong tra duoc.
+    """
+
+    def __init__(self, data: dict[str, dict[str, Any]]) -> None:
+        self.data = data
+        self.queries: list[str] = []
+
+    @classmethod
+    def from_dir(cls, path) -> StaticDictionary:
+        data = {}
+        for p in sorted(Path(path).glob("ja*.json")):
+            data[p.stem] = json.loads(p.read_text(encoding="utf-8")).get("queries", {})
+        return cls(data)
+
+    async def search_many(self, queries: list[str], lang: str) -> dict[str, list[DictEntry]]:
+        d = self.data.get(MAZII_DICTS.get(lang, "jaen"), {})
+        self.queries += queries
+        return {q: parse_words(d[q]) for q in queries if q in d}

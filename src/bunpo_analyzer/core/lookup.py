@@ -382,8 +382,8 @@ def _info_from_entry(i: int, span: tuple[int, int], e, meaning: str, via: str, l
                     e.han if lang == DEFAULT_LANG else None)
 
 
-async def lookup_dict(toks: list[MorphToken], dictionary, lang: str = DEFAULT_LANG) -> LookupResult:
-    """Nhu lookup() nhung lay nghia tu tu dien ngoai (Mazii). Tu khong tra duoc / qua gio -> "llm"."""
+def dict_queries(toks: list[MorphToken]) -> list[str]:
+    """Moi tu can tra tu dien cho mot cau (cum 2-3 tu, dang goc / mat chu / chuan hoa, phan cua tu ghep)."""
     queries: list[str] = []
     for i, t in enumerate(toks):
         if t.pos == "punct" or table_entry(toks, i) or _is_number(t) or t.pos not in _CONTENT:
@@ -393,6 +393,12 @@ async def lookup_dict(toks: list[MorphToken], dictionary, lang: str = DEFAULT_LA
         for surface, base, norm, _r, pos1 in t.parts:
             if pos1 != "接尾辞":
                 queries += [x for x in (base, surface, norm) if x]
+    return list(dict.fromkeys(queries))
+
+
+async def lookup_dict(toks: list[MorphToken], dictionary, lang: str = DEFAULT_LANG) -> LookupResult:
+    """Nhu lookup() nhung lay nghia tu tu dien ngoai (Mazii). Tu khong tra duoc / qua gio -> "llm"."""
+    queries = dict_queries(toks)
     found = await dictionary.search_many(queries, lang) if queries else {}
 
     def entries_for(keys) -> list:

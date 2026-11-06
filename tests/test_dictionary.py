@@ -295,3 +295,45 @@ async def test_cache_key_depends_on_dictionary(kho):
     a2 = await analyze_full(text, "vi", settings=s, kho=kho, cache=cache, client=client)
     a3 = await analyze_full(text, "vi", settings=s, kho=kho, cache=cache, client=client, dictionary=FakeDict({}))
     assert (a1.cache, a2.cache, a3.cache) == ("miss", "miss", "hit") and len(prov.calls) == 2
+
+
+# ---------------- D0: du lieu mau ----------------
+def test_trim_payload_and_static_dictionary(tmp_path):
+    t = M.trim_payload(neko())
+    w = t["data"]["words"][0]
+    assert set(w) == {"_id", "mobileId", "word", "phonetic", "level", "short_mean", "han", "means"}
+    assert set(w["means"][0]) == {"mean", "kind", "stagr"}
+    assert M.parse_words(t) == M.parse_words(neko())
+    (tmp_path / "jaen.json").write_text(json.dumps({"queries": {"猫": t}}), encoding="utf-8")
+    d = M.StaticDictionary.from_dir(tmp_path)
+    r = asyncio.run(d.search_many(["猫", "犬"], "en"))
+    assert list(r) == ["猫"] and r["猫"][0].level == "N5"
+    assert asyncio.run(d.search_many(["猫"], "ko")) == {}
+
+
+async def test_capture_script(tmp_path, monkeypatch):
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("mazii_capture", Path(__file__).parents[1] / "scripts" / "mazii_capture.py")
+    cap = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(cap)
+    monkeypatch.setattr(cap, "OUT", tmp_path)
+    sent = []
+
+    def handler(req):
+        q = json.loads(req.content)["query"]
+        sent.append(q)
+        if q == "bad":
+            return httpx.Response(500)
+        words = neko() if q == "猫" else {"data": {"words": []}}
+        return httpx.Response(200, json={"encryptedData": encrypt(words)})
+
+    real = httpx.AsyncClient
+    monkeypatch.setattr(cap.httpx, "AsyncClient", lambda **kw: real(transport=httpx.MockTransport(handler)))
+    st = await cap.capture("en", ["猫", "犬", "bad"], M.derive_key(PEM), "https://x", 3, 2)
+    assert st["with_result"] == 1 and st["errors"] == 1 and st["new"] == 3
+    saved = json.loads((tmp_path / "jaen.json").read_text(encoding="utf-8"))
+    assert set(saved["queries"]) == {"猫", "犬"} and saved["errors"] == ["bad: HTTPStatusError"]
+    sent.clear()
+    st = await cap.capture("en", ["猫", "犬", "bad"], M.derive_key(PEM), "https://x", 3, 2)
+    assert sent == ["bad"] and st["new"] == 1  # chay lai: chi thu tu loi
