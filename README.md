@@ -16,25 +16,31 @@ Cấu hình qua biến môi trường tiền tố `BUNPO_` (chép `.env.example`
 ## Cách dùng
 
 ```python
-from bunpo_analyzer import analyze
+from bunpo_analyzer import analyze, check_ready, grammar_detail, labels
 
-result = await analyze("今夜たくさんの宿題がある。", lang="vi")   # AnalysisResult (mục 11.5)
+rep = await check_ready()                                         # khi khởi động: kho, tách từ, LLM, cache, Mazii
+result = await analyze("今夜たくさんの宿題がある。", lang="en")    # AnalysisResult 1.5 (mục 11.5)
+detail = grammar_detail(252, "en")                                # bảng ngữ pháp (bottom sheet), không gọi AI
+L = labels("en")                                                  # nhãn cho mã trong kết quả (từ loại, vai trò...)
 ```
+
+Hướng dẫn tích hợp vào chatbot (cấu hình, API, khuôn kết quả, xử lý lỗi, ngôn ngữ): `docs/INTEGRATION.md`. Thay đổi theo phiên bản: `CHANGELOG.md`.
 
 ## Cấu trúc
 
 ```
 src/bunpo_analyzer/
-├── __init__.py        analyze, grammar_detail, AnalysisResult
+├── __init__.py        analyze, grammar_detail, labels, check_ready, AnalysisResult
 ├── config.py          Settings (BUNPO_*), 16 ngôn ngữ
-├── schema.py          khuôn AnalysisResult 1.4 (hợp đồng với app)
+├── schema.py          khuôn AnalysisResult 1.5 (hợp đồng với app)
 ├── core/
 │   ├── analyzer.py    analyze(), analyze_full() (kèm log) bước 2.5
 │   ├── assemble.py    ghép AnalysisResult đầy đủ      bước 2.5
 │   ├── input_check.py kiểm tra đầu vào, sửa furigana   bước 1.2
 │   ├── tokenizer.py   SudachiPy (chế độ C)             bước 1.1
 │   ├── data.py        nạp kho, đọc theo lang           bước 1.3
-│   ├── lookup.py      tra word_lib                     bước 1.4
+│   ├── lookup.py      tra nghĩa từ (Mazii / word_lib) bước 1.4
+│   ├── dictionary/    client API Mazii (cache, hạn giờ, ngắt tạm)
 │   ├── matcher.py     dò mẫu ngữ pháp                  bước 1.5
 │   ├── llm/           base.py + mỗi nhà cung cấp 1 file bước 2.1
 │   ├── validator.py   kiểm tra đầu ra LLM              bước 2.3–2.4
@@ -42,10 +48,13 @@ src/bunpo_analyzer/
 │   ├── canon.py       mẫu trùng -> mẫu chuẩn           bước 3.2
 │   ├── grammar_meta.py nhãn ngắn, "Dễ nhầm với"        bước 4.1
 │   ├── grammar_detail.py dữ liệu bảng ngữ pháp        bước 4.2
+│   ├── labels.py      nhãn giao diện 16 ngôn ngữ: labels(lang)
+│   ├── ready.py       check_ready(): kiểm tra cấu hình khi khởi động
 │   └── cache.py       cache (memory / redis)           bước 2.6
 ├── rules/             luật ngữ pháp *.json (định dạng: đầu `core/matcher.py`)  bước 1.5
 ├── tables/            particle_table.json: nghĩa trợ từ, trợ động từ, hậu tố (bước 1.4)
 │                      particle_table.<lang>.json: bản dịch en/id/tw/cn/ko (scripts/translation/export_particles.py)
+│                      grammar_meta.json (nhãn ngắn), grammar_canon.json (mẫu trùng), ui_labels.json (labels())
 └── adapters/chatbot.py                                 giai đoạn 5
 tests/
 ├── fixtures/          2 ví dụ ở mục 11.5
@@ -83,6 +92,9 @@ Không có adapter render: app tự dựng giao diện từ `AnalysisResult`.
 | 3.2 Sửa theo lỗi | Xong 3 lượt: tự vá lỗi khuôn, prompt bản 9, gom mẫu trùng (`core/canon.py`, `docs/mau_trung.md`), mẫu nền chỉ gắn khi câu không có mẫu khác, kiểm tra ngôn ngữ phần giải thích lỗi, lỗi hết ngân sách gateway không gọi lại; chốt 30/10: dòng đúng 99%, nhóm 100%, đạt khuôn lần đầu 90% |
 | 4.1 Nhãn ngắn, "Dễ nhầm với" | Xong (`core/grammar_meta.py`, `tables/grammar_meta.json`, sinh bằng `scripts/build_grammar_meta.py`; soát ở `docs/grammar_meta_review.md`) |
 | 4.2 Dữ liệu bảng ngữ pháp | Xong (`core/grammar_detail.py`: `grammar_detail(id, lang)`; soát bằng `scripts/check_grammar_detail.py` → `docs/grammar_detail_review.md`) |
+| 5.1 Tra nghĩa từ bằng Mazii | Xong (`core/dictionary/`, `lookup_dict`; dữ liệu mẫu `tests/fixtures/mazii/`, đánh giá `docs/mazii_eval.md`: ~90% từ nội dung có nghĩa từ Mazii) |
+| 5.2 Đa ngôn ngữ | Xong cho en, ko: bản dịch kho ngữ pháp (`publish_lang.py`), bảng trợ từ en/id/tw/cn/ko, nhãn giao diện 16 ngôn ngữ (`labels()`); ngôn ngữ khác hiện tiếng Việt cho phần kho đến khi dịch xong |
+| 5.3 Đóng gói 0.2.0 | Xong (`check_ready()`, `CHANGELOG.md`, `docs/INTEGRATION.md`) |
 
 ## Bộ câu kiểm thử
 
@@ -96,16 +108,25 @@ Không có adapter render: app tự dựng giao diện từ `AnalysisResult`.
 
 ```
 word/word_text.en.json        {"1": {"meaning": "movie, film"}}
-grammar/grammar_text.en.json  {"245": {"name": "...", "meaning": "...", "explain": "...", "mistakes": "..."}}
+grammar/grammar_text.en.json  {"245": {"name", "short_label", "meaning", "connection", "explain", "notes",
+                                       "examples": [{"jp", "tr"}], "mistakes": [...], "comparison": {"headers", "rows"}}}
 ```
 
-Thiếu file, thiếu `id` hoặc thiếu trường thì dùng tiếng Việt. Âm Hán Việt chỉ trả cho tiếng Việt. `Kho.version` là mã băm nội dung các file đã nạp (đổi kho là đổi khóa cache).
+`grammar_text.<lang>.json` sinh bằng một lệnh cho mỗi ngôn ngữ đã dịch xong (chạy trong `bunpo-analyzer`):
 
-Bộ công cụ dịch kho sang 15 ngôn ngữ (`scripts/translation/`, kế hoạch trong `ke-hoach-dich-kho-ngu-phap.md`, cách chạy trong `<kho>/translation/HUONG_DAN.md`): `export_batches.py` đóng gói kho đã làm sạch thành lô, `tm.py` quản lý tiến độ và khoá, `check.py` kiểm tra bản dịch, `merge.py` gộp thành `grammar_text.<lang>.json`. Trừ `export_batches.py`, các script chỉ dùng thư viện chuẩn.
+```bash
+python scripts/translation/publish_lang.py en     # gộp out/en, bỏ mẫu kho đã sửa sau khi dịch, ghi grammar/ + bảng trợ từ
+```
 
-## Tra nghĩa từ bằng Mazii (nhánh `feature/mazii-dict`)
+Nhãn ngắn còn chữ Việt mà chưa có tên dịch được liệt kê ở `translation/labels/<lang>.todo.json`: dịch trên Cowork vào `translation/labels/<lang>.json` (`{id: nhãn}`, giữ nguyên chữ Nhật) rồi chạy lại lệnh. Khởi động lại tiến trình dùng module để nạp bản mới.
 
-`BUNPO_DICT_PROVIDER=mazii` thì nghĩa từ lấy từ API Mazii (`/api/search/word/v3`) theo ngôn ngữ người dùng thay cho `word_lib` (mặc định `kho` để test không cần mạng).
+Thiếu file, thiếu `id` hoặc thiếu trường thì dùng tiếng Việt (câu ví dụ: `tr` = `vi`). Mẫu trùng đã gộp (`core/canon.py`) không dịch riêng: ngôn ngữ khác dùng nội dung và nhãn của mẫu chuẩn. Âm Hán Việt chỉ trả cho tiếng Việt. `Kho.version` là mã băm nội dung các file đã nạp (đổi kho là đổi khóa cache).
+
+Bộ công cụ dịch kho sang 15 ngôn ngữ (`scripts/translation/`, kế hoạch trong `ke-hoach-dich-kho-ngu-phap.md`, cách chạy trong `<kho>/translation/HUONG_DAN.md`): `export_batches.py` đóng gói kho đã làm sạch thành lô, `tm.py` quản lý tiến độ và khoá, `check.py` kiểm tra bản dịch, `merge.py` gộp thành `grammar_text.<lang>.json`, `publish_lang.py` đưa vào kho / module. Trừ `export_batches.py`, các script chỉ dùng thư viện chuẩn.
+
+## Tra nghĩa từ bằng Mazii
+
+Mặc định (`BUNPO_DICT_PROVIDER=mazii`) nghĩa từ lấy từ API Mazii (`/api/search/word/v3`) theo ngôn ngữ người dùng thay cho `word_lib`. Thiếu / hỏng `public.pem` thì ghi log lỗi và tự dùng `word_lib`; `BUNPO_DICT_PROVIDER=kho` để không gọi mạng. Test luôn dùng `kho` (`tests/conftest.py`).
 
 - Trợ từ, trợ động từ, hậu tố vẫn lấy từ bảng trợ từ; số và dấu câu không tra.
 - Mỗi câu gom mọi từ cần tra (kể cả cụm 2–3 từ như 気をつける và phần của từ ghép), gọi song song (`BUNPO_DICT_MAX_CONCURRENCY`), mỗi lần tối đa `BUNPO_DICT_TIMEOUT_S` (1,5 s), cả câu tối đa gấp đôi. Mỗi từ cache riêng 30 ngày (kết quả rỗng 1 ngày), dùng chung kho cache của module.

@@ -17,6 +17,7 @@ API (giai doan 5 se lam ban that trong chatbot):
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import sys
 from pathlib import Path
@@ -34,6 +35,8 @@ from bunpo_analyzer.core.analyzer import analyze_full
 from bunpo_analyzer.core.cache import MemoryCache, NoCache
 from bunpo_analyzer.core.data import Kho, get_kho
 from bunpo_analyzer.core.grammar_detail import grammar_detail
+from bunpo_analyzer.core.labels import label_langs, labels
+from bunpo_analyzer.core.ready import check_ready
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGE = ROOT / "demo" / "app.html"
@@ -48,7 +51,8 @@ class AnalyzeIn(BaseModel):
 
 def page_html() -> str:
     """Trang chat (demo/app.html) boc trong khung HTML day du; MOCK = null -> goi API that."""
-    body = PAGE.read_text(encoding="utf-8")
+    body = PAGE.read_text(encoding="utf-8").replace("/*LABELS*/null", json.dumps(
+        {lg: labels(lg) for lg in label_langs()}, ensure_ascii=False).replace("</", "<\\/"))
     return ('<!doctype html><html lang="vi"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>'
             + body + "</body></html>")
@@ -82,6 +86,14 @@ def create_app(settings: Optional[Settings] = None, kho: Optional[Kho] = None, c
                 "attempt_errors": info["attempt_errors"], "fixes": info["fixes"], "misses": info["misses"]}
         log.info("%s | %s | cache=%s | %.1fs | $%.4f", body.lang, body.text[:40], a.cache, a.latency_ms / 1000, a.cost_usd)
         return {"result": a.result.model_dump(mode="json", exclude_none=True), "meta": meta}
+
+    @app.get("/api/ready")
+    async def ready() -> dict:
+        return await check_ready(settings)
+
+    @app.get("/api/labels")
+    def ui_labels(lang: str = "vi") -> dict:
+        return labels(lang)
 
     @app.get("/api/grammar/{gid}")
     def grammar(gid: int, lang: str = "vi") -> dict:

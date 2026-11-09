@@ -57,9 +57,10 @@ class Settings(BaseSettings):
     # chi dich phan chu. Khong can suy nghi nen dung model nhanh, re.
     llm_light_model: str = "gpt-4.1-mini"
 
-    # Tu dien tra nghia tu: "kho" (word_lib, chi tieng Viet + ban dich kho) | "mazii" (API Mazii, da ngon ngu).
+    # Tu dien tra nghia tu: "mazii" (API Mazii, da ngon ngu, mac dinh) | "kho" (word_lib, khong can mang).
     # Mazii can noi dung public.pem (giai ma ket qua): duong dan file hoac noi dung truc tiep (bien moi truong).
-    dict_provider: str = "kho"
+    # Thieu / hong public.pem: ghi log loi va tu dung kho word_lib.
+    dict_provider: str = "mazii"
     mazii_url: str = "https://mazii.net/api/search/word/v3"
     mazii_pem_path: Path = Path("../secrets/public.pem")
     mazii_pem: str = ""

@@ -10,7 +10,8 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-SCHEMA_VERSION = "1.4"  # 1.3: them Token.pos_sub; 1.4: nghia tu tu dien ngoai (meaning_source "dict", level, han, dict_id)
+SCHEMA_VERSION = "1.5"  # 1.3: them Token.pos_sub; 1.4: nghia tu tu dien ngoai (meaning_source "dict", level, han, dict_id);
+# 1.5: GrammarDetail.examples[].tr (cau vi du dich theo lang), noi dung mau ngu phap theo ban dich kho
 
 Pos = Literal["noun", "verb", "adj", "adv", "prt", "aux", "punct"]
 # Phan loai chi tiet hien khi bam vao tu: dong tu nhom 1/2/3, tinh tu い/な.

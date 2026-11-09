@@ -5,7 +5,9 @@ Bo cuc thu muc (Settings.data_dir, mac dinh la thu muc `Model bunpo`):
     word/word_lib.json              kho tu vung goc (tieng Viet)
     word/word_text.<lang>.json      ban dich theo id: {"1": {"meaning": "..."}}
     grammar/grammar_lib.json        kho ngu phap goc (tieng Viet)
-    grammar/grammar_text.<lang>.json {"245": {"name", "meaning", "explain", "mistakes"}}
+    grammar/grammar_text.<lang>.json ban dich theo id (sinh boi scripts/translation/publish_lang.py):
+                                    {"245": {"name", "short_label", "meaning", "connection", "explain", "notes",
+                                             "examples": [{"jp", "tr"}], "mistakes": [...], "comparison": {...}}}
     i18n/<lang>.json                nhan giao dien, ten ma nhan ngu phap (label)
 
 Nguyen tac (muc 12.4, 12.9, 12.10 file ke hoach):
@@ -28,6 +30,8 @@ from typing import Any, Optional
 from bunpo_analyzer.core.tokenizer import kata_to_hira
 
 DEFAULT_LANG = "vi"
+# truong co chu trong ban dich kho ngu phap (co it nhat 1 -> phan chu cua mau la ngon ngu do)
+_TR_FIELDS = ("name", "meaning", "connection", "explain", "notes", "examples", "mistakes", "comparison")
 
 # pos cua word_lib -> ma tu loai cua module (khop khi tra tu, buoc 1.4)
 WORD_POS = {
@@ -199,19 +203,32 @@ class Kho:
             "lang": lang if tr.get("meaning") else DEFAULT_LANG,
         }
 
-    def grammar_text(self, gid: int, lang: str = DEFAULT_LANG) -> dict[str, Optional[str]]:
+    def grammar_tr(self, gid: int, lang: str) -> dict[str, Any]:
+        """Ban dich nguyen dang cua 1 mau ({} neu chua co / lang = vi). Truong rong = dung ban goc."""
+        if lang == DEFAULT_LANG:
+            return {}
+        return self._gram_text.get(lang, {}).get(str(int(gid))) or {}
+
+    def grammar_text(self, gid: int, lang: str = DEFAULT_LANG) -> dict[str, Any]:
+        """Chu cua mau theo lang, tung truong thieu ban dich thi dung tieng Viet.
+
+        mistakes: chuoi (kho goc) hoac danh sach (ban dich) - grammar_detail.mistakes() nhan ca hai.
+        lang: ngon ngu thuc cua phan chu (vi neu khong truong nao co ban dich).
+        """
         raw = self._gram_raw.get(int(gid))
         if raw is None:
             return {}
-        tr = self._gram_text.get(lang, {}).get(str(gid), {}) if lang != DEFAULT_LANG else {}
+        tr = self.grammar_tr(gid, lang)
         vi = {
             "name": raw.get("grammar") or None,
             "meaning": raw.get("meaning_vi") or None,
             "explain": raw.get("explain") or None,
             "mistakes": raw.get("common_mistakes") or None,
+            "notes": raw.get("notes") or None,
+            "connection": raw.get("接続") or None,
         }
         out = {k: tr.get(k) or v for k, v in vi.items()}
-        out["lang"] = lang if tr.get("meaning") else DEFAULT_LANG
+        out["lang"] = lang if any(tr.get(k) for k in _TR_FIELDS) else DEFAULT_LANG
         return out
 
     def label_name(self, code: str, lang: str = DEFAULT_LANG) -> Optional[str]:

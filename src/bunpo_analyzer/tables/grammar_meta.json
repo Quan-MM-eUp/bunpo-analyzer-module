@@ -5664,7 +5664,7 @@
   },
   "880": {
    "short_label": "noun-型",
-   "label_lang": "vi",
+   "label_lang": "en",
    "confusable_ids": []
   },
   "881": {
@@ -10059,7 +10059,7 @@
   },
   "1594": {
    "short_label": "～がた(polite plural suffix for people, as in あなたがた)",
-   "label_lang": "vi",
+   "label_lang": "en",
    "confusable_ids": []
   },
   "1595": {
@@ -10139,12 +10139,12 @@
   },
   "1610": {
    "short_label": "N（時／年齢）＋から（starting point in time/age）",
-   "label_lang": "vi",
+   "label_lang": "en",
    "confusable_ids": []
   },
   "1611": {
    "short_label": "いいえ、ちがいます(fixed negative reply to deny correctness)",
-   "label_lang": "vi",
+   "label_lang": "en",
    "confusable_ids": []
   },
   "1612": {

@@ -1,0 +1,774 @@
+{
+ "version": 1,
+ "note": "Sinh boi scripts/translation/export_ui_labels.py. Doc bang labels(lang).",
+ "langs": {
+  "vi": {
+   "pos": {
+    "noun": "danh từ",
+    "verb": "động từ",
+    "adj": "tính từ",
+    "adv": "trạng từ",
+    "prt": "trợ từ",
+    "aux": "trợ động từ"
+   },
+   "pos_sub": {
+    "v1": "động từ nhóm 1",
+    "v2": "động từ nhóm 2",
+    "v3": "động từ nhóm 3",
+    "adj_i": "tính từ い",
+    "adj_na": "tính từ な"
+   },
+   "role": {
+    "subject": "Chủ ngữ",
+    "topic": "Chủ đề",
+    "object": "Tân ngữ",
+    "complement": "Bổ ngữ",
+    "predicate": "Vị ngữ",
+    "main_predicate": "Vị ngữ chính",
+    "adv_time": "Trạng ngữ chỉ thời gian",
+    "adv_place": "Trạng ngữ chỉ nơi chốn",
+    "adv_manner": "Trạng ngữ chỉ cách thức",
+    "adv_reason": "Trạng ngữ chỉ lý do"
+   },
+   "kind": {
+    "rel": "Mệnh đề bổ nghĩa",
+    "sub": "Vế phụ",
+    "quote": "Lời trích dẫn",
+    "nominal": "Mệnh đề danh từ hoá"
+   },
+   "base_form": "dạng gốc",
+   "role_hidden": "{role} (ẩn)",
+   "kind_rel_for": "Mệnh đề bổ nghĩa cho {head}",
+   "check": {
+    "suspect": "Có thể chưa tự nhiên",
+    "error": "Chưa đúng ngữ pháp"
+   },
+   "error": {
+    "invalid_input": "Không phải 1 câu tiếng Nhật",
+    "grammar_error": "Sai ngữ pháp",
+    "structure_failed": "Chưa phân tích được cấu trúc",
+    "llm_unavailable": "Không gọi được AI"
+   }
+  },
+  "en": {
+   "pos": {
+    "noun": "noun",
+    "verb": "verb",
+    "adj": "adjective",
+    "adv": "adverb",
+    "prt": "particle",
+    "aux": "auxiliary verb"
+   },
+   "pos_sub": {
+    "v1": "Group 1 verb",
+    "v2": "Group 2 verb",
+    "v3": "Group 3 verb",
+    "adj_i": "i-adjective",
+    "adj_na": "na-adjective"
+   },
+   "role": {
+    "subject": "Subject",
+    "topic": "Topic",
+    "object": "Object",
+    "complement": "Complement",
+    "predicate": "Predicate",
+    "main_predicate": "Main predicate",
+    "adv_time": "Time adverbial",
+    "adv_place": "Place adverbial",
+    "adv_manner": "Manner adverbial",
+    "adv_reason": "Reason adverbial"
+   },
+   "kind": {
+    "rel": "Noun-modifying clause",
+    "sub": "Subordinate clause",
+    "quote": "Quotation",
+    "nominal": "Nominalization"
+   },
+   "base_form": "dictionary form",
+   "role_hidden": "{role} (omitted)",
+   "kind_rel_for": "Clause modifying {head}",
+   "check": {
+    "suspect": "May be unnatural",
+    "error": "Grammatically incorrect"
+   },
+   "error": {
+    "invalid_input": "Not a single Japanese sentence",
+    "grammar_error": "Grammar error",
+    "structure_failed": "Structure not analyzed",
+    "llm_unavailable": "AI unavailable"
+   }
+  },
+  "ko": {
+   "pos": {
+    "noun": "명사",
+    "verb": "동사",
+    "adj": "형용사",
+    "adv": "부사",
+    "prt": "조사",
+    "aux": "조동사"
+   },
+   "pos_sub": {
+    "v1": "1그룹 동사",
+    "v2": "2그룹 동사",
+    "v3": "3그룹 동사",
+    "adj_i": "い형용사",
+    "adj_na": "な형용사"
+   },
+   "role": {
+    "subject": "주어",
+    "topic": "주제",
+    "object": "목적어",
+    "complement": "보어",
+    "predicate": "술어",
+    "main_predicate": "주 술어",
+    "adv_time": "시간 부사어",
+    "adv_place": "장소 부사어",
+    "adv_manner": "방법 부사어",
+    "adv_reason": "이유 부사어"
+   },
+   "kind": {
+    "rel": "명사 수식절",
+    "sub": "종속절",
+    "quote": "인용",
+    "nominal": "명사화"
+   },
+   "base_form": "사전형",
+   "role_hidden": "{role} (생략)",
+   "kind_rel_for": "「{head}」 수식절",
+   "check": {
+    "suspect": "부자연스러울 수 있음",
+    "error": "문법 오류"
+   },
+   "error": {
+    "invalid_input": "일본어 한 문장이 아님",
+    "grammar_error": "문법 오류",
+    "structure_failed": "구조 분석 실패",
+    "llm_unavailable": "AI 사용 불가"
+   }
+  },
+  "cn": {
+   "pos": {
+    "noun": "名词",
+    "verb": "动词",
+    "adj": "形容词",
+    "adv": "副词",
+    "prt": "助词",
+    "aux": "助动词"
+   },
+   "pos_sub": {
+    "v1": "一类动词",
+    "v2": "二类动词",
+    "v3": "三类动词",
+    "adj_i": "い形容词",
+    "adj_na": "な形容词"
+   },
+   "role": {
+    "subject": "主语",
+    "topic": "主题",
+    "object": "宾语",
+    "complement": "补语",
+    "predicate": "谓语",
+    "main_predicate": "主要谓语",
+    "adv_time": "时间状语",
+    "adv_place": "地点状语",
+    "adv_manner": "方式状语",
+    "adv_reason": "原因状语"
+   },
+   "kind": {
+    "rel": "定语从句",
+    "sub": "从句",
+    "quote": "引用",
+    "nominal": "名词化"
+   },
+   "base_form": "辞书形",
+   "role_hidden": "{role}（省略）",
+   "kind_rel_for": "修饰「{head}」的从句",
+   "check": {
+    "suspect": "可能不自然",
+    "error": "语法错误"
+   },
+   "error": {
+    "invalid_input": "不是一句日语",
+    "grammar_error": "语法错误",
+    "structure_failed": "未能分析结构",
+    "llm_unavailable": "AI 不可用"
+   }
+  },
+  "tw": {
+   "pos": {
+    "noun": "名詞",
+    "verb": "動詞",
+    "adj": "形容詞",
+    "adv": "副詞",
+    "prt": "助詞",
+    "aux": "助動詞"
+   },
+   "pos_sub": {
+    "v1": "第一類動詞",
+    "v2": "第二類動詞",
+    "v3": "第三類動詞",
+    "adj_i": "い形容詞",
+    "adj_na": "な形容詞"
+   },
+   "role": {
+    "subject": "主詞",
+    "topic": "主題",
+    "object": "受詞",
+    "complement": "補語",
+    "predicate": "述語",
+    "main_predicate": "主要述語",
+    "adv_time": "時間狀語",
+    "adv_place": "地點狀語",
+    "adv_manner": "方式狀語",
+    "adv_reason": "原因狀語"
+   },
+   "kind": {
+    "rel": "名詞修飾子句",
+    "sub": "從屬子句",
+    "quote": "引用",
+    "nominal": "名詞化"
+   },
+   "base_form": "辭書形",
+   "role_hidden": "{role}（省略）",
+   "kind_rel_for": "修飾「{head}」的子句",
+   "check": {
+    "suspect": "可能不自然",
+    "error": "文法錯誤"
+   },
+   "error": {
+    "invalid_input": "不是一句日語",
+    "grammar_error": "文法錯誤",
+    "structure_failed": "無法分析結構",
+    "llm_unavailable": "AI 無法使用"
+   }
+  },
+  "th": {
+   "pos": {
+    "noun": "คำนาม",
+    "verb": "คำกริยา",
+    "adj": "คำคุณศัพท์",
+    "adv": "คำวิเศษณ์",
+    "prt": "คำช่วย",
+    "aux": "คำกริยานุเคราะห์"
+   },
+   "pos_sub": {
+    "v1": "คำกริยากลุ่มที่ 1",
+    "v2": "คำกริยากลุ่มที่ 2",
+    "v3": "คำกริยากลุ่มที่ 3",
+    "adj_i": "คำคุณศัพท์ い",
+    "adj_na": "คำคุณศัพท์ な"
+   },
+   "role": {
+    "subject": "ประธาน",
+    "topic": "หัวเรื่อง",
+    "object": "กรรม",
+    "complement": "ส่วนเติมเต็ม",
+    "predicate": "ภาคแสดง",
+    "main_predicate": "ภาคแสดงหลัก",
+    "adv_time": "ส่วนขยายบอกเวลา",
+    "adv_place": "ส่วนขยายบอกสถานที่",
+    "adv_manner": "ส่วนขยายบอกวิธีการ",
+    "adv_reason": "ส่วนขยายบอกเหตุผล"
+   },
+   "kind": {
+    "rel": "อนุประโยคขยายคำนาม",
+    "sub": "อนุประโยครอง",
+    "quote": "การยกคำพูด",
+    "nominal": "การทำให้เป็นคำนาม"
+   },
+   "base_form": "รูปพจนานุกรม",
+   "role_hidden": "{role} (ละไว้)",
+   "kind_rel_for": "อนุประโยคขยาย {head}",
+   "check": {
+    "suspect": "อาจไม่เป็นธรรมชาติ",
+    "error": "ผิดไวยากรณ์"
+   },
+   "error": {
+    "invalid_input": "ไม่ใช่ประโยคภาษาญี่ปุ่นหนึ่งประโยค",
+    "grammar_error": "ข้อผิดพลาดทางไวยากรณ์",
+    "structure_failed": "วิเคราะห์โครงสร้างไม่ได้",
+    "llm_unavailable": "ใช้ AI ไม่ได้ในขณะนี้"
+   }
+  },
+  "id": {
+   "pos": {
+    "noun": "kata benda",
+    "verb": "kata kerja",
+    "adj": "kata sifat",
+    "adv": "kata keterangan",
+    "prt": "partikel",
+    "aux": "kata kerja bantu"
+   },
+   "pos_sub": {
+    "v1": "kata kerja golongan 1",
+    "v2": "kata kerja golongan 2",
+    "v3": "kata kerja golongan 3",
+    "adj_i": "kata sifat い",
+    "adj_na": "kata sifat な"
+   },
+   "role": {
+    "subject": "Subjek",
+    "topic": "Topik",
+    "object": "Objek",
+    "complement": "Pelengkap",
+    "predicate": "Predikat",
+    "main_predicate": "Predikat utama",
+    "adv_time": "Keterangan waktu",
+    "adv_place": "Keterangan tempat",
+    "adv_manner": "Keterangan cara",
+    "adv_reason": "Keterangan alasan"
+   },
+   "kind": {
+    "rel": "Klausa penjelas kata benda",
+    "sub": "Klausa bawahan",
+    "quote": "Kutipan",
+    "nominal": "Nominalisasi"
+   },
+   "base_form": "bentuk kamus",
+   "role_hidden": "{role} (dilesapkan)",
+   "kind_rel_for": "Klausa yang menerangkan {head}",
+   "check": {
+    "suspect": "Mungkin kurang alami",
+    "error": "Tidak sesuai tata bahasa"
+   },
+   "error": {
+    "invalid_input": "Bukan satu kalimat bahasa Jepang",
+    "grammar_error": "Kesalahan tata bahasa",
+    "structure_failed": "Struktur tidak dapat dianalisis",
+    "llm_unavailable": "AI tidak tersedia"
+   }
+  },
+  "fr": {
+   "pos": {
+    "noun": "nom",
+    "verb": "verbe",
+    "adj": "adjectif",
+    "adv": "adverbe",
+    "prt": "particule",
+    "aux": "auxiliaire"
+   },
+   "pos_sub": {
+    "v1": "verbe du groupe 1",
+    "v2": "verbe du groupe 2",
+    "v3": "verbe du groupe 3",
+    "adj_i": "adjectif en い",
+    "adj_na": "adjectif en な"
+   },
+   "role": {
+    "subject": "Sujet",
+    "topic": "Thème",
+    "object": "Complément d'objet",
+    "complement": "Complément",
+    "predicate": "Prédicat",
+    "main_predicate": "Prédicat principal",
+    "adv_time": "Complément de temps",
+    "adv_place": "Complément de lieu",
+    "adv_manner": "Complément de manière",
+    "adv_reason": "Complément de cause"
+   },
+   "kind": {
+    "rel": "Proposition déterminative",
+    "sub": "Proposition subordonnée",
+    "quote": "Citation",
+    "nominal": "Nominalisation"
+   },
+   "base_form": "forme du dictionnaire",
+   "role_hidden": "{role} (sous-entendu)",
+   "kind_rel_for": "Proposition qui détermine {head}",
+   "check": {
+    "suspect": "Peut sembler peu naturel",
+    "error": "Grammaticalement incorrect"
+   },
+   "error": {
+    "invalid_input": "Pas une phrase japonaise unique",
+    "grammar_error": "Erreur de grammaire",
+    "structure_failed": "Structure non analysée",
+    "llm_unavailable": "IA indisponible"
+   }
+  },
+  "de": {
+   "pos": {
+    "noun": "Nomen",
+    "verb": "Verb",
+    "adj": "Adjektiv",
+    "adv": "Adverb",
+    "prt": "Partikel",
+    "aux": "Hilfsverb"
+   },
+   "pos_sub": {
+    "v1": "Gruppe-1-Verb",
+    "v2": "Gruppe-2-Verb",
+    "v3": "Gruppe-3-Verb",
+    "adj_i": "い-Adjektiv",
+    "adj_na": "な-Adjektiv"
+   },
+   "role": {
+    "subject": "Subjekt",
+    "topic": "Thema",
+    "object": "Objekt",
+    "complement": "Ergänzung",
+    "predicate": "Prädikat",
+    "main_predicate": "Hauptprädikat",
+    "adv_time": "Temporalangabe",
+    "adv_place": "Lokalangabe",
+    "adv_manner": "Modalangabe",
+    "adv_reason": "Kausalangabe"
+   },
+   "kind": {
+    "rel": "Attributsatz",
+    "sub": "Nebensatz",
+    "quote": "Zitat",
+    "nominal": "Nominalisierung"
+   },
+   "base_form": "Wörterbuchform",
+   "role_hidden": "{role} (ausgelassen)",
+   "kind_rel_for": "Attributsatz zu {head}",
+   "check": {
+    "suspect": "Möglicherweise unnatürlich",
+    "error": "Grammatikalisch falsch"
+   },
+   "error": {
+    "invalid_input": "Kein einzelner japanischer Satz",
+    "grammar_error": "Grammatikfehler",
+    "structure_failed": "Struktur nicht analysiert",
+    "llm_unavailable": "KI nicht verfügbar"
+   }
+  },
+  "es": {
+   "pos": {
+    "noun": "sustantivo",
+    "verb": "verbo",
+    "adj": "adjetivo",
+    "adv": "adverbio",
+    "prt": "partícula",
+    "aux": "verbo auxiliar"
+   },
+   "pos_sub": {
+    "v1": "verbo del grupo 1",
+    "v2": "verbo del grupo 2",
+    "v3": "verbo del grupo 3",
+    "adj_i": "adjetivo い",
+    "adj_na": "adjetivo な"
+   },
+   "role": {
+    "subject": "Sujeto",
+    "topic": "Tema",
+    "object": "Objeto directo",
+    "complement": "Complemento",
+    "predicate": "Predicado",
+    "main_predicate": "Predicado principal",
+    "adv_time": "Complemento de tiempo",
+    "adv_place": "Complemento de lugar",
+    "adv_manner": "Complemento de modo",
+    "adv_reason": "Complemento de causa"
+   },
+   "kind": {
+    "rel": "Cláusula que modifica al sustantivo",
+    "sub": "Cláusula subordinada",
+    "quote": "Cita",
+    "nominal": "Nominalización"
+   },
+   "base_form": "forma de diccionario",
+   "role_hidden": "{role} (omitido)",
+   "kind_rel_for": "Cláusula que modifica a {head}",
+   "check": {
+    "suspect": "Puede sonar poco natural",
+    "error": "Gramaticalmente incorrecta"
+   },
+   "error": {
+    "invalid_input": "No es una sola oración en japonés",
+    "grammar_error": "Error gramatical",
+    "structure_failed": "No se pudo analizar la estructura",
+    "llm_unavailable": "IA no disponible"
+   }
+  },
+  "pt": {
+   "pos": {
+    "noun": "substantivo",
+    "verb": "verbo",
+    "adj": "adjetivo",
+    "adv": "advérbio",
+    "prt": "partícula",
+    "aux": "verbo auxiliar"
+   },
+   "pos_sub": {
+    "v1": "verbo do grupo 1",
+    "v2": "verbo do grupo 2",
+    "v3": "verbo do grupo 3",
+    "adj_i": "adjetivo い",
+    "adj_na": "adjetivo な"
+   },
+   "role": {
+    "subject": "Sujeito",
+    "topic": "Tópico",
+    "object": "Objeto direto",
+    "complement": "Complemento",
+    "predicate": "Predicado",
+    "main_predicate": "Predicado principal",
+    "adv_time": "Adjunto adverbial de tempo",
+    "adv_place": "Adjunto adverbial de lugar",
+    "adv_manner": "Adjunto adverbial de modo",
+    "adv_reason": "Adjunto adverbial de causa"
+   },
+   "kind": {
+    "rel": "Oração que modifica o substantivo",
+    "sub": "Oração subordinada",
+    "quote": "Citação",
+    "nominal": "Nominalização"
+   },
+   "base_form": "forma de dicionário",
+   "role_hidden": "{role} (omitido)",
+   "kind_rel_for": "Oração que modifica {head}",
+   "check": {
+    "suspect": "Pode soar pouco natural",
+    "error": "Gramaticalmente incorreta"
+   },
+   "error": {
+    "invalid_input": "Não é uma única frase em japonês",
+    "grammar_error": "Erro gramatical",
+    "structure_failed": "Não foi possível analisar a estrutura",
+    "llm_unavailable": "IA indisponível"
+   }
+  },
+  "ru": {
+   "pos": {
+    "noun": "существительное",
+    "verb": "глагол",
+    "adj": "прилагательное",
+    "adv": "наречие",
+    "prt": "частица",
+    "aux": "вспомогательный глагол"
+   },
+   "pos_sub": {
+    "v1": "глагол I группы",
+    "v2": "глагол II группы",
+    "v3": "глагол III группы",
+    "adj_i": "い-прилагательное",
+    "adj_na": "な-прилагательное"
+   },
+   "role": {
+    "subject": "Подлежащее",
+    "topic": "Тема",
+    "object": "Дополнение",
+    "complement": "Комплемент",
+    "predicate": "Сказуемое",
+    "main_predicate": "Главное сказуемое",
+    "adv_time": "Обстоятельство времени",
+    "adv_place": "Обстоятельство места",
+    "adv_manner": "Обстоятельство образа действия",
+    "adv_reason": "Обстоятельство причины"
+   },
+   "kind": {
+    "rel": "Определительное придаточное",
+    "sub": "Придаточное предложение",
+    "quote": "Цитирование",
+    "nominal": "Номинализация"
+   },
+   "base_form": "словарная форма",
+   "role_hidden": "{role} (опущено)",
+   "kind_rel_for": "Придаточное к «{head}»",
+   "check": {
+    "suspect": "Возможно, неестественно",
+    "error": "Грамматически неверно"
+   },
+   "error": {
+    "invalid_input": "Это не одно японское предложение",
+    "grammar_error": "Грамматическая ошибка",
+    "structure_failed": "Не удалось разобрать структуру",
+    "llm_unavailable": "ИИ недоступен"
+   }
+  },
+  "pl": {
+   "pos": {
+    "noun": "rzeczownik",
+    "verb": "czasownik",
+    "adj": "przymiotnik",
+    "adv": "przysłówek",
+    "prt": "partykuła",
+    "aux": "czasownik posiłkowy"
+   },
+   "pos_sub": {
+    "v1": "czasownik grupy I",
+    "v2": "czasownik grupy II",
+    "v3": "czasownik grupy III",
+    "adj_i": "przymiotnik い",
+    "adj_na": "przymiotnik な"
+   },
+   "role": {
+    "subject": "Podmiot",
+    "topic": "Temat",
+    "object": "Dopełnienie",
+    "complement": "Uzupełnienie",
+    "predicate": "Orzeczenie",
+    "main_predicate": "Orzeczenie główne",
+    "adv_time": "Okolicznik czasu",
+    "adv_place": "Okolicznik miejsca",
+    "adv_manner": "Okolicznik sposobu",
+    "adv_reason": "Okolicznik przyczyny"
+   },
+   "kind": {
+    "rel": "Zdanie przydawkowe",
+    "sub": "Zdanie podrzędne",
+    "quote": "Cytowanie",
+    "nominal": "Nominalizacja"
+   },
+   "base_form": "forma słownikowa",
+   "role_hidden": "{role} (pominięty)",
+   "kind_rel_for": "Zdanie określające „{head}”",
+   "check": {
+    "suspect": "Może brzmieć nienaturalnie",
+    "error": "Niepoprawne gramatycznie"
+   },
+   "error": {
+    "invalid_input": "To nie jest jedno zdanie po japońsku",
+    "grammar_error": "Błąd gramatyczny",
+    "structure_failed": "Nie udało się przeanalizować struktury",
+    "llm_unavailable": "AI niedostępna"
+   }
+  },
+  "hi": {
+   "pos": {
+    "noun": "संज्ञा",
+    "verb": "क्रिया",
+    "adj": "विशेषण",
+    "adv": "क्रियाविशेषण",
+    "prt": "पार्टिकल",
+    "aux": "सहायक क्रिया"
+   },
+   "pos_sub": {
+    "v1": "समूह 1 क्रिया",
+    "v2": "समूह 2 क्रिया",
+    "v3": "समूह 3 क्रिया",
+    "adj_i": "い-विशेषण",
+    "adj_na": "な-विशेषण"
+   },
+   "role": {
+    "subject": "कर्ता",
+    "topic": "विषय",
+    "object": "कर्म",
+    "complement": "पूरक",
+    "predicate": "विधेय",
+    "main_predicate": "मुख्य विधेय",
+    "adv_time": "समयवाचक क्रियाविशेषण",
+    "adv_place": "स्थानवाचक क्रियाविशेषण",
+    "adv_manner": "रीतिवाचक क्रियाविशेषण",
+    "adv_reason": "कारणवाचक क्रियाविशेषण"
+   },
+   "kind": {
+    "rel": "संज्ञा-विशेषक उपवाक्य",
+    "sub": "आश्रित उपवाक्य",
+    "quote": "उद्धरण",
+    "nominal": "संज्ञाकरण"
+   },
+   "base_form": "शब्दकोश रूप",
+   "role_hidden": "{role} (लुप्त)",
+   "kind_rel_for": "{head} का विशेषक उपवाक्य",
+   "check": {
+    "suspect": "शायद स्वाभाविक न हो",
+    "error": "व्याकरण की दृष्टि से गलत"
+   },
+   "error": {
+    "invalid_input": "यह एक जापानी वाक्य नहीं है",
+    "grammar_error": "व्याकरण त्रुटि",
+    "structure_failed": "संरचना का विश्लेषण नहीं हो सका",
+    "llm_unavailable": "AI उपलब्ध नहीं"
+   }
+  },
+  "ne": {
+   "pos": {
+    "noun": "नाम",
+    "verb": "क्रिया",
+    "adj": "विशेषण",
+    "adv": "क्रियाविशेषण",
+    "prt": "पार्टिकल",
+    "aux": "सहायक क्रिया"
+   },
+   "pos_sub": {
+    "v1": "समूह 1 को क्रिया",
+    "v2": "समूह 2 को क्रिया",
+    "v3": "समूह 3 को क्रिया",
+    "adj_i": "い-विशेषण",
+    "adj_na": "な-विशेषण"
+   },
+   "role": {
+    "subject": "कर्ता",
+    "topic": "विषय",
+    "object": "कर्म",
+    "complement": "पूरक",
+    "predicate": "विधेय",
+    "main_predicate": "मुख्य विधेय",
+    "adv_time": "समयबोधक क्रियाविशेषण",
+    "adv_place": "स्थानबोधक क्रियाविशेषण",
+    "adv_manner": "रीतिबोधक क्रियाविशेषण",
+    "adv_reason": "कारणबोधक क्रियाविशेषण"
+   },
+   "kind": {
+    "rel": "नाम-विशेषक उपवाक्य",
+    "sub": "आश्रित उपवाक्य",
+    "quote": "उद्धरण",
+    "nominal": "नामीकरण"
+   },
+   "base_form": "शब्दकोश रूप",
+   "role_hidden": "{role} (लुप्त)",
+   "kind_rel_for": "{head} लाई विशेषित गर्ने उपवाक्य",
+   "check": {
+    "suspect": "स्वाभाविक नहुन सक्छ",
+    "error": "व्याकरणिक रूपमा गलत"
+   },
+   "error": {
+    "invalid_input": "यो एउटा जापानी वाक्य होइन",
+    "grammar_error": "व्याकरण त्रुटि",
+    "structure_failed": "संरचना विश्लेषण गर्न सकिएन",
+    "llm_unavailable": "AI उपलब्ध छैन"
+   }
+  },
+  "my": {
+   "pos": {
+    "noun": "နာမ်",
+    "verb": "ကြိယာ",
+    "adj": "နာမဝိသေသန",
+    "adv": "ကြိယာဝိသေသန",
+    "prt": "ပစ္စည်း",
+    "aux": "အကူကြိယာ"
+   },
+   "pos_sub": {
+    "v1": "အုပ်စု 1 ကြိယာ",
+    "v2": "အုပ်စု 2 ကြိယာ",
+    "v3": "အုပ်စု 3 ကြိယာ",
+    "adj_i": "い-နာမဝိသေသန",
+    "adj_na": "な-နာမဝိသေသန"
+   },
+   "role": {
+    "subject": "ကတ္တား",
+    "topic": "အကြောင်းအရာ",
+    "object": "ကံ",
+    "complement": "ဖြည့်စွက်ချက်",
+    "predicate": "ဝါစက",
+    "main_predicate": "အဓိကဝါစက",
+    "adv_time": "အချိန်ပြ ကြိယာဝိသေသန",
+    "adv_place": "နေရာပြ ကြိယာဝိသေသန",
+    "adv_manner": "ပုံစံပြ ကြိယာဝိသေသန",
+    "adv_reason": "အကြောင်းပြ ကြိယာဝိသေသန"
+   },
+   "kind": {
+    "rel": "နာမ်အထူးပြုဝါကျပိုင်း",
+    "sub": "ဝါကျခွဲ",
+    "quote": "ကိုးကားခြင်း",
+    "nominal": "နာမ်ပြုခြင်း"
+   },
+   "base_form": "အဘိဓာန်ပုံစံ",
+   "role_hidden": "{role} (ချန်လှပ်ထား)",
+   "kind_rel_for": "{head} ကို အထူးပြုသော ဝါကျပိုင်း",
+   "check": {
+    "suspect": "သဘာဝမကျနိုင်",
+    "error": "သဒ္ဒါမှားနေသည်"
+   },
+   "error": {
+    "invalid_input": "ဂျပန်ဝါကျ တစ်ကြောင်း မဟုတ်ပါ",
+    "grammar_error": "သဒ္ဒါအမှား",
+    "structure_failed": "ဝါကျဖွဲ့စည်းပုံကို ခွဲခြမ်းမရပါ",
+    "llm_unavailable": "AI မရနိုင်ပါ"
+   }
+  }
+ }
+}

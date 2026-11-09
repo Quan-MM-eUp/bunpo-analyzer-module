@@ -230,27 +230,20 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;
 const store = { get(k, d){ try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
                 set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
 
-/* ---- nhan tieng Viet cho ma trong ket qua (giai doan 5 se lay tu i18n bunpo.*) ---- */
-/* Nhan tu loai theo ngon ngu ket qua (thuat ngu lay tu translation/glossary). Ngon ngu khac: tieng Anh. */
-const POS_I18N = {
-  vi: {pos: {noun:"danh từ",verb:"động từ",adj:"tính từ",adv:"trạng từ",prt:"trợ từ",aux:"trợ động từ"},
-       sub: {v1:"động từ nhóm 1",v2:"động từ nhóm 2",v3:"động từ nhóm 3",adj_i:"tính từ い",adj_na:"tính từ な"}, base: "dạng gốc"},
-  en: {pos: {noun:"noun",verb:"verb",adj:"adjective",adv:"adverb",prt:"particle",aux:"auxiliary verb"},
-       sub: {v1:"Group 1 verb",v2:"Group 2 verb",v3:"Group 3 verb",adj_i:"i-adjective",adj_na:"na-adjective"}, base: "dictionary form"},
-  id: {pos: {noun:"kata benda",verb:"kata kerja",adj:"kata sifat",adv:"kata keterangan",prt:"partikel",aux:"kata kerja bantu"},
-       sub: {v1:"kata kerja golongan 1",v2:"kata kerja golongan 2",v3:"kata kerja golongan 3",adj_i:"kata sifat い",adj_na:"kata sifat な"}, base: "bentuk kamus"},
-  tw: {pos: {noun:"名詞",verb:"動詞",adj:"形容詞",adv:"副詞",prt:"助詞",aux:"助動詞"},
-       sub: {v1:"第一類動詞",v2:"第二類動詞",v3:"第三類動詞",adj_i:"い形容詞",adj_na:"な形容詞"}, base: "辭書形"},
-  cn: {pos: {noun:"名词",verb:"动词",adj:"形容词",adv:"副词",prt:"助词",aux:"助动词"},
-       sub: {v1:"一类动词",v2:"二类动词",v3:"三类动词",adj_i:"い形容词",adj_na:"な形容词"}, base: "辞书形"},
-  ko: {pos: {noun:"명사",verb:"동사",adj:"형용사",adv:"부사",prt:"조사",aux:"조동사"},
-       sub: {v1:"1그룹 동사",v2:"2그룹 동사",v3:"3그룹 동사",adj_i:"い형용사",adj_na:"な형용사"}, base: "사전형"},
-};
-const posLabels = lang => POS_I18N[lang] || POS_I18N.en;
-const POS = POS_I18N.vi.pos;
-const ROLE = {subject:"Chủ ngữ",topic:"Chủ đề",object:"Tân ngữ",complement:"Bổ ngữ",predicate:"Vị ngữ",
-  adv_time:"Trạng ngữ chỉ thời gian",adv_place:"Trạng ngữ chỉ nơi chốn",adv_manner:"Trạng ngữ chỉ cách thức",adv_reason:"Trạng ngữ chỉ lý do"};
-const KIND = {rel:"Mệnh đề bổ nghĩa",sub:"Vế phụ",quote:"Lời trích dẫn",nominal:"Mệnh đề danh từ hoá"};
+/* ---- nhan cho ma trong ket qua: server demo chen bang labels() cua module (16 ngon ngu, theo ngon ngu ket qua);
+   ban mau khong co server: tieng Viet ---- */
+const LABELS = /*LABELS*/null;
+const LABELS_VI = {
+  pos: {noun:"danh từ",verb:"động từ",adj:"tính từ",adv:"trạng từ",prt:"trợ từ",aux:"trợ động từ"},
+  pos_sub: {v1:"động từ nhóm 1",v2:"động từ nhóm 2",v3:"động từ nhóm 3",adj_i:"tính từ い",adj_na:"tính từ な"},
+  role: {subject:"Chủ ngữ",topic:"Chủ đề",object:"Tân ngữ",complement:"Bổ ngữ",predicate:"Vị ngữ",main_predicate:"Vị ngữ chính",
+    adv_time:"Trạng ngữ chỉ thời gian",adv_place:"Trạng ngữ chỉ nơi chốn",adv_manner:"Trạng ngữ chỉ cách thức",adv_reason:"Trạng ngữ chỉ lý do"},
+  role_hidden: "{role} (ẩn)",
+  kind: {rel:"Mệnh đề bổ nghĩa",sub:"Vế phụ",quote:"Lời trích dẫn",nominal:"Mệnh đề danh từ hoá"},
+  kind_rel_for: "Mệnh đề bổ nghĩa cho {head}", base_form: "dạng gốc"};
+const labelsFor = lang => (LABELS && (LABELS[lang] || LABELS.en)) || LABELS_VI;
+const POS_KEYS = ["noun","verb","adj","adv","prt","aux"];
+const fill = (tpl, k, v) => tpl.replace(`{${k}}`, () => v);
 const LEVEL_RANK = {N5:5,N4:4,N3:3,N2:2,N1:1};
 
 /* ---- goi module (that hoac mau) ---- */
@@ -386,9 +379,9 @@ function openScreen(entry){
     const inG = groups.filter(g => t.i >= g.span[0] && t.i < g.span[1]).sort((a, b) => depth(b.id) - depth(a.id))[0];
     return `<button type="button" class="tk p-${t.pos}${inG ? " in-" + inG.kind : ""}" data-i="${t.i}">${inner}</button>`;
   }).join("");
-  const PL = posLabels(entry.lang);
-  const lg = Object.keys(POS).map(p => `<span><i style="background:var(--${p})"></i>${PL.pos[p]}</span>`).join("") +
-    ["rel","sub","quote","nominal"].map(k => `<span><b style="background:var(--${k}-bg);border-left:3px solid var(--${k})"></b>${KIND[k]}</span>`).join("");
+  const PL = labelsFor(entry.lang);
+  const lg = POS_KEYS.map(p => `<span><i style="background:var(--${p})"></i>${esc(PL.pos[p])}</span>`).join("") +
+    ["rel","sub","quote","nominal"].map(k => `<span><b style="background:var(--${k}-bg);border-left:3px solid var(--${k})"></b>${esc(PL.kind[k])}</span>`).join("");
   let n = 0; const hd = (t, extra = "") => `<div class="sec-h"><span class="num">${++n}</span><h3>${t}</h3>${extra}</div>`;
   let h = `<div class="card">${hd("Câu gốc", `<button type="button" class="lg-btn" aria-expanded="false">Chú thích màu ▾</button>`)}
     <div class="sent" id="sent">${parts}</div><div class="lg" id="lgd" hidden>${lg}</div>
@@ -397,7 +390,7 @@ function openScreen(entry){
     h += `<div class="note">Chưa có phần dịch và cấu trúc câu (${esc(r.error.code)}).</div>`;
   } else {
     if (r.translation) h += `<div class="card">${hd("Dịch nghĩa")}<div class="tr">${esc(r.translation)}</div></div>`;
-    h += `<div class="card">${hd("Cấu trúc câu")}<div class="list">${tree(r)}</div></div>`;
+    h += `<div class="card">${hd("Cấu trúc câu")}<div class="list">${tree(r, PL)}</div></div>`;
     const gl = (r.grammar || []).map(g => `<button type="button" data-g="${g.id}"><span class="txt"><b>${esc(g.short_label)} · ${esc(g.level || "")}</b> — ${esc(g.meaning || "")}</span><span class="chev" aria-hidden="true">›</span></button>`).join("");
     if (gl) h += `<div class="card">${hd("Ngữ pháp trong câu")}<div class="gl">${gl}</div></div>`;
   }
@@ -406,25 +399,25 @@ function openScreen(entry){
   lb.addEventListener("click", () => { lgEl.hidden = !lgEl.hidden; lb.setAttribute("aria-expanded", !lgEl.hidden); lb.textContent = lgEl.hidden ? "Chú thích màu ▾" : "Chú thích màu ▴"; });
   box.querySelectorAll(".tk[data-i]").forEach(b => b.addEventListener("click", () => {
     box.querySelectorAll(".tk").forEach(x => x.classList.remove("on")); b.classList.add("on");
-    const t = r.tokens[+b.dataset.i]; const lab = PL.sub[t.pos_sub] || PL.pos[t.pos] || t.pos;
-    const base = t.base && t.base !== t.surface && (t.pos === "verb" || t.pos === "adj") ? ` · ${PL.base} ${esc(t.base)}` : "";
+    const t = r.tokens[+b.dataset.i]; const lab = esc(PL.pos_sub[t.pos_sub] || PL.pos[t.pos] || t.pos);
+    const base = t.base && t.base !== t.surface && (t.pos === "verb" || t.pos === "adj") ? ` · ${esc(PL.base_form)} ${esc(t.base)}` : "";
     const rd = t.reading && t.reading !== t.surface ? ` 【${esc(t.reading)}】` : "";
     const han = t.han ? ` · ${esc(t.han)}` : "", lv = t.level ? ` · ${esc(t.level)}` : "";
     $("tdet").innerHTML = `<span class="w">${esc(t.surface)}</span>${rd}${han} · ${lab}${base}${t.meaning ? " · " + esc(t.meaning) : ""}${lv}`;
   }));
   $("screen").classList.add("open"); $("screen").setAttribute("aria-hidden", "false");
 }
-function tree(r){
+function tree(r, PL){
   const nodes = r.nodes || [], gmap = Object.fromEntries((r.grammar || []).map(g => [g.id, g]));
   const tags = ids => (ids || []).filter(id => gmap[id]).map(id => `<button type="button" class="tag" data-g="${id}">${esc(gmap[id].short_label)} · ${esc(gmap[id].level || "")}</button>`).join("");
   const txt = n => n.span ? r.tokens.slice(n.span[0], n.span[1]).map(t => t.surface).join("") : (n.jp || "");
   const kids = pid => nodes.filter(n => (n.parent ?? null) === pid);
   const one = n => {
     if (n.type === "group") {
-      const label = n.kind === "rel" && n.head_text ? `${KIND.rel} cho ${esc(n.head_text)}` : (KIND[n.kind] || n.kind);
+      const label = n.kind === "rel" && n.head_text ? fill(esc(PL.kind_rel_for), "head", esc(n.head_text)) : esc(PL.kind[n.kind] || n.kind);
       return `<div class="grp ${n.kind}"><div class="gh"><span>${label}</span>${tags(n.grammar)}${n.gloss ? `<span class="gg">${esc(n.gloss)}</span>` : ""}</div>${kids(n.id).map(one).join("")}</div>`;
     }
-    const role = n.main ? "Vị ngữ chính" : (ROLE[n.role] || n.role) + (n.hidden ? " (ẩn)" : "");
+    const rl = PL.role[n.role] || n.role, role = esc(n.main ? PL.role.main_predicate : n.hidden ? fill(PL.role_hidden, "role", rl) : rl);
     return `<div class="row${n.main ? " main" : ""}${n.hidden ? " hidden" : ""}"><span class="role">${role}</span><div class="l2"><span class="jp">${esc(txt(n))}</span><span class="vi">${esc(n.gloss || "")}</span></div><span class="tags">${tags(n.grammar)}</span></div>`;
   };
   return kids(null).map(one).join("");
@@ -445,7 +438,7 @@ async function renderSheet(id){
   const rd = g.reading && /[一-鿿]/.test(g.short_label || "") ? `<span class="rd">（${esc(g.reading)}）</span>` : "";
   let h = `<section class="sh-card">${H("Mẫu ngữ pháp")}<div class="sh-name"><span class="nm">${esc(g.short_label || g.name)}</span>${rd}${g.level ? `<span class="pill">${esc(g.level)}</span>` : ""}${labels}</div>${g.meaning ? `<div class="senses">${esc(g.meaning)}</div>` : ""}</section>`;
   if (g.connection) h += `<section class="sh-card">${H("Công thức")}<div class="conn">${esc(g.connection)}</div></section>`;
-  const ex = (g.examples || []).slice(0, 2).map(e => `<div class="exi"><div class="j">${esc(e.jp)}</div>${e.vi ? `<div class="v">${esc(e.vi)}</div>` : ""}</div>`).join("");
+  const ex = (g.examples || []).slice(0, 2).map(e => `<div class="exi"><div class="j">${esc(e.jp)}</div>${(e.tr || e.vi) ? `<div class="v">${esc(e.tr || e.vi)}</div>` : ""}</div>`).join("");
   if (ex) h += `<section class="sh-card">${H("Ví dụ")}${ex}</section>`;
   let det = "";
   if (g.explain) det += `<div class="sub-t" style="margin-top:0">Giải thích</div><div class="explain">${esc(g.explain)}</div>`;

@@ -1,6 +1,6 @@
 """Tu dien tra nghia tu (thay kho word_lib): Mazii API, co cache, gioi han thoi gian, ngat tam khi loi.
 
-Chon bang `Settings.dict_provider`: "kho" (word_lib, mac dinh, khong can mang) | "mazii".
+Chon bang `Settings.dict_provider`: "mazii" (mac dinh; thieu public.pem thi tu dung kho) | "kho" (word_lib, khong can mang).
 """
 
 from bunpo_analyzer.core.dictionary.base import DictEntry, Dictionary, Sense
