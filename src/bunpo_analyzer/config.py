@@ -5,7 +5,7 @@ from __future__ import annotations
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import Field
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # vi + 15 ngon ngu trong thu muc i18n (muc 12.6 file ke hoach).
@@ -23,6 +23,11 @@ class Settings(BaseSettings):
     data_dir: Path = Path("..")
 
     default_lang: str = "vi"
+    # Ngon ngu du phong cho phan chu lay tu kho (y nghia / nhan ngan / bang ngu phap / cau vi du cua mau
+    # ngu phap) va nghia tro tu (particle_table) khi `lang` chua co ban dich. Mac dinh "vi" = hanh vi cu.
+    # Chatbot Migii dat "en": 13 ngon ngu chua dich kho hien tieng Anh thay vi tieng Viet.
+    # Phan do LLM viet (dich cau, gloss, giai thich loi) va nghia tu (Mazii) KHONG doi: van theo `lang`.
+    text_fallback_lang: str = "vi"
     # Gioi han do dai mot cau (muc 8 file kich ban). Chatbot da chan truoc,
     # module kiem tra lai de an toan.
     max_chars: int = Field(default=100, gt=0)
@@ -75,6 +80,15 @@ class Settings(BaseSettings):
     cache_url: str = ""  # redis://host:6379/0 khi cache_backend=redis
     cache_ttl_s: int = Field(default=30 * 86400, gt=0)
     cache_max_items: int = Field(default=5000, gt=0)  # chi cho memory
+
+
+    @field_validator("text_fallback_lang")
+    @classmethod
+    def _check_fallback(cls, v: str) -> str:
+        v = (v or "vi").strip().lower()
+        if v not in SUPPORTED_LANGS:
+            raise ValueError(f"BUNPO_TEXT_FALLBACK_LANG phai la mot trong {SUPPORTED_LANGS}")
+        return v
 
 
 @lru_cache

@@ -1,6 +1,6 @@
 # Tích hợp bunpo-analyzer vào chatbot Migii AI Sensei
 
-Tài liệu dành cho người (hoặc Claude) tích hợp module vào chatbot. Đọc xong tài liệu này là đủ để tích hợp, không cần đọc code module. Phiên bản module **0.2.0**, khuôn kết quả **1.5**.
+Tài liệu dành cho người (hoặc Claude) tích hợp module vào chatbot. Đọc xong tài liệu này là đủ để tích hợp, không cần đọc code module. Phiên bản module **0.2.1**, khuôn kết quả **1.5**.
 
 Đi kèm (cùng repo, cùng thư mục `docs/`): `docs/schema/*.schema.json` (JSON Schema sinh từ code) và `docs/examples/*.json` (kết quả chạy thật, dùng làm dữ liệu giả cho app). Mọi thứ cần để tích hợp đều có ở đây; các file khác chỉ để tham khảo thêm: `CHANGELOG.md`, thiết kế gốc mục 11–12 file `de-xuat-trien-khai-phan-tich-ngu-phap.md`, kịch bản hội thoại `kich-ban-module-phan-tich-ngu-phap.md`.
 
@@ -81,6 +81,7 @@ pip install "bunpo-analyzer[redis] @ git+https://github.com/Quan-MM-eUp/bunpo-an
 | `BUNPO_CACHE_URL` | Khi redis | | `redis://host:6379/0` |
 | `BUNPO_CACHE_TTL_S` | | `2592000` (30 ngày) | Hạn cache kết quả |
 | `BUNPO_DEFAULT_LANG` | | `vi` | Ngôn ngữ khi không truyền `lang` |
+| `BUNPO_TEXT_FALLBACK_LANG` | | `vi` | Ngôn ngữ dự phòng cho phần chữ lấy từ **kho ngữ pháp** (`grammar[].meaning`, `short_label`, `grammar_detail()`) và **nghĩa trợ từ** (`particle_table`) khi `lang` chưa có bản dịch (mục 9). Một trong 16 mã; mã lạ: lỗi cấu hình. **Chatbot Migii đặt `en`** |
 | `BUNPO_MAX_CHARS` | | `100` | Độ dài tối đa một câu |
 
 Có thể truyền cấu hình bằng code thay cho biến môi trường: `Settings(data_dir=..., openai_api_key=...)` rồi đưa vào `analyze_full(..., settings=s)` (mục 4.2).
@@ -114,7 +115,7 @@ if not rep["ok"]:
     log.error("bunpo-analyzer chưa sẵn sàng: %s", rep["checks"])
 ```
 
-`rep = {"ok": bool, "checks": {"kho", "tokenizer", "llm", "cache", "dictionary": {"ok": bool, "detail": str, "warn"?: true}}}`; riêng `checks.kho` có thêm `langs` (các ngôn ngữ đã có bản dịch kho ngữ pháp, gồm `vi`). `ok = False` khi thiếu thứ bắt buộc (kho, tách từ, key LLM, cache). Mazii hỏng chỉ là `warn` (module tự dùng `word_lib`). Không chứa key. Ví dụ: `docs/examples/check_ready.json`. Nên gọi `check_ready(ping=True)` một lần khi triển khai để phát hiện `public.pem` sai.
+`rep = {"ok": bool, "checks": {"kho", "tokenizer", "llm", "cache", "dictionary": {"ok": bool, "detail": str, "warn"?: true}}}`; riêng `checks.kho` có thêm `langs` (các ngôn ngữ đã có bản dịch kho ngữ pháp, gồm `vi`) và `text_fallback` (giá trị `BUNPO_TEXT_FALLBACK_LANG`; đặt ngôn ngữ dự phòng mà thiếu `grammar_text.<mã>.json` thì `checks.kho` có `warn: true`). `ok = False` khi thiếu thứ bắt buộc (kho, tách từ, key LLM, cache). Mazii hỏng chỉ là `warn` (module tự dùng `word_lib`). Không chứa key. Ví dụ: `docs/examples/check_ready.json`. Nên gọi `check_ready(ping=True)` một lần khi triển khai để phát hiện `public.pem` sai.
 
 ### 3.4. Khi Mazii không dùng được
 
@@ -183,7 +184,7 @@ Mục 7.
 ### 4.5. Khác
 
 - `check_ready(settings=None, ping=False)` (mục 3.3).
-- `SCHEMA_VERSION` (`"1.5"`), `__version__` (`"0.2.0"`), `AnalysisResult`, `GrammarDetail` (model pydantic), `Settings`, `get_settings()`.
+- `SCHEMA_VERSION` (`"1.5"`), `__version__` (`"0.2.1"`), `AnalysisResult`, `GrammarDetail` (model pydantic), `Settings`, `get_settings()`.
 - Logger: `bunpo_analyzer` (mỗi câu một dòng `analyze {...}` mức INFO), `bunpo_analyzer.llm`, `bunpo_analyzer.dict`, `bunpo_analyzer.cache`. Không bao giờ ghi key / `public.pem`.
 
 ## 5. Khuôn kết quả `AnalysisResult` (1.5)
@@ -196,7 +197,7 @@ JSON Schema đầy đủ: `docs/schema/analysis_result.schema.json`. Các trư�
 2. **`span` là khoảng nửa mở `[bắt đầu, kết thúc)` theo số thứ tự token** (`tokens[].i`). Chữ của một dòng = ghép `surface` của các token trong `span`. Riêng `input_check.correction_at` là vị trí **ký tự** trong `correction`.
 3. **`nodes` là danh sách phẳng, đã sắp xếp** theo thứ tự hiển thị (duyệt cây theo chiều sâu, anh em xếp theo token đầu tiên); quan hệ cha con qua `parent`. Dòng chủ ngữ ẩn (không `span`) đứng đầu cấp chứa nó (kể cả cấp ngoài cùng). Mỗi cấp có tối đa một dòng chủ ngữ (module bỏ dòng chủ ngữ ẩn nếu cấp đó đã có chủ ngữ thật).
 4. Nhóm có `span` tính sẵn để tô nền trên câu gốc. Token thuộc nhiều nhóm thì tô theo nhóm trong cùng (sâu nhất).
-5. **Chữ theo `lang`**: `translation`, `nodes[].gloss`, `tokens[].meaning`, `grammar[].meaning`, `grammar[].short_label`, `input_check.reason/explain`. Ngoại lệ (mục 9): `grammar[].meaning`, `short_label` lấy từ kho ngữ pháp nên là tiếng Việt khi `lang` chưa có trong `check_ready()["checks"]["kho"]["langs"]`; nghĩa trợ từ (`meaning_source = "particle_table"`) là tiếng Việt với các ngôn ngữ ở cột cuối bảng mục 9.
+5. **Chữ theo `lang`**: `translation`, `nodes[].gloss`, `tokens[].meaning`, `grammar[].meaning`, `grammar[].short_label`, `input_check.reason/explain`. Ngoại lệ (mục 9): `grammar[].meaning`, `short_label` lấy từ kho ngữ pháp, và nghĩa trợ từ (`meaning_source = "particle_table"`): khi `lang` chưa có bản dịch thì dùng ngôn ngữ dự phòng `BUNPO_TEXT_FALLBACK_LANG` (chatbot: tiếng Anh), mặc định tiếng Việt.
 6. Trường có dấu `?` ở bảng dưới có thể vắng (null). Token dấu câu (`pos = "punct"`) chỉ có `i`, `surface`, `pos`.
 
 ### 5.2. Các trường
@@ -314,7 +315,7 @@ Ví dụ thật đầy đủ (chạy bằng `scripts/build_doc_examples.py`): `d
 | Trường | Kiểu | Ý nghĩa |
 |---|---|---|
 | `id`, `lang` | int, string | Như tham số |
-| `text_lang` | string | Ngôn ngữ thực của phần chữ: `lang` nếu đã có bản dịch, không thì `vi` |
+| `text_lang` | string | Ngôn ngữ thực của phần chữ: `lang` nếu đã có bản dịch; chưa có thì ngôn ngữ dự phòng (`BUNPO_TEXT_FALLBACK_LANG`, nếu kho có bản dịch của nó); không thì `vi` |
 | `short_label`, `name` | string? | Nhãn ngắn; tên đầy đủ trong kho |
 | `reading` | string? | Cách đọc kana (hiện khi nhãn có kanji) |
 | `level` | string? | `N5`…`N1` |
@@ -399,16 +400,16 @@ Ví dụ: `✕ Câu của bạn: 映画は【面白いでした】。` / `✓ C�
 
 16 mã `lang`: `vi` (gốc) và `en`, `cn` (Trung giản thể), `tw` (Trung phồn thể), `ko`, `fr`, `de`, `es`, `pt`, `ru`, `pl`, `id`, `th`, `hi`, `ne`, `my` (trùng mã file `i18n` của chatbot).
 
-Phần do LLM viết (`translation`, `gloss`, `input_check.reason/explain`) luôn theo `lang`. Các phần còn lại phụ thuộc dữ liệu đã dịch:
+Phần do LLM viết (`translation`, `gloss`, `input_check.reason/explain`) luôn theo `lang`. Các phần còn lại phụ thuộc dữ liệu đã dịch. Chỗ chưa có bản dịch dùng **ngôn ngữ dự phòng** `BUNPO_TEXT_FALLBACK_LANG` (từ 0.2.1; mặc định `vi`, chatbot Migii đặt `en`):
 
 | Phần | vi | en, ko | id, tw, cn | fr, de, es, pt, ru, pl, th, hi, ne, my |
 |---|---|---|---|---|
 | Nghĩa từ (Mazii) | có | có | có | có (`pl` dùng từ điển tiếng Anh) |
-| Nghĩa trợ từ / trợ động từ (`particle_table`) | có | có | có | **tiếng Việt** (bản dịch đã có sẵn, bật bằng `export_particles.py --langs …`) |
-| Kho ngữ pháp: `grammar[].meaning`, `short_label`, `grammar_detail()` | có | có | **tiếng Việt** (chờ dịch kho) | **tiếng Việt** (chờ dịch kho) |
+| Nghĩa trợ từ / trợ động từ (`particle_table`) | có | có | có | **ngôn ngữ dự phòng** (bản dịch đã có sẵn, bật bằng `export_particles.py --langs …`) |
+| Kho ngữ pháp: `grammar[].meaning`, `short_label`, `grammar_detail()` | có | có | **ngôn ngữ dự phòng** (chờ dịch kho) | **ngôn ngữ dự phòng** (chờ dịch kho) |
 | `labels()` | có | có | có | có |
 
-Thiếu bản dịch thì dùng tiếng Việt, không lỗi. Biết phần kho đã dịch chưa: `grammar_detail().text_lang`, hoặc `lang in check_ready()["checks"]["kho"]["langs"]` (áp dụng cho `grammar[]` của `AnalysisResult`, vốn không có trường `text_lang`). `grammar_detail().labels[].name` lấy từ `i18n` nên luôn theo `lang`. Khi một ngôn ngữ dịch kho xong: `publish_lang.py <lang>` → chép `grammar_text.<lang>.json` vào `grammar/` → khởi động lại. Không cần đổi code chatbot.
+Thứ tự chọn chữ: bản dịch của `lang` → bản dịch của ngôn ngữ dự phòng → tiếng Việt (bản gốc). Người dùng tiếng Việt luôn thấy bản gốc. Ngôn ngữ đã có file dịch nhưng thiếu một mẫu hoặc một trường thì giữ như cũ (trường thiếu dùng tiếng Việt). Ngôn ngữ dự phòng không ảnh hưởng phần LLM viết và nghĩa từ Mazii, cũng không nằm trong khoá cache (cache chỉ giữ đầu ra LLM; phần chữ kho và nghĩa trợ từ ghép lại mỗi lần gọi), nên đổi biến này không cần xoá cache. `analyze_full(settings=…)` dùng giá trị trong `settings` của lần gọi; `grammar_detail()` gọi thẳng dùng biến môi trường (`get_settings()`). Biết phần kho đã dịch chưa: `grammar_detail().text_lang`, hoặc `lang in check_ready()["checks"]["kho"]["langs"]` (áp dụng cho `grammar[]` của `AnalysisResult`, vốn không có trường `text_lang`). `grammar_detail().labels[].name` lấy từ `i18n` nên luôn theo `lang`. Khi một ngôn ngữ dịch kho xong: `publish_lang.py <lang>` → chép `grammar_text.<lang>.json` vào `grammar/` → khởi động lại. Không cần đổi code chatbot.
 
 ## 10. Hiệu năng, chi phí, chạy đồng thời
 

@@ -19,6 +19,7 @@ from bunpo_analyzer.core.assemble import assemble
 from bunpo_analyzer.core.grammar_check import build_input_check
 from bunpo_analyzer.core.data import Kho, get_kho
 from bunpo_analyzer.core.input_check import check_input
+from bunpo_analyzer.core.langs import use_text_fallback
 from bunpo_analyzer.core.llm import LLMClient, LLMError
 from bunpo_analyzer.core.llm.base import Message
 from bunpo_analyzer.core.matcher import GrammarMatcher, get_matcher
@@ -165,6 +166,24 @@ async def analyze_full(
     dictionary: tu dien tra nghia tu (vd MaziiDictionary); mac dinh theo `Settings.dict_provider`.
     """
     settings = settings or get_settings()
+    # Ngon ngu du phong cho chu lay tu kho / bang tro tu (core/langs.py) theo `settings` cua lan goi nay.
+    # Khong can dua vao khoa cache: cache chi giu dau ra LLM, phan chu kho + nghia tro tu ghep lai moi lan.
+    with use_text_fallback(settings.text_fallback_lang):
+        return await _analyze_full(sentence, lang, settings=settings, client=client, kho=kho,
+                                   matcher=matcher, cache=cache, dictionary=dictionary)
+
+
+async def _analyze_full(
+    sentence: str,
+    lang: Optional[str],
+    *,
+    settings: Settings,
+    client: Optional[LLMClient],
+    kho: Optional[Kho],
+    matcher: Optional[GrammarMatcher],
+    cache: Optional[C.Cache],
+    dictionary,
+) -> Analysis:
     lang = _lang(lang, settings)
     inp = check_input(sentence, max_chars=settings.max_chars)
     if inp.error is not None:  # khong can kho, khong goi LLM

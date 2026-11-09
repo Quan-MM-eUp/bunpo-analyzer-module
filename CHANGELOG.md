@@ -1,5 +1,13 @@
 # Thay đổi
 
+## 0.2.1 (khuôn kết quả 1.5, không đổi)
+
+**Ngôn ngữ dự phòng cho phần chữ lấy từ kho**
+- Biến mới `BUNPO_TEXT_FALLBACK_LANG` (mặc định `vi`: giữ hành vi cũ). Khi `lang` chưa có bản dịch: kho ngữ pháp (`grammar[].meaning`, `short_label`, `grammar_detail()` gồm câu ví dụ `tr`) và nghĩa trợ từ (`particle_table`) dùng bản dịch của ngôn ngữ dự phòng, rồi mới tới tiếng Việt. Người dùng tiếng Việt không đổi.
+- `grammar_detail().text_lang` báo ngôn ngữ thật của chữ (vd. `en` khi `lang = fr` và dự phòng `en`); `labels[].name` vẫn theo `lang`.
+- `check_ready()`: `checks.kho.text_fallback`; cảnh báo (`warn`) khi đặt ngôn ngữ dự phòng mà kho thiếu `grammar_text.<mã>.json`.
+- Không đổi khoá cache (cache chỉ giữ đầu ra LLM).
+
 ## 0.2.0 (khuôn kết quả 1.5)
 
 **Tra nghĩa từ bằng Mazii**
