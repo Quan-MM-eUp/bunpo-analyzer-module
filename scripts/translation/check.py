@@ -81,9 +81,15 @@ def script_ratio(t: str, lang: str) -> float | None:
 NOTATION = {"na", "adj", "vt", "vi", "vn", "nb", "pp", "ok"}
 
 
+VI_ABBR = re.compile(r"(?<![A-Za-z])v\.\s?v\.?(?![A-Za-z])", re.I)
+
+
 def has_words(s: str) -> bool:
     """Co tu chu Latin that (>= 2 chu, khong phai ky hieu V/N/Na...): vd tieng Viet khong dau "cho", "Sau khi"."""
-    return any(w.lower() not in NOTATION for w in re.findall(r"[A-Za-zÀ-ỹđĐ]{2,}", deruby(s or "")))
+    s = deruby(s or "")
+    if VI_ABBR.search(s):  # viet tat tieng Viet khong dau: "v.v." (vân vân = etc.)
+        return True
+    return any(w.lower() not in NOTATION for w in re.findall(r"[A-Za-zÀ-ỹđĐ]{2,}", s))
 
 
 def check_text(s: str, t, lang: str, src: str, where: str, glossary: list[dict]) -> tuple[list, list]:
