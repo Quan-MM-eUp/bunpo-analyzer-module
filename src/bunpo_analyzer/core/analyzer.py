@@ -23,7 +23,7 @@ from bunpo_analyzer.core.llm import LLMClient, LLMError
 from bunpo_analyzer.core.llm.base import Message
 from bunpo_analyzer.core.matcher import GrammarMatcher, get_matcher
 from bunpo_analyzer.core.llm_output import LLMOutput
-from bunpo_analyzer.core.pipeline import Attempt, Prepared, StageResult, analyze_llm, prepare
+from bunpo_analyzer.core.pipeline import Attempt, Prepared, StageResult, analyze_llm, prepare_async
 from bunpo_analyzer.core.prompt import need_meaning
 from bunpo_analyzer.core.validator import validate
 from bunpo_analyzer.schema import AnalysisResult
@@ -63,9 +63,33 @@ class Analysis:
             "attempt_errors": [a.errors[:5] for a in st.attempts] if st else [],
             "fixes": (st.report.fixes if st and st.report else []) + self.notes,
             "misses": self.prepared.lookup.misses if self.prepared.lookup else [],
+            "dict": self.prepared.lookup.stats if self.prepared.lookup else {},
             "cost_usd": self.cost_usd,
             "latency_ms": self.latency_ms,
         }
+
+
+_DICTS: dict[tuple, object] = {}
+
+
+def get_dictionary(settings: Settings, cache=None):
+    """Tu dien ngoai dung chung trong tien trinh (theo cau hinh); None = dung kho word_lib.
+
+    Thieu / hong public.pem thi ghi loi va quay ve kho (khong lam hong phan tich).
+    """
+    if settings.dict_provider != "mazii":
+        return None
+    k = (settings.mazii_url, str(settings.mazii_pem_path), bool(settings.mazii_pem), settings.mazii_limit,
+         settings.dict_timeout_s, settings.dict_max_concurrency, id(cache))
+    if k not in _DICTS:
+        from bunpo_analyzer.core.dictionary import MaziiDictionary
+
+        try:
+            _DICTS[k] = MaziiDictionary.from_settings(settings, cache=cache)
+        except (OSError, ValueError) as e:
+            log.error("Khong dung duoc tu dien Mazii (%s) -> dung kho word_lib", type(e).__name__)
+            _DICTS[k] = None
+    return _DICTS[k]
 
 
 def _lang(lang: Optional[str], settings: Settings) -> str:
@@ -133,10 +157,12 @@ async def analyze_full(
     kho: Optional[Kho] = None,
     matcher: Optional[GrammarMatcher] = None,
     cache: Optional[C.Cache] = None,
+    dictionary=None,
 ) -> Analysis:
     """Nhu `analyze` nhung tra them thong tin ghi log. Tham so phu dung cho test / chatbot tu dung san.
 
     cache: kho cache rieng (co get/set bat dong bo); mac dinh theo `Settings.cache_backend`.
+    dictionary: tu dien tra nghia tu (vd MaziiDictionary); mac dinh theo `Settings.dict_provider`.
     """
     settings = settings or get_settings()
     lang = _lang(lang, settings)
@@ -145,9 +171,13 @@ async def analyze_full(
         p = Prepared(inp, lang=lang)
         return Analysis(assemble(p, None, None, lang)[0], p)
     kho = kho or get_kho(settings.data_dir)
-    p = prepare(sentence, lang, kho, matcher or get_matcher(), settings.max_chars)
     cache = cache if cache is not None else C.get_cache(settings)
-    base = C.base_key(p.input.text, kho.core_version, settings.llm_model)
+    if dictionary is None:
+        dictionary = get_dictionary(settings, cache)
+    p = await prepare_async(sentence, lang, kho, matcher or get_matcher(), settings.max_chars, dictionary)
+    # Nguon nghia tu nam trong khoa: danh sach "need meaning" gui LLM khac nhau giua kho va Mazii.
+    src = "mazii" if dictionary is not None else "kho"
+    base = C.base_key(p.input.text, kho.core_version if src == "kho" else f"{kho.core_version}|{src}", settings.llm_model)
     ttl = settings.cache_ttl_s
     state = "miss"
 

@@ -102,7 +102,9 @@ def _head_text(toks: list[MorphToken], head: int) -> str:
 
 
 def build_nodes(out: LLMOutput, toks: list[MorphToken]) -> list[Node]:
-    raw = out.nodes
+    # Chu ngu an thua: cung cap (cung parent) da co dong chu ngu that -> bo dong an (LLM doi khi them ca hai).
+    has_subj = {n.parent for n in out.nodes if n.type == "row" and n.role == "subject" and not n.hidden}
+    raw = [n for n in out.nodes if not (n.type == "row" and n.hidden and n.role == "subject" and n.parent in has_subj)]
     kids: dict[Optional[str], list[LLMNode]] = {}
     for n in raw:
         kids.setdefault(n.parent, []).append(n)

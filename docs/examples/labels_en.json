@@ -1,0 +1,51 @@
+{
+ "call": "labels('en')",
+ "result": {
+  "pos": {
+   "noun": "noun",
+   "verb": "verb",
+   "adj": "adjective",
+   "adv": "adverb",
+   "prt": "particle",
+   "aux": "auxiliary verb"
+  },
+  "pos_sub": {
+   "v1": "Group 1 verb",
+   "v2": "Group 2 verb",
+   "v3": "Group 3 verb",
+   "adj_i": "i-adjective",
+   "adj_na": "na-adjective"
+  },
+  "role": {
+   "subject": "Subject",
+   "topic": "Topic",
+   "object": "Object",
+   "complement": "Complement",
+   "predicate": "Predicate",
+   "main_predicate": "Main predicate",
+   "adv_time": "Time adverbial",
+   "adv_place": "Place adverbial",
+   "adv_manner": "Manner adverbial",
+   "adv_reason": "Reason adverbial"
+  },
+  "kind": {
+   "rel": "Noun-modifying clause",
+   "sub": "Subordinate clause",
+   "quote": "Quotation",
+   "nominal": "Nominalization"
+  },
+  "base_form": "dictionary form",
+  "role_hidden": "{role} (omitted)",
+  "kind_rel_for": "Clause modifying {head}",
+  "check": {
+   "suspect": "May be unnatural",
+   "error": "Grammatically incorrect"
+  },
+  "error": {
+   "invalid_input": "Not a single Japanese sentence",
+   "grammar_error": "Grammar error",
+   "structure_failed": "Structure not analyzed",
+   "llm_unavailable": "AI unavailable"
+  }
+ }
+}

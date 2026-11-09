@@ -32,7 +32,7 @@ def test_rules_short_label():
 def test_table():
     assert len(DATA) > 1500
     for gid, m in DATA.items():
-        assert m["short_label"] and m["label_lang"] in ("vi", "neutral")
+        assert m["short_label"] and m["label_lang"] in ("vi", "en", "neutral")
         assert int(gid) not in [canon_id(i) for i in m["confusable_ids"]] or canon_id(int(gid)) != int(gid)
         assert all(canon_id(i) == i for i in m["confusable_ids"])  # da tro ve mau chuan
     assert meta(252)["short_label"] == "～たことがある" and 350 in confusable_ids(252)

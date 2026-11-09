@@ -10,7 +10,8 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-SCHEMA_VERSION = "1.3"  # 1.3: them Token.pos_sub
+SCHEMA_VERSION = "1.5"  # 1.3: them Token.pos_sub; 1.4: nghia tu tu dien ngoai (meaning_source "dict", level, han, dict_id);
+# 1.5: GrammarDetail.examples[].tr (cau vi du dich theo lang), noi dung mau ngu phap theo ban dich kho
 
 Pos = Literal["noun", "verb", "adj", "adv", "prt", "aux", "punct"]
 # Phan loai chi tiet hien khi bam vao tu: dong tu nhom 1/2/3, tinh tu い/な.
@@ -20,7 +21,7 @@ Role = Literal[
     "adv_time", "adv_place", "adv_manner", "adv_reason",
 ]
 GroupKind = Literal["rel", "sub", "quote", "nominal"]
-MeaningSource = Literal["word_lib", "particle_table", "llm"]
+MeaningSource = Literal["word_lib", "dict", "particle_table", "llm"]
 CheckStatus = Literal["ok", "suspect", "error"]
 ErrorCode = Literal["invalid_input", "grammar_error", "structure_failed", "llm_unavailable"]
 
@@ -43,6 +44,10 @@ class Token(_Base):
     furigana: Optional[list[tuple[str, Optional[str]]]] = None
     meaning: Optional[str] = None
     meaning_source: Optional[MeaningSource] = None
+    # Chi co khi nghia lay tu tu dien ngoai (meaning_source = "dict"):
+    level: Optional[str] = None  # JLPT N5..N1
+    han: Optional[str] = None  # am Han Viet (chi tieng Viet)
+    dict_id: Optional[str] = None  # id muc tu trong tu dien (mo chi tiet tu trong app)
 
 
 class Node(_Base):

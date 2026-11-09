@@ -1,0 +1,51 @@
+{
+ "call": "labels('vi')",
+ "result": {
+  "pos": {
+   "noun": "danh từ",
+   "verb": "động từ",
+   "adj": "tính từ",
+   "adv": "trạng từ",
+   "prt": "trợ từ",
+   "aux": "trợ động từ"
+  },
+  "pos_sub": {
+   "v1": "động từ nhóm 1",
+   "v2": "động từ nhóm 2",
+   "v3": "động từ nhóm 3",
+   "adj_i": "tính từ い",
+   "adj_na": "tính từ な"
+  },
+  "role": {
+   "subject": "Chủ ngữ",
+   "topic": "Chủ đề",
+   "object": "Tân ngữ",
+   "complement": "Bổ ngữ",
+   "predicate": "Vị ngữ",
+   "main_predicate": "Vị ngữ chính",
+   "adv_time": "Trạng ngữ chỉ thời gian",
+   "adv_place": "Trạng ngữ chỉ nơi chốn",
+   "adv_manner": "Trạng ngữ chỉ cách thức",
+   "adv_reason": "Trạng ngữ chỉ lý do"
+  },
+  "kind": {
+   "rel": "Mệnh đề bổ nghĩa",
+   "sub": "Vế phụ",
+   "quote": "Lời trích dẫn",
+   "nominal": "Mệnh đề danh từ hoá"
+  },
+  "base_form": "dạng gốc",
+  "role_hidden": "{role} (ẩn)",
+  "kind_rel_for": "Mệnh đề bổ nghĩa cho {head}",
+  "check": {
+   "suspect": "Có thể chưa tự nhiên",
+   "error": "Chưa đúng ngữ pháp"
+  },
+  "error": {
+   "invalid_input": "Không phải 1 câu tiếng Nhật",
+   "grammar_error": "Sai ngữ pháp",
+   "structure_failed": "Chưa phân tích được cấu trúc",
+   "llm_unavailable": "Không gọi được AI"
+  }
+ }
+}

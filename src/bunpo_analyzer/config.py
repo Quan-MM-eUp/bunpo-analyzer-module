@@ -57,6 +57,18 @@ class Settings(BaseSettings):
     # chi dich phan chu. Khong can suy nghi nen dung model nhanh, re.
     llm_light_model: str = "gpt-4.1-mini"
 
+    # Tu dien tra nghia tu: "mazii" (API Mazii, da ngon ngu, mac dinh) | "kho" (word_lib, khong can mang).
+    # Mazii can noi dung public.pem (giai ma ket qua): duong dan file hoac noi dung truc tiep (bien moi truong).
+    # Thieu / hong public.pem: ghi log loi va tu dung kho word_lib.
+    dict_provider: str = "mazii"
+    mazii_url: str = "https://mazii.net/api/search/word/v3"
+    mazii_pem_path: Path = Path("../secrets/public.pem")
+    mazii_pem: str = ""
+    mazii_limit: int = Field(default=3, ge=1, le=20)
+    dict_timeout_s: float = Field(default=1.5, gt=0)  # moi lan goi; tong cho ca cau toi da 2 x
+    dict_max_concurrency: int = Field(default=8, ge=1)
+    dict_cache_ttl_s: int = Field(default=30 * 86400, gt=0)
+
     # Cache (buoc 2.6, muc 3.6): memory (mac dinh, trong tien trinh) | redis | none.
     # Phien ban prompt, kho, tu dien, model nam trong khoa nen khong can xoa tay khi doi.
     cache_backend: str = "memory"

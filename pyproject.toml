@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bunpo-analyzer"
-version = "0.1.0"
+version = "0.2.0"
 description = "Phan tich ngu phap cau tieng Nhat cho Migii AI Sensei"
 readme = "README.md"
 # Chatbot chay Python 3.14 (Dockerfile); giu >=3.10 de chay duoc tren may dev.
@@ -18,6 +18,9 @@ dependencies = [
     "sudachidict-core==20261015",
     # Goi LLM theo chuan OpenAI (buoc 2.1); chatbot cung dung thu vien nay.
     "openai>=2.0",
+    # Tra nghia tu bang API Mazii (BUNPO_DICT_PROVIDER=mazii): goi HTTP + giai ma AES ket qua.
+    "httpx>=0.27",
+    "cryptography>=42",
 ]
 
 [project.optional-dependencies]

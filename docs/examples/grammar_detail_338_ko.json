@@ -1,0 +1,61 @@
+{
+ "call": "grammar_detail(338, 'ko')",
+ "result": {
+  "id": 338,
+  "lang": "ko",
+  "text_lang": "ko",
+  "short_label": "～う／よう（의지형）",
+  "name": "～う／よう（의지형）",
+  "reading": "～う／よう（意志形）",
+  "level": "N4",
+  "labels": [
+   {
+    "code": "grammar_intent",
+    "name": "의지, 의향"
+   },
+   {
+    "code": "grammar_invite",
+    "name": "권유, 권장"
+   }
+  ],
+  "connection": "V 의지형 (寝よう・注意しよう)",
+  "meaning": "자신이 지금부터 무엇을 할지 말함 (미래)\n친한 사람에게 권유하거나, 여러 사람에게 호소할 때 사용함.",
+  "examples": [
+   {
+    "jp": "12時だ。もう寝よう。",
+    "vi": "12 giờ rồi. Ngủ thôi.",
+    "tr": "12시다. 이제 자야지.",
+    "dialog": false
+   },
+   {
+    "jp": "不注意でミスをした、次は注意しよう。",
+    "vi": "Mắc lỗi vì không chú ý. Lần sau hãy chú ý.",
+    "tr": "부주의로 실수를 했다. 다음에는 조심해야지.",
+    "dialog": false
+   },
+   {
+    "jp": "「今日、お昼ごはん、いっしょに食べようよ」",
+    "vi": "「Hôm nay cùng nhau ăn trưa nhé.」",
+    "tr": "「오늘 점심 같이 먹자」",
+    "dialog": false
+   },
+   {
+    "jp": "「今年は絶対優勝しよう！・みんなでがんばろう！」",
+    "vi": "“Năm nay nhất định hãy giành chiến thắng! Cùng nhau cố gắng lên!”",
+    "tr": "「올해는 꼭 우승하자!・다 같이 힘내자!」",
+    "dialog": false
+   },
+   {
+    "jp": "「来年はいっしょに旅行に行こうね」",
+    "vi": "「Năm sau hãy cùng nhau đi du lịch nhé.」",
+    "tr": "「내년에는 같이 여행 가자」",
+    "dialog": false
+   }
+  ],
+  "explain": null,
+  "comparison": null,
+  "mistakes": [],
+  "notes": "주의:\nていねいな会話では「～ましょう」を使う。\n정중한 대화에서는 「～ましょう」를 써요.\n1.  「寒いですね。はやく帰りましょう」\n「춥네요. 빨리 돌아갑시다.」\n2.  「道を渡るときは注意しましょう」\n“길을 건널 때는 조심합시다.”\nmeaning_vi: 미래의 의도나 바람을 말하는 표현이에요. 청자에게 권유할 때도 있어요. ⏐ examples: 1. ①    早く　行こう。\n빨리 가자.\n2. ②　来週は　病院へ　行こう。\n다음 주에는 병원에 가자.\n3. ➂　九州で　就職活動を　しようと　思います。\n규슈에서 취업 활동을 하려고 해요.",
+  "confusable": []
+ }
+}

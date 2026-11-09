@@ -1,0 +1,51 @@
+{
+ "call": "labels('ko')",
+ "result": {
+  "pos": {
+   "noun": "명사",
+   "verb": "동사",
+   "adj": "형용사",
+   "adv": "부사",
+   "prt": "조사",
+   "aux": "조동사"
+  },
+  "pos_sub": {
+   "v1": "1그룹 동사",
+   "v2": "2그룹 동사",
+   "v3": "3그룹 동사",
+   "adj_i": "い형용사",
+   "adj_na": "な형용사"
+  },
+  "role": {
+   "subject": "주어",
+   "topic": "주제",
+   "object": "목적어",
+   "complement": "보어",
+   "predicate": "술어",
+   "main_predicate": "주 술어",
+   "adv_time": "시간 부사어",
+   "adv_place": "장소 부사어",
+   "adv_manner": "방법 부사어",
+   "adv_reason": "이유 부사어"
+  },
+  "kind": {
+   "rel": "명사 수식절",
+   "sub": "종속절",
+   "quote": "인용",
+   "nominal": "명사화"
+  },
+  "base_form": "사전형",
+  "role_hidden": "{role} (생략)",
+  "kind_rel_for": "「{head}」 수식절",
+  "check": {
+   "suspect": "부자연스러울 수 있음",
+   "error": "문법 오류"
+  },
+  "error": {
+   "invalid_input": "일본어 한 문장이 아님",
+   "grammar_error": "문법 오류",
+   "structure_failed": "구조 분석 실패",
+   "llm_unavailable": "AI 사용 불가"
+  }
+ }
+}

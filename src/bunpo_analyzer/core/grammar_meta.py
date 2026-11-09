@@ -28,15 +28,25 @@ def meta(gid: int) -> dict[str, Any]:
 
 
 def short_label(gid: int, kho=None, lang: str = "vi") -> Optional[str]:
-    """Nhan ngan theo ngon ngu. Nhan con chu Viet (label_lang = vi): ngon ngu khac lay ten da dich."""
+    """Nhan ngan theo ngon ngu.
+
+    label_lang: "neutral" (chi chu Nhat / ky hieu) dung cho moi ngon ngu; "vi" / "en": nhan co chu cua ngon
+    ngu do. Ngon ngu khac: mau trung da gom lay nhan cua mau chuan; roi short_label da dich (nhan dich tay,
+    translation/labels/<lang>.json); roi ten da dich; chua co thi dung nhan goc.
+    """
     m = meta(gid)
     label = m.get("short_label")
-    if label and (m.get("label_lang") != "vi" or lang == "vi" or kho is None):
+    if label and (m.get("label_lang", "neutral") in ("neutral", lang) or lang == "vi" or kho is None):
         return label
     if kho is not None:
-        name = kho.grammar_text(gid, lang).get("name")
+        from bunpo_analyzer.core.canon import canon_id
+
+        cid = canon_id(int(gid))
+        if cid != int(gid) and kho.grammar(cid) is not None:
+            return short_label(cid, kho, lang)
+        tr = kho.grammar_tr(gid, lang)
         g = kho.grammar(gid)
-        return name or label or (g.name if g else None)
+        return tr.get("short_label") or tr.get("name") or label or (g.name if g else None)
     return label
 
 

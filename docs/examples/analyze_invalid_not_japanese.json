@@ -1,0 +1,25 @@
+{
+ "call": "await analyze('Hello, how are you?', lang='en')",
+ "meta": {
+  "cache": "off",
+  "latency_ms": 0,
+  "cost_usd": 0.0,
+  "wall_ms": 0
+ },
+ "result": {
+  "schema_version": "1.5",
+  "id": "an_3923a048cf1e",
+  "lang": "en",
+  "text": "Hello, how are you?",
+  "tokens": [],
+  "nodes": [],
+  "grammar": [],
+  "input_check": {
+   "status": "ok"
+  },
+  "error": {
+   "code": "invalid_input",
+   "reason": "not_japanese"
+  }
+ }
+}

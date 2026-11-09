@@ -33,6 +33,8 @@ def test_page_and_health(kho):
     assert r.status_code == 200 and "<!doctype html>" in r.text and "/*MOCK*/null" in r.text
     h = c.get("/api/health").json()
     assert h["ok"] and h["model"] == "main" and h["has_key"]
+    assert "/*LABELS*/null" not in r.text and "Subordinate clause" in r.text  # nhan 16 ngon ngu da chen
+    assert c.get("/api/labels?lang=ko").json()["role"]["subject"] == "주어"
 
 
 def test_analyze_cache_and_errors(kho):

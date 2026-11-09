@@ -1,0 +1,354 @@
+{
+ "call": "await analyze('雨が降りそうなので、傘を持っていきます。', lang='vi')",
+ "meta": {
+  "cache": "miss",
+  "latency_ms": 12949,
+  "cost_usd": 0.00343,
+  "wall_ms": 14950
+ },
+ "result": {
+  "schema_version": "1.5",
+  "id": "an_a5878112aa8e",
+  "lang": "vi",
+  "text": "雨が降りそうなので、傘を持っていきます。",
+  "translation": "Vì có vẻ trời sẽ mưa nên tôi sẽ mang theo ô.",
+  "tokens": [
+   {
+    "i": 0,
+    "surface": "雨",
+    "base": "雨",
+    "reading": "あめ",
+    "pos": "noun",
+    "furigana": [
+     [
+      "雨",
+      "あめ"
+     ]
+    ],
+    "meaning": "cơn mưa; mưa; trận mưa",
+    "meaning_source": "dict",
+    "level": "N5",
+    "han": "VŨ",
+    "dict_id": "ce8d06f9d091bfd288984d2a7eb85388"
+   },
+   {
+    "i": 1,
+    "surface": "が",
+    "base": "が",
+    "reading": "が",
+    "pos": "prt",
+    "furigana": [
+     [
+      "が",
+      null
+     ]
+    ],
+    "meaning": "đánh dấu chủ ngữ / đối tượng (thích, giỏi, có…)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 2,
+    "surface": "降り",
+    "base": "降る",
+    "reading": "ふり",
+    "pos": "verb",
+    "pos_sub": "v1",
+    "furigana": [
+     [
+      "降",
+      "ふ"
+     ],
+     [
+      "り",
+      null
+     ]
+    ],
+    "meaning": "(mưa, tuyết, sương) rơi; có nhiều",
+    "meaning_source": "dict",
+    "level": "N5",
+    "han": "HÀNG",
+    "dict_id": "02110c1060647172d3ab428cb6e9f158"
+   },
+   {
+    "i": 3,
+    "surface": "そう",
+    "base": "そう",
+    "reading": "そう",
+    "pos": "aux",
+    "furigana": [
+     [
+      "そう",
+      null
+     ]
+    ],
+    "meaning": "trông có vẻ; nghe nói (～そうだ)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 4,
+    "surface": "な",
+    "base": "だ",
+    "reading": "な",
+    "pos": "prt",
+    "furigana": [
+     [
+      "な",
+      null
+     ]
+    ],
+    "meaning": "(nối tính từ な / のな với danh từ)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 5,
+    "surface": "の",
+    "base": "の",
+    "reading": "の",
+    "pos": "prt",
+    "furigana": [
+     [
+      "の",
+      null
+     ]
+    ],
+    "meaning": "(～ので: vì)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 6,
+    "surface": "で",
+    "base": "だ",
+    "reading": "で",
+    "pos": "aux",
+    "furigana": [
+     [
+      "で",
+      null
+     ]
+    ],
+    "meaning": "vì (～ので)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 7,
+    "surface": "、",
+    "pos": "punct"
+   },
+   {
+    "i": 8,
+    "surface": "傘",
+    "base": "傘",
+    "reading": "かさ",
+    "pos": "noun",
+    "furigana": [
+     [
+      "傘",
+      "かさ"
+     ]
+    ],
+    "meaning": "cái ô; dù; ô",
+    "meaning_source": "dict",
+    "level": "N5",
+    "han": "TÁN",
+    "dict_id": "6c034cae2d930110294f569623a2bdb4"
+   },
+   {
+    "i": 9,
+    "surface": "を",
+    "base": "を",
+    "reading": "を",
+    "pos": "prt",
+    "furigana": [
+     [
+      "を",
+      null
+     ]
+    ],
+    "meaning": "đánh dấu tân ngữ (đối tượng của hành động)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 10,
+    "surface": "持っ",
+    "base": "持つ",
+    "reading": "もっ",
+    "pos": "verb",
+    "pos_sub": "v1",
+    "furigana": [
+     [
+      "持",
+      "も"
+     ],
+     [
+      "っ",
+      null
+     ]
+    ],
+    "meaning": "cầm; nắm; mang; chịu (phí tổn); đảm nhiệm; có",
+    "meaning_source": "dict",
+    "level": "N5",
+    "han": "TRÌ",
+    "dict_id": "1ba56f2534331143a63fc03ec846449d"
+   },
+   {
+    "i": 11,
+    "surface": "て",
+    "base": "て",
+    "reading": "て",
+    "pos": "prt",
+    "furigana": [
+     [
+      "て",
+      null
+     ]
+    ],
+    "meaning": "(dạng て: nối hành động, nguyên nhân)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 12,
+    "surface": "いき",
+    "base": "いく",
+    "reading": "いき",
+    "pos": "verb",
+    "pos_sub": "v1",
+    "furigana": [
+     [
+      "いき",
+      null
+     ]
+    ],
+    "meaning": "(dần dần / tiếp diễn: ～ていく)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 13,
+    "surface": "ます",
+    "base": "ます",
+    "reading": "ます",
+    "pos": "aux",
+    "furigana": [
+     [
+      "ます",
+      null
+     ]
+    ],
+    "meaning": "(đuôi lịch sự)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 14,
+    "surface": "。",
+    "pos": "punct"
+   }
+  ],
+  "nodes": [
+   {
+    "id": "r4",
+    "type": "row",
+    "grammar": [],
+    "role": "subject",
+    "jp": "（私が）",
+    "gloss": "tôi (ngầm)",
+    "main": false,
+    "hidden": true
+   },
+   {
+    "id": "g1",
+    "type": "group",
+    "span": [
+     0,
+     7
+    ],
+    "grammar": [
+     372
+    ],
+    "gloss": "vì có vẻ trời sẽ mưa",
+    "main": false,
+    "hidden": false,
+    "kind": "sub"
+   },
+   {
+    "id": "r2",
+    "type": "row",
+    "parent": "g1",
+    "span": [
+     0,
+     2
+    ],
+    "grammar": [],
+    "role": "subject",
+    "gloss": "trời/mưa (đối tượng gây hành động)",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r3",
+    "type": "row",
+    "parent": "g1",
+    "span": [
+     2,
+     7
+    ],
+    "grammar": [
+     349
+    ],
+    "role": "predicate",
+    "gloss": "có vẻ sắp mưa",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r5",
+    "type": "row",
+    "span": [
+     8,
+     10
+    ],
+    "grammar": [],
+    "role": "object",
+    "gloss": "cái ô",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r6",
+    "type": "row",
+    "span": [
+     10,
+     14
+    ],
+    "grammar": [
+     260
+    ],
+    "role": "predicate",
+    "gloss": "mang theo (đi)",
+    "main": true,
+    "hidden": false
+   }
+  ],
+  "grammar": [
+   {
+    "id": 372,
+    "short_label": "～ので",
+    "level": "N4",
+    "meaning": "vì ~ | Vì… nên…"
+   },
+   {
+    "id": 349,
+    "short_label": "～そう［có vẻ］",
+    "level": "N4",
+    "meaning": "~ Trông có vẻ (bề ngoài)"
+   },
+   {
+    "id": 260,
+    "short_label": "～ていく",
+    "level": "N4",
+    "meaning": "Làm rồi đi / tiếp tục về phía trước"
+   }
+  ],
+  "input_check": {
+   "status": "ok"
+  }
+ }
+}

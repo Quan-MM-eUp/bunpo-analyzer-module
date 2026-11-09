@@ -36,6 +36,8 @@ _J = f"{_JP}（）()・／/⇔→"
 _SPACE_JP = re.compile(f"(?<=[{_J}])[ \u3000]+(?=[{_J}A-Z])|(?<=[A-Z0-9])[ \u3000]+(?=[{_J}])")
 _VI = re.compile(r"[à-ỹđ]|[a-z]{3,}", re.I)
 _KANA = re.compile(r"[ぁ-ゖァ-ヺ]")
+# Nhan trong kho da la tieng Anh (has_vi nhan nham la chu Viet): ngon ngu khac tieng Anh dich theo publish_lang.py
+LABEL_LANG_FIX = {880: "en", 1594: "en", 1610: "en", 1611: "en"}
 _PAREN = re.compile(r"[（(［\[][^）)］\]]*[）)］\]]")
 
 
@@ -87,6 +89,7 @@ def main() -> int:
             c = canon_id(hit[0])
             if c != canon_id(g.id) and c not in ids:
                 ids.append(c)
+        lang = LABEL_LANG_FIX.get(g.id, lang)
         meta[str(g.id)] = {"short_label": label, "label_lang": lang, "confusable_ids": ids}
     data = {"version": 1, "kho_version": kho.core_version,
             "note": "Sinh tu dong boi scripts/build_grammar_meta.py (buoc 4.1). Sua tay short_label duoc.",

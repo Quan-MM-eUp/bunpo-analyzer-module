@@ -35,9 +35,15 @@ MAX_EXAMPLES = 6
 
 
 # ---------------- vi du ----------------
+def _ex_key(jp: Optional[str]) -> str:
+    """Khoa ghep cau vi du kho voi ban dich (bo khoang trang)."""
+    return re.sub(r"\s+", "", jp or "")
+
+
 class Example(BaseModel):
     jp: str
-    vi: Optional[str] = None  # ban dich (tieng Viet trong kho)
+    vi: Optional[str] = None  # ban dich tieng Viet trong kho
+    tr: Optional[str] = None  # ban dich theo lang cua bang ngu phap; chua co ban dich thi = vi
     dialog: bool = False  # hoi thoai A/B: jp, vi gom nhieu dong
 
 
@@ -83,9 +89,11 @@ def examples_clean(text: Optional[str], limit: int = MAX_EXAMPLES) -> list[Examp
 
 
 # ---------------- loi hay gap ----------------
-def mistakes(text: Optional[str]) -> list[str]:
+def mistakes(text) -> list[str]:
+    """Chuoi kho goc (moi loi 1 dong) hoac danh sach (ban dich) -> danh sach loi da bo dau dong."""
+    lines = [str(x) for x in text] if isinstance(text, list) else str(text or "").split("\n")
     out = []
-    for line in str(text or "").split("\n"):
+    for line in lines:
         line = _BULLET.sub("", line).strip()
         if line and line not in out:
             out.append(line)
@@ -177,7 +185,8 @@ class GrammarDetail(BaseModel):
 
 
 def grammar_detail(gid: int, lang: str = DEFAULT_LANG, kho: Optional[Kho] = None) -> Optional[GrammarDetail]:
-    """None neu khong co mau. id cua mau trung da gom van mo duoc (tra dung muc do)."""
+    """None neu khong co mau. id cua mau trung da gom van mo duoc (tra dung muc do; ngon ngu khac tieng Viet
+    ma mau trung chua co ban dich rieng thi tra noi dung da dich cua mau chuan, giu id da hoi)."""
     if kho is None:
         from bunpo_analyzer.core.data import get_kho
 
@@ -185,8 +194,21 @@ def grammar_detail(gid: int, lang: str = DEFAULT_LANG, kho: Optional[Kho] = None
     g = kho.grammar(gid)
     if g is None:
         return None
+    if lang != DEFAULT_LANG and not kho.grammar_tr(g.id, lang):
+        # mau trung da gom khong duoc dich rieng: ngon ngu khac dung noi dung da dich cua mau chuan
+        cid = canon_id(g.id)
+        if cid != g.id and kho.grammar(cid) is not None and kho.grammar_tr(cid, lang):
+            d = grammar_detail(cid, lang, kho)
+            return d.model_copy(update={"id": g.id}) if d else None
     r = g.raw
     txt = kho.grammar_text(g.id, lang)
+    tr = kho.grammar_tr(g.id, lang)
+    exs = examples_clean(r.get("examples"))
+    tr_ex = {_ex_key(e.get("jp")): e.get("tr") for e in tr.get("examples") or [] if isinstance(e, dict)}
+    for e in exs:
+        e.tr = tr_ex.get(_ex_key(e.jp)) or e.vi
+    cmp = tr.get("comparison")
+    cmp = Comparison(**cmp) if isinstance(cmp, dict) and cmp.get("rows") else comparison(r.get("comparison"))
     conf = []
     for cid in confusable_ids(g.id):
         cg = kho.grammar(cid)
@@ -197,9 +219,9 @@ def grammar_detail(gid: int, lang: str = DEFAULT_LANG, kho: Optional[Kho] = None
         short_label=short_label(g.id, kho, lang), name=txt.get("name") or g.name,
         reading=(r.get("grammar_reading") or None), level=g.level,
         labels=[Label(code=c, name=kho.label_name(c, lang)) for c in g.labels],
-        connection=(r.get("接続") or None), meaning=txt.get("meaning"),
-        examples=examples_clean(r.get("examples")),
-        explain=txt.get("explain"), comparison=comparison(r.get("comparison")),
-        mistakes=mistakes(txt.get("mistakes")), notes=(r.get("notes") or None),
+        connection=txt.get("connection"), meaning=txt.get("meaning"),
+        examples=exs,
+        explain=txt.get("explain"), comparison=cmp,
+        mistakes=mistakes(txt.get("mistakes")), notes=txt.get("notes"),
         confusable=conf,
     )

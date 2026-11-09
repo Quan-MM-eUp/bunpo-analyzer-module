@@ -1,0 +1,57 @@
+[
+ {
+  "dict": "javi",
+  "queries": 568,
+  "new": 568,
+  "errors": 0,
+  "with_result": 362,
+  "p50_ms": 338,
+  "p90_ms": 578,
+  "kb": 329,
+  "seconds": 60
+ },
+ {
+  "dict": "jaen",
+  "queries": 568,
+  "new": 568,
+  "errors": 0,
+  "with_result": 343,
+  "p50_ms": 361,
+  "p90_ms": 657,
+  "kb": 431,
+  "seconds": 61
+ },
+ {
+  "dict": "jatw",
+  "queries": 568,
+  "new": 568,
+  "errors": 0,
+  "with_result": 353,
+  "p50_ms": 335,
+  "p90_ms": 598,
+  "kb": 540,
+  "seconds": 57
+ },
+ {
+  "dict": "jacn",
+  "queries": 568,
+  "new": 568,
+  "errors": 0,
+  "with_result": 338,
+  "p50_ms": 318,
+  "p90_ms": 567,
+  "kb": 478,
+  "seconds": 53
+ },
+ {
+  "dict": "jako",
+  "queries": 568,
+  "new": 568,
+  "errors": 0,
+  "with_result": 333,
+  "p50_ms": 337,
+  "p90_ms": 627,
+  "kb": 524,
+  "seconds": 58
+ }
+]

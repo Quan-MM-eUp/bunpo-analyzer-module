@@ -1,0 +1,350 @@
+{
+ "call": "await analyze('雨が降りそうなので、傘を持っていきます。', lang='en')",
+ "meta": {
+  "cache": "light",
+  "latency_ms": 2231,
+  "cost_usd": 0.0005,
+  "wall_ms": 3507
+ },
+ "result": {
+  "schema_version": "1.5",
+  "id": "an_27721c5cd5ca",
+  "lang": "en",
+  "text": "雨が降りそうなので、傘を持っていきます。",
+  "translation": "Because it looks like it will rain, I will take an umbrella with me.",
+  "tokens": [
+   {
+    "i": 0,
+    "surface": "雨",
+    "base": "雨",
+    "reading": "あめ",
+    "pos": "noun",
+    "furigana": [
+     [
+      "雨",
+      "あめ"
+     ]
+    ],
+    "meaning": "rain; rainy day; rainy weather; the November suit (in hanafuda)",
+    "meaning_source": "dict",
+    "level": "N5",
+    "dict_id": "ce8d06f9d091bfd288984d2a7eb85388"
+   },
+   {
+    "i": 1,
+    "surface": "が",
+    "base": "が",
+    "reading": "が",
+    "pos": "prt",
+    "furigana": [
+     [
+      "が",
+      null
+     ]
+    ],
+    "meaning": "subject / object marker (like, good at, have…)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 2,
+    "surface": "降り",
+    "base": "降る",
+    "reading": "ふり",
+    "pos": "verb",
+    "pos_sub": "v1",
+    "furigana": [
+     [
+      "降",
+      "ふ"
+     ],
+     [
+      "り",
+      null
+     ]
+    ],
+    "meaning": "to fall (of rain, snow, ash, etc.); to come down; to form (of frost); to beam down (of sunlight or moonlight)",
+    "meaning_source": "dict",
+    "level": "N5",
+    "dict_id": "02110c1060647172d3ab428cb6e9f158"
+   },
+   {
+    "i": 3,
+    "surface": "そう",
+    "base": "そう",
+    "reading": "そう",
+    "pos": "aux",
+    "furigana": [
+     [
+      "そう",
+      null
+     ]
+    ],
+    "meaning": "looks like; I hear (～そうだ)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 4,
+    "surface": "な",
+    "base": "だ",
+    "reading": "な",
+    "pos": "prt",
+    "furigana": [
+     [
+      "な",
+      null
+     ]
+    ],
+    "meaning": "(links a な-adjective / のな to a noun)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 5,
+    "surface": "の",
+    "base": "の",
+    "reading": "の",
+    "pos": "prt",
+    "furigana": [
+     [
+      "の",
+      null
+     ]
+    ],
+    "meaning": "(～ので: because)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 6,
+    "surface": "で",
+    "base": "だ",
+    "reading": "で",
+    "pos": "aux",
+    "furigana": [
+     [
+      "で",
+      null
+     ]
+    ],
+    "meaning": "because (～ので)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 7,
+    "surface": "、",
+    "pos": "punct"
+   },
+   {
+    "i": 8,
+    "surface": "傘",
+    "base": "傘",
+    "reading": "かさ",
+    "pos": "noun",
+    "furigana": [
+     [
+      "傘",
+      "かさ"
+     ]
+    ],
+    "meaning": "umbrella; parasol; something shaped like an umbrella or a conical hat; shade (of a lamp); mushroom cap; pileus",
+    "meaning_source": "dict",
+    "level": "N5",
+    "dict_id": "6c034cae2d930110294f569623a2bdb4"
+   },
+   {
+    "i": 9,
+    "surface": "を",
+    "base": "を",
+    "reading": "を",
+    "pos": "prt",
+    "furigana": [
+     [
+      "を",
+      null
+     ]
+    ],
+    "meaning": "object marker (target of an action)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 10,
+    "surface": "持っ",
+    "base": "持つ",
+    "reading": "もっ",
+    "pos": "verb",
+    "pos_sub": "v1",
+    "furigana": [
+     [
+      "持",
+      "も"
+     ],
+     [
+      "っ",
+      null
+     ]
+    ],
+    "meaning": "to hold (in one's hand); to take; to carry; to possess; to have; to own; to maintain; to keep",
+    "meaning_source": "dict",
+    "level": "N5",
+    "dict_id": "1ba56f2534331143a63fc03ec846449d"
+   },
+   {
+    "i": 11,
+    "surface": "て",
+    "base": "て",
+    "reading": "て",
+    "pos": "prt",
+    "furigana": [
+     [
+      "て",
+      null
+     ]
+    ],
+    "meaning": "(て-form: links actions, cause)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 12,
+    "surface": "いき",
+    "base": "いく",
+    "reading": "いき",
+    "pos": "verb",
+    "pos_sub": "v1",
+    "furigana": [
+     [
+      "いき",
+      null
+     ]
+    ],
+    "meaning": "(gradually / continue on: ～ていく)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 13,
+    "surface": "ます",
+    "base": "ます",
+    "reading": "ます",
+    "pos": "aux",
+    "furigana": [
+     [
+      "ます",
+      null
+     ]
+    ],
+    "meaning": "(polite ending)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 14,
+    "surface": "。",
+    "pos": "punct"
+   }
+  ],
+  "nodes": [
+   {
+    "id": "r4",
+    "type": "row",
+    "grammar": [],
+    "role": "subject",
+    "jp": "（私が）",
+    "gloss": "(I) [implied]",
+    "main": false,
+    "hidden": true
+   },
+   {
+    "id": "g1",
+    "type": "group",
+    "span": [
+     0,
+     7
+    ],
+    "grammar": [
+     372
+    ],
+    "gloss": "because it looks like rain",
+    "main": false,
+    "hidden": false,
+    "kind": "sub"
+   },
+   {
+    "id": "r2",
+    "type": "row",
+    "parent": "g1",
+    "span": [
+     0,
+     2
+    ],
+    "grammar": [],
+    "role": "subject",
+    "gloss": "rain (subject)",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r3",
+    "type": "row",
+    "parent": "g1",
+    "span": [
+     2,
+     7
+    ],
+    "grammar": [
+     349
+    ],
+    "role": "predicate",
+    "gloss": "looks like it will rain",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r5",
+    "type": "row",
+    "span": [
+     8,
+     10
+    ],
+    "grammar": [],
+    "role": "object",
+    "gloss": "umbrella (object)",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r6",
+    "type": "row",
+    "span": [
+     10,
+     14
+    ],
+    "grammar": [
+     260
+    ],
+    "role": "predicate",
+    "gloss": "take with me",
+    "main": true,
+    "hidden": false
+   }
+  ],
+  "grammar": [
+   {
+    "id": 372,
+    "short_label": "～ので",
+    "level": "N4",
+    "meaning": "because ~ | Because..., so..."
+   },
+   {
+    "id": 349,
+    "short_label": "～そう［looks like］",
+    "level": "N4",
+    "meaning": "~ Looks like (outward appearance)"
+   },
+   {
+    "id": 260,
+    "short_label": "～ていく",
+    "level": "N4",
+    "meaning": "Do and then go / continue onward"
+   }
+  ],
+  "input_check": {
+   "status": "ok"
+  }
+ }
+}

@@ -207,3 +207,18 @@ def test_reading_fix_kanji_part_only(kho):
     tokens, _ = build_tokens(toks, p.lookup, _out(d))
     t = next(t for t in tokens if t.surface.startswith("開"))
     assert t.furigana[0] == ("開", "あ") and t.reading.startswith("あ")
+
+
+def test_drop_redundant_hidden_subject(kho):
+    """Cung cap da co chu ngu that -> bo dong chu ngu an LLM them thua; cap khac giu nguyen."""
+    d = copy.deepcopy(P.EX1_OUT)
+    r2 = next(n for n in d["nodes"] if n["id"] == "r2")
+    r2["role"] = "subject"  # g1 co chu ngu that -> r1 (an, trong g1) thua
+    d["nodes"].append({"id": "r9", "type": "row", "parent": None, "role": "subject", "kind": None, "span": None,
+                       "head": None, "hidden": True, "jp": "（私が）", "gloss": "tôi", "main": False,
+                       "grammar": []})  # ngoai cung: khong co chu ngu that -> giu
+    r, _ = assemble(_prep(kho), _stage(d), kho, "vi", "an_test")
+    ids = [n.id for n in r.nodes]
+    assert "r1" not in ids and "r9" in ids and ids.index("r9") < ids.index("r5")
+    r, _ = assemble(_prep(kho), _stage(P.EX1_OUT), kho, "vi", "an_test")
+    assert "r1" in [n.id for n in r.nodes]  # khong co chu ngu that -> giu chu ngu an

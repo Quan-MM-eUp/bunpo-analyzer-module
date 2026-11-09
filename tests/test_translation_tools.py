@@ -299,3 +299,23 @@ def test_qa_apply_and_report(ws):
     rows = {r["batch"]: r for r in tm.load_manifest(ws, "en")}
     assert rows["b001"]["status"] == "qa_low" and rows["b001"]["qa_low"] == "1" and rows["b001"]["score"] == "94.5"
     assert rows["b002"]["status"] == "failed" and rows["b002"]["attempts"] == "1"
+
+
+def test_vietnamese_without_diacritics():
+    # o bang / dong loi viet tieng Viet khong dau ("cho", "Sau khi", "Sai chia") van phai dich
+    assert check.has_words("N1 cho N2 N3") and check.has_words("Cao") and not check.has_words("Vる / Na")
+    assert check.check_text("Sai chia: ×行くませんか → ✓行きませんか.", "Wrong conjugation: ×行くませんか → ✓行きませんか.",
+                            "en", "ja", "x", [])[0] == []
+    assert check.check_text("Sai chia: ×行くませんか", "Wrong conjugation: ×行かませんか", "en", "ja", "x", [])[0]
+    err, _ = check.check_table({"headers": ["Mẫu", "Nghĩa"], "rows": [["〜ている", "Sau khi"]]},
+                               {"headers": ["Pattern", "Meaning"], "rows": [["〜ている", "After"]]}, "en", "c", [])
+    assert err == []
+    err, _ = check.check_table({"headers": ["Mẫu", "Nghĩa"], "rows": [["〜ている", "x"]]},
+                               {"headers": ["Pattern", "Meaning"], "rows": [["〜てる", "x"]]}, "en", "c", [])
+    assert err
+
+
+def test_example_with_latin_word_is_translated():
+    si = {"id": 1, "src_hash": "h", "fields": {"examples": [{"jp": "この町ではどこでもICカードが使えます。", "vi": "x"}]}}
+    ti = {"id": 1, "src_hash": "h", "fields": {"examples": ["You can use an IC card anywhere in this town."]}}
+    assert check.check_item(si, ti, "en", [])[0] == []

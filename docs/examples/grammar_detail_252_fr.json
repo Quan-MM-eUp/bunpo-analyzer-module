@@ -1,0 +1,121 @@
+{
+ "call": "grammar_detail(252, 'fr')",
+ "result": {
+  "id": 252,
+  "lang": "fr",
+  "text_lang": "vi",
+  "short_label": "～たことがある",
+  "name": "～た　ことが　ある",
+  "reading": null,
+  "level": "N4",
+  "labels": [
+   {
+    "code": "grammar_basic",
+    "name": "grammaire de base"
+   },
+   {
+    "code": "grammar_exper",
+    "name": "expérience"
+   }
+  ],
+  "connection": "Vた + ことがある ことがない ことがあります ことがありません",
+  "meaning": "Đã từng…",
+  "examples": [
+   {
+    "jp": "この歌は聞いたことがあります。",
+    "vi": "Tôi từng nghe bài hát này.",
+    "tr": "Tôi từng nghe bài hát này.",
+    "dialog": false
+   },
+   {
+    "jp": "富士山に登ったことがありますか。",
+    "vi": "Anh đã bao giờ leo núi Phú Sĩ chưa.",
+    "tr": "Anh đã bao giờ leo núi Phú Sĩ chưa.",
+    "dialog": false
+   },
+   {
+    "jp": "わたしは高校生のとき、１年間アメリカで勉強したことがあります。",
+    "vi": "Khi còn học cấp 3, tôi đã từng học ở Mỹ 1 năm.",
+    "tr": "Khi còn học cấp 3, tôi đã từng học ở Mỹ 1 năm.",
+    "dialog": false
+   },
+   {
+    "jp": "「この歌を知っていますか」「はい、前に一度聞いたことがあります」",
+    "vi": "“Bạn có biết bài hát này không?” “Vâng, trước đây tôi đã từng nghe một lần.”",
+    "tr": "“Bạn có biết bài hát này không?” “Vâng, trước đây tôi đã từng nghe một lần.”",
+    "dialog": false
+   },
+   {
+    "jp": "わたしはまだ一度も雪を見たことがありません。",
+    "vi": "Tôi vẫn chưa từng thấy tuyết dù chỉ một lần.",
+    "tr": "Tôi vẫn chưa từng thấy tuyết dù chỉ một lần.",
+    "dialog": false
+   },
+   {
+    "jp": "富士山に登ったことがある？",
+    "vi": "Bạn đã từng leo núi Phú Sĩ chưa?",
+    "tr": "Bạn đã từng leo núi Phú Sĩ chưa?",
+    "dialog": false
+   }
+  ],
+  "explain": "Thường đi kèm các từ chỉ số lần:一度／何回も／数回／一回も…ない để làm rõ tần suất kinh nghiệm.\nDùng thể lịch sự: 〜たことが あります ／〜たことが ありません .\nKhi hỏi kinh nghiệm: 〜たことが ありますか ？ là mẫu lịch sự, trung tính.\n\n• Vたことがある diễn tả kinh nghiệm trong quá khứ không xác định thời điểm cụ thể, nhấn vào “đã từng hay chưa”.\n• Phủ định: Vたことがない = hoàn toàn chưa từng có kinh nghiệm đó.\n• Không dùng với sự kiện quá cụ thể/điểm thời gian rõ ràng (昨日/先週…) vì mâu thuẫn với tính “phi thời điểm”.\n• Khác với Vた đơn thuần: Vた kể một lần đã xảy ra (có thể có thời gian); Vたことがある nhấn kinh nghiệm từng làm.",
+  "comparison": {
+   "headers": [
+    "Mẫu",
+    "Ý nghĩa",
+    "Khác biệt",
+    "Ví dụ ngắn"
+   ],
+   "rows": [
+    [
+     "Vたことがある",
+     "Đã từng (kinh nghiệm)",
+     "Phi thời điểm cụ thể",
+     "<ruby>寿司<rt>すし</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたことがある"
+    ],
+    [
+     "Vた",
+     "Đã làm (quá khứ)",
+     "Có thể gắn thời điểm cụ thể",
+     "<ruby>昨日<rt>きのう</rt></ruby><ruby>寿司<rt>すし</rt></ruby>を<ruby>食<rt>た</rt></ruby>べた"
+    ],
+    [
+     "Vることがある",
+     "Thỉnh thoảng",
+     "Thói quen/tính thường xuyên",
+     "<ruby>遅<rt>おく</rt></ruby>れることがある"
+    ],
+    [
+     "<ruby>経験<rt>けいけん</rt></ruby>がある",
+     "Có kinh nghiệm",
+     "Danh từ + がある",
+     "<ruby>留学<rt>りゅうがく</rt></ruby>の<ruby>経験<rt>けいけん</rt></ruby>がある"
+    ]
+   ]
+  },
+  "mistakes": [
+   "Gắn thời điểm cụ thể: “昨日富士山に登ったことがある” (không tự nhiên) → “昨日登った” hoặc “富士山に登ったことがある”.",
+   "Nhầm với thói quen: “よく行く” ≠ “行ったことがある”. Một cái là thường xuyên, một cái là kinh nghiệm đã từng.",
+   "Bỏ こと gây trang trọng không phù hợp trong văn viết: “食べたことある” khẩu ngữ, JLPT yêu cầu đầy đủ.",
+   "Phủ định kép sai: “一度も行ったことありません” (đúng) chứ không “一度も行ったことないです” trong văn chuẩn thi cử (nên đồng nhất mức lịch sự)."
+  ],
+  "notes": "• Thêm mốc thời gian rộng vẫn được: 子どものころに、海外へ行ったことがある (khoảng thời thơ ấu, không phải mốc cụ thể).\n• Đi với もう/まだ: もう行ったことがあります (đã từng rồi)／まだ行ったことがありません (vẫn chưa từng).\n• Đối thoại tự nhiên thường lược bỏ ことが: 食べたことある？ (khẩu ngữ).",
+  "confusable": [
+   {
+    "id": 245,
+    "short_label": "～がある",
+    "level": "N4"
+   },
+   {
+    "id": 435,
+    "short_label": "～ることがある",
+    "level": "N4"
+   },
+   {
+    "id": 350,
+    "short_label": "～たことがない",
+    "level": "N4"
+   }
+  ]
+ }
+}
