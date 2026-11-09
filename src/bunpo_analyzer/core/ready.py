@@ -33,8 +33,16 @@ async def check_ready(settings: Optional[Settings] = None, ping: bool = False) -
         from bunpo_analyzer.core.data import get_kho
 
         kho = get_kho(s.data_dir)
-        checks["kho"] = _ok(f"{len(kho.grammars)} mau ngu phap, {len(kho.words)} tu; ban dich kho: "
-                            f"{', '.join(x for x in kho.langs if x != 'vi') or 'chua co'}", langs=list(kho.langs))
+        fb = s.text_fallback_lang
+        detail = (f"{len(kho.grammars)} mau ngu phap, {len(kho.words)} tu; ban dich kho: "
+                  f"{', '.join(x for x in kho.langs if x != 'vi') or 'chua co'}; ngon ngu du phong: {fb}")
+        extra: dict[str, Any] = {"langs": list(kho.langs), "text_fallback": fb}
+        if fb != "vi" and fb not in kho.langs:
+            # Dat BUNPO_TEXT_FALLBACK_LANG nhung quen trien khai grammar_text.<fb>.json: ngon ngu chua dich
+            # se hien tieng Viet. Khong chan khoi dong (kho van dung duoc), chi canh bao.
+            detail += f" (THIEU grammar/grammar_text.{fb}.json -> dang dung tieng Viet)"
+            extra["warn"] = True
+        checks["kho"] = _ok(detail, **extra)
     except Exception as e:  # noqa: BLE001
         checks["kho"] = _fail(f"khong nap duoc kho o BUNPO_DATA_DIR={s.data_dir}: {type(e).__name__}: {e}")
 

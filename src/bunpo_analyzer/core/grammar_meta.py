@@ -33,7 +33,10 @@ def short_label(gid: int, kho=None, lang: str = "vi") -> Optional[str]:
     label_lang: "neutral" (chi chu Nhat / ky hieu) dung cho moi ngon ngu; "vi" / "en": nhan co chu cua ngon
     ngu do. Ngon ngu khac: mau trung da gom lay nhan cua mau chuan; roi short_label da dich (nhan dich tay,
     translation/labels/<lang>.json); roi ten da dich; chua co thi dung nhan goc.
+    `lang` chua co ban dich kho: dung nhan cua ngon ngu du phong (BUNPO_TEXT_FALLBACK_LANG, xem Kho.content_lang).
     """
+    if kho is not None:
+        lang = kho.content_lang(lang)
     m = meta(gid)
     label = m.get("short_label")
     if label and (m.get("label_lang", "neutral") in ("neutral", lang) or lang == "vi" or kho is None):

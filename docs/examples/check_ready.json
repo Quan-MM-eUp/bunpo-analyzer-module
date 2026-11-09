@@ -5,12 +5,13 @@
   "checks": {
    "kho": {
     "ok": true,
-    "detail": "1621 mau ngu phap, 12693 tu; ban dich kho: en, ko",
+    "detail": "1621 mau ngu phap, 12693 tu; ban dich kho: en, ko; ngon ngu du phong: vi",
     "langs": [
      "en",
      "ko",
      "vi"
-    ]
+    ],
+    "text_fallback": "vi"
    },
    "tokenizer": {
     "ok": true,

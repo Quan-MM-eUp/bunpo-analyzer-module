@@ -27,6 +27,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Optional
 
+from bunpo_analyzer.core.langs import text_fallback_lang
 from bunpo_analyzer.core.tokenizer import kata_to_hira
 
 DEFAULT_LANG = "vi"
@@ -203,8 +204,22 @@ class Kho:
             "lang": lang if tr.get("meaning") else DEFAULT_LANG,
         }
 
+    def content_lang(self, lang: str) -> str:
+        """Ngon ngu thuc dung cho phan chu cua kho ngu phap.
+
+        `lang` da co ban dich (hoac la vi) -> `lang`; chua co -> ngon ngu du phong
+        (BUNPO_TEXT_FALLBACK_LANG) neu kho co ban dich cua no; khong thi tieng Viet.
+        """
+        if lang == DEFAULT_LANG or lang in self._gram_text:
+            return lang
+        fb = text_fallback_lang()
+        return fb if fb in self._gram_text else DEFAULT_LANG
+
     def grammar_tr(self, gid: int, lang: str) -> dict[str, Any]:
-        """Ban dich nguyen dang cua 1 mau ({} neu chua co / lang = vi). Truong rong = dung ban goc."""
+        """Ban dich nguyen dang cua 1 mau ({} neu chua co / lang = vi). Truong rong = dung ban goc.
+
+        `lang` chua co ban dich thi dung ban dich cua ngon ngu du phong (xem `content_lang`)."""
+        lang = self.content_lang(lang)
         if lang == DEFAULT_LANG:
             return {}
         return self._gram_text.get(lang, {}).get(str(int(gid))) or {}
@@ -218,6 +233,7 @@ class Kho:
         raw = self._gram_raw.get(int(gid))
         if raw is None:
             return {}
+        lang = self.content_lang(lang)
         tr = self.grammar_tr(gid, lang)
         vi = {
             "name": raw.get("grammar") or None,

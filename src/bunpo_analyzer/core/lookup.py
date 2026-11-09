@@ -30,6 +30,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 from bunpo_analyzer.core.data import DEFAULT_LANG, Kho, Word
+from bunpo_analyzer.core.langs import text_fallback_lang
 from bunpo_analyzer.core.tokenizer import MorphToken, kata_to_hira
 
 _TABLES = Path(__file__).resolve().parent.parent / "tables"
@@ -104,10 +105,15 @@ def table_entry(toks: list[MorphToken], i: int) -> Optional[dict[str, Any]]:
 
 
 def table_meaning(e: dict[str, Any], lang: str) -> str:
+    """Nghia muc bang tro tu: ban dich cua `lang` -> cua ngon ngu du phong (BUNPO_TEXT_FALLBACK_LANG)
+    -> tieng Viet. Nguoi dung tieng Viet luon nhan ban goc."""
     if lang != DEFAULT_LANG:
-        tr = _table_text(lang).get(e["key"])
-        if tr:
-            return tr
+        for code in dict.fromkeys((lang, text_fallback_lang())):
+            if code == DEFAULT_LANG:
+                continue
+            tr = _table_text(code).get(e["key"])
+            if tr:
+                return tr
     return e["vi"]
 
 

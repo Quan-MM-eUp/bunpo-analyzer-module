@@ -95,6 +95,7 @@ Không có adapter render: app tự dựng giao diện từ `AnalysisResult`.
 | 5.1 Tra nghĩa từ bằng Mazii | Xong (`core/dictionary/`, `lookup_dict`; dữ liệu mẫu `tests/fixtures/mazii/`, đánh giá `docs/mazii_eval.md`: ~90% từ nội dung có nghĩa từ Mazii) |
 | 5.2 Đa ngôn ngữ | Xong cho en, ko: bản dịch kho ngữ pháp (`publish_lang.py`), bảng trợ từ en/id/tw/cn/ko, nhãn giao diện 16 ngôn ngữ (`labels()`); ngôn ngữ khác hiện tiếng Việt cho phần kho đến khi dịch xong |
 | 5.3 Đóng gói 0.2.0 | Xong (`check_ready()`, `CHANGELOG.md`, `docs/INTEGRATION.md`) |
+| 5.4 Ngôn ngữ dự phòng 0.2.1 | Xong (`BUNPO_TEXT_FALLBACK_LANG`, `core/langs.py`, `tests/test_text_fallback.py`) |
 
 ## Bộ câu kiểm thử
 
