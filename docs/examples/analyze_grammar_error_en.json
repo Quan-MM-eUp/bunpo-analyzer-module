@@ -1,0 +1,124 @@
+{
+ "call": "await analyze('映画は面白いでした。', lang='en')",
+ "meta": {
+  "cache": "miss",
+  "latency_ms": 4291,
+  "cost_usd": 0.0125,
+  "wall_ms": 4974
+ },
+ "result": {
+  "schema_version": "1.5",
+  "id": "an_a31c0d1b5ba8",
+  "lang": "en",
+  "text": "映画は面白いでした。",
+  "tokens": [
+   {
+    "i": 0,
+    "surface": "映画",
+    "base": "映画",
+    "reading": "えいが",
+    "pos": "noun",
+    "furigana": [
+     [
+      "映画",
+      "えいが"
+     ]
+    ],
+    "meaning": "movie; film; motion picture",
+    "meaning_source": "dict",
+    "level": "N5",
+    "dict_id": "3c648fb4cdfa1d53702419ac4b0f089a"
+   },
+   {
+    "i": 1,
+    "surface": "は",
+    "base": "は",
+    "reading": "は",
+    "pos": "prt",
+    "furigana": [
+     [
+      "は",
+      null
+     ]
+    ],
+    "meaning": "topic marker",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 2,
+    "surface": "面白い",
+    "base": "面白い",
+    "reading": "おもしろい",
+    "pos": "adj",
+    "pos_sub": "adj_i",
+    "furigana": [
+     [
+      "面白",
+      "おもしろ"
+     ],
+     [
+      "い",
+      null
+     ]
+    ],
+    "meaning": "interesting; fascinating; intriguing; enthralling; amusing; funny; comical; enjoyable; fun; entertaining; pleasant",
+    "meaning_source": "dict",
+    "level": "N5",
+    "dict_id": "6afb0303552c660b0d214a426dd2b4e0"
+   },
+   {
+    "i": 3,
+    "surface": "でし",
+    "base": "です",
+    "reading": "でし",
+    "pos": "aux",
+    "furigana": [
+     [
+      "でし",
+      null
+     ]
+    ],
+    "meaning": "is (polite)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 4,
+    "surface": "た",
+    "base": "た",
+    "reading": "た",
+    "pos": "aux",
+    "furigana": [
+     [
+      "た",
+      null
+     ]
+    ],
+    "meaning": "past, did (completion)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 5,
+    "surface": "。",
+    "pos": "punct"
+   }
+  ],
+  "nodes": [],
+  "grammar": [],
+  "input_check": {
+   "status": "error",
+   "at": [
+    2,
+    5
+   ],
+   "explain": "For い-adjectives, the past tense is formed by changing い to かった (面白い → 面白かった), not by adding でした.",
+   "correction": "映画は面白かったです。",
+   "correction_at": [
+    5,
+    10
+   ]
+  },
+  "error": {
+   "code": "grammar_error"
+  }
+ }
+}

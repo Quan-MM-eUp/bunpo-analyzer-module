@@ -1,0 +1,121 @@
+{
+ "call": "grammar_detail(252, 'en')",
+ "result": {
+  "id": 252,
+  "lang": "en",
+  "text_lang": "en",
+  "short_label": "～たことがある",
+  "name": "～た　ことが　ある",
+  "reading": null,
+  "level": "N4",
+  "labels": [
+   {
+    "code": "grammar_basic",
+    "name": "basic grammar"
+   },
+   {
+    "code": "grammar_exper",
+    "name": "experience"
+   }
+  ],
+  "connection": "Vた + ことがある ことがない ことがあります ことがありません",
+  "meaning": "Have (ever) done…",
+  "examples": [
+   {
+    "jp": "この歌は聞いたことがあります。",
+    "vi": "Tôi từng nghe bài hát này.",
+    "tr": "I've heard this song before.",
+    "dialog": false
+   },
+   {
+    "jp": "富士山に登ったことがありますか。",
+    "vi": "Anh đã bao giờ leo núi Phú Sĩ chưa.",
+    "tr": "Have you ever climbed Mt. Fuji?",
+    "dialog": false
+   },
+   {
+    "jp": "わたしは高校生のとき、１年間アメリカで勉強したことがあります。",
+    "vi": "Khi còn học cấp 3, tôi đã từng học ở Mỹ 1 năm.",
+    "tr": "When I was in high school, I studied in America for a year.",
+    "dialog": false
+   },
+   {
+    "jp": "「この歌を知っていますか」「はい、前に一度聞いたことがあります」",
+    "vi": "“Bạn có biết bài hát này không?” “Vâng, trước đây tôi đã từng nghe một lần.”",
+    "tr": "“Do you know this song?” “Yes, I've heard it once before.”",
+    "dialog": false
+   },
+   {
+    "jp": "わたしはまだ一度も雪を見たことがありません。",
+    "vi": "Tôi vẫn chưa từng thấy tuyết dù chỉ một lần.",
+    "tr": "I have never seen snow, not even once.",
+    "dialog": false
+   },
+   {
+    "jp": "富士山に登ったことがある？",
+    "vi": "Bạn đã từng leo núi Phú Sĩ chưa?",
+    "tr": "Have you ever climbed Mt. Fuji?",
+    "dialog": false
+   }
+  ],
+  "explain": "Often used with words indicating the number of times:一度／何回も／数回／一回も…ない to make clear how often the experience happened.\nPolite form: 〜たことが あります ／〜たことが ありません .\nWhen asking about experience: 〜たことが ありますか ？ is the polite, neutral pattern.\n\n• Vたことがある expresses a past experience without a specific point in time, focusing on “whether one has ever done it or not”.\n• Negative: Vたことがない = has never had that experience at all.\n• Not used with very specific events/clear points in time (昨日/先週…), because that contradicts its “non-specific time” nature.\n• Different from plain Vた: Vた tells of something that happened once (a time may be given); Vたことがある emphasizes the experience of having done it.",
+  "comparison": {
+   "headers": [
+    "Pattern",
+    "Meaning",
+    "Difference",
+    "Short example"
+   ],
+   "rows": [
+    [
+     "Vたことがある",
+     "Have done (experience)",
+     "No specific point in time",
+     "<ruby>寿司<rt>すし</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたことがある"
+    ],
+    [
+     "Vた",
+     "Did (past)",
+     "Can be tied to a specific point in time",
+     "<ruby>昨日<rt>きのう</rt></ruby><ruby>寿司<rt>すし</rt></ruby>を<ruby>食<rt>た</rt></ruby>べた"
+    ],
+    [
+     "Vることがある",
+     "Sometimes",
+     "Habit/frequency",
+     "<ruby>遅<rt>おく</rt></ruby>れることがある"
+    ],
+    [
+     "<ruby>経験<rt>けいけん</rt></ruby>がある",
+     "Have experience",
+     "Noun + がある",
+     "<ruby>留学<rt>りゅうがく</rt></ruby>の<ruby>経験<rt>けいけん</rt></ruby>がある"
+    ]
+   ]
+  },
+  "mistakes": [
+   "Attaching a specific point in time: “昨日富士山に登ったことがある” (unnatural) → “昨日登った” or “富士山に登ったことがある”.",
+   "Confusing it with habit: “よく行く” ≠ “行ったことがある”. One is frequent, the other is an experience one has had.",
+   "Dropping こと is inappropriate in formal written language: “食べたことある” is colloquial; the JLPT requires the full form.",
+   "Incorrect double negative: “一度も行ったことありません” (correct), not “一度も行ったことないです” in standard exam language (keep the level of politeness consistent)."
+  ],
+  "notes": "• Adding a broad time frame is still fine: 子どものころに、海外へ行ったことがある (childhood, not a specific point in time).\n• With もう/まだ: もう行ったことがあります (have already been)／まだ行ったことがありません (have still never been).\n• In natural conversation, ことが is often omitted: 食べたことある？ (colloquial).",
+  "confusable": [
+   {
+    "id": 245,
+    "short_label": "～がある",
+    "level": "N4"
+   },
+   {
+    "id": 435,
+    "short_label": "～ることがある",
+    "level": "N4"
+   },
+   {
+    "id": 350,
+    "short_label": "～たことがない",
+    "level": "N4"
+   }
+  ]
+ }
+}

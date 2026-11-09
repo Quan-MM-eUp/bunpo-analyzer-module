@@ -1,0 +1,638 @@
+{
+ "$defs": {
+  "AutoFix": {
+   "additionalProperties": false,
+   "properties": {
+    "original": {
+     "title": "Original",
+     "type": "string"
+    },
+    "fixed": {
+     "title": "Fixed",
+     "type": "string"
+    }
+   },
+   "required": [
+    "original",
+    "fixed"
+   ],
+   "title": "AutoFix",
+   "type": "object"
+  },
+  "ErrorInfo": {
+   "additionalProperties": false,
+   "properties": {
+    "code": {
+     "enum": [
+      "invalid_input",
+      "grammar_error",
+      "structure_failed",
+      "llm_unavailable"
+     ],
+     "title": "Code",
+     "type": "string"
+    },
+    "reason": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Reason"
+    }
+   },
+   "required": [
+    "code"
+   ],
+   "title": "ErrorInfo",
+   "type": "object"
+  },
+  "GrammarItem": {
+   "additionalProperties": false,
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "integer"
+    },
+    "short_label": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Short Label"
+    },
+    "level": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Level"
+    },
+    "meaning": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Meaning"
+    },
+    "note": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Note"
+    }
+   },
+   "required": [
+    "id"
+   ],
+   "title": "GrammarItem",
+   "type": "object"
+  },
+  "InputCheck": {
+   "additionalProperties": false,
+   "properties": {
+    "status": {
+     "default": "ok",
+     "enum": [
+      "ok",
+      "suspect",
+      "error"
+     ],
+     "title": "Status",
+     "type": "string"
+    },
+    "at": {
+     "anyOf": [
+      {
+       "maxItems": 2,
+       "minItems": 2,
+       "prefixItems": [
+        {
+         "type": "integer"
+        },
+        {
+         "type": "integer"
+        }
+       ],
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "At"
+    },
+    "reason": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Reason"
+    },
+    "explain": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Explain"
+    },
+    "correction": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Correction"
+    },
+    "correction_at": {
+     "anyOf": [
+      {
+       "maxItems": 2,
+       "minItems": 2,
+       "prefixItems": [
+        {
+         "type": "integer"
+        },
+        {
+         "type": "integer"
+        }
+       ],
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Correction At"
+    }
+   },
+   "title": "InputCheck",
+   "type": "object"
+  },
+  "Node": {
+   "additionalProperties": false,
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "type": {
+     "enum": [
+      "row",
+      "group"
+     ],
+     "title": "Type",
+     "type": "string"
+    },
+    "parent": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Parent"
+    },
+    "span": {
+     "anyOf": [
+      {
+       "maxItems": 2,
+       "minItems": 2,
+       "prefixItems": [
+        {
+         "type": "integer"
+        },
+        {
+         "type": "integer"
+        }
+       ],
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Span"
+    },
+    "grammar": {
+     "items": {
+      "type": "integer"
+     },
+     "title": "Grammar",
+     "type": "array"
+    },
+    "role": {
+     "anyOf": [
+      {
+       "enum": [
+        "subject",
+        "topic",
+        "object",
+        "complement",
+        "predicate",
+        "adv_time",
+        "adv_place",
+        "adv_manner",
+        "adv_reason"
+       ],
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Role"
+    },
+    "jp": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Jp"
+    },
+    "gloss": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Gloss"
+    },
+    "main": {
+     "default": false,
+     "title": "Main",
+     "type": "boolean"
+    },
+    "hidden": {
+     "default": false,
+     "title": "Hidden",
+     "type": "boolean"
+    },
+    "kind": {
+     "anyOf": [
+      {
+       "enum": [
+        "rel",
+        "sub",
+        "quote",
+        "nominal"
+       ],
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Kind"
+    },
+    "head": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Head"
+    },
+    "head_text": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Head Text"
+    }
+   },
+   "required": [
+    "id",
+    "type"
+   ],
+   "title": "Node",
+   "type": "object"
+  },
+  "Token": {
+   "additionalProperties": false,
+   "properties": {
+    "i": {
+     "minimum": 0,
+     "title": "I",
+     "type": "integer"
+    },
+    "surface": {
+     "title": "Surface",
+     "type": "string"
+    },
+    "base": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Base"
+    },
+    "reading": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Reading"
+    },
+    "pos": {
+     "enum": [
+      "noun",
+      "verb",
+      "adj",
+      "adv",
+      "prt",
+      "aux",
+      "punct"
+     ],
+     "title": "Pos",
+     "type": "string"
+    },
+    "pos_sub": {
+     "anyOf": [
+      {
+       "enum": [
+        "v1",
+        "v2",
+        "v3",
+        "adj_i",
+        "adj_na"
+       ],
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Pos Sub"
+    },
+    "furigana": {
+     "anyOf": [
+      {
+       "items": {
+        "maxItems": 2,
+        "minItems": 2,
+        "prefixItems": [
+         {
+          "type": "string"
+         },
+         {
+          "anyOf": [
+           {
+            "type": "string"
+           },
+           {
+            "type": "null"
+           }
+          ]
+         }
+        ],
+        "type": "array"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Furigana"
+    },
+    "meaning": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Meaning"
+    },
+    "meaning_source": {
+     "anyOf": [
+      {
+       "enum": [
+        "word_lib",
+        "dict",
+        "particle_table",
+        "llm"
+       ],
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Meaning Source"
+    },
+    "level": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Level"
+    },
+    "han": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Han"
+    },
+    "dict_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Dict Id"
+    }
+   },
+   "required": [
+    "i",
+    "surface",
+    "pos"
+   ],
+   "title": "Token",
+   "type": "object"
+  }
+ },
+ "additionalProperties": false,
+ "properties": {
+  "schema_version": {
+   "default": "1.5",
+   "title": "Schema Version",
+   "type": "string"
+  },
+  "id": {
+   "title": "Id",
+   "type": "string"
+  },
+  "lang": {
+   "title": "Lang",
+   "type": "string"
+  },
+  "text": {
+   "title": "Text",
+   "type": "string"
+  },
+  "translation": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Translation"
+  },
+  "tokens": {
+   "items": {
+    "$ref": "#/$defs/Token"
+   },
+   "title": "Tokens",
+   "type": "array"
+  },
+  "nodes": {
+   "items": {
+    "$ref": "#/$defs/Node"
+   },
+   "title": "Nodes",
+   "type": "array"
+  },
+  "grammar": {
+   "items": {
+    "$ref": "#/$defs/GrammarItem"
+   },
+   "title": "Grammar",
+   "type": "array"
+  },
+  "input_check": {
+   "$ref": "#/$defs/InputCheck"
+  },
+  "auto_fix": {
+   "anyOf": [
+    {
+     "$ref": "#/$defs/AutoFix"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null
+  },
+  "error": {
+   "anyOf": [
+    {
+     "$ref": "#/$defs/ErrorInfo"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null
+  }
+ },
+ "required": [
+  "id",
+  "lang",
+  "text"
+ ],
+ "title": "AnalysisResult",
+ "type": "object",
+ "$comment": "bunpo-analyzer, khuon 1.5. Sinh boi scripts/build_doc_examples.py"
+}

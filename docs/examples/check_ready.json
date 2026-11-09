@@ -1,0 +1,33 @@
+{
+ "call": "await check_ready(ping=True)",
+ "result": {
+  "ok": true,
+  "checks": {
+   "kho": {
+    "ok": true,
+    "detail": "1621 mau ngu phap, 12693 tu; ban dich kho: en, ko",
+    "langs": [
+     "en",
+     "ko",
+     "vi"
+    ]
+   },
+   "tokenizer": {
+    "ok": true,
+    "detail": "SudachiPy ok (5 token), 1612 luat"
+   },
+   "llm": {
+    "ok": true,
+    "detail": "openai https://llm-api.eup.ai/v1: gpt-5-mini (du phong gpt-4.1, dich nhe gpt-4.1-mini)"
+   },
+   "cache": {
+    "ok": true,
+    "detail": "memory"
+   },
+   "dictionary": {
+    "ok": true,
+    "detail": "Mazii ok (893 ms)"
+   }
+  }
+ }
+}

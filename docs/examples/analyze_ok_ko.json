@@ -1,0 +1,337 @@
+{
+ "call": "await analyze('昨日友達と見た映画はとても面白かったです。', lang='ko')",
+ "meta": {
+  "cache": "miss",
+  "latency_ms": 8458,
+  "cost_usd": 0.00173,
+  "wall_ms": 9395
+ },
+ "result": {
+  "schema_version": "1.5",
+  "id": "an_f5ecb72b52c3",
+  "lang": "ko",
+  "text": "昨日友達と見た映画はとても面白かったです。",
+  "translation": "어제 친구와 본 영화는 아주 재미있었어요.",
+  "tokens": [
+   {
+    "i": 0,
+    "surface": "昨日",
+    "base": "昨日",
+    "reading": "きのう",
+    "pos": "noun",
+    "furigana": [
+     [
+      "昨日",
+      "きのう"
+     ]
+    ],
+    "meaning": "작일; 어제((격식차린 말씨)); 어제; 오늘의 하루 전날",
+    "meaning_source": "dict",
+    "level": "N5",
+    "dict_id": "72627968112c4364edd9a73938d78667"
+   },
+   {
+    "i": 1,
+    "surface": "友達",
+    "base": "友達",
+    "reading": "ともだち",
+    "pos": "noun",
+    "furigana": [
+     [
+      "友達",
+      "ともだち"
+     ]
+    ],
+    "meaning": "친구; 벗; 동무",
+    "meaning_source": "dict",
+    "level": "N5",
+    "dict_id": "d40d1adfa408540429b140ff40f37b81"
+   },
+   {
+    "i": 2,
+    "surface": "と",
+    "base": "と",
+    "reading": "と",
+    "pos": "prt",
+    "furigana": [
+     [
+      "と",
+      null
+     ]
+    ],
+    "meaning": "~와/과, ~와 함께; ~라고 (인용)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 3,
+    "surface": "見",
+    "base": "見る",
+    "reading": "み",
+    "pos": "verb",
+    "pos_sub": "v2",
+    "furigana": [
+     [
+      "見",
+      "み"
+     ]
+    ],
+    "meaning": "보다; 눈으로 파악·확인하다; 조사하다",
+    "meaning_source": "dict",
+    "level": "N5",
+    "dict_id": "05680410dd078527905c20590c3571ce"
+   },
+   {
+    "i": 4,
+    "surface": "た",
+    "base": "た",
+    "reading": "た",
+    "pos": "aux",
+    "furigana": [
+     [
+      "た",
+      null
+     ]
+    ],
+    "meaning": "~했다 (과거, 완료)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 5,
+    "surface": "映画",
+    "base": "映画",
+    "reading": "えいが",
+    "pos": "noun",
+    "furigana": [
+     [
+      "映画",
+      "えいが"
+     ]
+    ],
+    "meaning": "영화",
+    "meaning_source": "dict",
+    "level": "N5",
+    "dict_id": "3c648fb4cdfa1d53702419ac4b0f089a"
+   },
+   {
+    "i": 6,
+    "surface": "は",
+    "base": "は",
+    "reading": "は",
+    "pos": "prt",
+    "furigana": [
+     [
+      "は",
+      null
+     ]
+    ],
+    "meaning": "주제 표시 ~은/는",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 7,
+    "surface": "とても",
+    "base": "とても",
+    "reading": "とても",
+    "pos": "adv",
+    "furigana": [
+     [
+      "とても",
+      null
+     ]
+    ],
+    "meaning": "(뒤에 부정어(否定語)가 따름) 아무리 해도; 도저히; 대단히; 매우; 몹시",
+    "meaning_source": "dict",
+    "dict_id": "1025885039aea8754dc2ad888e89ba65"
+   },
+   {
+    "i": 8,
+    "surface": "面白かっ",
+    "base": "面白い",
+    "reading": "おもしろかっ",
+    "pos": "adj",
+    "pos_sub": "adj_i",
+    "furigana": [
+     [
+      "面白",
+      "おもしろ"
+     ],
+     [
+      "かっ",
+      null
+     ]
+    ],
+    "meaning": "재미있다; 즐겁다; 유쾌하다; 우습다; 이상하다; 흥미 있다; 마음이 끌리다; (어딘지) 색다른 데가 있다",
+    "meaning_source": "dict",
+    "level": "N5",
+    "dict_id": "6afb0303552c660b0d214a426dd2b4e0"
+   },
+   {
+    "i": 9,
+    "surface": "た",
+    "base": "た",
+    "reading": "た",
+    "pos": "aux",
+    "furigana": [
+     [
+      "た",
+      null
+     ]
+    ],
+    "meaning": "~했다 (과거, 완료)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 10,
+    "surface": "です",
+    "base": "です",
+    "reading": "です",
+    "pos": "aux",
+    "furigana": [
+     [
+      "です",
+      null
+     ]
+    ],
+    "meaning": "~입니다 (정중)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 11,
+    "surface": "。",
+    "pos": "punct"
+   }
+  ],
+  "nodes": [
+   {
+    "id": "g1",
+    "type": "group",
+    "span": [
+     0,
+     5
+    ],
+    "grammar": [
+     196
+    ],
+    "gloss": "내가 어제 친구와 본 (영화)",
+    "main": false,
+    "hidden": false,
+    "kind": "rel",
+    "head": 5,
+    "head_text": "映画"
+   },
+   {
+    "id": "r1",
+    "type": "row",
+    "parent": "g1",
+    "grammar": [],
+    "role": "subject",
+    "jp": "（私が）",
+    "gloss": "내가",
+    "main": false,
+    "hidden": true
+   },
+   {
+    "id": "r2",
+    "type": "row",
+    "parent": "g1",
+    "span": [
+     0,
+     1
+    ],
+    "grammar": [],
+    "role": "adv_time",
+    "gloss": "어제",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r3",
+    "type": "row",
+    "parent": "g1",
+    "span": [
+     1,
+     3
+    ],
+    "grammar": [
+     19
+    ],
+    "role": "complement",
+    "gloss": "친구와 함께",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r4",
+    "type": "row",
+    "parent": "g1",
+    "span": [
+     3,
+     5
+    ],
+    "grammar": [],
+    "role": "predicate",
+    "gloss": "봤다",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r5",
+    "type": "row",
+    "span": [
+     5,
+     7
+    ],
+    "grammar": [],
+    "role": "topic",
+    "gloss": "그 영화는",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r6",
+    "type": "row",
+    "span": [
+     7,
+     11
+    ],
+    "grammar": [
+     43,
+     26
+    ],
+    "role": "predicate",
+    "gloss": "아주 재미있었다",
+    "main": true,
+    "hidden": false
+   }
+  ],
+  "grammar": [
+   {
+    "id": 196,
+    "short_label": "명사 수식절",
+    "level": "N5",
+    "meaning": "관계절로 명사를 수식하는 방법."
+   },
+   {
+    "id": 19,
+    "short_label": "と",
+    "level": "N5",
+    "meaning": "…와 함께 | …와, …와 함께, 인용 | 명사와 명사를 잇는 조사"
+   },
+   {
+    "id": 43,
+    "short_label": "とても",
+    "level": "N5",
+    "meaning": "매우 ~"
+   },
+   {
+    "id": 26,
+    "short_label": "Aい",
+    "level": "N5",
+    "meaning": "【사진】 \n \n 예: きのうは　とても　いそがしかったです。 어제는 아주 바빴어요."
+   }
+  ],
+  "input_check": {
+   "status": "ok"
+  }
+ }
+}

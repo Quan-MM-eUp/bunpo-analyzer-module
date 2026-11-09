@@ -1,0 +1,221 @@
+{
+ "call": "await analyze('見みた映画は面白かった。', lang='vi')",
+ "meta": {
+  "cache": "miss",
+  "latency_ms": 6339,
+  "cost_usd": 0.00135,
+  "wall_ms": 6913
+ },
+ "result": {
+  "schema_version": "1.5",
+  "id": "an_cd0a7c2f1ee0",
+  "lang": "vi",
+  "text": "見た映画は面白かった。",
+  "translation": "Bộ phim (mà tôi) đã xem thì thú vị.",
+  "tokens": [
+   {
+    "i": 0,
+    "surface": "見",
+    "base": "見る",
+    "reading": "み",
+    "pos": "verb",
+    "pos_sub": "v2",
+    "furigana": [
+     [
+      "見",
+      "み"
+     ]
+    ],
+    "meaning": "coi; ngắm; ngó",
+    "meaning_source": "dict",
+    "level": "N5",
+    "han": "KIẾN",
+    "dict_id": "05680410dd078527905c20590c3571ce"
+   },
+   {
+    "i": 1,
+    "surface": "た",
+    "base": "た",
+    "reading": "た",
+    "pos": "aux",
+    "furigana": [
+     [
+      "た",
+      null
+     ]
+    ],
+    "meaning": "quá khứ, đã (hoàn thành)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 2,
+    "surface": "映画",
+    "base": "映画",
+    "reading": "えいが",
+    "pos": "noun",
+    "furigana": [
+     [
+      "映画",
+      "えいが"
+     ]
+    ],
+    "meaning": "điện ảnh; phim",
+    "meaning_source": "dict",
+    "level": "N5",
+    "han": "ÁNH HỌA",
+    "dict_id": "3c648fb4cdfa1d53702419ac4b0f089a"
+   },
+   {
+    "i": 3,
+    "surface": "は",
+    "base": "は",
+    "reading": "は",
+    "pos": "prt",
+    "furigana": [
+     [
+      "は",
+      null
+     ]
+    ],
+    "meaning": "đánh dấu chủ đề",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 4,
+    "surface": "面白かっ",
+    "base": "面白い",
+    "reading": "おもしろかっ",
+    "pos": "adj",
+    "pos_sub": "adj_i",
+    "furigana": [
+     [
+      "面白",
+      "おもしろ"
+     ],
+     [
+      "かっ",
+      null
+     ]
+    ],
+    "meaning": "dí dỏm; thú vị; hay; vui tính",
+    "meaning_source": "dict",
+    "level": "N5",
+    "han": "DIỆN BẠCH",
+    "dict_id": "6afb0303552c660b0d214a426dd2b4e0"
+   },
+   {
+    "i": 5,
+    "surface": "た",
+    "base": "た",
+    "reading": "た",
+    "pos": "aux",
+    "furigana": [
+     [
+      "た",
+      null
+     ]
+    ],
+    "meaning": "quá khứ, đã (hoàn thành)",
+    "meaning_source": "particle_table"
+   },
+   {
+    "i": 6,
+    "surface": "。",
+    "pos": "punct"
+   }
+  ],
+  "nodes": [
+   {
+    "id": "g1",
+    "type": "group",
+    "span": [
+     0,
+     2
+    ],
+    "grammar": [
+     196
+    ],
+    "gloss": "bộ phim (mà [người nào đó] đã xem)",
+    "main": false,
+    "hidden": false,
+    "kind": "rel",
+    "head": 2,
+    "head_text": "映画"
+   },
+   {
+    "id": "r1",
+    "type": "row",
+    "parent": "g1",
+    "grammar": [],
+    "role": "subject",
+    "jp": "（私が）",
+    "gloss": "(tôi)",
+    "main": false,
+    "hidden": true
+   },
+   {
+    "id": "r2",
+    "type": "row",
+    "parent": "g1",
+    "span": [
+     0,
+     2
+    ],
+    "grammar": [],
+    "role": "predicate",
+    "gloss": "đã xem",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r3",
+    "type": "row",
+    "span": [
+     2,
+     4
+    ],
+    "grammar": [],
+    "role": "topic",
+    "gloss": "bộ phim",
+    "main": false,
+    "hidden": false
+   },
+   {
+    "id": "r4",
+    "type": "row",
+    "span": [
+     4,
+     6
+    ],
+    "grammar": [
+     26
+    ],
+    "role": "predicate",
+    "gloss": "thú vị",
+    "main": true,
+    "hidden": false
+   }
+  ],
+  "grammar": [
+   {
+    "id": 196,
+    "short_label": "Mệnh đề bổ nghĩa danh từ",
+    "level": "N5",
+    "meaning": "Cách bổ nghĩa cho danh từ bằng mệnh đề quan hệ."
+   },
+   {
+    "id": 26,
+    "short_label": "Aい",
+    "level": "N5",
+    "meaning": "【ảnh】 \n \n VD: きのうは　とても　いそがしかったです。 Hôm qua đã rất bận rộn."
+   }
+  ],
+  "input_check": {
+   "status": "ok"
+  },
+  "auto_fix": {
+   "original": "見みた映画は面白かった。",
+   "fixed": "見た映画は面白かった。"
+  }
+ }
+}

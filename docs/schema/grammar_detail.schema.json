@@ -1,0 +1,288 @@
+{
+ "$defs": {
+  "Comparison": {
+   "properties": {
+    "headers": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Headers",
+     "type": "array"
+    },
+    "rows": {
+     "items": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array"
+     },
+     "title": "Rows",
+     "type": "array"
+    }
+   },
+   "title": "Comparison",
+   "type": "object"
+  },
+  "Confusable": {
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "integer"
+    },
+    "short_label": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Short Label"
+    },
+    "level": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Level"
+    }
+   },
+   "required": [
+    "id"
+   ],
+   "title": "Confusable",
+   "type": "object"
+  },
+  "Example": {
+   "properties": {
+    "jp": {
+     "title": "Jp",
+     "type": "string"
+    },
+    "vi": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Vi"
+    },
+    "tr": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Tr"
+    },
+    "dialog": {
+     "default": false,
+     "title": "Dialog",
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "jp"
+   ],
+   "title": "Example",
+   "type": "object"
+  },
+  "Label": {
+   "properties": {
+    "code": {
+     "title": "Code",
+     "type": "string"
+    },
+    "name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Name"
+    }
+   },
+   "required": [
+    "code"
+   ],
+   "title": "Label",
+   "type": "object"
+  }
+ },
+ "properties": {
+  "id": {
+   "title": "Id",
+   "type": "integer"
+  },
+  "lang": {
+   "title": "Lang",
+   "type": "string"
+  },
+  "text_lang": {
+   "title": "Text Lang",
+   "type": "string"
+  },
+  "short_label": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Short Label"
+  },
+  "name": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Name"
+  },
+  "reading": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Reading"
+  },
+  "level": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Level"
+  },
+  "labels": {
+   "items": {
+    "$ref": "#/$defs/Label"
+   },
+   "title": "Labels",
+   "type": "array"
+  },
+  "connection": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Connection"
+  },
+  "meaning": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Meaning"
+  },
+  "examples": {
+   "items": {
+    "$ref": "#/$defs/Example"
+   },
+   "title": "Examples",
+   "type": "array"
+  },
+  "explain": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Explain"
+  },
+  "comparison": {
+   "anyOf": [
+    {
+     "$ref": "#/$defs/Comparison"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null
+  },
+  "mistakes": {
+   "items": {
+    "type": "string"
+   },
+   "title": "Mistakes",
+   "type": "array"
+  },
+  "notes": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Notes"
+  },
+  "confusable": {
+   "items": {
+    "$ref": "#/$defs/Confusable"
+   },
+   "title": "Confusable",
+   "type": "array"
+  }
+ },
+ "required": [
+  "id",
+  "lang",
+  "text_lang"
+ ],
+ "title": "GrammarDetail",
+ "type": "object",
+ "$comment": "bunpo-analyzer, khuon 1.5. Sinh boi scripts/build_doc_examples.py"
+}
