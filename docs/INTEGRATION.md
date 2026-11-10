@@ -466,7 +466,7 @@ def summary_for_llm(r: dict) -> str:
 - Nghĩa từ tiếng Việt từ Mazii đôi khi xếp nghĩa phụ lên trước (登る, 今日, 明日); từ đồng âm khác nghĩa (つく) chưa chọn theo ngữ cảnh. Đánh giá: `docs/mazii_eval.md` (khoảng 90% từ nội dung có nghĩa từ Mazii, khoảng 95% chấp nhận được khi duyệt tay).
 - Kiểm tra câu sai do LLM: có thể báo nhầm `suspect` với văn nói, lời bài hát; `error` chỉ dùng cho lỗi rõ ràng.
 - Bộ luật dò mẫu và một số nội dung kho đang chờ duyệt (`docs/rules_N*.md`, `docs/kho_loi_du_lieu.md`): sửa kho / luật là đổi khoá cache, kết quả cũ tự hết hiệu lực.
-- Kho còn lỗi dữ liệu hiện nguyên văn (module không sửa kho), ví dụ trong `docs/examples/`: `grammar[].meaning` của mẫu #26 có chữ 【ảnh】 / 【사진】 (chỗ ảnh trong kho), `notes` của mẫu #338 chứa nguyên khối "meaning_vi: … ⏐ examples:", `reading` của #338 chứa kanji. Câu ví dụ hội thoại viết liền trên một dòng (「…」「…」) không được nhận là hội thoại (`dialog = false`).
+- Kho còn lỗi dữ liệu hiện nguyên văn (module không sửa kho), ví dụ trong `docs/examples/`: `notes` của mẫu #338 chứa nguyên khối "meaning_vi: … ⏐ examples:", `reading` của #338 chứa kanji. Câu ví dụ hội thoại viết liền trên một dòng (「…」「…」) không được nhận là hội thoại (`dialog = false`).
 - Quyền dùng API Mazii và giới hạn gọi: giả định đã được phép; cần xác nhận với team Mazii trước khi chạy thật ở quy mô lớn.
 - Chỉ hỗ trợ nhà cung cấp LLM chuẩn OpenAI (`llm_provider = openai`).
 
