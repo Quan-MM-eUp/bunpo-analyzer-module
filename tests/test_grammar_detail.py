@@ -148,3 +148,32 @@ def test_publish_labels(tmp_path):
     todo, errs, used = pl.build_labels(kho, out, {"338": "～う／よう (let's)", "30": "sai"}, "en")
     assert todo == {} and used == 1 and out["338"]["short_label"] == "～う／よう (let's)"
     assert any("[30]" in e for e in errs)  # nhan dich sai -> bao loi, van dung ten da dich
+
+
+def test_publish_patches(tmp_path):
+    """Kho sua sau khi dich: muc cu bi bo, ghi todo; ban dich bu khop ma bam thi duoc dung."""
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts" / "translation"))
+    pytest = __import__("pytest")
+    pytest.importorskip("sudachipy")
+    import publish_lang as pl
+
+    kho = _kho_tr(tmp_path / "kho")
+    ws = tmp_path / "ws"
+    _write(ws / "source" / "items.json", {"252": {"fields": {"meaning": {"src": "vi", "text": "Cũ"}}}})
+    merged = {"252": {"meaning": "Old meaning", "explain": "Explanation.", "_meta": {"src_hash": "cu"}}}
+    out: dict = {}
+    todo, errs, used = pl.apply_patches(ws, "en", kho, merged, out)
+    assert used == 0 and errs == [] and "252" not in out and "meaning" in todo["252"]["changed"]
+    h = todo["252"]["src_hash"]
+    _write(ws / "patches" / "en.json", {"252": {"src_hash": h, "fields": {"meaning": "Have done before"}}})
+    todo, errs, used = pl.apply_patches(ws, "en", kho, merged, out)
+    assert used == 1 and todo == {} and errs == []
+    assert out["252"]["meaning"] == "Have done before" and out["252"]["explain"] == "Explanation."
+    _write(ws / "patches" / "en.json", {"252": {"src_hash": "khac", "fields": {"meaning": "x"}}})
+    todo, errs, used = pl.apply_patches(ws, "en", kho, merged, {})
+    assert used == 0 and "252" in todo and any("ma bam cu" in e for e in errs)
+    _write(ws / "patches" / "en.json", {"252": {"src_hash": h, "fields": {"meaning": "Đã từng"}}})
+    todo, errs, used = pl.apply_patches(ws, "en", kho, merged, {})
+    assert used == 0 and any("chu tieng Viet" in e for e in errs)

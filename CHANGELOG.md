@@ -1,5 +1,11 @@
 # Thay đổi
 
+## Chưa phát hành
+
+**Dữ liệu / công cụ (không đổi code module, không đổi khuôn)**
+- Kho: sửa `meaning_vi` của mẫu #26 (Tính từ い), #27 (Tính từ な) vốn là chỗ ảnh 【ảnh】 + câu ví dụ; dịch bù en, ko. Cần triển khai lại `grammar/grammar_lib.json`, `grammar/grammar_text.en.json`, `grammar/grammar_text.ko.json`.
+- `publish_lang.py`: dịch bù khi kho sửa sau khi dịch (`translation/patches/<lang>.json`, danh sách cần dịch ở `patches/<lang>.todo.json`); các trường không đổi giữ bản dịch cũ.
+
 ## 0.2.1 (khuôn kết quả 1.5, không đổi)
 
 **Ngôn ngữ dự phòng cho phần chữ lấy từ kho**
