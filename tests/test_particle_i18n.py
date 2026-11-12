@@ -35,7 +35,7 @@ def test_table_meaning_uses_lang(lang):
     m = table_meaning(e, lang)
     assert m != e["vi"] and "～そうだ" in m
     assert table_meaning(e, "vi") == e["vi"]
-    assert table_meaning(e, "fr") == e["vi"]  # chua dua vao module -> tieng Viet
+    assert table_meaning(e, "de") == e["vi"]  # chua dua vao module -> tieng Viet
 
 
 def test_lookup_dict_particles_en():

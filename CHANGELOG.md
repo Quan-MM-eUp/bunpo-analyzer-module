@@ -1,5 +1,10 @@
 # Thay đổi
 
+## 0.2.3 (khuôn kết quả 1.5, không đổi)
+
+- `tables/particle_table.fr.json`: nghĩa trợ từ / trợ động từ tiếng Pháp (bản dịch C2). Đổi bảng là đổi khoá cache.
+- Kho: thêm bản dịch kho ngữ pháp tiếng Pháp (`grammar/grammar_text.fr.json`, 1491/1491 mẫu, repo dịch) — chép vào thư mục kho khi triển khai.
+
 ## 0.2.2 (khuôn kết quả 1.5, không đổi)
 
 **Nghĩa trợ từ thêm 3 ngôn ngữ**

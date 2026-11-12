@@ -118,9 +118,9 @@ E = next(e for e in ENTRIES if e["key"] in EN and e["key"] in CN)
 
 def test_table_meaning_fallback():
     with use_text_fallback("vi"):
-        assert table_meaning(E, "fr") == E["vi"]  # hanh vi cu
+        assert table_meaning(E, "de") == E["vi"]  # hanh vi cu
     with use_text_fallback("en"):
-        assert table_meaning(E, "fr") == EN[E["key"]]
+        assert table_meaning(E, "de") == EN[E["key"]]
         assert table_meaning(E, "my") == EN[E["key"]]
         assert table_meaning(E, "cn") == CN[E["key"]]  # da co bang dich rieng -> giu
         assert table_meaning(E, "vi") == E["vi"]  # nguoi dung tieng Viet luon ban goc
@@ -159,8 +159,8 @@ async def _run(kho, lang, fb):
 
 
 async def test_analyze_full_uses_settings_fallback(kho_ex1):
-    a_vi = await _run(kho_ex1, "fr", "vi")
-    a_en = await _run(kho_ex1, "fr", "en")
+    a_vi = await _run(kho_ex1, "de", "vi")
+    a_en = await _run(kho_ex1, "de", "en")
     g_vi = {g.id: g.meaning for g in a_vi.result.grammar}
     g_en = {g.id: g.meaning for g in a_en.result.grammar}
     assert g_vi[19] == "Cùng với." and g_en[19] == "Together with."  # mau co ban dich en
@@ -181,9 +181,9 @@ async def test_analyze_full_vi_user_unchanged(kho_ex1):
 
 
 def test_prepare_particle_follows_context(kho_ex1):
-    toks_vi = {w.i: w.meaning for w in prepare(P.EX1_TEXT, "fr", kho_ex1).lookup.words
+    toks_vi = {w.i: w.meaning for w in prepare(P.EX1_TEXT, "de", kho_ex1).lookup.words
                if w.meaning_source == "particle_table"}
     with use_text_fallback("en"):
-        toks_en = {w.i: w.meaning for w in prepare(P.EX1_TEXT, "fr", kho_ex1).lookup.words
+        toks_en = {w.i: w.meaning for w in prepare(P.EX1_TEXT, "de", kho_ex1).lookup.words
                    if w.meaning_source == "particle_table"}
     assert toks_vi.keys() == toks_en.keys() and toks_vi != toks_en
