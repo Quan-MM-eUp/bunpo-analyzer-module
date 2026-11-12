@@ -11,7 +11,7 @@ from bunpo_analyzer.core.labels import label_langs, labels
 from bunpo_analyzer.core.ready import check_ready
 from bunpo_analyzer.schema import SCHEMA_VERSION, AnalysisResult
 
-__version__ = "0.2.1"
+__version__ = "0.2.2"
 
 __all__ = ["analyze", "grammar_detail", "GrammarDetail", "labels", "label_langs", "check_ready", "AnalysisResult",
            "SCHEMA_VERSION", "Settings", "get_settings", "__version__"]

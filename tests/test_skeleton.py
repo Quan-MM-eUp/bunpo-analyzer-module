@@ -18,7 +18,7 @@ def load(name: str) -> dict:
 
 
 def test_version():
-    assert bunpo_analyzer.__version__ == "0.2.1"
+    assert bunpo_analyzer.__version__ == "0.2.2"
     assert SCHEMA_VERSION == "1.5"
 
 

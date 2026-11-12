@@ -152,6 +152,20 @@ def test_check_errors(ws, patch, needle):
     assert any(needle in e for e in r["errors"]), r["errors"]
 
 
+def test_check_kana_kept_japanese():
+    """Tieng Trung giu mau / cum ngan / ten katakana tu nguon: khong bao "chua dich";
+    chep nguyen cau Nhat dai tu nguon: van bao."""
+    src = "Dùng 「～ている」 để nói trạng thái. ×食べてる → ○食べている"
+    err, _ = check.check_text(src, "用「～ている」表示狀態。\n×食べてる → ○食べている", "tw", "vi", "x", [])
+    assert not any("chua dich" in e for e in err), err
+    jp = "「電車で「カクテイ」っていうのは何のことですか。」"
+    err, _ = check.check_text(jp, "「電車上說的『カクテイ』是什麼意思？」", "tw", "ex", "x", [])
+    assert not any("chua dich" in e for e in err), err
+    jp = "現在の状態がこれからも続く様子を表す。"
+    err, _ = check.check_text(jp, jp, "tw", "ja", "x", [])
+    assert any("chua dich" in e for e in err), err
+
+
 def test_check_script_and_variant(ws):
     ko = {1618: {**GOOD_EN[1618], "meaning": "This sentence is English not Korean at all, long enough to judge"},
           7: GOOD_EN[7]}

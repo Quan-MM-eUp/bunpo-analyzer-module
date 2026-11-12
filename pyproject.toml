@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bunpo-analyzer"
-version = "0.2.1"
+version = "0.2.2"
 description = "Phan tich ngu phap cau tieng Nhat cho Migii AI Sensei"
 readme = "README.md"
 # Chatbot chay Python 3.14 (Dockerfile); giu >=3.10 de chay duoc tren may dev.

@@ -5,6 +5,7 @@ giu nguyen hanh vi cu (toan bo test cu chay voi mac dinh nay).
 """
 
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -126,12 +127,13 @@ def test_table_meaning_fallback():
 
 
 def test_table_meaning_all_entries_no_vietnamese_for_fallback_langs():
-    vi_chars = set("ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ")
+    # chi chu rieng cua tieng Viet (a, e, o co dau dung chung voi es/pt/fr/pl khong tinh) - nhu VI_ONLY cua check.py
+    vi_only = re.compile(r"[ăđơưĂĐƠƯẠ-ỹ]")
     with use_text_fallback("en"):
         for lang in ("fr", "de", "es", "pt", "ru", "pl", "th", "hi", "ne", "my"):
             for e in ENTRIES:
                 m = table_meaning(e, lang)
-                assert not (set(m.lower()) & vi_chars), f"{lang}.{e['key']}: {m}"
+                assert not vi_only.search(m), f"{lang}.{e['key']}: {m}"
 
 
 # ---------------- ca luot phan tich (analyze_full) ----------------

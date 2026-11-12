@@ -1,10 +1,16 @@
 # Thay đổi
 
-## Chưa phát hành
+## 0.2.2 (khuôn kết quả 1.5, không đổi)
 
-**Dữ liệu / công cụ (không đổi code module, không đổi khuôn)**
-- Kho: sửa `meaning_vi` của mẫu #26 (Tính từ い), #27 (Tính từ な) vốn là chỗ ảnh 【ảnh】 + câu ví dụ; dịch bù en, ko. Cần triển khai lại `grammar/grammar_lib.json`, `grammar/grammar_text.en.json`, `grammar/grammar_text.ko.json`.
+**Nghĩa trợ từ thêm 3 ngôn ngữ**
+- `tables/particle_table.th.json`, `.ru.json`, `.es.json` (bản dịch C2): người dùng tiếng Thái, Nga, Tây Ban Nha thấy nghĩa trợ từ / trợ động từ đúng ngôn ngữ (trước dùng ngôn ngữ dự phòng hoặc tiếng Việt). Đổi bảng là đổi khoá cache.
+
+**Dữ liệu kho (triển khai lại thư mục kho)**
+- Sửa `grammar_lib.json`: #26, #27 (bỏ chỗ ảnh 【ảnh】 trong `meaning_vi`) và 13 lỗi trong `LOI_NGUON_BTV.md` của repo dịch (#632 #510 #1335 `notes`, #1290 `explain`, #1085, chữ Nhật gõ sai ở #594 #964 #966 #981 #984 #1086 #1087, #1015). Bản dịch kho (`grammar_text.<lang>.json`: en, ko, id, cn, th, ru, es) đã cập nhật theo; chép cùng `grammar_lib.json`.
+
+**Công cụ dịch kho**
 - `publish_lang.py`: dịch bù khi kho sửa sau khi dịch (`translation/patches/<lang>.json`, danh sách cần dịch ở `patches/<lang>.todo.json`); các trường không đổi giữ bản dịch cũ.
+- `check.py`: bớt báo nhầm "chưa dịch (còn nhiều kana)" (tiếng Trung giữ mẫu trong 「」, cụm ngắn, dòng ×/○ chép từ nguồn); câu Nhật dài chép nguyên từ nguồn vẫn bị báo.
 
 ## 0.2.1 (khuôn kết quả 1.5, không đổi)
 

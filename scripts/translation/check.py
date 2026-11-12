@@ -92,6 +92,40 @@ def has_words(s: str) -> bool:
     return any(w.lower() not in NOTATION for w in re.findall(r"[A-Za-zÀ-ỹđĐ]{2,}", s))
 
 
+QUOTED_JP = re.compile(r"「[^「」]*」|『[^『』]*』")
+KANA_RUN = re.compile(r"[ぁ-ゖァ-ヺー〜～・]{2,}")
+MARKED_LINE = re.compile(r"^(\s*\*?\s*(?:（[^）]{1,6}）|\([^)]{1,6}\)|[×○◯✓✕])\s*)(.*)$")
+
+
+def _strip_kept_jp(t: str, src: str) -> str:
+    """Bo phan tieng Nhat duoc giu nguyen co chu dich (mau ngu phap trong 「」/『』,
+    cum ngan <= 12 ky tu) neu no cung co trong cau nguon - khong tinh vao ty le kana.
+    Cau Nhat dai chep nguyen (chua dich) van bi tinh."""
+    srcn = _norm(src)
+    # dong cau dung/sai co danh dau (*（誤）, *（正）, ×, ○ ...) chep nguyen cau Nhat tu nguon
+    lines = []
+    for ln in t.split("\n"):
+        m = MARKED_LINE.match(ln)
+        if m and m.group(2).strip() and _norm(m.group(2)) in srcn:
+            continue
+        lines.append(ln)
+    t = "\n".join(lines)
+    t = QUOTED_JP.sub(lambda m: "" if _norm(m.group()) in srcn else m.group(), t)
+    # cau Nhat dai (> 12 ky tu) ngoai 「」 chep nguyen tu nguon = chua dich: giu nguyen de van tinh kana,
+    # khong de buoc duoi xoa cac cum kana ngan nam ben trong no.
+    kept: list[str] = []
+    longs = sorted({r for r in jp_runs(t) if len(r) > 12 and _norm(r) in srcn}, key=len, reverse=True)
+    if longs:
+        t = re.sub("|".join(map(re.escape, longs)), lambda m: kept.append(m.group()) or "\x00", t)
+    runs = set(jp_runs(t)) | set(KANA_RUN.findall(t))
+    for r in sorted(runs, key=len, reverse=True):
+        if len(r) <= 12 and _norm(r) in srcn:
+            t = t.replace(r, "")
+    for k in kept:
+        t = t.replace("\x00", k, 1)
+    return t
+
+
 def check_text(s: str, t, lang: str, src: str, where: str, glossary: list[dict]) -> tuple[list, list]:
     err, warn = [], []
     if src == "ex":  # cau vi du: dich tu cau Nhat (co the co chu Latin nhu ICカード)
@@ -114,7 +148,7 @@ def check_text(s: str, t, lang: str, src: str, where: str, glossary: list[dict])
     elif t.strip() == s.strip() and any(m in s for m in "×○✕"):
         pass  # dong sua loi chi co chu Nhat (× … → ○ …): chep nguyen la dung
     else:  # nguon tieng Nhat: phai dich, khong chep lai
-        kana = len(KANA.findall(RUBY.sub("", t)))
+        kana = len(KANA.findall(_strip_kept_jp(RUBY.sub("", t), deruby(s))))
         lim = 0.15 if lang in ("cn", "tw") else 0.3
         if kana / max(len(_norm(t)), 1) > lim:
             err.append(f"{where}: chua dich (con nhieu kana)")
